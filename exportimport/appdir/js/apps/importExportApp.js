@@ -1,5 +1,10 @@
 /**
  * Main requirejs app module for driving import
+ * This app is based on launching a hidden iframe which resides on a domain that GitHub's CORS rules allows, it then
+ * uses HTML5 postmessage to communicate with it to retrieve file data, that data is then sent to AppDirector using
+ * CORS rules defined by AppDirector's CORS filter, CORS is another feature defined in the HTML5 spec.
+ *
+ * e.g
  * @author samueldoyle
  */
 
@@ -192,12 +197,11 @@ define(["jquery", "underscore", "backbone", "workers/corsDataListener", "workers
 
         ImportExportApp.prototype.requestGHData = function (sendMsgData) {
             cu.log("ImportExportApp sending message to github iframe: type: " + sendMsgData.type + " data: " + sendMsgData.data.url);
-            corsDataSender.sendMsg($.extend({}, sendMsgData));
+            corsDataSender.sendMsg(_.extend({}, sendMsgData));
             return this;
         };
 
         ImportExportApp.prototype.bindImportForm = function () {
-
             $("#appDirImportButton").addClass("btn-primary").removeAttr("disabled").text("Import");
             $("#importForm").validate({
                 submitHandler:_.bind(function (form, e) {

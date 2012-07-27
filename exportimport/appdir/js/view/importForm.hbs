@@ -1,0 +1,60 @@
+{{!
+  model: model/importForm
+}}
+<form class="form-horizontal" id="importForm">
+    <fieldset>
+        <div class="control-group">
+            <label class="control-label" for="appDirHost">{{ appDirHostLabel }}</label>
+
+            <div class="controls">
+                <input class="input-xlarge required dn" id="appDirHost" type="text"
+                       value="{{ appDirHostValue }}">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="appDirUserName">{{ appDirUserNameLabel }}</label>
+
+            <div class="controls">
+                <input class="input-xlarge focused required" minlength="4" id="appDirUserName"
+                       value="{{ appDirUserNameValue }}" type="text">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="appDirPassword">{{ appDirUserPasswordLabel }}</label>
+
+            <div class="controls">
+                <input class="input-xlarge required" id="appDirPassword" minlength="4"
+                       value="{{ appDirUserPasswordValue }}" type="password">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="bpExportFN">File{{ appDirImportFileLabel }}:</label>
+
+            <div class="controls">
+                <input class="input-xlarge disabled" id="bpExportFN" type="text"
+                       placeholder="" disabled="">
+            </div>
+        </div>
+
+        <div id="progressGroup" class="control-group hidden">
+            <span class="badge" id="progressBadge"
+                  style="padding: 3px; float: left; width: 25px; text-align: center;">50%</span>
+
+            <div id="progressWrapper" class="progress progress-striped">
+                <div class="bar" style="width: 50%;" id="progressBar">{{ appDirProgressBarText }}</div>
+            </div>
+        </div>
+
+        <div id="responseDataControl" class="hidden">
+            <div id="responseData"></div>
+        </div>
+
+        <button id="appDirImportButton" type="submit" class="btn btn-large pull-right"
+                disabled="">{{ appDirImportButtonText }}
+        </button>
+    </fieldset>
+</form>
+<div id="eximData" class="hidden">
+    <span id="riframe" type="data" data-value="{{ rIFrameLocation }}"></span>
+    <span id="eximep" type="data" data-value="{{ importEP }}"></span>
+</div>

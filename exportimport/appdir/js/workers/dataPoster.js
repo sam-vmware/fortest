@@ -16,7 +16,7 @@ define(["jquery"], function ($) {
     };
 
     return function (options) {
-        var theOptions = $.extend({}, postDefaultOptions, options);
+        var theOptions = _.extend({}, postDefaultOptions, options);
         if (!theOptions.url) throw new Error("Missing required url field");
         if (!theOptions.data) throw new Error("Missinger required data field");
         return $.ajax(theOptions);

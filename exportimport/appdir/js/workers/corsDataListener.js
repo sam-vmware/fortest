@@ -13,7 +13,7 @@ define(["jquery", "underscore", "util/appDirCommon"], function ($, _, cu) {
     };
 
     function CorsDataListener(options) {
-        this.opts = $.extend({}, defaultOptions, options);
+        this.opts = _.extend({}, defaultOptions, options);
         if (_.isNull(this.opts, "messageType")) {
             throw new Error("Required messageType missing")
         }

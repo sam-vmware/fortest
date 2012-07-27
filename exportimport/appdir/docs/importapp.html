@@ -15,7 +15,6 @@
         }
     </style>
     <link href="../../twitterbootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
-
     <link href="importapp.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -26,16 +25,6 @@
     <script src="../js/thirdparty/require/require-2.0.4-min.js"></script>
     <script src="../js/apps/configs/shared.config.js"></script>
 
-    <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="../../twitterbootstrap/docs/assets/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144"
-          href="../../twitterbootstrap/docs/assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114"
-          href="../../twitterbootstrap/docs/assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"
-          href="../../twitterbootstrap/docs/assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed"
-          href="../../twitterbootstrap/docs/assets/ico/apple-touch-icon-57-precomposed.png">
     <!-- override bootstrap stuff -->
     <style>
         .form-horizontal .control-label {
@@ -48,130 +37,39 @@
         }
     </style>
 </head>
-
 <body>
-
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="#"><img class="pull-left" src="../images/vmware_logo.png"></a>
-
-            <div class="nav-collapse">
-                <ul class="nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <!--/.nav-collapse -->
-        </div>
-    </div>
-</div>
-
-
-<div class="row-fluid">
-    <div class="span12">
-        <h1 class="pagination-centered">Import Application</h1>
-        <br/>
-
-        <div class="row-fluid">
-            <div class="span8">
-                <form class="form-horizontal" id="importForm">
-                    <fieldset>
-                        <div class="control-group">
-                            <label class="control-label" for="appDirHost">Application Director Host:</label>
-
-                            <div class="controls">
-                                <input class="input-xlarge required dn" id="appDirHost" type="text"
-                                       value="http://localhost:8443">
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="appDirUserName">Application Director Username:</label>
-
-                            <div class="controls">
-                                <input class="input-xlarge focused required" minlength="4" id="appDirUserName"
-                                       value="admin" type="text">
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="appDirPassword">Application Director Password:</label>
-
-                            <div class="controls">
-                                <input class="input-xlarge required" id="appDirPassword" minlength="4"
-                                       value="password" type="password">
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="bpExportFN">File:</label>
-
-                            <div class="controls">
-                                <input class="input-xlarge disabled" id="bpExportFN" type="text"
-                                       placeholder="" disabled="">
-                            </div>
-                        </div>
-
-                        <div id="progressGroup" class="control-group hidden">
-                            <span class="badge" id="progressBadge"
-                                  style="padding: 3px; float: left; width: 25px; text-align: center;">50%</span>
-
-                            <div id="progressWrapper" class="progress progress-striped">
-                                <div class="bar" style="width: 50%;" id="progressBar">Importing ...</div>
-                            </div>
-                        </div>
-
-                        <div id="responseDataControl" class="hidden">
-                            <div id="responseData"></div>
-                        </div>
-
-                        <!--<div class="form-actions">-->
-                        <button id="appDirImportButton" type="submit" class="btn btn-large pull-right" disabled="">Loading...
-                        </button>
-                        <!--<button class="btn">Cancel</button>-->
-                        <!--</div>-->
-
-                    </fieldset>
-                </form>
-                <div id="eximData" class="hidden">
-                    <span id="repo" type="data"
-                          data-value='{"aname":"sam-vmware","repo":"fortest"}'></span>
-                    <span id="riframe" type="data"
-                          data-value="http://samsapp.org/AppDirExternalmport/appdir/docs/retrievalDelegate.html"></span>
-                    <span id="eximep" type="data" data-value="/darwin/api/service/action/importexport"></span>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="#"><img class="pull-left" src="../images/vmware_logo.png"></a>
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-<!-- /container -->
-<!-- Le javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="../../twitterbootstrap/docs/assets/js/jquery.js"></script>
-<script src="../../twitterbootstrap/docs/assets/js/bootstrap-transition.js"></script>
-<script src="../../twitterbootstrap/docs/assets/js/bootstrap-alert.js"></script>
-<script src="../../twitterbootstrap/docs/assets/js/bootstrap-modal.js"></script>
-<script src="../../twitterbootstrap/docs/assets/js/bootstrap-dropdown.js"></script>
-<script src="../../twitterbootstrap/docs/assets/js/bootstrap-scrollspy.js"></script>
-<script src="../../twitterbootstrap/docs/assets/js/bootstrap-tab.js"></script>
-<script src="../../twitterbootstrap/docs/assets/js/bootstrap-tooltip.js"></script>
-<script src="../../twitterbootstrap/docs/assets/js/bootstrap-popover.js"></script>
-<script src="../../twitterbootstrap/docs/assets/js/bootstrap-button.js"></script>
-<script src="../../twitterbootstrap/docs/assets/js/bootstrap-collapse.js"></script>
-<script src="../../twitterbootstrap/docs/assets/js/bootstrap-carousel.js"></script>
-<script src="../../twitterbootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
-
-<script>
-//    require(["domReady!", "apps/importExportApp" ], function (doc, ImportExportApp) {
-    require(["domReady!", "apps/importExportApp.nopm" ], function (doc, ImportExportApp) {
-        new ImportExportApp();
-    });
-</script>
+    <div class="row-fluid">
+        <div class="span12">
+            <h1 class="pagination-centered">Import Application</h1>
+            <br/>
+            <div class="row-fluid">
+                <div class="span8" id="importFormWrapper"></div> <!-- This is filled in by template -->
+            </div>
+        </div>
+    </div>
+    <script>
+        require(["domReady!", "apps/importExportApp.nopm" ], function (doc, ImportExportApp) {
+            new ImportExportApp();
+        });
+    </script>
 </body>
 </html>

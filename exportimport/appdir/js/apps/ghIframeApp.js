@@ -1,5 +1,6 @@
 /**
- * This sits inside the GitHub iFrame that runs on the domain that our application is associated
+ * This sits inside the iFrame that runs on the domain that our application is associated with and is permitted
+ * to make make requests from by GitHub CORS rules.
  * @author samueldoyle
  */
 define(["jquery", "underscore", "workers/corsDataListener", "workers/corsDataSender", "util/appDirCommon"],
@@ -24,7 +25,7 @@ define(["jquery", "underscore", "workers/corsDataListener", "workers/corsDataSen
                     }
                 })).done(function (data, textStatus, jqXHR) {
                     cu.log("Done: getting from url: " + dataFromParent.url);
-                    corsDataSender.sendMsg($.extend({}, sendMsgDefaults, {
+                    corsDataSender.sendMsg(_.extend({}, sendMsgDefaults, {
                         data:{
                             requestedUrl:data.url,
                             success:true,
@@ -34,7 +35,7 @@ define(["jquery", "underscore", "workers/corsDataListener", "workers/corsDataSen
                     }));
                 }).fail(function (jqXHR, textStatus, errorThrown) {
                    cu.log("Failed: getting data from GH");
-                   corsDataSender.sendMsg($.extend({}, sendMsgDefaults, {
+                   corsDataSender.sendMsg(_.extend({}, sendMsgDefaults, {
                        data:{
                            requestedUrl:dataFromParent.url,
                            success:false,
@@ -53,7 +54,7 @@ define(["jquery", "underscore", "workers/corsDataListener", "workers/corsDataSen
         // The parent window is waiting on this message so it knows the iframe is loaded
         // this is the signal for it to continue
         function ackParent() {
-            corsDataSender.sendMsg($.extend({}, sendMsgDefaults, {
+            corsDataSender.sendMsg(_.extend({}, sendMsgDefaults, {
                 data:{
                     success:true,
                     uid:cu.getUid(cu.MsgTypes.GH_IFRAME, cu.MsgTypes.PARENT),

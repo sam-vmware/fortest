@@ -1,25 +1,44 @@
 /**
  * Main requirejs app module for driving import
+ * This version of the application resides entirely in GitHub and doesn't use HTML5 postmessage.
+ * Data retrieved is still sent to AppDirector via CORS
  * @author samueldoyle
  */
-
-define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataFetcher", "workers/dataPoster", "model/gitHubFileCollection"],
-    function ($, _, Backbone, cu, dataGetter, dataPoster, GitHubFileCollection) {
+define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataFetcher", "workers/dataPoster",
+    "model/gitHubFileCollection", "hb!view/importForm.hbs", "model/importForm"],
+    function ($, _, Backbone, cu, dataGetter, dataPoster, GitHubFileCollection, compiledImportFormView, ImportFormModel) {
 
         function ImportExportApp() {
+            var importFormModel = new ImportFormModel();
+            var content = compiledImportFormView(importFormModel.toJSON());
+            $("#importFormWrapper").html(content);
+
             this.myData = {
-                targetFile:$.url().param("targetFile"),
-                targetFileFoundIndex:-1,
-                targetFileMeta:null
+                /* queryParams:
+                 uname: mandatory name of the github user that owns the repo
+                 repo: mandatory the name of the repository where the exported services are stored
+                 targetFile: mandatory the name of the exported service file that is stored in the repo.
+                 descr: optional Will be set on the header so Import + this value if set
+                 */
+                queryParams:$.url().param(),
+                targetFileFoundIndex:-1, // where the target github file metadata is stored in the collection
+                targetFileMeta:null // instance of GitHubFile taken from collection that matches the import file we want
             };
-            if (_.isUndefined(this.myData.targetFile)) {
+
+            var missingValues = [];
+            if (_.isUndefined(this.myData.queryParams.uname)) missingValues.push("uname");
+            if (_.isUndefined(this.myData.queryParams.repo)) missingValues.push("repo");
+            if (_.isUndefined(this.myData.queryParams.targetFile)) missingValues.push("targetFile");
+
+            if (missingValues.length > 0) {
+                var missingValuesString = missingValues.join(", ");
                 updateFormDisplay({
                     rdcClass:ALERT_ERROR_CLASSES,
-                    rdMsgVal:"ImportExportApp Missing 'targetFile' query param, can't continue."
+                    rdMsgVal:"ImportExportApp Missing <b>" + missingValuesString + "</b> query params can't continue."
                 });
                 return;
             }
-            cu.log("cImportExportApp Target file to lookup: " + this.myData.targetFile);
+            cu.log("cImportExportApp Target file to lookup: " + this.myData.queryParams.targetFile);
 
             this.loadData();
             this.eventsHandler = {};
@@ -41,16 +60,17 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataFe
 
 
             this.myData.gitHubFileCollection =
-                new GitHubFileCollection({userName:this.myData.repo.aname, repoName:this.myData.repo.repo});
+                new GitHubFileCollection({userName:this.myData.queryParams.uname, repoName:this.myData.queryParams.repo});
 
             // Fetch the tree collection from GitHub
             var that = this;
             this.myData.gitHubFileCollection.fetch({
+                parse:false,
                 success:function (collection, response) {
                     cu.log("%cImportExportApp received tree data: ", "color:yellow; background-color:blue");
                     _.each(collection.models, function (model, index) {
                         cu.log("tree entry: " + JSON.stringify(model));
-                        if (_.isEqual(model.get("path"), that.myData.targetFile)) {
+                        if (_.isEqual(model.get("path"), that.myData.queryParams.targetFile)) {
                             // Save index in collection where the target is located
                             that.myData.targetFileFoundIndex = index;
                         }
@@ -60,7 +80,7 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataFe
                     if (that.myData.targetFileFoundIndex == -1) {
                         updateFormDisplay({
                             rdcClass:ALERT_ERROR_CLASSES,
-                            rdMsgVal:"ImportExportApp server did not contain targetFile: " + that.myData.targetFile
+                            rdMsgVal:"ImportExportApp server did not contain targetFile: " + that.myData.queryParams.targetFile
                         });
                         return;
                     }
@@ -112,6 +132,9 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataFe
                         rdcClass:msgClass,
                         rdMsgVal:msgVal
                     });
+                    var url = that.myData.postParams.appdhost + "/darwin/#applicationOverviewPage:" + data.applicationId;
+                    cu.log("ImportExportApp opening new application location: " + url);
+                    window.open(url);
                 }).fail(function (jqXHR, textStatus, errorThrown) {
                     cu.log("%cImportExportApp post to app dir returned status: " + jqXHR.status, "color:red; background-color:blue");
                     updateFormDisplay({
@@ -128,8 +151,7 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataFe
             $("#responseDataControl").removeAttr("class").addClass(options.rdcClass);
             var msg;
 
-            // Ideally this type of stuff should be done with a template
-            // If application grows add Backbone MVC + Handlebars for Template
+            // Small enough not to place in template
             if (_.isEqual(options.rdcClass, ALERT_SUCCESS_CLASSES)) {
                 msg = "<h4>Success</h4>" + options.rdMsgVal;
             } else if (_.isEqual(options.rdcClass, ALERT_ERROR_CLASSES)) {
@@ -140,37 +162,40 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataFe
 
         ImportExportApp.prototype.startImport = function () {
             $("#responseDataControl").addClass("hidden"); // hide the response in case it is open from prev request
-//            var url = _.template("https://api.github.com/repos/<%= aname %>/<%= repo %>/git/blobs/<%= sha %>")(this.myData.repo);
             var url = this.myData.targetFileMeta.get("theURL");
             var that = this;
-            $.when(dataGetter({
-                url:url,
+            // Fetch the rawData for the file we want from GitHub
+            this.myData.targetFileMeta.fetch({
                 beforeSend:function (xhr) {
                     xhr.setRequestHeader("Accept", "application/vnd.github.raw");
-                }
-            })).done(function (data, textStatus, jqXHR) {
+                },
+                success:function (model, response, jqXHR) {
                     that.eventsHandler.trigger("updateProgressBar", {value:"50%"});
                     cu.log("%cImportExportApp sending import data to app dir, user: "
                         + that.myData.postParams.uname + " app dir host: " + that.myData.postParams.appdhost, "color:yellow; background-color:blue");
-                    that.importData(data);
-                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    that.importData(model.get("rawData"));
+                },
+                error:function (model, error, jqXHR) {
                     cu.log("Failed: getting data from GH");
                     updateFormDisplay({
                         rdcClass:ALERT_ERROR_CLASSES,
                         rdMsgVal:"An error occurred during import. " + JSON.stringify({
+                            name:model.get("path"),
                             code:jqXHR.status,
-                            textStatus:textStatus,
-                            errorThrow:errorThrown
+                            error:error
                         })
                     });
-                })
+                }
+            });
         };
 
         ImportExportApp.prototype.bindImportForm = function () {
             $("#appDirImportButton").addClass("btn-primary").removeAttr("disabled").text("Import");
             var fName = this.myData.targetFileMeta.get("path");
+            var header = !_.isUndefined(this.myData.queryParams.descr) ? this.myData.queryParams.descr : fName.split("\.")[0];
             $("#bpExportFN").attr("placeholder", fName);
-            $("h1").empty().text("Import " + fName.split("\.")[0]);
+            $("h1").empty().text("Import " + header);
+
             $("#importForm").validate({
                 submitHandler:_.bind(function (form, e) {
                     e.preventDefault();

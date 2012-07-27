@@ -1,4 +1,5 @@
 /**
+ * The collection of metadata returned by GitHub API and stored in GitHubFile instances
  * @author samueldoyle
  */
 define(["underscore", "backbone", "model/gitHubFile", "util/appDirCommon"], function (_, Backbone, GitHubFile, cu) {

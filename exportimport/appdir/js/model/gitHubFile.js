@@ -1,4 +1,6 @@
 /**
+ * Storage of metadata representing a GitHubFile, the rawData is lazy loaded on demand through calling
+ * fetch on this model.
  * @author samueldoyle
  */
 define(["underscore", "backbone", "util/appDirCommon"], function (_, Backbone, cu) {
@@ -6,10 +8,11 @@ define(["underscore", "backbone", "util/appDirCommon"], function (_, Backbone, c
         defaults:{
             sha:null,
             path:null,
-            theURL:null
+            theURL:null,
+            rawData:null
         },
 
-        initialize:function () {
+        initialize:function (arguments) {
             Backbone.Model.prototype.initialize.apply(this, arguments);
             var error = this.validate(this.attributes);
             if (error) {
@@ -34,6 +37,15 @@ define(["underscore", "backbone", "util/appDirCommon"], function (_, Backbone, c
         },
 
         sync:function (method, model, options) {
+            if (!_.isEqual("read", method)) {
+                cu.log("GitHubFile sync called with non-read method: " + method);
+                this.trigger("error", this, error);
+                return;
+            }
+            if (!_.isNull(this.get("rawData"))) {
+                // only sync if data not set.
+                return;
+            }
             var params = _.extend({
                 type:"GET",
                 timeout:30000,
@@ -52,6 +64,10 @@ define(["underscore", "backbone", "util/appDirCommon"], function (_, Backbone, c
             }, options);
 
             return $.ajax(params);
+        },
+
+        parse:function (response) { // fetch should only ever be called in lazy init for rawdata
+           this.set("rawData", response);
         }
     });
     return GitHubFile;
