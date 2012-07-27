@@ -26,6 +26,10 @@ define(["underscore", "backbone", "util/appDirCommon"], function (_, Backbone, c
             }
         },
 
+        url:function() {
+            return this.get("theURL");
+        },
+
         save:function () {
             cu.log("GitHubFile: save called");
             this.trigger("error", this, error);
@@ -50,7 +54,7 @@ define(["underscore", "backbone", "util/appDirCommon"], function (_, Backbone, c
                 type:"GET",
                 timeout:30000,
                 processData:true,
-                url:this.theURL,
+                url:this.url(),
                 context:this,
                 complete:function (data) {
                 },
