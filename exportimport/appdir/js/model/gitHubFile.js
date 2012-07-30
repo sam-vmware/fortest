@@ -20,14 +20,14 @@ define(["underscore", "backbone", "util/appDirCommon"], function (_, Backbone, c
             }
         },
 
+        url:function() {
+            return this.get("theURL");
+        },
+
         validate:function (attrs) {
             if (!_.isString(attrs.sha) || !_.isString(attrs.path) || !_.isString(attrs.theURL)) {
                 return "Invalid attribute set."
             }
-        },
-
-        url:function() {
-            return this.get("theURL");
         },
 
         save:function () {
@@ -46,7 +46,7 @@ define(["underscore", "backbone", "util/appDirCommon"], function (_, Backbone, c
                 this.trigger("error", this, error);
                 return;
             }
-            if (!_.isNull(this.get("rawData"))) {
+            if (!_.isNull(this.get("rawData")) && !options.reset) {
                 // only sync if data not set.
                 return;
             }

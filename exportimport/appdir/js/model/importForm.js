@@ -5,15 +5,17 @@
 define(["underscore", "backbone"], function (_, Backbone) {
     var ImportForm = Backbone.Model.extend({
         defaults:{
-            appDirHostLabel:"Application Director Host:",
-            appDirHostValue:"http://localhost:8080",
-            appDirUserNameLabel:"Application Director Username:",
-            appDirUserNameValue:"admin",
-            appDirUserPasswordLabel:"Application Director Password:",
-            appDirUserPasswordValue:"somerandompassword",
-            appDirImportFileLabel:"File:",
-            appDirProgressBarText:"Importing...",
-            appDirImportButtonText:"Loading...",
+            hostLabel:"Application Director Host:",
+            hostValue:"http://localhost:8080",
+            userLabel:"Application Director Username:",
+            userValue:"admin",
+            passwordLabel:"Application Director Password:",
+            passwordValue:"somerandompassword",
+            importFileLabel:"File:",
+            progressBarText:"Importing...",
+            importButtonText:"Import",
+            viewFileButtonText:"View File",
+            buttonLoadingText:"loading...",
             rIFrameLocation:"http://samsapp.org/AppDirExternalmport/appdir/docs/retrievalDelegate.html",
             importEP:"/darwin/api/service/action/importexport"
         }

@@ -4,31 +4,31 @@
 <form class="form-horizontal" id="importForm">
     <fieldset>
         <div class="control-group">
-            <label class="control-label" for="appDirHost">{{ appDirHostLabel }}</label>
+            <label class="control-label" for="appDirHost">{{hostLabel}}</label>
 
             <div class="controls">
                 <input class="input-xlarge required dn" id="appDirHost" type="text"
-                       value="{{ appDirHostValue }}">
+                       value="{{hostValue}}">
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="appDirUserName">{{ appDirUserNameLabel }}</label>
+            <label class="control-label" for="appDirUserName">{{userLabel}}</label>
 
             <div class="controls">
                 <input class="input-xlarge focused required" minlength="4" id="appDirUserName"
-                       value="{{ appDirUserNameValue }}" type="text">
+                       value="{{userValue}}" type="text">
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="appDirPassword">{{ appDirUserPasswordLabel }}</label>
+            <label class="control-label" for="appDirPassword">{{passwordLabel}}</label>
 
             <div class="controls">
                 <input class="input-xlarge required" id="appDirPassword" minlength="4"
-                       value="{{ appDirUserPasswordValue }}" type="password">
+                       value="{{passwordValue}}" type="password">
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="bpExportFN">File{{ appDirImportFileLabel }}:</label>
+            <label class="control-label" for="bpExportFN">{{importFileLabel}}</label>
 
             <div class="controls">
                 <input class="input-xlarge disabled" id="bpExportFN" type="text"
@@ -41,7 +41,7 @@
                   style="padding: 3px; float: left; width: 25px; text-align: center;">50%</span>
 
             <div id="progressWrapper" class="progress progress-striped">
-                <div class="bar" style="width: 50%;" id="progressBar">{{ appDirProgressBarText }}</div>
+                <div class="bar" style="width: 50%;" id="progressBar">{{progressBarText}}</div>
             </div>
         </div>
 
@@ -49,12 +49,24 @@
             <div id="responseData"></div>
         </div>
 
-        <button id="appDirImportButton" type="submit" class="btn btn-large pull-right"
-                disabled="">{{ appDirImportButtonText }}
-        </button>
+        <div class="control-group">
+            <div class="controls">
+                <a id="viewImportFileButton" data-loading-text="{{buttonLoadingText}}"
+                   data-complete-text="{{viewFileButtonText}}"
+                   class="btn">
+                </a>
+                <button id="appDirImportButton" data-loading-text="{{buttonLoadingText}}"
+                        data-complete-text="{{importButtonText}}"
+                        type="submit" class="btn btn-primary" disabled="">
+                </button>
+            </div>
+        </div>
     </fieldset>
 </form>
+<div id="viewFileModalWrapper">
+    {{> viewFileModal}}
+</div>
 <div id="eximData" class="hidden">
-    <span id="riframe" type="data" data-value="{{ rIFrameLocation }}"></span>
-    <span id="eximep" type="data" data-value="{{ importEP }}"></span>
+    <span id="riframe" type="data" data-value="{{rIFrameLocation}}"></span>
+    <span id="eximep" type="data" data-value="{{importEP}}"></span>
 </div>

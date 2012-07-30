@@ -17,6 +17,7 @@ requirejs.config({
     paths:{
         jquery:"jquery/jquery-1.7.2.min",
         jqPlugins:"jquery/plugins",
+        twitterjs:"../../twitterbootstrap/docs/assets/js",
         underscore:"thirdparty/underscore-min",
         backbone:"thirdparty/backbone-min",
         handlebars:"thirdparty/handlebars",
@@ -41,22 +42,18 @@ requirejs.config({
         "backbone":{
             deps:["underscore", "jquery"],
             exports:"Backbone"
-        }
+        },
+        "twitterjs/bootstrap-transition":["jquery"],
+        "twitterjs/bootstrap-button":["jquery"],
+        "twitterjs/bootstrap-modal":["jquery"]
     },
-    deps:["jqPlugins/jquery.validate", "jqPlugins/jquery.validate.bootstrap", "jqPlugins/postmessage",
-        "jqPlugins/jquery.url", "thirdparty/crypto-min"], // force these to load since they aren't directly referenced
+    deps:["jquery", "jqPlugins/jquery.validate", "jqPlugins/jquery.validate.bootstrap", "jqPlugins/postmessage",
+        "jqPlugins/jquery.url", "thirdparty/crypto-min", "twitterjs/bootstrap-transition", "twitterjs/bootstrap-button", "twitterjs/bootstrap-modal"], // force these to load since they aren't directly referenced
     callback:function () {
         // Add a domain specifier check to the validator
         $.validator.addMethod("dn", function (value, element) {
             return this.optional(element) || /^(https?:\/\/)?([0-9A-Za-z]+\.?)+([A-Za-z]{2,3})?(:\d+)?$/i.test(value);
         });
         $.extend($.validator.messages, {dn:"is not a valid domain name."});
-    },
-    // HBS plugin config
-    hbs:{
-        templateExtension:'hbtmpl',
-        // if disableI18n is `true` it won't load locales and the i18n helper
-        // won't work as well.
-        disableI18n:true
     }
 });

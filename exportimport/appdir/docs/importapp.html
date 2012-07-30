@@ -8,34 +8,18 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="../../twitterbootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
-    <style>
-        body {
-            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-        }
-    </style>
-    <link href="../../twitterbootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="importapp.css" rel="stylesheet">
+    <link href="../../twitterbootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../../twitterbootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+    <link href="../css/thirdparty/prettify.css" rel="stylesheet" type="text/css">
+    <link href="importapp.css" rel="stylesheet" type="text/css">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script type="text/javascript" src="../js/thirdparty/html5.js"></script>
     <![endif]-->
 
-    <script src="../js/thirdparty/require/require-2.0.4-min.js"></script>
-    <script src="../js/apps/configs/shared.config.js"></script>
-
-    <!-- override bootstrap stuff -->
-    <style>
-        .form-horizontal .control-label {
-            width: 200px;
-            text-align: right;
-        }
-
-        .form-horizontal .controls {
-            margin-left: 220px;
-        }
-    </style>
+    <script type="text/javascript" src="../js/thirdparty/require/require-2.0.4-min.js"></script>
+    <script type="text/javascript" src="../js/apps/configs/shared.config.js"></script>
 </head>
 <body>
     <div class="navbar navbar-fixed-top">
@@ -66,6 +50,7 @@
             </div>
         </div>
     </div>
+
     <script>
         require(["domReady!", "apps/importExportApp.nopm" ], function (doc, ImportExportApp) {
             new ImportExportApp();

@@ -6,3 +6,31 @@
     background-image: url("../images/vmware_logo.jpg");
     background-repeat: no-repeat;
 }
+
+h3 {
+    text-align: center;
+}
+
+body {
+    /*padding-top: 60px; *//* 60px to make the container go all the way to the bottom of the topbar */
+}
+
+body .modal {
+    width: 90%; /* desired relative width */
+    left: 5%; /* (100%-width)/2 */
+    margin: auto auto auto auto; /* place center */
+}
+
+body .modal.fade.in {
+    top: 5%; /* fade in to correct spot */
+}
+
+/* override bootstrap stuff */
+.form-horizontal .control-label {
+    width: 200px;
+    text-align: right;
+}
+
+.form-horizontal .controls {
+    margin-left: 220px;
+}
