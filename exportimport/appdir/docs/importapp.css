@@ -1,3 +1,7 @@
+/* Whatever custom stuff goes here, mostly atm for overriding defaults in twitter bootstrap
+  S.D.
+*/
+
 .vmware-logo {
     width: 200px;
     height: 100px;
@@ -12,13 +16,20 @@ h3 {
 }
 
 body {
-    /*padding-top: 60px; *//* 60px to make the container go all the way to the bottom of the topbar */
+    /*padding-top: 60px;  60px to make the container go all the way to the bottom of the topbar */
 }
 
 body .modal {
+    height: 90%;
     width: 90%; /* desired relative width */
     left: 5%; /* (100%-width)/2 */
+    overflow: hidden;
     margin: auto auto auto auto; /* place center */
+}
+
+.modal-body {
+    max-height: 75%;
+    overflow: scroll;
 }
 
 body .modal.fade.in {
