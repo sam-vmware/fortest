@@ -7,6 +7,8 @@ define(["jquery", "underscore"], function ($, _) {
     // TESTING defined in shared.config
     var logEnabled = _.isBoolean(TESTING);
     var separator = "->";
+    var activityDefaults = {el:"#spinnerEl",segments:8, steps:3, opacity:0.3, space:0,
+        width:3, length:4, color:"white", speed:1.5};
     return {
         MsgTypes:{
             PARENT:"PARENT",
@@ -32,6 +34,11 @@ define(["jquery", "underscore"], function ($, _) {
             if (logEnabled && _.isString(message)) {
                 _.isUndefined(style) ? console.debug(message) : console.debug(message, style);
             }
+        },
+        activity:function(state, options) {
+            // this relies on the jquery.activity-indicator plugin
+            var activityOptions = _.extend({}, options, activityDefaults);
+            state ? $(activityOptions.el).activity(activityOptions) : $(activityOptions.el).activity(false);
         },
         getDeepProperty:function (o, s) {
             s = s.replace(/\[(\w+)\]/g, '.$1');

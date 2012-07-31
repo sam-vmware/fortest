@@ -71,3 +71,7 @@ body .modal {
     margin: auto auto auto auto; /* place center */
 }
 
+#spinnerEl {
+    margin-top: 21px; /* plugin doesn't allow override computed */
+}
+

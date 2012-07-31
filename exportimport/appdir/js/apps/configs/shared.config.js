@@ -27,6 +27,7 @@ requirejs.config({
         domReady:"thirdparty/require/plugins/domReady"
     },
     shim:{
+        "jqPlugins/jquery.activity-indicator":["jquery"],
         "jqPlugins/jquery.validate":["jquery"],
         "jqPlugins/jquery.validate.bootstrap":["jquery", "jqPlugins/jquery.validate"],
         "jqPlugins/postmessage":{
@@ -47,13 +48,20 @@ requirejs.config({
         "twitterjs/bootstrap-button":["jquery"],
         "twitterjs/bootstrap-modal":["jquery"]
     },
-    deps:["jquery", "jqPlugins/jquery.validate", "jqPlugins/jquery.validate.bootstrap", "jqPlugins/postmessage",
-        "jqPlugins/jquery.url", "thirdparty/crypto-min", "twitterjs/bootstrap-transition", "twitterjs/bootstrap-button", "twitterjs/bootstrap-modal"], // force these to load since they aren't directly referenced
-    callback:function () {
+    deps:["jquery", "util/appDirCommon", "jqPlugins/jquery.validate", "jqPlugins/jquery.validate.bootstrap", "jqPlugins/postmessage", "jqPlugins/jquery.activity-indicator",
+        "jqPlugins/jquery.url", "thirdparty/crypto-min", "twitterjs/bootstrap-transition", "twitterjs/bootstrap-button", "twitterjs/bootstrap-modal"], // force some to load since they aren't directly referenced
+    callback:function ($, cu) {
         // Add a domain specifier check to the validator
         $.validator.addMethod("dn", function (value, element) {
             return this.optional(element) || /^(https?:\/\/)?([0-9A-Za-z]+\.?)+([A-Za-z]{2,3})?(:\d+)?$/i.test(value);
         });
         $.extend($.validator.messages, {dn:"is not a valid domain name."});
+
+        // setup activity indicator
+        $(document).ajaxStart(function() {
+            cu.activity(true);
+        }).ajaxStop(function(){
+            cu.activity(false);
+        });
     }
 });
