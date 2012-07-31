@@ -1,0 +1,72 @@
+{{!
+  model: model/importForm
+}}
+<form class="form-horizontal" id="importForm">
+    <fieldset>
+        <div class="control-group">
+            <label class="control-label" for="appDirHost">{{hostLabel}}</label>
+
+            <div class="controls">
+                <input class="input-xlarge required dn" id="appDirHost" type="text"
+                       value="{{hostValue}}">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="appDirUserName">{{userLabel}}</label>
+
+            <div class="controls">
+                <input class="input-xlarge focused required" minlength="4" id="appDirUserName"
+                       value="{{userValue}}" type="text">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="appDirPassword">{{passwordLabel}}</label>
+
+            <div class="controls">
+                <input class="input-xlarge required" id="appDirPassword" minlength="4"
+                       value="{{passwordValue}}" type="password">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="bpExportFN">{{importFileLabel}}</label>
+
+            <div class="controls">
+                <input class="input-xlarge disabled" id="bpExportFN" type="text"
+                       placeholder="" disabled="">
+            </div>
+        </div>
+
+        <div id="progressGroup" class="control-group hidden">
+            <span class="badge" id="progressBadge"
+                  style="padding: 3px; float: left; width: 25px; text-align: center;">50%</span>
+
+            <div id="progressWrapper" class="progress progress-striped">
+                <div class="bar" style="width: 50%;" id="progressBar">{{progressBarText}}</div>
+            </div>
+        </div>
+
+        <div id="responseDataControl" class="hidden">
+            <div id="responseData"></div>
+        </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <a id="viewImportFileButton" data-loading-text="{{buttonLoadingText}}"
+                   data-complete-text="{{viewFileButtonText}}"
+                   class="btn">
+                </a>
+                <button id="appDirImportButton" data-loading-text="{{buttonLoadingText}}"
+                        data-complete-text="{{importButtonText}}"
+                        type="submit" class="btn btn-primary" disabled="">
+                </button>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<div id="viewFileModalWrapper">
+    {{> viewFileModal}}
+</div>
+<div id="eximData" class="hidden">
+    <span id="riframe" type="data" data-value="{{rIFrameLocation}}"></span>
+    <span id="eximep" type="data" data-value="{{importEP}}"></span>
+</div>

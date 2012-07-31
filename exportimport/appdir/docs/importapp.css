@@ -11,29 +11,33 @@
     background-repeat: no-repeat;
 }
 
-h3 {
-    text-align: center;
+html, body {
+    height: 100%;
+}
+
+.fill {
+    min-height: 75%;
+    position: relative;
+}
+
+.filler:after {
+    background-color: inherit;
+    bottom: 0;
+    content: "";
+    left: 20px;
+    position: absolute;
+    top: 0;
+    width: inherit;
+    z-index: -1;
 }
 
 body {
     padding-top: 60px;
 }
 
-body .modal {
-    height: 90%;
-    width: 90%; /* desired relative width */
-    left: 5%; /* (100%-width)/2 */
-    overflow: hidden;
-    margin: auto auto auto auto; /* place center */
-}
-
-.modal-body {
-    max-height: 75%;
-    overflow: scroll;
-}
-
-body .modal.fade.in {
-    top: 5%; /* fade in to correct spot */
+#sidebar {
+    padding: 0;
+    background-color: #BBD8E9;
 }
 
 /* override bootstrap stuff */
@@ -45,3 +49,25 @@ body .modal.fade.in {
 .form-horizontal .controls {
     margin-left: 220px;
 }
+
+.modal-body {
+    max-height: 75%;
+    overflow: scroll;
+}
+
+body .modal.fade.in {
+    top: 5%; /* fade in to correct spot */
+}
+
+.modal-footer {
+    background-color: inherit;
+}
+
+body .modal {
+    height: 90%;
+    width: 90%; /* desired relative width */
+    left: 5%; /* (100%-width)/2 */
+    overflow: hidden;
+    margin: auto auto auto auto; /* place center */
+}
+

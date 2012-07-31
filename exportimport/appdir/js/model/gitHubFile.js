@@ -6,10 +6,10 @@
 define(["underscore", "backbone", "util/appDirCommon"], function (_, Backbone, cu) {
     var GitHubFile = Backbone.Model.extend({
         defaults:{
-            sha:null,
-            path:null,
-            theURL:null,
-            rawData:null
+            sha:undefined,
+            path:undefined,
+            theURL:undefined,
+            rawData:undefined
         },
 
         initialize:function (arguments) {
@@ -46,7 +46,7 @@ define(["underscore", "backbone", "util/appDirCommon"], function (_, Backbone, c
                 this.trigger("error", this, error);
                 return;
             }
-            if (!_.isNull(this.get("rawData")) && !options.reset) {
+            if (!_.isUndefined(this.get("rawData")) && !options.reset) {
                 // only sync if data not set.
                 return;
             }

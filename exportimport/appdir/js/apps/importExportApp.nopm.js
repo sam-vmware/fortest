@@ -5,38 +5,9 @@
  * @author samueldoyle
  */
 define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPoster", "model/gitHubFileCollection",
-    "hb!view/viewFileModal.part.hbs", "hb!view/importForm.hbs", "model/importForm"],
-    function ($, _, Backbone, cu, dataPoster, GitHubFileCollection, viewFileModal, compiledImportFormView, ImportFormModel) {
-
-        ImportExportApp.prototype.setupFileModalViewListener = function () {
-            var that = this;
-
-            function showModal(data, header) {
-                $("#model-content").empty().append(_.escape(data)); // insert our data into the modal
-//                prettyPrint(); // use google pretty print, takes too long for some files I found causing script timeout
-                $("#viewFileModal h3").empty().text(header);
-                $("#viewFileModal").modal({
-                    backdrop:true,
-                    keyboard:true
-                })
-            }
-
-            var fName = this.myData.targetFileMeta.get("path");
-            $("#viewImportFileButton").live("click", (function (e) {
-                e.preventDefault();
-                var fileMetaModel = that.myData.targetFileMeta;
-                if (_.isNull(fileMetaModel.get("rawData"))) {
-                    // if we haven't yet fetched our file raw data then get it
-                    that.getGHRawData({
-                        success:function (model, response, jqXHR) {
-                            showModal(model.get("rawData"), fName);
-                        }
-                    });
-                    return;
-                }
-                showModal(fileMetaModel.get("rawData"), fName);
-            }));
-        };
+    "hb!template/viewFileModal.part.hbs", "hb!template/importForm.hbs", "model/importForm", "view/sideBar", "view/ghViewDataModal"],
+    function ($, _, Backbone, cu, dataPoster, GitHubFileCollection, viewFileModal, compiledImportFormTmpl,
+              ImportFormModel, SideBarView, GHViewDataModal) {
 
         // Constructor
         function ImportExportApp() {
@@ -53,13 +24,13 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
                     targetFile:undefined, //mandatory the name of the exported service file that is stored in the repo.
                     descr:undefined //optional Will be set on the header so Import + this value if set
                 },*/
-                targetFileFoundIndex:-1, // where the target github file metadata is stored in the collection
-                targetFileMeta:null, // instance of GitHubFile taken from collection that matches the import file we want
+                targetFileMeta:undefined, // instance of GitHubFile taken from collection that matches the import file we want
+                readMeFile:undefined,
                 importFormModel:new ImportFormModel() // some standard values for handlebar templates+partials
             };
 
             // Compile and insert template
-            var content = compiledImportFormView(this.myData.importFormModel.toJSON());
+            var content = compiledImportFormTmpl(this.myData.importFormModel.toJSON());
             $("#importFormWrapper").html(content);
 
             // Check for anything missing that is required on the URL that redirected to our page
@@ -76,6 +47,9 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
                 });
                 return;
             }
+
+            // Set the readme file, making assumpting the convention is the targetFile + .readme
+            this.myData.readMeFile = this.myData.queryParams.targetFile + ".readme";
             cu.log("cImportExportApp Target file to lookup: " + this.myData.queryParams.targetFile);
 
             this.initData();
@@ -117,23 +91,38 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
                 parse:false,
                 success:function (collection, response) {
                     cu.log("%cImportExportApp received tree data: ", "color:yellow; background-color:blue");
+
+                    // Try to locate both the importfile and the corresponding readme file in the github results
+                    var readMeFileName = that.myData.queryParams.targetFile + ".readme";
                     _.each(collection.models, function (model, index) {
                         cu.log("tree entry: " + JSON.stringify(model));
-                        if (_.isEqual(model.get("path"), that.myData.queryParams.targetFile)) {
-                            // Save index in collection where the target is located
-                            that.myData.targetFileFoundIndex = index;
+                        switch(model.get("path")) {
+                            case that.myData.queryParams.targetFile:
+                                that.myData.targetFileMeta = model;
+                                cu.log("found target file meta entry at index: " + index);
+                                break;
+                            case readMeFileName:
+                                that.myData.readMeFile = model;
+                                cu.log("found target file readme at index: " + index);
+                                break;
                         }
                     });
-                    cu.log("ImportExportApp Found target file in collection at index: " + that.myData.targetFileFoundIndex);
                     // If the server data doesn't contain a match for the targetFile we can't continue
-                    if (that.myData.targetFileFoundIndex == -1) {
+                    if (_.isUndefined(that.myData.targetFileMeta)) {
                         updateFormDisplay({
                             rdcClass:ALERT_ERROR_CLASSES,
                             rdMsgVal:"ImportExportApp server did not contain targetFile: " + that.myData.queryParams.targetFile
                         });
                         return;
                     }
-                    that.myData.targetFileMeta = collection.at(that.myData.targetFileFoundIndex);
+                    if (_.isUndefined(that.myData.readMeFile)) {
+                        cu.log("%cImportExportApp unable to locate readmefile: " + readMeFileName, "color:red; background-color:blue");
+                    }
+                     // Construct sidebar
+                    this.sidebar = new SideBarView({el:$("#sidebar"), readMe:that.myData.readMeFile});
+                    // Construct the modal for viewing the importfile on the view file click
+                    this.viewDataModal =
+                        new GHViewDataModal({model:that.myData.targetFileMeta, clickTarget:"#viewImportFileButton"});
                     that.bindImportForm(); // ok to allow input on the form now that we have all our data
                 },
                 error:function (collection, response) {
@@ -159,28 +148,28 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
                 beforeSend:this.myData.postParams.beforeSend,
                 xhrFields:this.myData.postParams.xhrFields
             })).done(function (data, textStatus, jqXHR) {
-                    var msgClass = ALERT_SUCCESS_CLASSES;
-                    var msgVal = "";
-                    if (!_.isBoolean(data.success) || data.success == false) {
-                        msgClass = ALERT_ERROR_CLASSES;
-                        msgVal = "Application Director reported non-success in importing the application. Please review the logs for result.";
-                    } else {
-                        that.eventsHandler.trigger("updateProgressBar", {value:"100%"});
-                    }
-                    updateFormDisplay({
-                        rdcClass:msgClass,
-                        rdMsgVal:msgVal
-                    });
-                    var url = that.myData.postParams.appdhost + "/darwin/#applicationOverviewPage:" + data.applicationId;
-                    cu.log("ImportExportApp opening new application location: " + url);
-                    window.open(url);
-                }).fail(function (jqXHR, textStatus, errorThrown) {
-                    cu.log("%cImportExportApp post to app dir returned status: " + jqXHR.status, "color:red; background-color:blue");
-                    updateFormDisplay({
-                        rdcClass:ALERT_ERROR_CLASSES,
-                        rdMsgVal:"An error occurred during import. " + errorThrown
-                    });
+                var msgClass = ALERT_SUCCESS_CLASSES;
+                var msgVal = "";
+                if (!_.isBoolean(data.success) || data.success == false) {
+                    msgClass = ALERT_ERROR_CLASSES;
+                    msgVal = "Application Director reported non-success in importing the application. Please review the logs for result.";
+                } else {
+                    that.eventsHandler.trigger("updateProgressBar", {value:"100%"});
+                }
+                updateFormDisplay({
+                    rdcClass:msgClass,
+                    rdMsgVal:msgVal
                 });
+                var url = that.myData.postParams.appdhost + "/darwin/#applicationOverviewPage:" + data.applicationId;
+                cu.log("ImportExportApp opening new application location: " + url);
+                window.open(url);
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                cu.log("%cImportExportApp post to app dir returned status: " + jqXHR.status, "color:red; background-color:blue");
+                updateFormDisplay({
+                    rdcClass:ALERT_ERROR_CLASSES,
+                    rdMsgVal:"An error occurred during import. " + errorThrown
+                });
+            });
         };
 
         // TODO convert to backbone view
@@ -202,9 +191,8 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
         // We only have meta data in the collection getting all the file data potentially could take a lot of time
         // this can be used in a lazy init manner to get the raw full data for a file from GH
         // each property can be overridden in the options success,error etc. the defaults are as you see.
-        ImportExportApp.prototype.getGHRawData = function (options) {
+        ImportExportApp.prototype.getImportFileRawData = function (model, options) {
             $("#responseDataControl").addClass("hidden"); // hide the response in case it is open from prev request
-            var url = this.myData.targetFileMeta.get("theURL");
             var that = this;
 
             var requestOpts = _.extend({}, {
@@ -232,7 +220,7 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
             }, options);
 
             // Fetch the rawData for the file we want from GitHub
-            this.myData.targetFileMeta.fetch(requestOpts);
+            model.fetch(requestOpts);
         };
 
         ImportExportApp.prototype.bindImportForm = function () {
@@ -244,7 +232,7 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
             var fName = this.myData.targetFileMeta.get("path");
             var header = !_.isUndefined(this.myData.queryParams.descr) ? this.myData.queryParams.descr : fName.split("\.")[0];
             $("#bpExportFN").attr("placeholder", fName);
-            $("h1").empty().text("Import " + header);
+            $("#importHeader").empty().text("Import " + header);
 
             $("#importForm").validate({
                 submitHandler:_.bind(function (form, e) {
@@ -270,10 +258,9 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
                     };
                     this.eventsHandler.trigger("updateProgressBar", {value:"0%"});
                     cu.log("ImportExportApp form submitted");
-                    this.getGHRawData();
+                    this.getImportFileRawData(this.myData.targetFileMeta);
                 }, this)
             });
-            this.setupFileModalViewListener(); // handle view file action
             return this;
         };
 
