@@ -16,7 +16,6 @@ define(["underscore", "backbone"], function (_, Backbone) {
             importButtonText:"Import",
             viewFileButtonText:"View File",
             buttonLoadingText:"loading...",
-            rIFrameLocation:"http://samsapp.org/AppDirExternalmport/appdir/docs/retrievalDelegate.html",
             importEP:"/darwin/api/service/action/importexport"
         }
     });

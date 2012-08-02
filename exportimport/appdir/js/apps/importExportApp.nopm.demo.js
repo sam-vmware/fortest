@@ -10,10 +10,10 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
     function ($, _, Backbone, cu, dataPoster, GitHubFileCollection, viewFileModal, compiledImportFormTmpl,
               ImportFormModel, SideBarView, GHViewDataModal, ProgressBarView) {
 
+        var activityValues = {el:"document",segments: 12, width: 5.5, space: 6, length: 13, color: '#252525', outside:false, speed: 1.5};
         // Constructor, with requirejs this should not do anything dom dependant call init to do so use this
         // to define some attributes
         function ImportExportApp() {
-
             // attributes
             this.queryParams = $.url().param();
             /*queryParams:{
@@ -51,6 +51,7 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
             this.progressBar = new ProgressBarView({el:this.progressBarEL});
             this.sideBarEL = "#sidebar";
             this.importButtonEL = "#viewImportFileButton";
+            this.eximep = "/darwin/api/service/action/importexport";
 
             // Check for anything missing that is required on the URL that redirected to our page
             var missingValues = [];
@@ -70,6 +71,13 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
             // Set the readme file, making assumpting the convention is the targetFile + .readme
             this.readMeFile = this.queryParams.targetFile + ".readme";
             cu.log("cImportExportApp Target file to lookup: " + this.queryParams.targetFile);
+
+            var spinner;
+            $(document).ajaxStart(function() {
+                spinner = new Spinner().spin(document.getElementById('center'));
+            }).ajaxStop(function(){
+                spinner.stop();
+            });
 
             this.initData();
         };
@@ -126,6 +134,19 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
                     this.viewDataModal =
                         new GHViewDataModal({model:that.targetFileMeta, clickTarget:that.importButtonEL});
 
+
+                    that.getImportFileRawData(that.readMeFile, {
+                        beforeSend:function (xhr) {
+                            xhr.setRequestHeader("Accept", "application/vnd.github.raw");
+                        },
+                        success:function (model, response, jqXHR) {
+                            this.$("#readme-content").empty().append(_.escape(response)); // insert our data into the modal
+                        },
+                        error:function (model, error, jqXHR) {
+                            alert("Unable to retrieve readme file data");
+                        }
+                    });
+
                     that.bindImportForm(); // ok to allow input on the form now that we have all our data
                 },
                 error:function (collection, response) {
@@ -178,16 +199,18 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
         // TODO convert to backbone view
         function updateFormDisplay(options) {
             // TODO validation
-            $("#responseDataControl").removeClass("hidden");
-            $("#responseDataControl").removeAttr("class").addClass(options.rdcClass);
-            var msg;
+            var msg,clazz;
 
             // Small enough not to place in template
             if (_.isEqual(options.rdcClass, ALERT_SUCCESS_CLASSES)) {
                 msg = "<h4>Success</h4>" + options.rdMsgVal;
+                clazz = "success main-state-deploy-success"
             } else if (_.isEqual(options.rdcClass, ALERT_ERROR_CLASSES)) {
                 msg = "<h4>Error</h4>" + options.rdMsgVal;
+                clazz = "notification-bulb-error"
             }
+            $("#responseDataControl").removeClass("hidden");
+            $("#responseDataControl").removeAttr("class").addClass(clazz);
             $("#responseData").empty().html(msg);
         }
 
@@ -237,9 +260,7 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
             $("#bpExportFN").attr("placeholder", fName);
             $("#importHeader").empty().text("Import " + header);
 
-            $("#importForm").validate({
-                submitHandler:_.bind(function (form, e) {
-                    e.preventDefault();
+               $("#importButton").bind("click", _.bind(function () {
                     var uname = $("#appDirUserName").val();
                     var password = $("#appDirPassword").val();
                     var bytes =
@@ -262,8 +283,7 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
                     this.progressBar.show().update({value:"0%"});
                     cu.log("ImportExportApp form submitted");
                     this.getImportFileRawData(this.targetFileMeta);
-                }, this)
-            });
+                }, this));
             return this;
         };
 

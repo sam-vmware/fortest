@@ -60,8 +60,8 @@
 </div>
 
 <script>
-    require(["domReady!", "apps/importExportApp.nopm" ], function (doc, ImportExportApp) {
-        new ImportExportApp();
+    require(["domReady!", "apps/importExportApp.nopm" ], function (doc, importApp) {
+        importApp.postConstruct();
     });
 </script>
 </body>
