@@ -2,332 +2,325 @@
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Import</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Import</title>
 
-<link href="../../twitterbootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
-<link href="../../twitterbootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="../css/styles.css" />
-<script type="text/javascript" src="../js/thirdparty/require/require-2.0.4-min.js"></script>
-<script type="text/javascript" src="../js/apps/configs/shared.config.js"></script>
-<script type="text/javascript" src="../js/jquery/plugins/spin.min.js"></script>
+    <link href="../../twitterbootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../../twitterbootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css"/>
+    <script type="text/javascript" src="../js/thirdparty/require/require-2.0.4-min.js"></script>
+    <script type="text/javascript" src="../js/apps/configs/shared.config.js"></script>
+    <script type="text/javascript" src="../js/jquery/plugins/spin.min.js"></script>
 
-<style type="text/css">
-    .success {
-      color: #468847;
-      border-color: #468847;
-    }
-    .error {
-        color: #b94a48;
-        border-color: #b94a48;
-    }
-    .center {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-    }
-    .modal-body {
-        max-height: 75%;
-        overflow: scroll;
-    }
+    <style type="text/css">
+        .success {
+            color: #468847;
+            border-color: #468847;
+        }
 
-    body .modal.fade.in {
-        top: 5%; /* fade in to correct spot */
-    }
+        .error {
+            color: #b94a48;
+            border-color: #b94a48;
+        }
 
-    .modal-footer {
-        background-color: inherit;
-    }
+        .center {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+        }
 
-    body .modal {
-        height: 90%;
-        width: 90%; /* desired relative width */
-        left: 5%; /* (100%-width)/2 */
-        overflow: hidden;
-        margin: auto auto auto auto; /* place center */
-    }
-</style>
+        .modal-body {
+            max-height: 75%;
+            overflow: scroll;
+        }
+
+        body .modal.fade.in {
+            top: 5%; /* fade in to correct spot */
+        }
+
+        .modal-footer {
+            background-color: inherit;
+        }
+
+        body .modal {
+            height: 90%;
+            width: 90%; /* desired relative width */
+            left: 5%; /* (100%-width)/2 */
+            overflow: hidden;
+            margin: auto auto auto auto; /* place center */
+        }
+    </style>
 </head>
 
 <body
-	class="x-body x-webkit x-chrome x-mac x-reset x-container x-chrome-bg x-container-default x-border-layout-ct"
-	id="ext-gen1003" role="application">
+        class="x-body x-webkit x-chrome x-mac x-reset x-container x-chrome-bg x-container-default x-border-layout-ct"
+        id="ext-gen1003" role="application">
 <div id="center" class="center"></div>
-<div id="viewportHeader-1038" class="x-container chrome-header x-box-item x-container-default x-layout-fit" style="height: 44px; margin: 0px; width: 1280px; left: 0px; top: 0px;" role="presentation"><div id="container-1039" class="x-container main-toolbar x-fit-item x-container-default x-box-layout-ct" role="presentation" style="margin: 0px; width: 1280px; height: 44px;"><div role="presentation" class="x-box-inner" id="ext-gen1040" style="height: 46px; width: 1260px;"><div id="dropdown-1040" class="x-btn header-dropdown x-box-item x-btn-default-small x-icon-text-left x-btn-icon-text-left x-btn-default-small-icon-text-left" style="margin: 0px; left: 819px; top: 0px;"><em class="x-btn-arrow x-btn-arrow-right" id="dropdown-1040-btnWrap"><button autocomplete="off" role="button" hidefocus="true" type="button" id="dropdown-1040-btnEl" class="x-btn-center" aria-haspopup="true"><span style="" class="x-btn-inner" id="dropdown-1040-btnInnerEl">Applications</span><span class="x-btn-icon menu-icon-selected-application" id="dropdown-1040-btnIconEl">&nbsp;</span></button></em></div><div id="userDropdown" class="x-btn header-dropdown x-box-item x-btn-default-small x-icon-text-left x-btn-icon-text-left x-btn-default-small-icon-text-left" style="margin: 0px; left: 978px; top: 0px;"><em class="x-btn-arrow x-btn-arrow-right" id="userDropdown-btnWrap"><button autocomplete="off" role="button" hidefocus="true" type="button" id="userDropdown-btnEl" class="x-btn-center" aria-haspopup="true"><span style="" class="x-btn-inner" id="userDropdown-btnInnerEl">AppDirector Administrator</span><span class="x-btn-icon menu-icon-selected-user" id="userDropdown-btnIconEl">&nbsp;</span></button></em></div><div id="button-1055" class="x-btn x-box-item x-btn-transparent-btn-large x-icon x-btn-icon x-btn-transparent-btn-large-icon" style="margin: 0px; left: 1232px; top: 8px;"><em class="" id="button-1055-btnWrap"><button autocomplete="off" role="button" hidefocus="true" type="button" id="button-1055-btnEl" class="x-btn-center"><span style="" class="x-btn-inner" id="button-1055-btnInnerEl">&nbsp;</span><span class="x-btn-icon help-action" id="button-1055-btnIconEl">&nbsp;</span></button></em></div></div></div></div>
+<div id="viewportHeader-1038" class="x-container chrome-header x-box-item x-container-default x-layout-fit"
+     style="height: 44px; margin: 0px; width: 1280px; left: 0px; top: 0px;" role="presentation">
+    <div id="container-1039" class="x-container main-toolbar x-fit-item x-container-default x-box-layout-ct"
+         role="presentation" style="margin: 0px; width: 1280px; height: 44px;">
+        <div role="presentation" class="x-box-inner" id="ext-gen1040" style="height: 46px; width: 1260px;">
+            <div id="button-1055"
+                 class="x-btn x-box-item x-btn-transparent-btn-large x-icon x-btn-icon x-btn-transparent-btn-large-icon"
+                 style="margin: 0px; left: 1232px; top: 8px;"><em class="" id="button-1055-btnWrap">
+                <button autocomplete="off" role="button" hidefocus="true" type="button" id="button-1055-btnEl"
+                        class="x-btn-center"><span style="" class="x-btn-inner"
+                                                   id="button-1055-btnInnerEl">&nbsp;</span><span
+                        class="x-btn-icon help-action" id="button-1055-btnIconEl">&nbsp;</span></button>
+            </em></div>
+        </div>
+    </div>
+</div>
 
-	<div id="viewportContent"
-		class="x-container x-box-item x-container-default x-layout-fit"
-		role="presentation"
-		style="margin: 0px; width: 1071px; height: 586px; left: 0px; top: 44px;">
-		<div id="deploymentEnvironmentOverviewPage-1302"
-			class="x-container overview-page x-fit-item x-container-default x-box-layout-ct"
-			role="presentation"
-			style="margin: 0px; width: 1071px; height: 586px;">
-			<div class="x-box-inner" role="presentation" id="ext-gen1652"
-				style="width: 1071px; height: 586px;">
-				<div id="dTitlePage-1318"
-					class="x-container title-page x-border-box x-box-item x-container-default"
-					style="height: 284px; margin: 0px; width: 900px; left: 0px; top: 0px;"
-					role="presentation">
-					<div id="dPageTitle-1325"
-						class="x-container title-container x-container-default"
-						role="presentation">
-						<div class="title-container-body" id="dPageTitle-1325-body">
-							<div class="title-content-container"
-								id="importHeader" data-qtip="camDE">Import Application</div>
-						</div>
-					</div>
-					<div id="container-1319"
-						class="x-container control-bar x-container-default"
-						role="presentation">
-						<div id="mainbutton-2323"
-							class="x-btn control-item x-btn-transparent-btn-medium x-icon-text-left x-btn-icon-text-left x-btn-transparent-btn-medium-icon-text-left"
-							style="">
-							<em id="mainbutton-2323-btnWrap" class=""><button
-									id="mainbutton-2323-btnEl" type="button" hidefocus="true"
-									role="button" autocomplete="off" data-qtip="Cancel"
-									class="x-btn-center" style="">
-									<span id="mainbutton-2323-btnInnerEl" class="x-btn-inner"
-										style="">About</span>
-								</button> </em>
-						</div>
-						<div id="mainbutton-3323"
-							class="x-btn control-item x-btn-transparent-btn-medium x-icon-text-left x-btn-icon-text-left x-btn-transparent-btn-medium-icon-text-left"
-							style="">
-							<em id="mainbutton-3333-btnWrap" class=""><button
-									id="mainbutton-3333-btnEl" type="button" hidefocus="true"
-									role="button" autocomplete="off" data-qtip="Cancel"
-									class="x-btn-center" style="">
-									<span id="mainbutton-3333-btnInnerEl" class="x-btn-inner"
-										style="">Home</span>
-								</button> </em>
-						</div>
-						<div id="mainbutton-1323"
-							class="x-btn control-item x-btn-transparent-btn-medium x-icon-text-left x-btn-icon-text-left x-btn-transparent-btn-medium-icon-text-left"
-							style="">
-							<em id="mainbutton-1323-btnWrap" class=""><button
-									id="mainbutton-1323-btnEl" type="button" hidefocus="true"
-									role="button" autocomplete="off" data-qtip="Cancel"
-									class="x-btn-center" style="">
-									<span id="mainbutton-1323-btnInnerEl" class="x-btn-inner"
-										style="">Contact</span>
-								</button> </em>
-						</div>
-						<div class="x-clear" role="presentation" id="ext-gen1717"></div>
-					</div>
-					<div id="container-1336" style="height: 350px;"
-						class="x-container content-container x-container-default x-layout-fit"
-						role="presentation">
-						<div id="container-1327"
-							class="x-container content overview-form x-fit-item x-container-default x-box-layout-ct"
-							style="height: 244px; margin: 0px;" role="presentation">
-							<div class="x-box-inner" role="presentation" id="ext-gen1667"
-								style="width: 1015px; height: 244px;">
-								<div id="form-1328" class="x-panel x-box-item x-panel-default"
-									style="width: 380px; height: 244px; margin: 0px; left: 0px; top: 0px;"
-									role="form">
-									<div id="form-1328-body"
-										class="x-panel-body  x-panel-body-default x-panel-body-default x-table-layout-ct"
-										style="width: 380px; height: 244px; left: 0px; top: 0px;">
-										<table role="presentation" class="x-table-layout"
-											cellspacing="0" style="width: 100%;">
-											<tbody>
-												<tr>
-													<td id="" colspan="2" rowspan="1"
-														class="x-table-layout-cell "><div
-															id="commontextareafield-1330"
-															class="x-field x-form-item x-field-default x-form-dirty"
-															style="margin: 6px 0px 0px; width: 380px; height: 80px;">
-															<label id="commontextareafield-1330-labelEl"
-																for="readme-content"
-																class="x-form-item-label x-form-item-label-top"
-																style="margin-bottom: 0px;">Description:</label>
-															<div id="readmewrapper"
-																id="commontextareafield-1330-bodyEl" role="presentation"
-																style="width: 380px; height: 60px;">
-																<textarea id="readme-content" name="description" rows="6"
-																	cols="20" class="x-form-field x-form-text"
-																	autocomplete="off" aria-readonly="false"
-																	aria-invalid="false" data-errorqtip=""
-																	style="width: 380px; height: 180px;" role="textbox"
-																	aria-describedby="commontextareafield-1330-errorEl"
-																	aria-required="false" aria-multiline="true"></textarea>
-															</div>
-															<div id="commontextareafield-1330-errorEl"
-																class="x-form-error-msg" style="display: none"></div>
-															<div class="x-clear" role="presentation">
-																<!-- -->
-															</div>
-														</div></td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-								<div id="form-1332" class="x-panel x-box-item x-panel-default"
-									style="margin: 0px; height: 244px; width: 511px; left: 404px; top: 0px;"
-									role="form">
-									<div id="form-1332-body"
-										class="x-panel-body  x-panel-body-default x-panel-body-default x-box-layout-ct"
-										style="height: 244px; left: 0px; top: 0px; width: 511px;">
-										<div class="x-box-inner" role="presentation" id="ext-gen1683"
-											style="height: 244px; width: 511px;">
-											<div id="commonTextField-1129"
-												class="x-field x-form-item x-field-default x-form-dirty"
-												style="width: 380px;">
-												<label id="commonTextField-1129-labelEl" for="appDirHost"
-													class="x-form-item-label x-form-item-label-top"
-													style="margin-bottom: 0px;">Application Director
-													Host:<span class="x-darwin-required-field">*</span> </label>
-												<div class="x-form-item-body "
-													id="commonTextField-1129-bodyEl" role="presentation"
-													style="width: 380px;">
-													<input id="appDirHost" type="text" name="name" size="20"
-														class="x-form-field x-form-text" autocomplete="off"
-														aria-readonly="false" aria-invalid="false"
-														value="http://localhost:8080"
-														data-errorqtip="" style="width: 380px;" role="textbox"
-														aria-describedby="commonTextField-1329-errorEl"
-														aria-required="true">
-												</div>
-												<div id="commonTextField-1129-errorEl"
-													class="x-form-error-msg" style="display: none"></div>
-												<div class="x-clear" role="presentation">
-													<!-- -->
-												</div>
-											</div>
-											<div class="x-clear" role="presentation">
-												<!-- -->
-											</div>
+<div id="viewportContent"
+     class="x-container x-box-item x-container-default x-layout-fit"
+     role="presentation"
+     style="margin: 0px; width: 1071px; height: 586px; left: 0px; top: 44px;">
+<div id="deploymentEnvironmentOverviewPage-1302"
+     class="x-container overview-page x-fit-item x-container-default x-box-layout-ct"
+     role="presentation"
+     style="margin: 0px; width: 1071px; height: 586px;">
+<div class="x-box-inner" role="presentation" id="ext-gen1652"
+     style="width: 1071px; height: 586px;">
+<div id="dTitlePage-1318"
+     class="x-container title-page x-border-box x-box-item x-container-default"
+     style="height: 284px; margin: 0px; width: 900px; left: 0px; top: 0px;"
+     role="presentation">
+<div id="dPageTitle-1325"
+     class="x-container title-container x-container-default"
+     role="presentation">
+    <div class="title-container-body" id="dPageTitle-1325-body">
+        <div class="title-content-container"
+             id="importHeader" data-qtip="camDE">Import Application
+        </div>
+    </div>
+</div>
+<div id="container-1336" style="height: 350px;"
+     class="x-container content-container x-container-default x-layout-fit"
+     role="presentation">
+<div id="container-1327"
+     class="x-container content overview-form x-fit-item x-container-default x-box-layout-ct"
+     style="height: 244px; margin: 0px;" role="presentation">
+    <div class="x-box-inner" role="presentation" id="ext-gen1667"
+         style="width: 1015px; height: 244px;">
+        <div id="form-1328" class="x-panel x-box-item x-panel-default"
+             style="width: 380px; height: 244px; margin: 0px; left: 0px; top: 0px;"
+             role="form">
+            <div id="form-1328-body"
+                 class="x-panel-body  x-panel-body-default x-panel-body-default x-table-layout-ct"
+                 style="width: 380px; height: 244px; left: 0px; top: 0px;">
+                <table role="presentation" class="x-table-layout"
+                       cellspacing="0" style="width: 100%;">
+                    <tbody>
+                    <tr>
+                        <td id="" colspan="2" rowspan="1"
+                            class="x-table-layout-cell ">
+                            <div
+                                    id="commontextareafield-1330"
+                                    class="x-field x-form-item x-field-default x-form-dirty"
+                                    style="margin: 6px 0px 0px; width: 380px; height: 80px;">
+                                <label id="commontextareafield-1330-labelEl"
+                                       for="readme-content"
+                                       class="x-form-item-label x-form-item-label-top"
+                                       style="margin-bottom: 0px;">Description:</label>
 
-											<div id="commonTextField-1229"
-												class="x-field x-form-item x-field-default x-form-dirty"
-												style="width: 380px;">
-												<label id="commonTextField-1229-labelEl" for="appDirUserName"
-													class="x-form-item-label x-form-item-label-top"
-													style="margin-bottom: 0px;">Application Director
-													Username:<span class="x-darwin-required-field">*</span> </label>
-												<div class="x-form-item-body "
-													id="commonTextField-1229-bodyEl" role="presentation"
-													style="width: 380px;">
-													<input id="appDirUserName" type="text" name="name" size="20"
-														class="x-form-field x-form-text" autocomplete="off"
-														aria-readonly="false" aria-invalid="false"
-														value="admin"
-														data-errorqtip="" style="width: 380px;" role="textbox"
-														aria-describedby="commonTextField-1329-errorEl"
-														aria-required="true">
-												</div>
-												<div id="commonTextField-1229-errorEl"
-													class="x-form-error-msg" style="display: none"></div>
-												<div class="x-clear" role="presentation">
-													<!-- -->
-												</div>
-											</div>
-											<div class="x-clear" role="presentation">
-												<!-- -->
-											</div>
+                                <div id="readmewrapper"
+                                     id="commontextareafield-1330-bodyEl" role="presentation"
+                                     style="width: 380px; height: 60px;">
+                                    <textarea id="readme-content" name="description" rows="6"
+                                              cols="20" class="x-form-field x-form-text"
+                                              autocomplete="off" aria-readonly="false"
+                                              aria-invalid="false" data-errorqtip=""
+                                              style="width: 380px; height: 180px;" role="textbox"
+                                              aria-describedby="commontextareafield-1330-errorEl"
+                                              aria-required="false" aria-multiline="true"></textarea>
+                                </div>
+                                <div id="commontextareafield-1330-errorEl"
+                                     class="x-form-error-msg" style="display: none"></div>
+                                <div class="x-clear" role="presentation">
+                                    <!-- -->
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="form-1332" class="x-panel x-box-item x-panel-default"
+             style="margin: 0px; height: 244px; width: 511px; left: 404px; top: 0px;"
+             role="form">
+            <div id="form-1332-body"
+                 class="x-panel-body  x-panel-body-default x-panel-body-default x-box-layout-ct"
+                 style="height: 244px; left: 0px; top: 0px; width: 511px;">
+                <div class="x-box-inner" role="presentation" id="ext-gen1683"
+                     style="height: 244px; width: 511px;">
+                    <div id="commonTextField-1129"
+                         class="x-field x-form-item x-field-default x-form-dirty"
+                         style="width: 380px;">
+                        <label id="commonTextField-1129-labelEl" for="appDirHost"
+                               class="x-form-item-label x-form-item-label-top"
+                               style="margin-bottom: 0px;">Application Director
+                            Host:<span class="x-darwin-required-field">*</span> </label>
 
-											<div id="commonTextField-4329"
-												class="x-field x-form-item x-field-default x-form-dirty"
-												style="width: 380px;">
-												<label id="commonTextField-4329-labelEl" for="appDirPassword"
-													class="x-form-item-label x-form-item-label-top"
-													style="margin-bottom: 0px;">Application Director
-													Password:<span class="x-darwin-required-field">*</span> </label>
-												<div class="x-form-item-body "
-													id="commonTextField-4329-bodyEl" role="presentation"
-													style="width: 380px;">
-													<input id="appDirPassword" type="password" name="name" size="20"
-														class="x-form-field x-form-text" autocomplete="off"
-														aria-readonly="false" aria-invalid="false"
-														value=""
-														data-errorqtip="" style="width: 380px;" role="textbox"
-														aria-describedby="commonTextField-1329-errorEl"
-														aria-required="true">
-												</div>
-												<div id="commonTextField-4329-errorEl"
-													class="x-form-error-msg" style="display: none"></div>
-												<div class="x-clear" role="presentation">
-													<!-- -->
-												</div>
-												<div id="commonTextField-1329"
-													class="x-field x-form-item x-field-default x-form-dirty"
-													style="width: 380px;">
-													<label id="commonTextField-1329-labelEl" for="bpExportFN"
-														class="x-form-item-label x-form-item-label-top"
-														style="margin-bottom: 0px;">Blueprint File:<span
-														class="x-darwin-required-field">*</span> </label>
-													<div class="x-form-item-body "
-														id="commonTextField-1329-bodyEl" role="presentation"
-														style="width: 380px;">
-														<input id="bpExportFN" type="text" name="name" size="20"
-															class="x-form-field x-form-text" autocomplete="off"
-															aria-readonly="true" aria-invalid="false"
-															data-errorqtip="" style="width: 380px;" role="textbox"
-															aria-describedby="commonTextField-1329-errorEl"
-															aria-required="false" disabled="">
-													</div>
-													<div id="commonTextField-1329-errorEl"
-														class="x-form-error-msg" style="display: none"></div>
-													<div class="x-clear" role="presentation">
-														<!-- -->
-													</div>
-												</div>
-
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div id="deploymentWizardButtonContainer-1450"
-							class="x-container wizard-footer x-box-item x-container-default"
-							style="height: 28px; margin: 0px; width: 900px; left: 0px; top: 398px;"
-							role="presentation">
-							<div id="slantedbuttonbar-1451"
-								class="x-container slanted-button-bar x-container-default"
-								role="presentation">
-								<div id="importButton"
-									class="x-btn is-last is-default x-btn-slanted-medium x-noicon x-btn-noicon x-btn-slanted-medium-noicon"
-									style="">
-									<em id="button-1452-btnWrap" class=""><button
-											id="button-1452-btnEl" type="button" hidefocus="true"
-											role="button" autocomplete="off" data-qtip="Deploy"
-											class="x-btn-center" style="">
-											<span id="button-1452-btnInnerEl" class="x-btn-inner"
-												style="">Import Blueprint</span><span id="button-1452-btnIconEl"
-												class="x-btn-icon  x-hide-display" style="">&nbsp;</span>
-										</button> </em>
-								</div>
-								<div id="viewImportFileButton"
-									class="x-btn x-btn-slanted-medium x-noicon x-btn-noicon x-btn-slanted-medium-noicon"
-									style="">
-									<em id="button-1454-btnWrap" class=""><button
-											id="button-1454-btnEl" type="button" hidefocus="true"
-											role="button" autocomplete="off"
-											data-qtip="&lt;&lt; Previous" class="x-btn-center" style="">
-											<span id="view1234" class="x-btn-inner"
-												style="">&lt;&lt; View Blueprint</span><span
-												id="button-1454-btnIconEl"
-												class="x-btn-icon  x-hide-display" style="">&nbsp;</span>
-										</button> </em>
-								</div>
-								<div class="x-clear" role="presentation" id="ext-gen2016"></div>
-							</div>
-							<div class="x-clear" role="presentation" id="ext-gen2015"></div>
-						</div>
-					</div>
-
-                    <div id="responseDataControl" class="hidden">
-                        <div id="responseData" style="font-size: 20px;"></div>
+                        <div class="x-form-item-body "
+                             id="commonTextField-1129-bodyEl" role="presentation"
+                             style="width: 380px;">
+                            <input id="appDirHost" type="text" name="name" size="20"
+                                   class="x-form-field x-form-text" autocomplete="off"
+                                   aria-readonly="false" aria-invalid="false"
+                                   value="http://localhost:8080"
+                                   data-errorqtip="" style="width: 380px;" role="textbox"
+                                   aria-describedby="commonTextField-1329-errorEl"
+                                   aria-required="true">
+                        </div>
+                        <div id="commonTextField-1129-errorEl"
+                             class="x-form-error-msg" style="display: none"></div>
+                        <div class="x-clear" role="presentation">
+                            <!-- -->
+                        </div>
+                    </div>
+                    <div class="x-clear" role="presentation">
+                        <!-- -->
                     </div>
 
-				</div>
-			</div>
-		</div>
-	</div>
+                    <div id="commonTextField-1229"
+                         class="x-field x-form-item x-field-default x-form-dirty"
+                         style="width: 380px;">
+                        <label id="commonTextField-1229-labelEl" for="appDirUserName"
+                               class="x-form-item-label x-form-item-label-top"
+                               style="margin-bottom: 0px;">Application Director
+                            Username:<span class="x-darwin-required-field">*</span> </label>
+
+                        <div class="x-form-item-body "
+                             id="commonTextField-1229-bodyEl" role="presentation"
+                             style="width: 380px;">
+                            <input id="appDirUserName" type="text" name="name" size="20"
+                                   class="x-form-field x-form-text" autocomplete="off"
+                                   aria-readonly="false" aria-invalid="false"
+                                   value="admin"
+                                   data-errorqtip="" style="width: 380px;" role="textbox"
+                                   aria-describedby="commonTextField-1329-errorEl"
+                                   aria-required="true">
+                        </div>
+                        <div id="commonTextField-1229-errorEl"
+                             class="x-form-error-msg" style="display: none"></div>
+                        <div class="x-clear" role="presentation">
+                            <!-- -->
+                        </div>
+                    </div>
+                    <div class="x-clear" role="presentation">
+                        <!-- -->
+                    </div>
+
+                    <div id="commonTextField-4329"
+                         class="x-field x-form-item x-field-default x-form-dirty"
+                         style="width: 380px;">
+                        <label id="commonTextField-4329-labelEl" for="appDirPassword"
+                               class="x-form-item-label x-form-item-label-top"
+                               style="margin-bottom: 0px;">Application Director
+                            Password:<span class="x-darwin-required-field">*</span> </label>
+
+                        <div class="x-form-item-body "
+                             id="commonTextField-4329-bodyEl" role="presentation"
+                             style="width: 380px;">
+                            <input id="appDirPassword" type="password" name="name" size="20"
+                                   class="x-form-field x-form-text" autocomplete="off"
+                                   aria-readonly="false" aria-invalid="false"
+                                   value=""
+                                   data-errorqtip="" style="width: 380px;" role="textbox"
+                                   aria-describedby="commonTextField-1329-errorEl"
+                                   aria-required="true">
+                        </div>
+                        <div id="commonTextField-4329-errorEl"
+                             class="x-form-error-msg" style="display: none"></div>
+                        <div class="x-clear" role="presentation">
+                            <!-- -->
+                        </div>
+                        <div id="commonTextField-1329"
+                             class="x-field x-form-item x-field-default x-form-dirty"
+                             style="width: 380px;">
+                            <label id="commonTextField-1329-labelEl" for="bpExportFN"
+                                   class="x-form-item-label x-form-item-label-top"
+                                   style="margin-bottom: 0px;">Blueprint File:<span
+                                    class="x-darwin-required-field">*</span> </label>
+
+                            <div class="x-form-item-body "
+                                 id="commonTextField-1329-bodyEl" role="presentation"
+                                 style="width: 380px;">
+                                <input id="bpExportFN" type="text" name="name" size="20"
+                                       class="x-form-field x-form-text" autocomplete="off"
+                                       aria-readonly="true" aria-invalid="false"
+                                       data-errorqtip="" style="width: 380px;" role="textbox"
+                                       aria-describedby="commonTextField-1329-errorEl"
+                                       aria-required="false" disabled="">
+                            </div>
+                            <div id="commonTextField-1329-errorEl"
+                                 class="x-form-error-msg" style="display: none"></div>
+                            <div class="x-clear" role="presentation">
+                                <!-- -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="deploymentWizardButtonContainer-1450"
+     class="x-container wizard-footer x-box-item x-container-default"
+     style="height: 28px; margin: 0px; width: 900px; left: 0px; top: 398px;"
+     role="presentation">
+    <div id="slantedbuttonbar-1451"
+         class="x-container slanted-button-bar x-container-default"
+         role="presentation">
+        <div id="importButton"
+             class="x-btn is-last is-default x-btn-slanted-medium x-noicon x-btn-noicon x-btn-slanted-medium-noicon"
+             style="">
+            <em id="button-1452-btnWrap" class="">
+                <button
+                        id="button-1452-btnEl" type="button" hidefocus="true"
+                        role="button" autocomplete="off" data-qtip="Deploy"
+                        class="x-btn-center" style="">
+											<span id="button-1452-btnInnerEl" class="x-btn-inner"
+                                                  style="">Import Blueprint File</span><span id="button-1452-btnIconEl"
+                                                                                        class="x-btn-icon  x-hide-display"
+                                                                                        style="">&nbsp;</span>
+                </button>
+            </em>
+        </div>
+        <div id="viewImportFileButton"
+             class="x-btn x-btn-slanted-medium x-noicon x-btn-noicon x-btn-slanted-medium-noicon"
+             style="">
+            <em id="button-1454-btnWrap" class="">
+                <button
+                        id="button-1454-btnEl" type="button" hidefocus="true"
+                        role="button" autocomplete="off"
+                        data-qtip="&lt;&lt; Previous" class="x-btn-center" style="">
+											<span id="view1234" class="x-btn-inner"
+                                                  style="">&lt;&lt; View Blueprint File</span><span
+                        id="button-1454-btnIconEl"
+                        class="x-btn-icon  x-hide-display" style="">&nbsp;</span>
+                </button>
+            </em>
+        </div>
+        <div class="x-clear" role="presentation" id="ext-gen2016"></div>
+    </div>
+    <div class="x-clear" role="presentation" id="ext-gen2015"></div>
+</div>
+</div>
+
+<div id="responseDataControl" class="hidden">
+    <div id="responseData" style="font-size: 20px;"></div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
 <div id="viewFileModal" class="modal hide fade in" style="display: none; ">
     <div class="modal-header">
         <h3 class="pagination-centered"></h3>
