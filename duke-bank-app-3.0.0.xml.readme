@@ -1,3 +1,3 @@
 Dukes Bank is the leading banking solution used by more than 80% of the banking companies in the Fortune 500.
 
-This solution is designed for vFabric Application Director 5.0 and contains a three-tier Dukes Bank application running on Linux nodes; Apache HTTP Server for load balancer, JBoss Server for application server (clustered), and MySQL Server for database server.his is the readmefile for duke-bank-app.3.0.0.xml
+This solution is designed for vFabric Application Director 5.0 and contains a three-tier Dukes Bank application running on Linux nodes; Apache HTTP Server for load balancer, JBoss Server for application server (clustered), and MySQL Server for database server.
