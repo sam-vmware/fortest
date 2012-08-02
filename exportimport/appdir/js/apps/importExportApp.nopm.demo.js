@@ -203,10 +203,10 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
 
             // Small enough not to place in template
             if (_.isEqual(options.rdcClass, ALERT_SUCCESS_CLASSES)) {
-                msg = "<h4>Success</h4>" + options.rdMsgVal;
+                msg = "Success " + options.rdMsgVal;
                 clazz = "success main-state-deploy-success"
             } else if (_.isEqual(options.rdcClass, ALERT_ERROR_CLASSES)) {
-                msg = "<h4>Error</h4>" + options.rdMsgVal;
+                msg = "Error " + options.rdMsgVal;
                 clazz = "notification-bulb-error"
             }
             $("#responseDataControl").removeClass("hidden");
