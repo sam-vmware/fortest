@@ -280,7 +280,7 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
                             withCredentials:true // required for CORS check
                         }
                     };
-                    this.progressBar.show().update({value:"0%"});
+                    this.progressBar.show().update({value:"0%",text:"Importing..."});
                     cu.log("ImportExportApp form submitted");
                     this.getImportFileRawData(this.targetFileMeta);
                 }, this));
