@@ -178,7 +178,7 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
                     msgClass = ALERT_ERROR_CLASSES;
                     msgVal = "Application Director reported non-success in importing the application. Please review the logs for result.";
                 } else {
-                    that.progressBar.update({value:"100%"});
+                    that.progressBar.update({value:"100%",text:"Complete!"});
                 }
                 updateFormDisplay({
                     rdcClass:msgClass,

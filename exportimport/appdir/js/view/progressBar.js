@@ -22,6 +22,9 @@ define(["underscore", "backbone", "util/appDirCommon"],
                 }
                 this.$("#progressBadge").text(options.value);
                 this.$("#progressBar").css("width", options.value);
+                if (!_.isNull(options.text)) {
+                    this.$("#progressBar").text(options.text);
+                }
                 return this;
             },
             show:function () {
