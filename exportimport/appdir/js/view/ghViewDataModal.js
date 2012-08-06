@@ -54,6 +54,10 @@ define(["underscore", "backbone", "util/appDirCommon", "model/gitHubFile"],
         showModal:function(header, data) {
             this.$("#model-content").empty().append(_.escape(data)); // insert our data into the modal
             this.$("h3").empty().text(header);
+
+            // get a link referencing the inmemory data and set it on our download button
+            var url = this.model.get("inMemLink");
+            this.$("a[download]", ".modal-footer").attr("href", url).attr("download", header).attr("target", "_blank");
             this.$el.modal({
                backdrop:true,
                keyboard:true

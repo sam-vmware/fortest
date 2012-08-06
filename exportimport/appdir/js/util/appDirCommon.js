@@ -9,6 +9,22 @@ define(["jquery", "underscore"], function ($, _) {
     var separator = "->";
     var activityDefaults = {el:"#spinnerEl",segments:8, steps:3, opacity:0.3, space:0,
         width:3, length:4, color:"white", speed:1.5};
+
+     // Following 2 utility methods taken from here:
+    // http://stackoverflow.com/questions/6965107/converting-between-strings-and-arraybuffers
+    function ab2str(buf) {
+      return String.fromCharCode.apply(null, new Uint16Array(buf));
+    }
+
+    function str2ab(str) {
+      var buf = new ArrayBuffer(str.length*2); // 2 bytes for each char
+      var bufView = new Uint16Array(buf);
+      for (var i=0, strLen=str.length; i<strLen; i++) {
+        bufView[i] = str.charCodeAt(i);
+      }
+      return buf;
+    }
+
     return {
         MsgTypes:{
             PARENT:"PARENT",
@@ -53,6 +69,14 @@ define(["jquery", "underscore"], function ($, _) {
                 }
             }
             return o;
+        },
+        // Given data object return a href to be used to access it, used when data stored in dom for example
+        getLinkForData:function(data, type) {
+            window.URL = window.URL || window.webkitURL;
+            type = type || "text/plain"; // if no type defined default to text
+            var byteArray = str2ab(data); // here we assuming string data
+            var blob = new Blob([byteArray], {type: type});
+            return window.URL.createObjectURL(blob);
         }
     };
 });

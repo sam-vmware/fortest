@@ -6,10 +6,30 @@
 define(["underscore", "backbone", "util/appDirCommon"], function (_, Backbone, cu) {
     var GitHubFile = Backbone.Model.extend({
         defaults:{
+            contentType:"application/xml",
             sha:undefined,
             path:undefined,
             theURL:undefined,
-            rawData:undefined
+            rawData:undefined,
+            inMemLinkHolder:undefined // Don't use this directly, call get("inMemLink") to lazy init it or return if set
+        },
+
+        get:function (attr) {
+            if (typeof this[attr] == "function") {
+                return this[attr]();
+            }
+            return Backbone.Model.prototype.get.call(this, attr);
+        },
+
+        // Get on inMemLink check to see if we allocated one already otherwise create it based on our raw data
+        inMemLink:function() {
+            if (this.has("inMemLinkHolder")) return this.get("inMemLinkHolder");
+
+            // Init and store inmem link
+            var link = cu.getLinkForData(this.get("rawData"), this.get("contentType"));
+            cu.log("GitHubFile setting inMemLinkHolder: " + link);
+            this.set("inMemLinkHolder", link);
+            return this.get("inMemLinkHolder");
         },
 
         initialize:function (arguments) {

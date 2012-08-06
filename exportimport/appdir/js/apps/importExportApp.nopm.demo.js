@@ -74,7 +74,7 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
 
             var spinner;
             $(document).ajaxStart(function() {
-                spinner = new Spinner().spin(document.getElementById('center'));
+                spinner = new Spinner().spin($("#center")[0]);
             }).ajaxStop(function(){
                 spinner.stop();
             });
