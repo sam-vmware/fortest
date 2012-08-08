@@ -1,0 +1,3354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns24:export-package
+    xmlns:ns10="http://www.vmware.com/darwin/schema/beans/cloud/provider"
+    xmlns:ns8="http://www.vmware.com/darwin/schema/beans/catalog/component"
+    xmlns:ns18="http://www.vmware.com/darwin/schema/beans/update/profile"
+    xmlns:ns16="http://www.vmware.com/darwin/schema/beans/flow"
+    xmlns:ns25="http://www.vmware.com/darwin/schema/beans/notification"
+    xmlns:ns7="http://www.vmware.com/darwin/schema/beans/entity"
+    xmlns:ns13="http://www.vmware.com/darwin/schema/beans/cloud/tunnel"
+    xmlns:ns21="http://www.vmware.com/darwin/schema/beans/security/user"
+    xmlns:ns23="http://www.vmware.com/darwin/schema/beans/ssl"
+    xmlns:ns20="http://www.vmware.com/darwin/schema/beans/security/ldap"
+    xmlns:ns14="http://www.vmware.com/darwin/schema/beans/deployment/environment"
+    xmlns:ns22="http://www.vmware.com/darwin/schema/beans/networking"
+    xmlns:ns2="http://www.vmware.com/darwin/schema/beans/response"
+    xmlns:ns26="http://www.vmware.com/darwin/schema/beans/api"
+    xmlns:ns19="http://www.vmware.com/darwin/schema/beans/deployment"
+    xmlns:ns6="http://www.vmware.com/darwin/schema/beans/metatag"
+    xmlns:ns5="http://www.vmware.com/darwin/schema/beans/props"
+    xmlns:ns11="http://www.vmware.com/darwin/schema/beans/physical/template"
+    xmlns:ns24="http://www.vmware.com/darwin/schema/beans/exim"
+    xmlns:ns17="http://www.vmware.com/darwin/schema/beans/deployment/profile"
+    xmlns:ns15="http://www.vmware.com/darwin/schema/beans/driver/location"
+    xmlns:ns9="http://www.vmware.com/darwin/schema/beans/scripts"
+    xmlns:ns12="http://www.vmware.com/darwin/schema/beans/blueprint"
+    xmlns:ns4="http://www.vmware.com/darwin/schema/beans/application" xmlns:ns3="http://www.vmware.com/darwin/schema/beans/security">
+    <errors>false</errors>
+    <application-versions>
+        <id>0</id>
+        <inactive>false</inactive>
+        <lock-version>0</lock-version>
+        <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+        <last-update-user>admin</last-update-user>
+        <created>2012-08-08T01:00:03+00:00</created>
+        <create-user>admin</create-user>
+        <name>Sharepoint Server</name>
+        <description>This example contains a single node Sharepoint server with a sample application.
+
+Microsoft SharePoint 2010 makes it easier for people to work together. Using SharePoint 2010, your people can set up Web sites to share information with others, manage documents from start to finish, and publish reports to help everyone make better decisions.</description>
+        <revision>0</revision>
+        <major>1</major>
+        <minor>0</minor>
+        <micro>0</micro>
+        <qualifier></qualifier>
+        <dynamically-installable>false</dynamically-installable>
+        <auto-bind-properties>false</auto-bind-properties>
+        <icon-name></icon-name>
+        <application>
+            <id>0</id>
+            <inactive>false</inactive>
+            <lock-version>0</lock-version>
+            <last-updated>2012-08-08T01:01:53+00:00</last-updated>
+            <last-update-user>admin</last-update-user>
+            <created>2012-08-08T00:59:55+00:00</created>
+            <create-user>admin</create-user>
+            <name>Sharepoint Server</name>
+            <description>Microsoft SharePoint 2010 makes it easier for people to work together. Using SharePoint 2010, your people can set up Web sites to share information with others, manage documents from start to finish, and publish reports to help everyone make better decisions. </description>
+            <revision>0</revision>
+            <group>
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>0</lock-version>
+                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                <last-update-user>SYSTEM</last-update-user>
+                <created>2012-08-07T23:09:17+00:00</created>
+                <create-user>SYSTEM</create-user>
+                <name>Default</name>
+                <description>The Default vFabric Application Director group.</description>
+                <name-message-key>group.default.name</name-message-key>
+                <description-message-key>group.default.description</description-message-key>
+            </group>
+        </application>
+        <blueprint>
+            <id>0</id>
+            <inactive>false</inactive>
+            <lock-version>0</lock-version>
+            <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+            <last-update-user>admin</last-update-user>
+            <created>2012-08-08T01:00:03+00:00</created>
+            <create-user>admin</create-user>
+            <name> v1.0</name>
+            <description></description>
+            <revision>0</revision>
+            <nodes xsi:type="ns12:node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <id>0</id>
+                <inactive>false</inactive>
+                <lock-version>0</lock-version>
+                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                <last-update-user>admin</last-update-user>
+                <created>2012-08-08T01:17:55+00:00</created>
+                <create-user>admin</create-user>
+                <name>SharepointServer</name>
+                <grid-row>0</grid-row>
+                <grid-column>2</grid-column>
+                <vm-template-version>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-08-08T02:13:17+00:00</last-updated>
+                    <last-update-user>admin</last-update-user>
+                    <created>2012-03-15T10:00:00+00:00</created>
+                    <create-user>SYSTEM</create-user>
+                    <name>W2K8 R2 Enterprise SP1</name>
+                    <description>Windows Server 2008 R2 Enterprise SP1 VM</description>
+                    <revision>0</revision>
+                    <major>1</major>
+                    <minor>0</minor>
+                    <micro>0</micro>
+                    <qualifier></qualifier>
+                    <dynamically-installable>true</dynamically-installable>
+                    <auto-bind-properties>false</auto-bind-properties>
+                    <meta-tag>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                        <last-update-user>SYSTEM</last-update-user>
+                        <created>2012-08-07T23:09:17+00:00</created>
+                        <create-user>SYSTEM</create-user>
+                        <name>OS Templates</name>
+                        <description>OS Templates</description>
+                        <meta-tag-type>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>Server Type</name>
+                            <description>Server type, primarily used for organizing data.</description>
+                            <meta-tag-enum>SERVER_TYPE</meta-tag-enum>
+                            <user-managed-type>true</user-managed-type>
+                        </meta-tag-type>
+                    </meta-tag>
+                    <os-version>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-03-15T10:00:00+00:00</last-updated>
+                        <last-update-user>SYSTEM</last-update-user>
+                        <created>2012-03-15T10:00:00+00:00</created>
+                        <create-user>SYSTEM</create-user>
+                        <name>WIN64</name>
+                        <description>Windows Server 2008 R2 Enterprise SP1</description>
+                        <revision>0</revision>
+                        <major>6</major>
+                        <minor>1</minor>
+                        <micro>7601</micro>
+                        <qualifier></qualifier>
+                        <dynamically-installable>false</dynamically-installable>
+                        <auto-bind-properties>false</auto-bind-properties>
+                        <operating-system>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>WIN64</name>
+                            <description>Microsoft Windows 64bit</description>
+                            <revision>0</revision>
+                            <icon-name>windowstemplate</icon-name>
+                            <os-family-meta-tag>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Windows</name>
+                                <description>Windows based operating systems</description>
+                                <meta-tag-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>OS Family</name>
+                                    <description>Operating System (OS) Family.</description>
+                                    <meta-tag-enum>OS_FAMILY</meta-tag-enum>
+                                    <user-managed-type>false</user-managed-type>
+                                </meta-tag-type>
+                                <os-family>WINDOWS</os-family>
+                            </os-family-meta-tag>
+                            <hardware-architecture-meta-tag>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>x86_64</name>
+                                <description>x86_64</description>
+                                <meta-tag-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Hardware Architecture</name>
+                                    <description>Hardware Architecture, used to describe whether something is or supports 32 bit, 64 bit, etc.</description>
+                                    <meta-tag-enum>HARDWARE_ARCHITECTURE</meta-tag-enum>
+                                    <user-managed-type>false</user-managed-type>
+                                </meta-tag-type>
+                                <hardware-architecture>X86_64</hardware-architecture>
+                            </hardware-architecture-meta-tag>
+                        </operating-system>
+                    </os-version>
+                    <vm-template>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-07T23:09:18+00:00</last-updated>
+                        <last-update-user>SYSTEM</last-update-user>
+                        <created>2012-08-07T23:09:18+00:00</created>
+                        <create-user>SYSTEM</create-user>
+                        <name>W2K8 R2 Enterprise SP1</name>
+                        <description>Windows Server 2008 R2 Enterprise SP1 VM</description>
+                        <revision>0</revision>
+                        <icon-name>windowstemplate</icon-name>
+                        <group>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>Default</name>
+                            <description>The Default vFabric Application Director group.</description>
+                            <name-message-key>group.default.name</name-message-key>
+                            <description-message-key>group.default.description</description-message-key>
+                        </group>
+                    </vm-template>
+                </vm-template-version>
+                <ns12:node-nic>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                    <last-update-user>admin</last-update-user>
+                    <created>2012-08-08T01:17:55+00:00</created>
+                    <create-user>admin</create-user>
+                    <name>NIC0</name>
+                    <network-name>Default Logical Network</network-name>
+                </ns12:node-nic>
+                <service-node-component>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <name>Sharepoint_2010</name>
+                    <grid-row>0</grid-row>
+                    <grid-column>0</grid-column>
+                    <props>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                        <last-update-user>admin</last-update-user>
+                        <created>2012-08-08T01:17:54+00:00</created>
+                        <create-user>admin</create-user>
+                        <name></name>
+                        <description>The Location where the installer will be saved on the Local machine.</description>
+                        <key>sharepoint_installer</key>
+                        <prop-type>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>String</name>
+                            <description>String (java.lang.String).</description>
+                        </prop-type>
+                        <required>true</required>
+                        <secured>false</secured>
+                        <prop-auto-bind-type>
+                            <id>1</id>
+                            <inactive>false</inactive>
+                            <lock-version>1</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>None</name>
+                            <description>Property will not participate in auto-binding.</description>
+                        </prop-auto-bind-type>
+                        <value><![CDATA[C:\SHAREPT]]></value>
+                        <readonly>false</readonly>
+                        <overridable>true</overridable>
+                        <expression>false</expression>
+                        <ns5:bound-prop>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:17:54+00:00</created>
+                            <create-user>admin</create-user>
+                            <bind-lifecycle-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Catalog</name>
+                                <description>Bindable at service/catalog level.</description>
+                                <lifecycle-order>1</lifecycle-order>
+                            </bind-lifecycle-type>
+                            <value><![CDATA[C:\SHAREPT]]></value>
+                            <overridable>true</overridable>
+                            <expression>false</expression>
+                        </ns5:bound-prop>
+                    </props>
+                    <props>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                        <last-update-user>admin</last-update-user>
+                        <created>2012-08-08T01:17:54+00:00</created>
+                        <create-user>admin</create-user>
+                        <name></name>
+                        <description>SharePoint service running machine ip.</description>
+                        <key>machine_ip</key>
+                        <prop-type>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>String</name>
+                            <description>String (java.lang.String).</description>
+                        </prop-type>
+                        <required>true</required>
+                        <secured>false</secured>
+                        <prop-auto-bind-type>
+                            <id>2</id>
+                            <inactive>false</inactive>
+                            <lock-version>1</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>Consume</name>
+                            <description>Property value eligible to be set via auto-binding.</description>
+                        </prop-auto-bind-type>
+                        <meta-tags>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>Self</name>
+                            <description>Set property from own node.</description>
+                            <meta-tag-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Property Descriptor</name>
+                                <description>Auto-bind descriptors, used during for matching during property auto-binding.</description>
+                                <meta-tag-enum>PROPERTY_DESCRIPTOR</meta-tag-enum>
+                                <user-managed-type>true</user-managed-type>
+                            </meta-tag-type>
+                        </meta-tags>
+                        <meta-tags>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>IP Address</name>
+                            <description>IP Address.</description>
+                            <meta-tag-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Property Descriptor</name>
+                                <description>Auto-bind descriptors, used during for matching during property auto-binding.</description>
+                                <meta-tag-enum>PROPERTY_DESCRIPTOR</meta-tag-enum>
+                                <user-managed-type>true</user-managed-type>
+                            </meta-tag-type>
+                        </meta-tags>
+                        <value><![CDATA[${['self']['host']['ip']}]]></value>
+                        <readonly>false</readonly>
+                        <overridable>true</overridable>
+                        <expression>true</expression>
+                        <ns5:bound-prop>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:17:54+00:00</created>
+                            <create-user>admin</create-user>
+                            <bind-lifecycle-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Catalog</name>
+                                <description>Bindable at service/catalog level.</description>
+                                <lifecycle-order>1</lifecycle-order>
+                            </bind-lifecycle-type>
+                            <value><![CDATA[]]></value>
+                            <overridable>true</overridable>
+                            <expression>false</expression>
+                        </ns5:bound-prop>
+                        <ns5:bound-prop>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:27:14+00:00</created>
+                            <create-user>admin</create-user>
+                            <bind-lifecycle-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Blueprint</name>
+                                <description>Bindable at blueprint level.</description>
+                                <lifecycle-order>2</lifecycle-order>
+                            </bind-lifecycle-type>
+                            <value><![CDATA[${['self']['host']['ip']}]]></value>
+                            <overridable>true</overridable>
+                            <expression>true</expression>
+                        </ns5:bound-prop>
+                    </props>
+                    <props>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                        <last-update-user>admin</last-update-user>
+                        <created>2012-08-08T01:17:54+00:00</created>
+                        <create-user>admin</create-user>
+                        <name></name>
+                        <description>Specifies the type of server that you are installing to: stand-alone (SINGLESERVER) or application (APPLICATION)</description>
+                        <key>server_role</key>
+                        <prop-type>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>String</name>
+                            <description>String (java.lang.String).</description>
+                        </prop-type>
+                        <required>true</required>
+                        <secured>false</secured>
+                        <prop-auto-bind-type>
+                            <id>1</id>
+                            <inactive>false</inactive>
+                            <lock-version>1</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>None</name>
+                            <description>Property will not participate in auto-binding.</description>
+                        </prop-auto-bind-type>
+                        <value><![CDATA[SINGLESERVER]]></value>
+                        <readonly>false</readonly>
+                        <overridable>true</overridable>
+                        <expression>false</expression>
+                        <ns5:bound-prop>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:17:54+00:00</created>
+                            <create-user>admin</create-user>
+                            <bind-lifecycle-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Catalog</name>
+                                <description>Bindable at service/catalog level.</description>
+                                <lifecycle-order>1</lifecycle-order>
+                            </bind-lifecycle-type>
+                            <value><![CDATA[SINGLESERVER]]></value>
+                            <overridable>true</overridable>
+                            <expression>false</expression>
+                        </ns5:bound-prop>
+                    </props>
+                    <props>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                        <last-update-user>admin</last-update-user>
+                        <created>2012-08-08T01:17:54+00:00</created>
+                        <create-user>admin</create-user>
+                        <name></name>
+                        <description>The Package Id attribute identifies the product and technologies that are affected by this Config.xml file.</description>
+                        <key>package_id</key>
+                        <prop-type>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>String</name>
+                            <description>String (java.lang.String).</description>
+                        </prop-type>
+                        <required>true</required>
+                        <secured>false</secured>
+                        <prop-auto-bind-type>
+                            <id>1</id>
+                            <inactive>false</inactive>
+                            <lock-version>1</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>None</name>
+                            <description>Property will not participate in auto-binding.</description>
+                        </prop-auto-bind-type>
+                        <value><![CDATA[Sts]]></value>
+                        <readonly>false</readonly>
+                        <overridable>true</overridable>
+                        <expression>false</expression>
+                        <ns5:bound-prop>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:17:54+00:00</created>
+                            <create-user>admin</create-user>
+                            <bind-lifecycle-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Catalog</name>
+                                <description>Bindable at service/catalog level.</description>
+                                <lifecycle-order>1</lifecycle-order>
+                            </bind-lifecycle-type>
+                            <value><![CDATA[Sts]]></value>
+                            <overridable>true</overridable>
+                            <expression>false</expression>
+                        </ns5:bound-prop>
+                    </props>
+                    <props>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                        <last-update-user>admin</last-update-user>
+                        <created>2012-08-08T01:17:54+00:00</created>
+                        <create-user>admin</create-user>
+                        <name></name>
+                        <description>SharePoint service running port.</description>
+                        <key>Port</key>
+                        <prop-type>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>String</name>
+                            <description>String (java.lang.String).</description>
+                        </prop-type>
+                        <required>true</required>
+                        <secured>false</secured>
+                        <prop-auto-bind-type>
+                            <id>1</id>
+                            <inactive>false</inactive>
+                            <lock-version>1</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>None</name>
+                            <description>Property will not participate in auto-binding.</description>
+                        </prop-auto-bind-type>
+                        <value><![CDATA[7001]]></value>
+                        <readonly>false</readonly>
+                        <overridable>true</overridable>
+                        <expression>false</expression>
+                        <ns5:bound-prop>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:17:54+00:00</created>
+                            <create-user>admin</create-user>
+                            <bind-lifecycle-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Catalog</name>
+                                <description>Bindable at service/catalog level.</description>
+                                <lifecycle-order>1</lifecycle-order>
+                            </bind-lifecycle-type>
+                            <value><![CDATA[7001]]></value>
+                            <overridable>true</overridable>
+                            <expression>false</expression>
+                        </ns5:bound-prop>
+                    </props>
+                    <props>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                        <last-update-user>admin</last-update-user>
+                        <created>2012-08-08T01:17:54+00:00</created>
+                        <create-user>admin</create-user>
+                        <name></name>
+                        <description>The url which contains the files to be downloaded of the installer software.</description>
+                        <key>download_url</key>
+                        <prop-type>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>String</name>
+                            <description>String (java.lang.String).</description>
+                        </prop-type>
+                        <required>true</required>
+                        <secured>false</secured>
+                        <prop-auto-bind-type>
+                            <id>1</id>
+                            <inactive>false</inactive>
+                            <lock-version>1</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>None</name>
+                            <description>Property will not participate in auto-binding.</description>
+                        </prop-auto-bind-type>
+                        <value><![CDATA[]]></value>
+                        <readonly>false</readonly>
+                        <overridable>true</overridable>
+                        <expression>false</expression>
+                        <ns5:bound-prop>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:17:54+00:00</created>
+                            <create-user>admin</create-user>
+                            <bind-lifecycle-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Catalog</name>
+                                <description>Bindable at service/catalog level.</description>
+                                <lifecycle-order>1</lifecycle-order>
+                            </bind-lifecycle-type>
+                            <value><![CDATA[]]></value>
+                            <overridable>true</overridable>
+                            <expression>false</expression>
+                        </ns5:bound-prop>
+                    </props>
+                    <props>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                        <last-update-user>admin</last-update-user>
+                        <created>2012-08-08T01:17:54+00:00</created>
+                        <create-user>admin</create-user>
+                        <name></name>
+                        <description>The 25-character volume license key.</description>
+                        <key>pid_key</key>
+                        <prop-type>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>String</name>
+                            <description>String (java.lang.String).</description>
+                        </prop-type>
+                        <required>true</required>
+                        <secured>false</secured>
+                        <prop-auto-bind-type>
+                            <id>1</id>
+                            <inactive>false</inactive>
+                            <lock-version>1</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>None</name>
+                            <description>Property will not participate in auto-binding.</description>
+                        </prop-auto-bind-type>
+                        <value><![CDATA[]]></value>
+                        <readonly>false</readonly>
+                        <overridable>true</overridable>
+                        <expression>false</expression>
+                        <ns5:bound-prop>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:17:54+00:00</created>
+                            <create-user>admin</create-user>
+                            <bind-lifecycle-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Catalog</name>
+                                <description>Bindable at service/catalog level.</description>
+                                <lifecycle-order>1</lifecycle-order>
+                            </bind-lifecycle-type>
+                            <value><![CDATA[]]></value>
+                            <overridable>true</overridable>
+                            <expression>false</expression>
+                        </ns5:bound-prop>
+                    </props>
+                    <props>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                        <last-update-user>admin</last-update-user>
+                        <created>2012-08-08T01:41:02+00:00</created>
+                        <create-user>admin</create-user>
+                        <name></name>
+                        <description>Path to the config.xml file to use for installation.</description>
+                        <key>config_xml</key>
+                        <prop-type>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>String</name>
+                            <description>String (java.lang.String).</description>
+                        </prop-type>
+                        <required>true</required>
+                        <secured>false</secured>
+                        <prop-auto-bind-type>
+                            <id>1</id>
+                            <inactive>false</inactive>
+                            <lock-version>1</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>None</name>
+                            <description>Property will not participate in auto-binding.</description>
+                        </prop-auto-bind-type>
+                        <value><![CDATA[C:\Program Files (x86)\MSECache\oserver2010\Files\Setup\config.xml]]></value>
+                        <readonly>true</readonly>
+                        <overridable>false</overridable>
+                        <expression>false</expression>
+                        <ns5:bound-prop>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:41:02+00:00</created>
+                            <create-user>admin</create-user>
+                            <bind-lifecycle-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Catalog</name>
+                                <description>Bindable at service/catalog level.</description>
+                                <lifecycle-order>1</lifecycle-order>
+                            </bind-lifecycle-type>
+                            <value><![CDATA[C:\Program Files (x86)\MSECache\oserver2010\Files\Setup\config.xml]]></value>
+                            <overridable>false</overridable>
+                            <expression>false</expression>
+                        </ns5:bound-prop>
+                    </props>
+                    <service-version>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                        <last-update-user>admin</last-update-user>
+                        <created>2012-08-08T01:17:54+00:00</created>
+                        <create-user>admin</create-user>
+                        <name>Sharepoint 2010</name>
+                        <description>Microsoft SharePoint 2010 makes it easier for people to work together. Using SharePoint 2010, your people can set up Web sites to share information with others, manage documents from start to finish, and publish reports to help everyone make better decisions. </description>
+                        <revision>0</revision>
+                        <major>1</major>
+                        <minor>0</minor>
+                        <micro>0</micro>
+                        <qualifier></qualifier>
+                        <dynamically-installable>true</dynamically-installable>
+                        <auto-bind-properties>false</auto-bind-properties>
+                        <icon-name></icon-name>
+                        <props>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:17:54+00:00</created>
+                            <create-user>admin</create-user>
+                            <name></name>
+                            <description>The Location where the installer will be saved on the Local machine.</description>
+                            <key>sharepoint_installer</key>
+                            <prop-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>String</name>
+                                <description>String (java.lang.String).</description>
+                            </prop-type>
+                            <required>true</required>
+                            <secured>false</secured>
+                            <prop-auto-bind-type>
+                                <id>1</id>
+                                <inactive>false</inactive>
+                                <lock-version>1</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>None</name>
+                                <description>Property will not participate in auto-binding.</description>
+                            </prop-auto-bind-type>
+                            <value><![CDATA[C:\SHAREPT]]></value>
+                            <readonly>false</readonly>
+                            <overridable>true</overridable>
+                            <expression>false</expression>
+                            <ns5:bound-prop>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:17:54+00:00</created>
+                                <create-user>admin</create-user>
+                                <bind-lifecycle-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Catalog</name>
+                                    <description>Bindable at service/catalog level.</description>
+                                    <lifecycle-order>1</lifecycle-order>
+                                </bind-lifecycle-type>
+                                <value><![CDATA[C:\SHAREPT]]></value>
+                                <overridable>true</overridable>
+                                <expression>false</expression>
+                            </ns5:bound-prop>
+                        </props>
+                        <props>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:17:54+00:00</created>
+                            <create-user>admin</create-user>
+                            <name></name>
+                            <description>SharePoint service running machine ip.</description>
+                            <key>machine_ip</key>
+                            <prop-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>String</name>
+                                <description>String (java.lang.String).</description>
+                            </prop-type>
+                            <required>true</required>
+                            <secured>false</secured>
+                            <prop-auto-bind-type>
+                                <id>2</id>
+                                <inactive>false</inactive>
+                                <lock-version>1</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Consume</name>
+                                <description>Property value eligible to be set via auto-binding.</description>
+                            </prop-auto-bind-type>
+                            <meta-tags>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Self</name>
+                                <description>Set property from own node.</description>
+                                <meta-tag-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Property Descriptor</name>
+                                    <description>Auto-bind descriptors, used during for matching during property auto-binding.</description>
+                                    <meta-tag-enum>PROPERTY_DESCRIPTOR</meta-tag-enum>
+                                    <user-managed-type>true</user-managed-type>
+                                </meta-tag-type>
+                            </meta-tags>
+                            <meta-tags>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>IP Address</name>
+                                <description>IP Address.</description>
+                                <meta-tag-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Property Descriptor</name>
+                                    <description>Auto-bind descriptors, used during for matching during property auto-binding.</description>
+                                    <meta-tag-enum>PROPERTY_DESCRIPTOR</meta-tag-enum>
+                                    <user-managed-type>true</user-managed-type>
+                                </meta-tag-type>
+                            </meta-tags>
+                            <value><![CDATA[]]></value>
+                            <readonly>false</readonly>
+                            <overridable>true</overridable>
+                            <expression>false</expression>
+                            <ns5:bound-prop>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:17:54+00:00</created>
+                                <create-user>admin</create-user>
+                                <bind-lifecycle-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Catalog</name>
+                                    <description>Bindable at service/catalog level.</description>
+                                    <lifecycle-order>1</lifecycle-order>
+                                </bind-lifecycle-type>
+                                <value><![CDATA[]]></value>
+                                <overridable>true</overridable>
+                                <expression>false</expression>
+                            </ns5:bound-prop>
+                        </props>
+                        <props>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:17:54+00:00</created>
+                            <create-user>admin</create-user>
+                            <name></name>
+                            <description>Specifies the type of server that you are installing to: stand-alone (SINGLESERVER) or application (APPLICATION)</description>
+                            <key>server_role</key>
+                            <prop-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>String</name>
+                                <description>String (java.lang.String).</description>
+                            </prop-type>
+                            <required>true</required>
+                            <secured>false</secured>
+                            <prop-auto-bind-type>
+                                <id>1</id>
+                                <inactive>false</inactive>
+                                <lock-version>1</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>None</name>
+                                <description>Property will not participate in auto-binding.</description>
+                            </prop-auto-bind-type>
+                            <value><![CDATA[SINGLESERVER]]></value>
+                            <readonly>false</readonly>
+                            <overridable>true</overridable>
+                            <expression>false</expression>
+                            <ns5:bound-prop>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:17:54+00:00</created>
+                                <create-user>admin</create-user>
+                                <bind-lifecycle-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Catalog</name>
+                                    <description>Bindable at service/catalog level.</description>
+                                    <lifecycle-order>1</lifecycle-order>
+                                </bind-lifecycle-type>
+                                <value><![CDATA[SINGLESERVER]]></value>
+                                <overridable>true</overridable>
+                                <expression>false</expression>
+                            </ns5:bound-prop>
+                        </props>
+                        <props>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:17:54+00:00</created>
+                            <create-user>admin</create-user>
+                            <name></name>
+                            <description>The Package Id attribute identifies the product and technologies that are affected by this Config.xml file.</description>
+                            <key>package_id</key>
+                            <prop-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>String</name>
+                                <description>String (java.lang.String).</description>
+                            </prop-type>
+                            <required>true</required>
+                            <secured>false</secured>
+                            <prop-auto-bind-type>
+                                <id>1</id>
+                                <inactive>false</inactive>
+                                <lock-version>1</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>None</name>
+                                <description>Property will not participate in auto-binding.</description>
+                            </prop-auto-bind-type>
+                            <value><![CDATA[Sts]]></value>
+                            <readonly>false</readonly>
+                            <overridable>true</overridable>
+                            <expression>false</expression>
+                            <ns5:bound-prop>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:17:54+00:00</created>
+                                <create-user>admin</create-user>
+                                <bind-lifecycle-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Catalog</name>
+                                    <description>Bindable at service/catalog level.</description>
+                                    <lifecycle-order>1</lifecycle-order>
+                                </bind-lifecycle-type>
+                                <value><![CDATA[Sts]]></value>
+                                <overridable>true</overridable>
+                                <expression>false</expression>
+                            </ns5:bound-prop>
+                        </props>
+                        <props>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:17:54+00:00</created>
+                            <create-user>admin</create-user>
+                            <name></name>
+                            <description>SharePoint service running port.</description>
+                            <key>Port</key>
+                            <prop-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>String</name>
+                                <description>String (java.lang.String).</description>
+                            </prop-type>
+                            <required>true</required>
+                            <secured>false</secured>
+                            <prop-auto-bind-type>
+                                <id>1</id>
+                                <inactive>false</inactive>
+                                <lock-version>1</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>None</name>
+                                <description>Property will not participate in auto-binding.</description>
+                            </prop-auto-bind-type>
+                            <value><![CDATA[7001]]></value>
+                            <readonly>false</readonly>
+                            <overridable>true</overridable>
+                            <expression>false</expression>
+                            <ns5:bound-prop>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:17:54+00:00</created>
+                                <create-user>admin</create-user>
+                                <bind-lifecycle-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Catalog</name>
+                                    <description>Bindable at service/catalog level.</description>
+                                    <lifecycle-order>1</lifecycle-order>
+                                </bind-lifecycle-type>
+                                <value><![CDATA[7001]]></value>
+                                <overridable>true</overridable>
+                                <expression>false</expression>
+                            </ns5:bound-prop>
+                        </props>
+                        <props>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:17:54+00:00</created>
+                            <create-user>admin</create-user>
+                            <name></name>
+                            <description>The url which contains the files to be downloaded of the installer software.</description>
+                            <key>download_url</key>
+                            <prop-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>String</name>
+                                <description>String (java.lang.String).</description>
+                            </prop-type>
+                            <required>true</required>
+                            <secured>false</secured>
+                            <prop-auto-bind-type>
+                                <id>1</id>
+                                <inactive>false</inactive>
+                                <lock-version>1</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>None</name>
+                                <description>Property will not participate in auto-binding.</description>
+                            </prop-auto-bind-type>
+                            <value><![CDATA[]]></value>
+                            <readonly>false</readonly>
+                            <overridable>true</overridable>
+                            <expression>false</expression>
+                            <ns5:bound-prop>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:17:54+00:00</created>
+                                <create-user>admin</create-user>
+                                <bind-lifecycle-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Catalog</name>
+                                    <description>Bindable at service/catalog level.</description>
+                                    <lifecycle-order>1</lifecycle-order>
+                                </bind-lifecycle-type>
+                                <value><![CDATA[]]></value>
+                                <overridable>true</overridable>
+                                <expression>false</expression>
+                            </ns5:bound-prop>
+                        </props>
+                        <props>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:17:54+00:00</created>
+                            <create-user>admin</create-user>
+                            <name></name>
+                            <description>The 25-character volume license key.</description>
+                            <key>pid_key</key>
+                            <prop-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>String</name>
+                                <description>String (java.lang.String).</description>
+                            </prop-type>
+                            <required>true</required>
+                            <secured>false</secured>
+                            <prop-auto-bind-type>
+                                <id>1</id>
+                                <inactive>false</inactive>
+                                <lock-version>1</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>None</name>
+                                <description>Property will not participate in auto-binding.</description>
+                            </prop-auto-bind-type>
+                            <value><![CDATA[]]></value>
+                            <readonly>false</readonly>
+                            <overridable>true</overridable>
+                            <expression>false</expression>
+                            <ns5:bound-prop>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:17:54+00:00</created>
+                                <create-user>admin</create-user>
+                                <bind-lifecycle-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Catalog</name>
+                                    <description>Bindable at service/catalog level.</description>
+                                    <lifecycle-order>1</lifecycle-order>
+                                </bind-lifecycle-type>
+                                <value><![CDATA[]]></value>
+                                <overridable>true</overridable>
+                                <expression>false</expression>
+                            </ns5:bound-prop>
+                        </props>
+                        <props>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:41:02+00:00</created>
+                            <create-user>admin</create-user>
+                            <name></name>
+                            <description>Path to the config.xml file to use for installation.</description>
+                            <key>config_xml</key>
+                            <prop-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>String</name>
+                                <description>String (java.lang.String).</description>
+                            </prop-type>
+                            <required>true</required>
+                            <secured>false</secured>
+                            <prop-auto-bind-type>
+                                <id>1</id>
+                                <inactive>false</inactive>
+                                <lock-version>1</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>None</name>
+                                <description>Property will not participate in auto-binding.</description>
+                            </prop-auto-bind-type>
+                            <value><![CDATA[C:\Program Files (x86)\MSECache\oserver2010\Files\Setup\config.xml]]></value>
+                            <readonly>false</readonly>
+                            <overridable>false</overridable>
+                            <expression>false</expression>
+                            <ns5:bound-prop>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:41:02+00:00</created>
+                                <create-user>admin</create-user>
+                                <bind-lifecycle-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Catalog</name>
+                                    <description>Bindable at service/catalog level.</description>
+                                    <lifecycle-order>1</lifecycle-order>
+                                </bind-lifecycle-type>
+                                <value><![CDATA[C:\Program Files (x86)\MSECache\oserver2010\Files\Setup\config.xml]]></value>
+                                <overridable>false</overridable>
+                                <expression>false</expression>
+                            </ns5:bound-prop>
+                        </props>
+                        <meta-tag>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>Application Servers</name>
+                            <description>Application Servers</description>
+                            <meta-tag-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Server Type</name>
+                                <description>Server type, primarily used for organizing data.</description>
+                                <meta-tag-enum>SERVER_TYPE</meta-tag-enum>
+                                <user-managed-type>true</user-managed-type>
+                            </meta-tag-type>
+                        </meta-tag>
+                        <meta-tag>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>Web Servers</name>
+                            <description>Web Server</description>
+                            <meta-tag-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Server Type</name>
+                                <description>Server type, primarily used for organizing data.</description>
+                                <meta-tag-enum>SERVER_TYPE</meta-tag-enum>
+                                <user-managed-type>true</user-managed-type>
+                            </meta-tag-type>
+                        </meta-tag>
+                        <meta-tag>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>SCRIPT</name>
+                            <description>SCRIPT</description>
+                            <meta-tag-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Application Component</name>
+                                <description>Application component, which is used to indicate what type of component is associated with an application or a service supports.</description>
+                                <meta-tag-enum>APPLICATION_COMPONENT</meta-tag-enum>
+                                <user-managed-type>false</user-managed-type>
+                            </meta-tag-type>
+                        </meta-tag>
+                        <service>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:05:14+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:05:14+00:00</created>
+                            <create-user>admin</create-user>
+                            <name>Sharepoint 2010</name>
+                            <description>Microsoft SharePoint 2010 makes it easier for people to work together. Using SharePoint 2010, your people can set up Web sites to share information with others, manage documents from start to finish, and publish reports to help everyone make better decisions. </description>
+                            <revision>0</revision>
+                            <icon-name></icon-name>
+                        </service>
+                        <os-versions>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-03-15T10:00:00+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-03-15T10:00:00+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>WIN64</name>
+                            <description>Windows Server 2008 R2 Enterprise SP1</description>
+                            <revision>0</revision>
+                            <major>6</major>
+                            <minor>1</minor>
+                            <micro>7601</micro>
+                            <qualifier></qualifier>
+                            <dynamically-installable>false</dynamically-installable>
+                            <auto-bind-properties>false</auto-bind-properties>
+                            <operating-system>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>WIN64</name>
+                                <description>Microsoft Windows 64bit</description>
+                                <revision>0</revision>
+                                <icon-name>windowstemplate</icon-name>
+                                <os-family-meta-tag>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Windows</name>
+                                    <description>Windows based operating systems</description>
+                                    <meta-tag-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>OS Family</name>
+                                    <description>Operating System (OS) Family.</description>
+                                    <meta-tag-enum>OS_FAMILY</meta-tag-enum>
+                                    <user-managed-type>false</user-managed-type>
+                                    </meta-tag-type>
+                                    <os-family>WINDOWS</os-family>
+                                </os-family-meta-tag>
+                                <hardware-architecture-meta-tag>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>x86_64</name>
+                                    <description>x86_64</description>
+                                    <meta-tag-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Hardware Architecture</name>
+                                    <description>Hardware Architecture, used to describe whether something is or supports 32 bit, 64 bit, etc.</description>
+                                    <meta-tag-enum>HARDWARE_ARCHITECTURE</meta-tag-enum>
+                                    <user-managed-type>false</user-managed-type>
+                                    </meta-tag-type>
+                                    <hardware-architecture>X86_64</hardware-architecture>
+                                </hardware-architecture-meta-tag>
+                            </operating-system>
+                        </os-versions>
+                        <ns9:component-version-script>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T01:45:01+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:17:54+00:00</created>
+                            <create-user>admin</create-user>
+                            <description></description>
+                            <script>cls
+##############SCRIPT INTERNAL PARAMETERS#######################
+
+$SHAREPOINT_INSTALLER = "$sharepoint_installer"
+$INSTALLER = "$SHAREPOINT_INSTALLER\INSTALLER"
+$LOG_DIR = "$SHAREPOINT_INSTALLER\LOG"
+$DOWNLOAD_URL = "$download_url"
+$CONFIG_XML="$config_xml"
+$PID_KEY="$pid_key"
+$SERVER_ROLE="$server_role"
+$PACKAGE_ID="$package_id"
+$PORT = "$port"
+$MACHINE_IP = "$machine_ip"
+
+###########CREATING INSTALLATION DIRECTORIES###################
+
+write-host "CREATING INSTALLATION DIRECTORIES"
+if (!(Test-Path -Path $INSTALLER))
+{
+	New-Item $INSTALLER -type directory
+}
+if (!(Test-Path -Path $LOG_DIR))
+{
+	New-Item $LOG_DIR -type directory
+	Write-Host $LOG_DIR
+}
+
+########VALIDATION FUNCTIONS#########################
+ 
+Function check_error
+{
+	if (!$?)
+	{ 
+		error_exit $args[0] 
+	}
+}
+
+Function error_exit
+{
+	write-host $args[0]
+	exit 1
+}
+###### FUNCTION TO VALIDATE THE IP ########################
+Function valid_ip
+{
+     $IP = $args[0]
+     $ValidIP = $true
+
+    &lt;#Test format and leading zero (technically not necessary to test for
+    leading zero as this function strips the leading zero when converting to [int]#&gt;
+    $ValidIP = ($IP -match "^[1-9]\d{0,2}\.\d{1,3}\.\d{1,3}\.\d{1,3}$") 
+    if(-not $ValidIP){return $false}
+
+    $myip = $IP -split "\." #Each octet is element of an array
+    $ValidIP = ([int]$myip[0] -gt 0 -and [int]$myip[0] -le 255) #First octet is between 1-255
+    if(-not $ValidIP){return $false}
+
+    for($i = 1;$i -le 3;$i++)
+    {
+        $ValidIP = ([int]$myip[$i] -ge 0 -and [int]$myip[$i] -le 255) #Remain octets between 0-255
+        if(-not $ValidIP){return $false}
+    }
+    return $ValidIP #$ValidIP will always be true at this point.
+}
+############# FUNCTION TO VALIDATE THE INTEGER VALUE###########
+Function valid_int
+{ 
+    $STR = $args[0]
+    $ValidSTR = $true
+    $ValidSTR = ($STR-match"^[0-9]{1,9}$")
+    if(-not $ValidSTR){return $false}
+	return $ValidSTR
+}
+
+#########PARAMETER VALIDATION#########################
+
+write-host "PARAMETER VALIDATION -- START"
+
+if (($SHAREPOINT_INSTALLER -eq ''))
+{
+	error_exit "ERROR:SHAREPOINT INSTALLER NOT SET"	
+}
+if (($INSTALLER -eq ''))
+{
+	error_exit "ERROR:INSTALLER NOT SET"	
+}
+if (($LOG_DIR -eq ''))
+{
+	error_exit "ERROR:LOG DIRECTORY NOT SET"	
+}
+if (($DOWNLOAD_URL -eq ''))
+{
+	error_exit "ERROR:DOWNLOAD URL NOT SET"	
+}
+if (($CONFIG_XML -eq ''))
+{
+	error_exit "ERROR:CONFIG_XML NOT SET"	
+}
+if (($PID_KEY -eq ''))
+{
+	error_exit "ERROR:PID KEY NOT SET"	
+}
+if (($SERVER_ROLE -eq ''))
+{
+	error_exit "ERROR:SERVER ROLE NOT SET"	
+}
+if (($PACKAGE_ID -eq ''))
+{
+	error_exit "ERROR:PACKAGE ID  NOT SET"	
+}
+if (($PORT -eq ''))
+{
+	error_exit "ERROR:PORT NOT SET"	
+}
+elseif(!(valid_int $PORT))
+{
+    error_exit "ERROR:NOT A VALID LISTENING PORT"
+}
+
+if (($MACHINE_IP -eq ''))
+{
+	error_exit "ERROR:MACHINE IP NOT SET"	
+}
+elseif(!(valid_ip $MACHINE_IP))
+{
+    error_exit "ERROR:NOT A VALID MACHINE IP"
+}
+
+
+########SHAREPOINT INSTALLER DOWNLAOD###############
+
+$WEBCLIENT = new-object system.net.webclient
+$TARGET_FILE = "$INSTALLER/SharePointServer.exe"
+$WEBCLIENT.Downloadfile($DOWNLOAD_URL,$TARGET_FILE)
+
+########### EXECUTE THE SELF EXTRACTING SHAREPOINT EXE ########
+cd $INSTALLER
+./SharePointServer.exe
+Start-Sleep -s 180
+#################### PATH WHERE SHARE POINT INSTALLER PACKAGE EXTRACTED ################
+$PATH = "C:\Program Files (x86)\MSECache\oserver2010"
+
+cd $PATH
+########## EXECUTING SHARE POINT PREREQUISITE INSTALLER ##########################
+.\PrerequisiteInstaller.exe /unattended
+Start-Sleep -s 600
+######### EXECUTE THE PREREQUISITE AGAIN TO INSTALL PREREQUISITE IF ANY NOT INSTALLED PREVIOUSLY ############# 
+.\PrerequisiteInstaller.exe /unattended
+Start-Sleep -s 300
+
+############CREATING CONFIG XML FILE WHICH WILL BE USED AT SHAREPOINT SILENT INSTALLATION ################ 
+Remove-Item $CONFIG_XML
+New-Item $CONFIG_XML -type file
+$sw = new-object system.IO.StreamWriter($CONFIG_XML)
+$sw.writeline("&lt;Configuration&gt; ")
+$sw.writeline("	 &lt;Package Id=`"$PACKAGE_ID`"&gt; ")
+$sw.writeline("                 &lt;Setting Id=`"LAUNCHEDFROMSETUPSTS`" Value=`"Yes`"/&gt;")
+$sw.writeline("	 &lt;/Package&gt; ")
+$sw.writeline("         &lt;Logging Type=`"verbose`" Path=`"$LOG_DIR`" Template=`"SharePoint Server Setup(*).log`"/&gt; ")
+$sw.writeline("         &lt;Display Level=`"basic`" CompletionNotice=`"no`" SupressModal=`"no`" AcceptEula=`"yes`"/&gt; ")
+$sw.writeline("         &lt;PIDKEY Value=`"$PID_KEY`" /&gt;")
+$sw.writeline("         &lt;Setting Id=`"SERVERROLE`" Value=`"$SERVER_ROLE`"/&gt;")
+$sw.writeline("         &lt;Setting Id=`"USINGUIINSTALLMODE`" Value=`"0`"/&gt;")
+$sw.writeline("         &lt;Setting Id=`"SETUPTYPE`" Value=`"CLEAN_INSTALL`"/&gt;")
+$sw.writeline("         &lt;Setting Id=`"SETUP_REBOOT`" Value=`"Never`"/&gt;")
+$sw.writeline("&lt;/Configuration&gt; ")
+$sw.close()
+
+#############INVOKE THE SHAREPOINT SETUP EXE#############
+cd $path
+.\setup.exe /config $CONFIG_XML
+Start-Sleep -s 1800
+
+########CREATING A POWERSHELL SCRIPT FILE TO CONFIGURE THE SHAREPOINT RUNNING PORT###############
+$PORT_FILE = "$INSTALLER\Port.PS1"
+New-Item $PORT_FILE -type file
+$sw = new-object system.IO.StreamWriter($PORT_FILE)
+$sw.writeline("cd `"C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\BIN`"")
+$sw.writeline(".\STSADM.EXE -o setadminport -port $PORT")
+$sw.close()
+############# EXECUTE THE PROT.PS1 FILE AS A ADMINISTRATOR #########################
+Start-Process powershell -verb runas -ArgumentList "-file $PORT_FILE"
+
+###########FOR SUCCESSFUL EXIT CRITERIA READ THE SHAREPOINT INSTALLATION LOGS AND SEARCH FOR STRING "Return code: 0" ###############
+$fileEntries = [IO.Directory]::GetFiles($LOG_DIR); 
+foreach($fileName in $fileEntries) 
+{ 
+  if ($fileName.Contains(".log"))
+	  {
+	    $log_file = $fileName
+	  }
+    
+}
+$SearchString = "Return code: 0"
+$Sel = select-string -pattern $SearchString -path $log_file
+If ($Sel -eq $null) 
+{ 
+   echo "SHAREPOINT SERVER NOT INSTALLED SUCCESSFULLY "
+} 
+Else
+{
+    echo "SHAREPOINT SERVER INSTALLED SUCCESSFULLY "
+    
+}
+
+Start-Sleep -s 180
+###########FOR SECOND SUCCESSFUL EXIT CRITERIA WE ARE CHECKING THAT SHAREPOINT SERVICE RUNING AT GIVEN PORT ###############
+$Socket = New-Object Net.Sockets.TcpClient
+$Socket.Connect("$MACHINE_IP","$PORT")
+if ($Socket.Connected) 
+{
+   Write-Host "SharePoint Service Running At port $PORT " 
+   $Socket.Close()
+   exit
+}
+else
+{
+  Write-Host "SharePoint Service Not Running At port $PORT " 
+  exit
+}</script>
+                            <embedded>true</embedded>
+                            <script-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Windows Powershell Script</name>
+                                <description>Windows Powershell Script.</description>
+                                <name-message-key>type.script.powershell.name</name-message-key>
+                                <description-message-key>type.script.powershell.description</description-message-key>
+                                <supported-os-details>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <os-family>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Windows</name>
+                                    <description>Windows based operating systems</description>
+                                    <meta-tag-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>OS Family</name>
+                                    <description>Operating System (OS) Family.</description>
+                                    <meta-tag-enum>OS_FAMILY</meta-tag-enum>
+                                    <user-managed-type>false</user-managed-type>
+                                    </meta-tag-type>
+                                    <os-family>WINDOWS</os-family>
+                                    </os-family>
+                                    <supports-array-props>true</supports-array-props>
+                                    <supports-output-props>true</supports-output-props>
+                                    <exec-command>powershell.exe -ExecutionPolicy remotesigned &lt;exec-script&gt; &lt;script-file&gt; &lt;json-input-properties-file&gt; &lt;output-properties-file&gt;</exec-command>
+                                    <exec-script>$error.clear()
+# Auto convert input properties to local Powershell variables
+
+# Parsing JSON elements into Powershell object
+function ParseJsonProps ($jsonFile)
+{
+ $jsonjsonCharCount = 0
+ $newObjStart = $false
+ $arrayStart = $false
+ $tokenStart = $false
+ $valueStart = $false
+ $escapeStart = $false
+ 
+ $jsonFileLen = $jsonFile.length
+ $jsonObj = New-Object System.Text.StringBuilder
+ 
+ ForEach($c in $jsonFile.ToCharArray()) {
+    $jsonCharCount++
+    $tmpStr = ""
+    switch -regex ($c) {
+        "{" { 
+            if($newObjStart -eq $false) {
+                $tmpStr = "(New-Object PSObject "
+                $newObjStart = $true
+            } else {
+                $tmpStr = $c
+            }
+        }
+        "}" {
+            if($jsonCharCount -lt $jsonFileLen) {
+                $tmpStr = $c
+            } else {
+                $tmpStr = ")"
+            }
+        }
+        '"' {
+            if($tokenStart -eq $false -and $valueStart -eq $false -and $arrayStart -eq $false) {
+                $tmpStr = '| Add-Member -Passthru NoteProperty "'
+            } else {
+                if($escapeStart -eq $false) {
+                    $tmpStr = $c
+                } else {
+                    $tmpStr = "```""
+                    $escapeStart = $false
+                }
+            }
+            $tokenStart = $true
+        }
+        ":" {
+            if($valueStart -eq $true -or $arrayStart -eq $true) {
+                $tmpStr = $c
+            } else {
+                $tmpStr = " "
+            }
+            $valueStart = $true
+        }
+        "," {
+            if($arrayStart) {
+                $tmpStr = $c
+            } else {
+                $valueStart = $false
+                $tokenStart = $false
+            }
+        }	
+        "\[" {
+            $tmpStr = "@("
+            $arrayStart = $true
+        }
+        "\]" {
+            $tmpStr = ")"
+            $arrayStart = $false
+        }
+        "``" {
+            $tmpStr = "````"
+        }
+        "\\" {
+            if($escapeStart -eq $false) {
+                $escapeStart = $true
+            } else {
+                $tmpStr = $c
+                $escapeStart = $false
+            }
+        }
+        "\$" {
+            if($escapeStart -eq $false) {
+                $tmpStr = '`$'
+            } else {
+                $tmpStr = '`$'
+                $escapeStart = $false
+            }
+        }
+        "n" {
+            if($escapeStart -eq $false) {
+                $tmpStr = $c
+            } else {
+                $tmpStr = "``n"
+                $escapeStart = $false
+            }
+        }
+        "r" {
+            if($escapeStart -eq $false) {
+                $tmpStr = $c
+            } else {
+                $tmpStr = "``r"
+                $escapeStart = $false
+            }
+        }
+        "t" {
+            if($escapeStart -eq $false) {
+                $tmpStr = $c
+            } else {
+                $tmpStr = "``t"
+                $escapeStart = $false
+            }
+        }
+        "b" {
+            if($escapeStart -eq $false) {
+                $tmpStr = $c
+            } else {
+                $tmpStr = "``b"
+                $escapeStart = $false
+            }
+        }
+        default {
+            if($escapeStart -eq $false) {
+                $tmpStr = $c
+            } else {
+                $tmpStr = "\$c"
+                $escapeStart = $false
+            }
+            #$tmpStr = $c
+            #if($escapeStart -eq $true) {
+            #    $escapeStart = $false
+            #}
+        }
+    }                        
+    [void] $jsonObj.Append($tmpStr)
+ }
+ 
+ $jsonObj | Invoke-Expression
+}
+
+$vmw_appd_json_file = Get-Content "$($Args[1])"
+$vmw_appd_json_obj = ParseJsonProps $vmw_appd_json_file
+$vmw_appd_json_props = $vmw_appd_json_obj.PsObject.Properties
+
+# Assigning obj to local variable
+ForEach ($vmw_appd_obj_prop in $vmw_appd_json_props)
+{
+ $vmw_appd_obj_prop_name = $vmw_appd_obj_prop.Name;
+ #$vmw_appd_obj_prop_name_full = '$vmw_appd_json_obj' + '.' + $vmw_appd_obj_prop_name
+ #$vmw_appd_obj_prop_value = Invoke-Expression $vmw_appd_obj_prop_name_full
+ Set-Variable -Name $vmw_appd_obj_prop_name -value $vmw_appd_json_obj."$vmw_appd_obj_prop_name"
+}
+
+
+# Execute user's Powershell script
+$error.clear()
+$LASTEXITCODE = 0
+. "$($Args[0])"
+
+if ($LASTEXITCODE -ne 0) {
+ Write-Host "`nABORT. LASTEXITCODE is non-zero.`n"
+ exit $LASTEXITCODE
+}
+
+if ($error.count -gt 0) {
+ Write-Host "`nABORT. Encountered error in Powershell.`n"
+ exit $error.count
+ }
+
+# Export Powershell variables to output properties file
+ForEach ($vmw_appd_obj_prop in $vmw_appd_json_props)
+{
+ $vmw_appd_obj_prop_name = $vmw_appd_obj_prop.Name;
+ $vmw_appd_obj_prop_type = (($vmw_appd_json_obj.($vmw_appd_obj_prop_name)).GetType()).Name
+
+ # Export only String AppD's properties; Output Array properties is not currently supported.
+ if ($vmw_appd_obj_prop_type.Contains("String")) {
+      $vmw_appd_obj_prop_name_expanded = '$' + $vmw_appd_obj_prop_name
+
+      # The ExpandString takes care of three cases. 
+      # Case-I when the string is set via input properties
+      # Case-II when the string is set via input properties and overridden in script (install/configure..)
+      # Case-III lastly when it is only set via script (install/configure..) and left empty in input props
+      #
+      # Also note that powershell as is does not care if this variable was a computed 
+      # or a string variable that filter happens at a different layer.
+      #
+      $expandedUserVariable = $ExecutionContext.InvokeCommand.ExpandString($vmw_appd_obj_prop_name_expanded)
+
+     ($vmw_appd_obj_prop_name + '=' + $expandedUserVariable) | Add-Content $($Args[2]) 
+ }
+}
+</exec-script>
+                                    <exec-script-extension>ps1</exec-script-extension>
+                                    <file-extension>ps1</file-extension>
+                                </supported-os-details>
+                                <script-type-expression>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <prop-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>String</name>
+                                    <description>String (java.lang.String).</description>
+                                    </prop-type>
+                                    <expression>$&lt;property-name&gt;</expression>
+                                </script-type-expression>
+                                <script-type-expression>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <prop-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Content</name>
+                                    <description>Content (java.lang.String).</description>
+                                    </prop-type>
+                                    <expression>$&lt;property-name&gt;</expression>
+                                </script-type-expression>
+                                <script-type-expression>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <prop-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Array</name>
+                                    <description>Array</description>
+                                    </prop-type>
+                                    <expression>$&lt;property-name&gt;</expression>
+                                </script-type-expression>
+                            </script-type>
+                            <component-lifecycle-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>INSTALL</name>
+                                <description>Install lifecycle on a component.</description>
+                                <name-message-key>type.lifecycle.install.name</name-message-key>
+                                <description-message-key>type.lifecycle.install.description</description-message-key>
+                            </component-lifecycle-type>
+                            <reboot-after>false</reboot-after>
+                        </ns9:component-version-script>
+                    </service-version>
+                    <application-node-component>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <name>App</name>
+                        <grid-row>0</grid-row>
+                        <grid-column>0</grid-column>
+                        <props>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:27:14+00:00</created>
+                            <create-user>admin</create-user>
+                            <description>Share point Sample Application pool.</description>
+                            <key>apppool_name</key>
+                            <prop-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>String</name>
+                                <description>String (java.lang.String).</description>
+                            </prop-type>
+                            <required>true</required>
+                            <secured>false</secured>
+                            <prop-auto-bind-type>
+                                <id>1</id>
+                                <inactive>false</inactive>
+                                <lock-version>1</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>None</name>
+                                <description>Property will not participate in auto-binding.</description>
+                            </prop-auto-bind-type>
+                            <value><![CDATA[Apppool_4484]]></value>
+                            <readonly>false</readonly>
+                            <overridable>true</overridable>
+                            <expression>false</expression>
+                            <ns5:bound-prop>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:27:14+00:00</created>
+                                <create-user>admin</create-user>
+                                <bind-lifecycle-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Blueprint</name>
+                                    <description>Bindable at blueprint level.</description>
+                                    <lifecycle-order>2</lifecycle-order>
+                                </bind-lifecycle-type>
+                                <value><![CDATA[Apppool_4484]]></value>
+                                <overridable>true</overridable>
+                                <expression>false</expression>
+                            </ns5:bound-prop>
+                        </props>
+                        <props>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:27:14+00:00</created>
+                            <create-user>admin</create-user>
+                            <description>Share point Sample App running port.</description>
+                            <key>sampleapp_port</key>
+                            <prop-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>String</name>
+                                <description>String (java.lang.String).</description>
+                            </prop-type>
+                            <required>true</required>
+                            <secured>false</secured>
+                            <prop-auto-bind-type>
+                                <id>1</id>
+                                <inactive>false</inactive>
+                                <lock-version>1</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>None</name>
+                                <description>Property will not participate in auto-binding.</description>
+                            </prop-auto-bind-type>
+                            <value><![CDATA[4484]]></value>
+                            <readonly>false</readonly>
+                            <overridable>true</overridable>
+                            <expression>false</expression>
+                            <ns5:bound-prop>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:27:14+00:00</created>
+                                <create-user>admin</create-user>
+                                <bind-lifecycle-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Blueprint</name>
+                                    <description>Bindable at blueprint level.</description>
+                                    <lifecycle-order>2</lifecycle-order>
+                                </bind-lifecycle-type>
+                                <value><![CDATA[4484]]></value>
+                                <overridable>true</overridable>
+                                <expression>false</expression>
+                            </ns5:bound-prop>
+                        </props>
+                        <props>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:27:14+00:00</created>
+                            <create-user>admin</create-user>
+                            <description>SharePoint Sample site name.</description>
+                            <key>sampleapp_sitename</key>
+                            <prop-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>String</name>
+                                <description>String (java.lang.String).</description>
+                            </prop-type>
+                            <required>true</required>
+                            <secured>false</secured>
+                            <prop-auto-bind-type>
+                                <id>1</id>
+                                <inactive>false</inactive>
+                                <lock-version>1</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>None</name>
+                                <description>Property will not participate in auto-binding.</description>
+                            </prop-auto-bind-type>
+                            <value><![CDATA[samplesite]]></value>
+                            <readonly>false</readonly>
+                            <overridable>true</overridable>
+                            <expression>false</expression>
+                            <ns5:bound-prop>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:27:14+00:00</created>
+                                <create-user>admin</create-user>
+                                <bind-lifecycle-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Blueprint</name>
+                                    <description>Bindable at blueprint level.</description>
+                                    <lifecycle-order>2</lifecycle-order>
+                                </bind-lifecycle-type>
+                                <value><![CDATA[samplesite]]></value>
+                                <overridable>true</overridable>
+                                <expression>false</expression>
+                            </ns5:bound-prop>
+                        </props>
+                        <props>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:27:14+00:00</created>
+                            <create-user>admin</create-user>
+                            <description>SharePoint service running machine ip.</description>
+                            <key>machine_ip</key>
+                            <prop-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>String</name>
+                                <description>String (java.lang.String).</description>
+                            </prop-type>
+                            <required>true</required>
+                            <secured>false</secured>
+                            <prop-auto-bind-type>
+                                <id>1</id>
+                                <inactive>false</inactive>
+                                <lock-version>1</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>None</name>
+                                <description>Property will not participate in auto-binding.</description>
+                            </prop-auto-bind-type>
+                            <value><![CDATA[${['self']['host']['ip']}]]></value>
+                            <readonly>false</readonly>
+                            <overridable>false</overridable>
+                            <expression>true</expression>
+                            <ns5:bound-prop>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:27:14+00:00</created>
+                                <create-user>admin</create-user>
+                                <bind-lifecycle-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Blueprint</name>
+                                    <description>Bindable at blueprint level.</description>
+                                    <lifecycle-order>2</lifecycle-order>
+                                </bind-lifecycle-type>
+                                <value><![CDATA[${['self']['host']['ip']}]]></value>
+                                <overridable>false</overridable>
+                                <expression>true</expression>
+                            </ns5:bound-prop>
+                        </props>
+                        <ns8:application-component-version>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-08T01:27:14+00:00</created>
+                            <create-user>admin</create-user>
+                            <revision>0</revision>
+                            <major>1</major>
+                            <minor>0</minor>
+                            <micro>0</micro>
+                            <dynamically-installable>false</dynamically-installable>
+                            <auto-bind-properties>false</auto-bind-properties>
+                            <props>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:27:14+00:00</created>
+                                <create-user>admin</create-user>
+                                <description>Share point Sample Application pool.</description>
+                                <key>apppool_name</key>
+                                <prop-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>String</name>
+                                    <description>String (java.lang.String).</description>
+                                </prop-type>
+                                <required>true</required>
+                                <secured>false</secured>
+                                <prop-auto-bind-type>
+                                    <id>1</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>1</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>None</name>
+                                    <description>Property will not participate in auto-binding.</description>
+                                </prop-auto-bind-type>
+                                <value><![CDATA[Apppool_4484]]></value>
+                                <readonly>false</readonly>
+                                <overridable>true</overridable>
+                                <expression>false</expression>
+                                <ns5:bound-prop>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                                    <last-update-user>admin</last-update-user>
+                                    <created>2012-08-08T01:27:14+00:00</created>
+                                    <create-user>admin</create-user>
+                                    <bind-lifecycle-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Blueprint</name>
+                                    <description>Bindable at blueprint level.</description>
+                                    <lifecycle-order>2</lifecycle-order>
+                                    </bind-lifecycle-type>
+                                    <value><![CDATA[Apppool_4484]]></value>
+                                    <overridable>true</overridable>
+                                    <expression>false</expression>
+                                </ns5:bound-prop>
+                            </props>
+                            <props>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:27:14+00:00</created>
+                                <create-user>admin</create-user>
+                                <description>Share point Sample App running port.</description>
+                                <key>sampleapp_port</key>
+                                <prop-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>String</name>
+                                    <description>String (java.lang.String).</description>
+                                </prop-type>
+                                <required>true</required>
+                                <secured>false</secured>
+                                <prop-auto-bind-type>
+                                    <id>1</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>1</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>None</name>
+                                    <description>Property will not participate in auto-binding.</description>
+                                </prop-auto-bind-type>
+                                <value><![CDATA[4484]]></value>
+                                <readonly>false</readonly>
+                                <overridable>true</overridable>
+                                <expression>false</expression>
+                                <ns5:bound-prop>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                                    <last-update-user>admin</last-update-user>
+                                    <created>2012-08-08T01:27:14+00:00</created>
+                                    <create-user>admin</create-user>
+                                    <bind-lifecycle-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Blueprint</name>
+                                    <description>Bindable at blueprint level.</description>
+                                    <lifecycle-order>2</lifecycle-order>
+                                    </bind-lifecycle-type>
+                                    <value><![CDATA[4484]]></value>
+                                    <overridable>true</overridable>
+                                    <expression>false</expression>
+                                </ns5:bound-prop>
+                            </props>
+                            <props>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:27:14+00:00</created>
+                                <create-user>admin</create-user>
+                                <description>SharePoint Sample site name.</description>
+                                <key>sampleapp_sitename</key>
+                                <prop-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>String</name>
+                                    <description>String (java.lang.String).</description>
+                                </prop-type>
+                                <required>true</required>
+                                <secured>false</secured>
+                                <prop-auto-bind-type>
+                                    <id>1</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>1</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>None</name>
+                                    <description>Property will not participate in auto-binding.</description>
+                                </prop-auto-bind-type>
+                                <value><![CDATA[samplesite]]></value>
+                                <readonly>false</readonly>
+                                <overridable>true</overridable>
+                                <expression>false</expression>
+                                <ns5:bound-prop>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                                    <last-update-user>admin</last-update-user>
+                                    <created>2012-08-08T01:27:14+00:00</created>
+                                    <create-user>admin</create-user>
+                                    <bind-lifecycle-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Blueprint</name>
+                                    <description>Bindable at blueprint level.</description>
+                                    <lifecycle-order>2</lifecycle-order>
+                                    </bind-lifecycle-type>
+                                    <value><![CDATA[samplesite]]></value>
+                                    <overridable>true</overridable>
+                                    <expression>false</expression>
+                                </ns5:bound-prop>
+                            </props>
+                            <props>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:27:14+00:00</created>
+                                <create-user>admin</create-user>
+                                <description>SharePoint service running machine ip.</description>
+                                <key>machine_ip</key>
+                                <prop-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>String</name>
+                                    <description>String (java.lang.String).</description>
+                                </prop-type>
+                                <required>true</required>
+                                <secured>false</secured>
+                                <prop-auto-bind-type>
+                                    <id>1</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>1</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>None</name>
+                                    <description>Property will not participate in auto-binding.</description>
+                                </prop-auto-bind-type>
+                                <value><![CDATA[${['self']['host']['ip']}]]></value>
+                                <readonly>false</readonly>
+                                <overridable>false</overridable>
+                                <expression>true</expression>
+                                <ns5:bound-prop>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                                    <last-update-user>admin</last-update-user>
+                                    <created>2012-08-08T01:27:14+00:00</created>
+                                    <create-user>admin</create-user>
+                                    <bind-lifecycle-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Blueprint</name>
+                                    <description>Bindable at blueprint level.</description>
+                                    <lifecycle-order>2</lifecycle-order>
+                                    </bind-lifecycle-type>
+                                    <value><![CDATA[${['self']['host']['ip']}]]></value>
+                                    <overridable>false</overridable>
+                                    <expression>true</expression>
+                                </ns5:bound-prop>
+                            </props>
+                            <ns8:application-component>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:27:14+00:00</created>
+                                <create-user>admin</create-user>
+                                <name>SCRIPT</name>
+                                <revision>0</revision>
+                            </ns8:application-component>
+                            <ns9:component-version-script>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                                <last-update-user>admin</last-update-user>
+                                <created>2012-08-08T01:27:14+00:00</created>
+                                <create-user>admin</create-user>
+                                <script>cls
+############### INTERNAL PARAMETERTS #################
+$SITENAME = "$sampleapp_sitename"
+$SITEPORT = "$sampleapp_port"
+$APPPOOLNAME = "$apppool_name"
+$APP_DIR = "$sample_app_dir\APP"
+$WEBAPP_FILE = "$APP_DIR\CreateWebApp.PS1"
+$TEMP_FILE = "$APP_DIR\Temp.txt"
+$SITECOLLECTION_FILE = "$APP_DIR\CreateSiteCollection.PS1"
+$COMPUTERNAME = get-content env:computername
+$USERNAME = "$admin_user"
+$PASSWORD = "$admin_password"
+$PASSWORD &gt; "$APP_DIR\tmp.txt"
+
+
+write-host "CREATING SAMPLE APP DIRECTORIES"
+if (!(Test-Path -Path $APP_DIR))
+{
+	New-Item $APP_DIR -type directory
+}
+
+########VALIDATION FUNCTIONS#########################
+ 
+Function check_error
+{
+	if (!$?)
+	{ 
+		error_exit $args[0] 
+	}
+}
+
+Function error_exit
+{
+	write-host $args[0]
+	exit 1
+}
+
+Function valid_int
+{ 
+    $STR = $args[0]
+    $ValidSTR = $true
+    $ValidSTR = ($STR-match"^[0-9]{1,9}$")
+    if(-not $ValidSTR){return $false}
+	return $ValidSTR
+}
+
+#########PARAMETER VALIDATION#########################
+
+write-host "PARAMETER VALIDATION -- START"
+
+if (($SITENAME -eq ''))
+{
+	error_exit "ERROR: SITE NAME NOT SET"	
+}
+if (($APPPOOLNAME -eq ''))
+{
+	error_exit "ERROR:APP POOL NAME"	
+}
+if (($APP_DIR -eq ''))
+{
+	error_exit "ERROR:APP DIRECTORY NOT SET"	
+}
+if (($USERNAME -eq ''))
+{
+	error_exit "ERROR:USER NAME NOT SET"	
+}
+if (($PASSWORD -eq ''))
+{
+	error_exit "ERROR:PASSWORD NOT SET"	
+}
+if (($SITEPORT -eq ''))
+{
+	error_exit "ERROR:PORT NOT SET"	
+}
+elseif(!(valid_int $SITEPORT))
+{
+    error_exit "ERROR:NOT A VALID LISTENING PORT"
+}
+
+############ CREATING A POWERSHELL SCRIPT FILE TO CREATE A SAMPLE APP################
+New-Item $WEBAPP_FILE -type file
+$sw1 = new-object system.IO.StreamWriter($WEBAPP_FILE)
+$sw1.writeline("add-PSSnapin Microsoft.Sharepoint.powershell")
+$sw1.writeline("`$Username = `"$COMPUTERNAME\$USERNAME`"")
+$sw1.writeline("`$Password = get-content `"$INSTALLER\tmp.txt`"")
+$sw1.writeline("`$my_secure_password_string = convertto-securestring `"`$Password`" -asplaintext -force")
+$sw1.writeline("`$my_encrypted_string = convertfrom-securestring `$my_secure_password_string-key (1..16)")
+$sw1.writeline("`$my_encrypted_string &gt; `"$INSTALLER\password.txt`"")
+$sw1.writeline("`$my_secure_password_string = convertto-securestring (get-content `"$INSTALLER\password.txt`") -key (1..16)")
+$sw1.writeline("`$cred = New-Object System.Management.Automation.PSCredential `$Username,`$my_secure_password_string ")
+$sw1.writeline("New-SPManagedAccount -Credential `$cred")
+$sw1.writeline("`$siteName = `"$SITENAME`"")
+$sw1.writeline("`$port = `"$SITEPORT`"")
+$sw1.writeline("`$hostHeader = `"`"")
+$sw1.writeline("`$url = `"http://$COMPUTERNAME`"")
+$sw1.writeline("`$appPoolName = `"$APPPOOLNAME`"")
+$sw1.writeline("`$managedAccount = `"$COMPUTERNAME\$USERNAME`"")
+$sw1.writeline("`$dbServer = `"$COMPUTERNAME\SharePoint`"")
+$sw1.writeline("`$dbName = `"WSS_Content_$SITEPORT`"")
+$sw1.writeline("`$authenticationMethod = `"NTLM`"")
+$sw1.writeline("New-SPWebApplication -Name `$siteName -Port `$port -HostHeader `$hostHeader -URL `$url -ApplicationPool `$appPoolName -ApplicationPoolAccount (Get-SPManagedAccount `"`$managedAccount`") -DatabaseName `$dbName -DatabaseServer `$dbServer -AllowAnonymousAccess: `$allowAnonymous -AuthenticationMethod `$authenticationMethod")
+$sw1.close()
+
+##################### EXECUTE THE SCRIPT AS A ADMINISTRATOR#############################
+Start-Process powershell -verb runas -ArgumentList "-file $WEBAPP_FILE"
+
+############ CREATING A POWERSHELL SCRIPT FILE TO CREATE A SAMPLE POOL################
+New-Item $SITECOLLECTION_FILE -type file
+$sw = new-object system.IO.StreamWriter($SITECOLLECTION_FILE)
+$sw.writeline("add-PSSnapin Microsoft.Sharepoint.powershell")
+$sw.writeline("`$siteURL = `"http://$COMPUTERNAME`:$SITEPORT/sites/test`"")
+$sw.writeline("`$owner = `"$COMPUTERNAME\$USERNAME`"")
+$sw.writeline("`$secondOwner = `"$COMPUTERNAME\$USERNAME`"")
+$sw.writeline("`$template = `"STS#0`"")
+$sw.writeline("`$description = `"`" ")
+$sw.writeline("New-SPSite `$siteURL -OwnerAlias `$owner -SecondaryOwnerAlias `$secondOwner -name `"PowerShell for SharePoint`" -Template `$template -Description `$description")
+$sw.close()
+##################### EXECUTE THE SCRIPT AS A ADMINISTRATOR#############################
+Start-Process powershell -verb runas -ArgumentList "-file $SITECOLLECTION_FILE"
+
+</script>
+                                <embedded>true</embedded>
+                                <script-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Windows Powershell Script</name>
+                                    <description>Windows Powershell Script.</description>
+                                    <name-message-key>type.script.powershell.name</name-message-key>
+                                    <description-message-key>type.script.powershell.description</description-message-key>
+                                    <supported-os-details>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <os-family>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Windows</name>
+                                    <description>Windows based operating systems</description>
+                                    <meta-tag-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>OS Family</name>
+                                    <description>Operating System (OS) Family.</description>
+                                    <meta-tag-enum>OS_FAMILY</meta-tag-enum>
+                                    <user-managed-type>false</user-managed-type>
+                                    </meta-tag-type>
+                                    <os-family>WINDOWS</os-family>
+                                    </os-family>
+                                    <supports-array-props>true</supports-array-props>
+                                    <supports-output-props>true</supports-output-props>
+                                    <exec-command>powershell.exe -ExecutionPolicy remotesigned &lt;exec-script&gt; &lt;script-file&gt; &lt;json-input-properties-file&gt; &lt;output-properties-file&gt;</exec-command>
+                                    <exec-script>$error.clear()
+# Auto convert input properties to local Powershell variables
+
+# Parsing JSON elements into Powershell object
+function ParseJsonProps ($jsonFile)
+{
+ $jsonjsonCharCount = 0
+ $newObjStart = $false
+ $arrayStart = $false
+ $tokenStart = $false
+ $valueStart = $false
+ $escapeStart = $false
+ 
+ $jsonFileLen = $jsonFile.length
+ $jsonObj = New-Object System.Text.StringBuilder
+ 
+ ForEach($c in $jsonFile.ToCharArray()) {
+    $jsonCharCount++
+    $tmpStr = ""
+    switch -regex ($c) {
+        "{" { 
+            if($newObjStart -eq $false) {
+                $tmpStr = "(New-Object PSObject "
+                $newObjStart = $true
+            } else {
+                $tmpStr = $c
+            }
+        }
+        "}" {
+            if($jsonCharCount -lt $jsonFileLen) {
+                $tmpStr = $c
+            } else {
+                $tmpStr = ")"
+            }
+        }
+        '"' {
+            if($tokenStart -eq $false -and $valueStart -eq $false -and $arrayStart -eq $false) {
+                $tmpStr = '| Add-Member -Passthru NoteProperty "'
+            } else {
+                if($escapeStart -eq $false) {
+                    $tmpStr = $c
+                } else {
+                    $tmpStr = "```""
+                    $escapeStart = $false
+                }
+            }
+            $tokenStart = $true
+        }
+        ":" {
+            if($valueStart -eq $true -or $arrayStart -eq $true) {
+                $tmpStr = $c
+            } else {
+                $tmpStr = " "
+            }
+            $valueStart = $true
+        }
+        "," {
+            if($arrayStart) {
+                $tmpStr = $c
+            } else {
+                $valueStart = $false
+                $tokenStart = $false
+            }
+        }	
+        "\[" {
+            $tmpStr = "@("
+            $arrayStart = $true
+        }
+        "\]" {
+            $tmpStr = ")"
+            $arrayStart = $false
+        }
+        "``" {
+            $tmpStr = "````"
+        }
+        "\\" {
+            if($escapeStart -eq $false) {
+                $escapeStart = $true
+            } else {
+                $tmpStr = $c
+                $escapeStart = $false
+            }
+        }
+        "\$" {
+            if($escapeStart -eq $false) {
+                $tmpStr = '`$'
+            } else {
+                $tmpStr = '`$'
+                $escapeStart = $false
+            }
+        }
+        "n" {
+            if($escapeStart -eq $false) {
+                $tmpStr = $c
+            } else {
+                $tmpStr = "``n"
+                $escapeStart = $false
+            }
+        }
+        "r" {
+            if($escapeStart -eq $false) {
+                $tmpStr = $c
+            } else {
+                $tmpStr = "``r"
+                $escapeStart = $false
+            }
+        }
+        "t" {
+            if($escapeStart -eq $false) {
+                $tmpStr = $c
+            } else {
+                $tmpStr = "``t"
+                $escapeStart = $false
+            }
+        }
+        "b" {
+            if($escapeStart -eq $false) {
+                $tmpStr = $c
+            } else {
+                $tmpStr = "``b"
+                $escapeStart = $false
+            }
+        }
+        default {
+            if($escapeStart -eq $false) {
+                $tmpStr = $c
+            } else {
+                $tmpStr = "\$c"
+                $escapeStart = $false
+            }
+            #$tmpStr = $c
+            #if($escapeStart -eq $true) {
+            #    $escapeStart = $false
+            #}
+        }
+    }                        
+    [void] $jsonObj.Append($tmpStr)
+ }
+ 
+ $jsonObj | Invoke-Expression
+}
+
+$vmw_appd_json_file = Get-Content "$($Args[1])"
+$vmw_appd_json_obj = ParseJsonProps $vmw_appd_json_file
+$vmw_appd_json_props = $vmw_appd_json_obj.PsObject.Properties
+
+# Assigning obj to local variable
+ForEach ($vmw_appd_obj_prop in $vmw_appd_json_props)
+{
+ $vmw_appd_obj_prop_name = $vmw_appd_obj_prop.Name;
+ #$vmw_appd_obj_prop_name_full = '$vmw_appd_json_obj' + '.' + $vmw_appd_obj_prop_name
+ #$vmw_appd_obj_prop_value = Invoke-Expression $vmw_appd_obj_prop_name_full
+ Set-Variable -Name $vmw_appd_obj_prop_name -value $vmw_appd_json_obj."$vmw_appd_obj_prop_name"
+}
+
+
+# Execute user's Powershell script
+$error.clear()
+$LASTEXITCODE = 0
+. "$($Args[0])"
+
+if ($LASTEXITCODE -ne 0) {
+ Write-Host "`nABORT. LASTEXITCODE is non-zero.`n"
+ exit $LASTEXITCODE
+}
+
+if ($error.count -gt 0) {
+ Write-Host "`nABORT. Encountered error in Powershell.`n"
+ exit $error.count
+ }
+
+# Export Powershell variables to output properties file
+ForEach ($vmw_appd_obj_prop in $vmw_appd_json_props)
+{
+ $vmw_appd_obj_prop_name = $vmw_appd_obj_prop.Name;
+ $vmw_appd_obj_prop_type = (($vmw_appd_json_obj.($vmw_appd_obj_prop_name)).GetType()).Name
+
+ # Export only String AppD's properties; Output Array properties is not currently supported.
+ if ($vmw_appd_obj_prop_type.Contains("String")) {
+      $vmw_appd_obj_prop_name_expanded = '$' + $vmw_appd_obj_prop_name
+
+      # The ExpandString takes care of three cases. 
+      # Case-I when the string is set via input properties
+      # Case-II when the string is set via input properties and overridden in script (install/configure..)
+      # Case-III lastly when it is only set via script (install/configure..) and left empty in input props
+      #
+      # Also note that powershell as is does not care if this variable was a computed 
+      # or a string variable that filter happens at a different layer.
+      #
+      $expandedUserVariable = $ExecutionContext.InvokeCommand.ExpandString($vmw_appd_obj_prop_name_expanded)
+
+     ($vmw_appd_obj_prop_name + '=' + $expandedUserVariable) | Add-Content $($Args[2]) 
+ }
+}
+</exec-script>
+                                    <exec-script-extension>ps1</exec-script-extension>
+                                    <file-extension>ps1</file-extension>
+                                    </supported-os-details>
+                                    <script-type-expression>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <prop-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>String</name>
+                                    <description>String (java.lang.String).</description>
+                                    </prop-type>
+                                    <expression>$&lt;property-name&gt;</expression>
+                                    </script-type-expression>
+                                    <script-type-expression>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <prop-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Content</name>
+                                    <description>Content (java.lang.String).</description>
+                                    </prop-type>
+                                    <expression>$&lt;property-name&gt;</expression>
+                                    </script-type-expression>
+                                    <script-type-expression>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <prop-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>Array</name>
+                                    <description>Array</description>
+                                    </prop-type>
+                                    <expression>$&lt;property-name&gt;</expression>
+                                    </script-type-expression>
+                                </script-type>
+                                <component-lifecycle-type>
+                                    <id>0</id>
+                                    <inactive>false</inactive>
+                                    <lock-version>0</lock-version>
+                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                    <last-update-user>SYSTEM</last-update-user>
+                                    <created>2012-08-07T23:09:17+00:00</created>
+                                    <create-user>SYSTEM</create-user>
+                                    <name>INSTALL</name>
+                                    <description>Install lifecycle on a component.</description>
+                                    <name-message-key>type.lifecycle.install.name</name-message-key>
+                                    <description-message-key>type.lifecycle.install.description</description-message-key>
+                                </component-lifecycle-type>
+                                <reboot-after>false</reboot-after>
+                            </ns9:component-version-script>
+                        </ns8:application-component-version>
+                    </application-node-component>
+                </service-node-component>
+                <bindable-props>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                    <last-update-user>admin</last-update-user>
+                    <created>2012-08-08T01:17:55+00:00</created>
+                    <create-user>admin</create-user>
+                    <name>Memory(MB)</name>
+                    <description>Virtual Memory in MB</description>
+                    <key>Memory(MB)</key>
+                    <prop-type>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                        <last-update-user>SYSTEM</last-update-user>
+                        <created>2012-08-07T23:09:17+00:00</created>
+                        <create-user>SYSTEM</create-user>
+                        <name>String</name>
+                        <description>String (java.lang.String).</description>
+                    </prop-type>
+                    <required>true</required>
+                    <secured>false</secured>
+                    <value><![CDATA[2048]]></value>
+                    <readonly>false</readonly>
+                    <overridable>true</overridable>
+                    <expression>false</expression>
+                    <ns5:bound-prop>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                        <last-update-user>admin</last-update-user>
+                        <created>2012-08-08T01:17:55+00:00</created>
+                        <create-user>admin</create-user>
+                        <bind-lifecycle-type>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>Blueprint</name>
+                            <description>Bindable at blueprint level.</description>
+                            <lifecycle-order>2</lifecycle-order>
+                        </bind-lifecycle-type>
+                        <value><![CDATA[2048]]></value>
+                        <overridable>true</overridable>
+                        <expression>false</expression>
+                    </ns5:bound-prop>
+                </bindable-props>
+                <bindable-props>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                    <last-update-user>admin</last-update-user>
+                    <created>2012-08-08T01:17:55+00:00</created>
+                    <create-user>admin</create-user>
+                    <name>vCPU</name>
+                    <description>vCPU size</description>
+                    <key>vCPU</key>
+                    <prop-type>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                        <last-update-user>SYSTEM</last-update-user>
+                        <created>2012-08-07T23:09:17+00:00</created>
+                        <create-user>SYSTEM</create-user>
+                        <name>String</name>
+                        <description>String (java.lang.String).</description>
+                    </prop-type>
+                    <required>true</required>
+                    <secured>false</secured>
+                    <value><![CDATA[1]]></value>
+                    <readonly>false</readonly>
+                    <overridable>true</overridable>
+                    <expression>false</expression>
+                    <ns5:bound-prop>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                        <last-update-user>admin</last-update-user>
+                        <created>2012-08-08T01:17:55+00:00</created>
+                        <create-user>admin</create-user>
+                        <bind-lifecycle-type>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>Blueprint</name>
+                            <description>Bindable at blueprint level.</description>
+                            <lifecycle-order>2</lifecycle-order>
+                        </bind-lifecycle-type>
+                        <value><![CDATA[1]]></value>
+                        <overridable>true</overridable>
+                        <expression>false</expression>
+                    </ns5:bound-prop>
+                </bindable-props>
+                <bindable-props>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                    <last-update-user>admin</last-update-user>
+                    <created>2012-08-08T01:17:55+00:00</created>
+                    <create-user>admin</create-user>
+                    <name>ClusterSize</name>
+                    <description>Number of nodes in the cluster</description>
+                    <key>ClusterSize</key>
+                    <prop-type>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                        <last-update-user>SYSTEM</last-update-user>
+                        <created>2012-08-07T23:09:17+00:00</created>
+                        <create-user>SYSTEM</create-user>
+                        <name>String</name>
+                        <description>String (java.lang.String).</description>
+                    </prop-type>
+                    <required>true</required>
+                    <secured>false</secured>
+                    <value><![CDATA[1]]></value>
+                    <readonly>false</readonly>
+                    <overridable>true</overridable>
+                    <expression>false</expression>
+                    <ns5:bound-prop>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                        <last-update-user>admin</last-update-user>
+                        <created>2012-08-08T01:17:55+00:00</created>
+                        <create-user>admin</create-user>
+                        <bind-lifecycle-type>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>Blueprint</name>
+                            <description>Bindable at blueprint level.</description>
+                            <lifecycle-order>2</lifecycle-order>
+                        </bind-lifecycle-type>
+                        <value><![CDATA[1]]></value>
+                        <overridable>true</overridable>
+                        <expression>false</expression>
+                    </ns5:bound-prop>
+                </bindable-props>
+                <bindable-props>
+                    <id>0</id>
+                    <inactive>false</inactive>
+                    <lock-version>0</lock-version>
+                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                    <last-update-user>admin</last-update-user>
+                    <created>2012-08-08T01:17:55+00:00</created>
+                    <create-user>admin</create-user>
+                    <name>Hostname</name>
+                    <description>Hostname or computer name</description>
+                    <key>Hostname</key>
+                    <prop-type>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                        <last-update-user>SYSTEM</last-update-user>
+                        <created>2012-08-07T23:09:17+00:00</created>
+                        <create-user>SYSTEM</create-user>
+                        <name>String</name>
+                        <description>String (java.lang.String).</description>
+                    </prop-type>
+                    <required>false</required>
+                    <secured>false</secured>
+                    <value><![CDATA[]]></value>
+                    <readonly>false</readonly>
+                    <overridable>true</overridable>
+                    <expression>false</expression>
+                    <ns5:bound-prop>
+                        <id>0</id>
+                        <inactive>false</inactive>
+                        <lock-version>0</lock-version>
+                        <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                        <last-update-user>admin</last-update-user>
+                        <created>2012-08-08T01:17:55+00:00</created>
+                        <create-user>admin</create-user>
+                        <bind-lifecycle-type>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                            <last-update-user>SYSTEM</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>Blueprint</name>
+                            <description>Bindable at blueprint level.</description>
+                            <lifecycle-order>2</lifecycle-order>
+                        </bind-lifecycle-type>
+                        <overridable>true</overridable>
+                        <expression>false</expression>
+                    </ns5:bound-prop>
+                </bindable-props>
+            </nodes>
+        </blueprint>
+    </application-versions>
+</ns24:export-package>
