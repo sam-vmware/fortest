@@ -29,11 +29,11 @@
         <id>0</id>
         <inactive>false</inactive>
         <lock-version>0</lock-version>
-        <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+        <last-updated>2012-08-08T22:46:30+00:00</last-updated>
         <last-update-user>admin</last-update-user>
         <created>2012-08-08T01:00:03+00:00</created>
         <create-user>admin</create-user>
-        <name>Sharepoint Server</name>
+        <name>Microsoft Sharepoint Server 2010</name>
         <description>This example contains a single node Sharepoint server with a sample application.
 
 Microsoft SharePoint 2010 makes it easier for people to work together. Using SharePoint 2010, your people can set up Web sites to share information with others, manage documents from start to finish, and publish reports to help everyone make better decisions.</description>
@@ -49,11 +49,11 @@ Microsoft SharePoint 2010 makes it easier for people to work together. Using Sha
             <id>0</id>
             <inactive>false</inactive>
             <lock-version>0</lock-version>
-            <last-updated>2012-08-08T01:01:53+00:00</last-updated>
+            <last-updated>2012-08-08T22:46:13+00:00</last-updated>
             <last-update-user>admin</last-update-user>
             <created>2012-08-08T00:59:55+00:00</created>
             <create-user>admin</create-user>
-            <name>Sharepoint Server</name>
+            <name>Microsoft Sharepoint Server 2010</name>
             <description>Microsoft SharePoint 2010 makes it easier for people to work together. Using SharePoint 2010, your people can set up Web sites to share information with others, manage documents from start to finish, and publish reports to help everyone make better decisions. </description>
             <revision>0</revision>
             <group>
@@ -74,7 +74,7 @@ Microsoft SharePoint 2010 makes it easier for people to work together. Using Sha
             <id>0</id>
             <inactive>false</inactive>
             <lock-version>0</lock-version>
-            <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+            <last-updated>2012-08-08T22:46:30+00:00</last-updated>
             <last-update-user>admin</last-update-user>
             <created>2012-08-08T01:00:03+00:00</created>
             <create-user>admin</create-user>
@@ -85,7 +85,7 @@ Microsoft SharePoint 2010 makes it easier for people to work together. Using Sha
                 <id>0</id>
                 <inactive>false</inactive>
                 <lock-version>0</lock-version>
-                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                <last-updated>2012-08-08T22:46:30+00:00</last-updated>
                 <last-update-user>admin</last-update-user>
                 <created>2012-08-08T01:17:55+00:00</created>
                 <create-user>admin</create-user>
@@ -96,7 +96,7 @@ Microsoft SharePoint 2010 makes it easier for people to work together. Using Sha
                     <id>0</id>
                     <inactive>false</inactive>
                     <lock-version>0</lock-version>
-                    <last-updated>2012-08-08T02:13:17+00:00</last-updated>
+                    <last-updated>2012-08-08T18:48:15+00:00</last-updated>
                     <last-update-user>admin</last-update-user>
                     <created>2012-03-15T10:00:00+00:00</created>
                     <create-user>SYSTEM</create-user>
@@ -113,8 +113,8 @@ Microsoft SharePoint 2010 makes it easier for people to work together. Using Sha
                         <id>0</id>
                         <inactive>false</inactive>
                         <lock-version>0</lock-version>
-                        <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                        <last-update-user>SYSTEM</last-update-user>
+                        <last-updated>2012-08-08T06:54:46+00:00</last-updated>
+                        <last-update-user>admin</last-update-user>
                         <created>2012-08-07T23:09:17+00:00</created>
                         <create-user>SYSTEM</create-user>
                         <name>OS Templates</name>
@@ -245,7 +245,7 @@ Microsoft SharePoint 2010 makes it easier for people to work together. Using Sha
                     <id>0</id>
                     <inactive>false</inactive>
                     <lock-version>0</lock-version>
-                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                    <last-updated>2012-08-08T22:46:30+00:00</last-updated>
                     <last-update-user>admin</last-update-user>
                     <created>2012-08-08T01:17:55+00:00</created>
                     <create-user>admin</create-user>
@@ -438,7 +438,7 @@ Microsoft SharePoint 2010 makes it easier for people to work together. Using Sha
                             <id>0</id>
                             <inactive>false</inactive>
                             <lock-version>0</lock-version>
-                            <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                            <last-updated>2012-08-08T22:46:30+00:00</last-updated>
                             <last-update-user>admin</last-update-user>
                             <created>2012-08-08T01:27:14+00:00</created>
                             <create-user>admin</create-user>
@@ -851,7 +851,7 @@ Microsoft SharePoint 2010 makes it easier for people to work together. Using Sha
                         <last-update-user>admin</last-update-user>
                         <created>2012-08-08T01:17:54+00:00</created>
                         <create-user>admin</create-user>
-                        <name>Sharepoint 2010</name>
+                        <name>Microsoft Sharepoint 2010</name>
                         <description>Microsoft SharePoint 2010 makes it easier for people to work together. Using SharePoint 2010, your people can set up Web sites to share information with others, manage documents from start to finish, and publish reports to help everyone make better decisions. </description>
                         <revision>0</revision>
                         <major>1</major>
@@ -1429,30 +1429,6 @@ Microsoft SharePoint 2010 makes it easier for people to work together. Using Sha
                             <last-update-user>SYSTEM</last-update-user>
                             <created>2012-08-07T23:09:17+00:00</created>
                             <create-user>SYSTEM</create-user>
-                            <name>Application Servers</name>
-                            <description>Application Servers</description>
-                            <meta-tag-type>
-                                <id>0</id>
-                                <inactive>false</inactive>
-                                <lock-version>0</lock-version>
-                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                <last-update-user>SYSTEM</last-update-user>
-                                <created>2012-08-07T23:09:17+00:00</created>
-                                <create-user>SYSTEM</create-user>
-                                <name>Server Type</name>
-                                <description>Server type, primarily used for organizing data.</description>
-                                <meta-tag-enum>SERVER_TYPE</meta-tag-enum>
-                                <user-managed-type>true</user-managed-type>
-                            </meta-tag-type>
-                        </meta-tag>
-                        <meta-tag>
-                            <id>0</id>
-                            <inactive>false</inactive>
-                            <lock-version>0</lock-version>
-                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                            <last-update-user>SYSTEM</last-update-user>
-                            <created>2012-08-07T23:09:17+00:00</created>
-                            <create-user>SYSTEM</create-user>
                             <name>Web Servers</name>
                             <description>Web Server</description>
                             <meta-tag-type>
@@ -1473,8 +1449,32 @@ Microsoft SharePoint 2010 makes it easier for people to work together. Using Sha
                             <id>0</id>
                             <inactive>false</inactive>
                             <lock-version>0</lock-version>
-                            <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                            <last-update-user>SYSTEM</last-update-user>
+                            <last-updated>2012-08-08T06:54:46+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
+                            <created>2012-08-07T23:09:17+00:00</created>
+                            <create-user>SYSTEM</create-user>
+                            <name>Application Servers</name>
+                            <description>Application Servers</description>
+                            <meta-tag-type>
+                                <id>0</id>
+                                <inactive>false</inactive>
+                                <lock-version>0</lock-version>
+                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
+                                <last-update-user>SYSTEM</last-update-user>
+                                <created>2012-08-07T23:09:17+00:00</created>
+                                <create-user>SYSTEM</create-user>
+                                <name>Server Type</name>
+                                <description>Server type, primarily used for organizing data.</description>
+                                <meta-tag-enum>SERVER_TYPE</meta-tag-enum>
+                                <user-managed-type>true</user-managed-type>
+                            </meta-tag-type>
+                        </meta-tag>
+                        <meta-tag>
+                            <id>0</id>
+                            <inactive>false</inactive>
+                            <lock-version>0</lock-version>
+                            <last-updated>2012-08-08T06:54:46+00:00</last-updated>
+                            <last-update-user>admin</last-update-user>
                             <created>2012-08-07T23:09:17+00:00</created>
                             <create-user>SYSTEM</create-user>
                             <name>SCRIPT</name>
@@ -1497,11 +1497,11 @@ Microsoft SharePoint 2010 makes it easier for people to work together. Using Sha
                             <id>0</id>
                             <inactive>false</inactive>
                             <lock-version>0</lock-version>
-                            <last-updated>2012-08-08T01:05:14+00:00</last-updated>
+                            <last-updated>2012-08-08T22:45:14+00:00</last-updated>
                             <last-update-user>admin</last-update-user>
                             <created>2012-08-08T01:05:14+00:00</created>
                             <create-user>admin</create-user>
-                            <name>Sharepoint 2010</name>
+                            <name>Microsoft Sharepoint 2010</name>
                             <description>Microsoft SharePoint 2010 makes it easier for people to work together. Using SharePoint 2010, your people can set up Web sites to share information with others, manage documents from start to finish, and publish reports to help everyone make better decisions. </description>
                             <revision>0</revision>
                             <icon-name></icon-name>
@@ -2143,1005 +2143,12 @@ ForEach ($vmw_appd_obj_prop in $vmw_appd_json_props)
                             <reboot-after>false</reboot-after>
                         </ns9:component-version-script>
                     </service-version>
-                    <application-node-component>
-                        <id>0</id>
-                        <inactive>false</inactive>
-                        <lock-version>0</lock-version>
-                        <name>App</name>
-                        <grid-row>0</grid-row>
-                        <grid-column>0</grid-column>
-                        <props>
-                            <id>0</id>
-                            <inactive>false</inactive>
-                            <lock-version>0</lock-version>
-                            <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                            <last-update-user>admin</last-update-user>
-                            <created>2012-08-08T01:27:14+00:00</created>
-                            <create-user>admin</create-user>
-                            <description>Share point Sample Application pool.</description>
-                            <key>apppool_name</key>
-                            <prop-type>
-                                <id>0</id>
-                                <inactive>false</inactive>
-                                <lock-version>0</lock-version>
-                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                <last-update-user>SYSTEM</last-update-user>
-                                <created>2012-08-07T23:09:17+00:00</created>
-                                <create-user>SYSTEM</create-user>
-                                <name>String</name>
-                                <description>String (java.lang.String).</description>
-                            </prop-type>
-                            <required>true</required>
-                            <secured>false</secured>
-                            <prop-auto-bind-type>
-                                <id>1</id>
-                                <inactive>false</inactive>
-                                <lock-version>1</lock-version>
-                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                <last-update-user>SYSTEM</last-update-user>
-                                <created>2012-08-07T23:09:17+00:00</created>
-                                <create-user>SYSTEM</create-user>
-                                <name>None</name>
-                                <description>Property will not participate in auto-binding.</description>
-                            </prop-auto-bind-type>
-                            <value><![CDATA[Apppool_4484]]></value>
-                            <readonly>false</readonly>
-                            <overridable>true</overridable>
-                            <expression>false</expression>
-                            <ns5:bound-prop>
-                                <id>0</id>
-                                <inactive>false</inactive>
-                                <lock-version>0</lock-version>
-                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                                <last-update-user>admin</last-update-user>
-                                <created>2012-08-08T01:27:14+00:00</created>
-                                <create-user>admin</create-user>
-                                <bind-lifecycle-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>Blueprint</name>
-                                    <description>Bindable at blueprint level.</description>
-                                    <lifecycle-order>2</lifecycle-order>
-                                </bind-lifecycle-type>
-                                <value><![CDATA[Apppool_4484]]></value>
-                                <overridable>true</overridable>
-                                <expression>false</expression>
-                            </ns5:bound-prop>
-                        </props>
-                        <props>
-                            <id>0</id>
-                            <inactive>false</inactive>
-                            <lock-version>0</lock-version>
-                            <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                            <last-update-user>admin</last-update-user>
-                            <created>2012-08-08T01:27:14+00:00</created>
-                            <create-user>admin</create-user>
-                            <description>Share point Sample App running port.</description>
-                            <key>sampleapp_port</key>
-                            <prop-type>
-                                <id>0</id>
-                                <inactive>false</inactive>
-                                <lock-version>0</lock-version>
-                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                <last-update-user>SYSTEM</last-update-user>
-                                <created>2012-08-07T23:09:17+00:00</created>
-                                <create-user>SYSTEM</create-user>
-                                <name>String</name>
-                                <description>String (java.lang.String).</description>
-                            </prop-type>
-                            <required>true</required>
-                            <secured>false</secured>
-                            <prop-auto-bind-type>
-                                <id>1</id>
-                                <inactive>false</inactive>
-                                <lock-version>1</lock-version>
-                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                <last-update-user>SYSTEM</last-update-user>
-                                <created>2012-08-07T23:09:17+00:00</created>
-                                <create-user>SYSTEM</create-user>
-                                <name>None</name>
-                                <description>Property will not participate in auto-binding.</description>
-                            </prop-auto-bind-type>
-                            <value><![CDATA[4484]]></value>
-                            <readonly>false</readonly>
-                            <overridable>true</overridable>
-                            <expression>false</expression>
-                            <ns5:bound-prop>
-                                <id>0</id>
-                                <inactive>false</inactive>
-                                <lock-version>0</lock-version>
-                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                                <last-update-user>admin</last-update-user>
-                                <created>2012-08-08T01:27:14+00:00</created>
-                                <create-user>admin</create-user>
-                                <bind-lifecycle-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>Blueprint</name>
-                                    <description>Bindable at blueprint level.</description>
-                                    <lifecycle-order>2</lifecycle-order>
-                                </bind-lifecycle-type>
-                                <value><![CDATA[4484]]></value>
-                                <overridable>true</overridable>
-                                <expression>false</expression>
-                            </ns5:bound-prop>
-                        </props>
-                        <props>
-                            <id>0</id>
-                            <inactive>false</inactive>
-                            <lock-version>0</lock-version>
-                            <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                            <last-update-user>admin</last-update-user>
-                            <created>2012-08-08T01:27:14+00:00</created>
-                            <create-user>admin</create-user>
-                            <description>SharePoint Sample site name.</description>
-                            <key>sampleapp_sitename</key>
-                            <prop-type>
-                                <id>0</id>
-                                <inactive>false</inactive>
-                                <lock-version>0</lock-version>
-                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                <last-update-user>SYSTEM</last-update-user>
-                                <created>2012-08-07T23:09:17+00:00</created>
-                                <create-user>SYSTEM</create-user>
-                                <name>String</name>
-                                <description>String (java.lang.String).</description>
-                            </prop-type>
-                            <required>true</required>
-                            <secured>false</secured>
-                            <prop-auto-bind-type>
-                                <id>1</id>
-                                <inactive>false</inactive>
-                                <lock-version>1</lock-version>
-                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                <last-update-user>SYSTEM</last-update-user>
-                                <created>2012-08-07T23:09:17+00:00</created>
-                                <create-user>SYSTEM</create-user>
-                                <name>None</name>
-                                <description>Property will not participate in auto-binding.</description>
-                            </prop-auto-bind-type>
-                            <value><![CDATA[samplesite]]></value>
-                            <readonly>false</readonly>
-                            <overridable>true</overridable>
-                            <expression>false</expression>
-                            <ns5:bound-prop>
-                                <id>0</id>
-                                <inactive>false</inactive>
-                                <lock-version>0</lock-version>
-                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                                <last-update-user>admin</last-update-user>
-                                <created>2012-08-08T01:27:14+00:00</created>
-                                <create-user>admin</create-user>
-                                <bind-lifecycle-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>Blueprint</name>
-                                    <description>Bindable at blueprint level.</description>
-                                    <lifecycle-order>2</lifecycle-order>
-                                </bind-lifecycle-type>
-                                <value><![CDATA[samplesite]]></value>
-                                <overridable>true</overridable>
-                                <expression>false</expression>
-                            </ns5:bound-prop>
-                        </props>
-                        <props>
-                            <id>0</id>
-                            <inactive>false</inactive>
-                            <lock-version>0</lock-version>
-                            <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                            <last-update-user>admin</last-update-user>
-                            <created>2012-08-08T01:27:14+00:00</created>
-                            <create-user>admin</create-user>
-                            <description>SharePoint service running machine ip.</description>
-                            <key>machine_ip</key>
-                            <prop-type>
-                                <id>0</id>
-                                <inactive>false</inactive>
-                                <lock-version>0</lock-version>
-                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                <last-update-user>SYSTEM</last-update-user>
-                                <created>2012-08-07T23:09:17+00:00</created>
-                                <create-user>SYSTEM</create-user>
-                                <name>String</name>
-                                <description>String (java.lang.String).</description>
-                            </prop-type>
-                            <required>true</required>
-                            <secured>false</secured>
-                            <prop-auto-bind-type>
-                                <id>1</id>
-                                <inactive>false</inactive>
-                                <lock-version>1</lock-version>
-                                <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                <last-update-user>SYSTEM</last-update-user>
-                                <created>2012-08-07T23:09:17+00:00</created>
-                                <create-user>SYSTEM</create-user>
-                                <name>None</name>
-                                <description>Property will not participate in auto-binding.</description>
-                            </prop-auto-bind-type>
-                            <value><![CDATA[${['self']['host']['ip']}]]></value>
-                            <readonly>false</readonly>
-                            <overridable>false</overridable>
-                            <expression>true</expression>
-                            <ns5:bound-prop>
-                                <id>0</id>
-                                <inactive>false</inactive>
-                                <lock-version>0</lock-version>
-                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                                <last-update-user>admin</last-update-user>
-                                <created>2012-08-08T01:27:14+00:00</created>
-                                <create-user>admin</create-user>
-                                <bind-lifecycle-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>Blueprint</name>
-                                    <description>Bindable at blueprint level.</description>
-                                    <lifecycle-order>2</lifecycle-order>
-                                </bind-lifecycle-type>
-                                <value><![CDATA[${['self']['host']['ip']}]]></value>
-                                <overridable>false</overridable>
-                                <expression>true</expression>
-                            </ns5:bound-prop>
-                        </props>
-                        <ns8:application-component-version>
-                            <id>0</id>
-                            <inactive>false</inactive>
-                            <lock-version>0</lock-version>
-                            <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                            <last-update-user>admin</last-update-user>
-                            <created>2012-08-08T01:27:14+00:00</created>
-                            <create-user>admin</create-user>
-                            <revision>0</revision>
-                            <major>1</major>
-                            <minor>0</minor>
-                            <micro>0</micro>
-                            <dynamically-installable>false</dynamically-installable>
-                            <auto-bind-properties>false</auto-bind-properties>
-                            <props>
-                                <id>0</id>
-                                <inactive>false</inactive>
-                                <lock-version>0</lock-version>
-                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                                <last-update-user>admin</last-update-user>
-                                <created>2012-08-08T01:27:14+00:00</created>
-                                <create-user>admin</create-user>
-                                <description>Share point Sample Application pool.</description>
-                                <key>apppool_name</key>
-                                <prop-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>String</name>
-                                    <description>String (java.lang.String).</description>
-                                </prop-type>
-                                <required>true</required>
-                                <secured>false</secured>
-                                <prop-auto-bind-type>
-                                    <id>1</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>1</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>None</name>
-                                    <description>Property will not participate in auto-binding.</description>
-                                </prop-auto-bind-type>
-                                <value><![CDATA[Apppool_4484]]></value>
-                                <readonly>false</readonly>
-                                <overridable>true</overridable>
-                                <expression>false</expression>
-                                <ns5:bound-prop>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                                    <last-update-user>admin</last-update-user>
-                                    <created>2012-08-08T01:27:14+00:00</created>
-                                    <create-user>admin</create-user>
-                                    <bind-lifecycle-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>Blueprint</name>
-                                    <description>Bindable at blueprint level.</description>
-                                    <lifecycle-order>2</lifecycle-order>
-                                    </bind-lifecycle-type>
-                                    <value><![CDATA[Apppool_4484]]></value>
-                                    <overridable>true</overridable>
-                                    <expression>false</expression>
-                                </ns5:bound-prop>
-                            </props>
-                            <props>
-                                <id>0</id>
-                                <inactive>false</inactive>
-                                <lock-version>0</lock-version>
-                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                                <last-update-user>admin</last-update-user>
-                                <created>2012-08-08T01:27:14+00:00</created>
-                                <create-user>admin</create-user>
-                                <description>Share point Sample App running port.</description>
-                                <key>sampleapp_port</key>
-                                <prop-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>String</name>
-                                    <description>String (java.lang.String).</description>
-                                </prop-type>
-                                <required>true</required>
-                                <secured>false</secured>
-                                <prop-auto-bind-type>
-                                    <id>1</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>1</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>None</name>
-                                    <description>Property will not participate in auto-binding.</description>
-                                </prop-auto-bind-type>
-                                <value><![CDATA[4484]]></value>
-                                <readonly>false</readonly>
-                                <overridable>true</overridable>
-                                <expression>false</expression>
-                                <ns5:bound-prop>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                                    <last-update-user>admin</last-update-user>
-                                    <created>2012-08-08T01:27:14+00:00</created>
-                                    <create-user>admin</create-user>
-                                    <bind-lifecycle-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>Blueprint</name>
-                                    <description>Bindable at blueprint level.</description>
-                                    <lifecycle-order>2</lifecycle-order>
-                                    </bind-lifecycle-type>
-                                    <value><![CDATA[4484]]></value>
-                                    <overridable>true</overridable>
-                                    <expression>false</expression>
-                                </ns5:bound-prop>
-                            </props>
-                            <props>
-                                <id>0</id>
-                                <inactive>false</inactive>
-                                <lock-version>0</lock-version>
-                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                                <last-update-user>admin</last-update-user>
-                                <created>2012-08-08T01:27:14+00:00</created>
-                                <create-user>admin</create-user>
-                                <description>SharePoint Sample site name.</description>
-                                <key>sampleapp_sitename</key>
-                                <prop-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>String</name>
-                                    <description>String (java.lang.String).</description>
-                                </prop-type>
-                                <required>true</required>
-                                <secured>false</secured>
-                                <prop-auto-bind-type>
-                                    <id>1</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>1</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>None</name>
-                                    <description>Property will not participate in auto-binding.</description>
-                                </prop-auto-bind-type>
-                                <value><![CDATA[samplesite]]></value>
-                                <readonly>false</readonly>
-                                <overridable>true</overridable>
-                                <expression>false</expression>
-                                <ns5:bound-prop>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                                    <last-update-user>admin</last-update-user>
-                                    <created>2012-08-08T01:27:14+00:00</created>
-                                    <create-user>admin</create-user>
-                                    <bind-lifecycle-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>Blueprint</name>
-                                    <description>Bindable at blueprint level.</description>
-                                    <lifecycle-order>2</lifecycle-order>
-                                    </bind-lifecycle-type>
-                                    <value><![CDATA[samplesite]]></value>
-                                    <overridable>true</overridable>
-                                    <expression>false</expression>
-                                </ns5:bound-prop>
-                            </props>
-                            <props>
-                                <id>0</id>
-                                <inactive>false</inactive>
-                                <lock-version>0</lock-version>
-                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                                <last-update-user>admin</last-update-user>
-                                <created>2012-08-08T01:27:14+00:00</created>
-                                <create-user>admin</create-user>
-                                <description>SharePoint service running machine ip.</description>
-                                <key>machine_ip</key>
-                                <prop-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>String</name>
-                                    <description>String (java.lang.String).</description>
-                                </prop-type>
-                                <required>true</required>
-                                <secured>false</secured>
-                                <prop-auto-bind-type>
-                                    <id>1</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>1</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>None</name>
-                                    <description>Property will not participate in auto-binding.</description>
-                                </prop-auto-bind-type>
-                                <value><![CDATA[${['self']['host']['ip']}]]></value>
-                                <readonly>false</readonly>
-                                <overridable>false</overridable>
-                                <expression>true</expression>
-                                <ns5:bound-prop>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                                    <last-update-user>admin</last-update-user>
-                                    <created>2012-08-08T01:27:14+00:00</created>
-                                    <create-user>admin</create-user>
-                                    <bind-lifecycle-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>Blueprint</name>
-                                    <description>Bindable at blueprint level.</description>
-                                    <lifecycle-order>2</lifecycle-order>
-                                    </bind-lifecycle-type>
-                                    <value><![CDATA[${['self']['host']['ip']}]]></value>
-                                    <overridable>false</overridable>
-                                    <expression>true</expression>
-                                </ns5:bound-prop>
-                            </props>
-                            <ns8:application-component>
-                                <id>0</id>
-                                <inactive>false</inactive>
-                                <lock-version>0</lock-version>
-                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                                <last-update-user>admin</last-update-user>
-                                <created>2012-08-08T01:27:14+00:00</created>
-                                <create-user>admin</create-user>
-                                <name>SCRIPT</name>
-                                <revision>0</revision>
-                            </ns8:application-component>
-                            <ns9:component-version-script>
-                                <id>0</id>
-                                <inactive>false</inactive>
-                                <lock-version>0</lock-version>
-                                <last-updated>2012-08-08T02:08:16+00:00</last-updated>
-                                <last-update-user>admin</last-update-user>
-                                <created>2012-08-08T01:27:14+00:00</created>
-                                <create-user>admin</create-user>
-                                <script>cls
-############### INTERNAL PARAMETERTS #################
-$SITENAME = "$sampleapp_sitename"
-$SITEPORT = "$sampleapp_port"
-$APPPOOLNAME = "$apppool_name"
-$APP_DIR = "$sample_app_dir\APP"
-$WEBAPP_FILE = "$APP_DIR\CreateWebApp.PS1"
-$TEMP_FILE = "$APP_DIR\Temp.txt"
-$SITECOLLECTION_FILE = "$APP_DIR\CreateSiteCollection.PS1"
-$COMPUTERNAME = get-content env:computername
-$USERNAME = "$admin_user"
-$PASSWORD = "$admin_password"
-$PASSWORD &gt; "$APP_DIR\tmp.txt"
-
-
-write-host "CREATING SAMPLE APP DIRECTORIES"
-if (!(Test-Path -Path $APP_DIR))
-{
-	New-Item $APP_DIR -type directory
-}
-
-########VALIDATION FUNCTIONS#########################
- 
-Function check_error
-{
-	if (!$?)
-	{ 
-		error_exit $args[0] 
-	}
-}
-
-Function error_exit
-{
-	write-host $args[0]
-	exit 1
-}
-
-Function valid_int
-{ 
-    $STR = $args[0]
-    $ValidSTR = $true
-    $ValidSTR = ($STR-match"^[0-9]{1,9}$")
-    if(-not $ValidSTR){return $false}
-	return $ValidSTR
-}
-
-#########PARAMETER VALIDATION#########################
-
-write-host "PARAMETER VALIDATION -- START"
-
-if (($SITENAME -eq ''))
-{
-	error_exit "ERROR: SITE NAME NOT SET"	
-}
-if (($APPPOOLNAME -eq ''))
-{
-	error_exit "ERROR:APP POOL NAME"	
-}
-if (($APP_DIR -eq ''))
-{
-	error_exit "ERROR:APP DIRECTORY NOT SET"	
-}
-if (($USERNAME -eq ''))
-{
-	error_exit "ERROR:USER NAME NOT SET"	
-}
-if (($PASSWORD -eq ''))
-{
-	error_exit "ERROR:PASSWORD NOT SET"	
-}
-if (($SITEPORT -eq ''))
-{
-	error_exit "ERROR:PORT NOT SET"	
-}
-elseif(!(valid_int $SITEPORT))
-{
-    error_exit "ERROR:NOT A VALID LISTENING PORT"
-}
-
-############ CREATING A POWERSHELL SCRIPT FILE TO CREATE A SAMPLE APP################
-New-Item $WEBAPP_FILE -type file
-$sw1 = new-object system.IO.StreamWriter($WEBAPP_FILE)
-$sw1.writeline("add-PSSnapin Microsoft.Sharepoint.powershell")
-$sw1.writeline("`$Username = `"$COMPUTERNAME\$USERNAME`"")
-$sw1.writeline("`$Password = get-content `"$INSTALLER\tmp.txt`"")
-$sw1.writeline("`$my_secure_password_string = convertto-securestring `"`$Password`" -asplaintext -force")
-$sw1.writeline("`$my_encrypted_string = convertfrom-securestring `$my_secure_password_string-key (1..16)")
-$sw1.writeline("`$my_encrypted_string &gt; `"$INSTALLER\password.txt`"")
-$sw1.writeline("`$my_secure_password_string = convertto-securestring (get-content `"$INSTALLER\password.txt`") -key (1..16)")
-$sw1.writeline("`$cred = New-Object System.Management.Automation.PSCredential `$Username,`$my_secure_password_string ")
-$sw1.writeline("New-SPManagedAccount -Credential `$cred")
-$sw1.writeline("`$siteName = `"$SITENAME`"")
-$sw1.writeline("`$port = `"$SITEPORT`"")
-$sw1.writeline("`$hostHeader = `"`"")
-$sw1.writeline("`$url = `"http://$COMPUTERNAME`"")
-$sw1.writeline("`$appPoolName = `"$APPPOOLNAME`"")
-$sw1.writeline("`$managedAccount = `"$COMPUTERNAME\$USERNAME`"")
-$sw1.writeline("`$dbServer = `"$COMPUTERNAME\SharePoint`"")
-$sw1.writeline("`$dbName = `"WSS_Content_$SITEPORT`"")
-$sw1.writeline("`$authenticationMethod = `"NTLM`"")
-$sw1.writeline("New-SPWebApplication -Name `$siteName -Port `$port -HostHeader `$hostHeader -URL `$url -ApplicationPool `$appPoolName -ApplicationPoolAccount (Get-SPManagedAccount `"`$managedAccount`") -DatabaseName `$dbName -DatabaseServer `$dbServer -AllowAnonymousAccess: `$allowAnonymous -AuthenticationMethod `$authenticationMethod")
-$sw1.close()
-
-##################### EXECUTE THE SCRIPT AS A ADMINISTRATOR#############################
-Start-Process powershell -verb runas -ArgumentList "-file $WEBAPP_FILE"
-
-############ CREATING A POWERSHELL SCRIPT FILE TO CREATE A SAMPLE POOL################
-New-Item $SITECOLLECTION_FILE -type file
-$sw = new-object system.IO.StreamWriter($SITECOLLECTION_FILE)
-$sw.writeline("add-PSSnapin Microsoft.Sharepoint.powershell")
-$sw.writeline("`$siteURL = `"http://$COMPUTERNAME`:$SITEPORT/sites/test`"")
-$sw.writeline("`$owner = `"$COMPUTERNAME\$USERNAME`"")
-$sw.writeline("`$secondOwner = `"$COMPUTERNAME\$USERNAME`"")
-$sw.writeline("`$template = `"STS#0`"")
-$sw.writeline("`$description = `"`" ")
-$sw.writeline("New-SPSite `$siteURL -OwnerAlias `$owner -SecondaryOwnerAlias `$secondOwner -name `"PowerShell for SharePoint`" -Template `$template -Description `$description")
-$sw.close()
-##################### EXECUTE THE SCRIPT AS A ADMINISTRATOR#############################
-Start-Process powershell -verb runas -ArgumentList "-file $SITECOLLECTION_FILE"
-
-</script>
-                                <embedded>true</embedded>
-                                <script-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>Windows Powershell Script</name>
-                                    <description>Windows Powershell Script.</description>
-                                    <name-message-key>type.script.powershell.name</name-message-key>
-                                    <description-message-key>type.script.powershell.description</description-message-key>
-                                    <supported-os-details>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <os-family>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>Windows</name>
-                                    <description>Windows based operating systems</description>
-                                    <meta-tag-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>OS Family</name>
-                                    <description>Operating System (OS) Family.</description>
-                                    <meta-tag-enum>OS_FAMILY</meta-tag-enum>
-                                    <user-managed-type>false</user-managed-type>
-                                    </meta-tag-type>
-                                    <os-family>WINDOWS</os-family>
-                                    </os-family>
-                                    <supports-array-props>true</supports-array-props>
-                                    <supports-output-props>true</supports-output-props>
-                                    <exec-command>powershell.exe -ExecutionPolicy remotesigned &lt;exec-script&gt; &lt;script-file&gt; &lt;json-input-properties-file&gt; &lt;output-properties-file&gt;</exec-command>
-                                    <exec-script>$error.clear()
-# Auto convert input properties to local Powershell variables
-
-# Parsing JSON elements into Powershell object
-function ParseJsonProps ($jsonFile)
-{
- $jsonjsonCharCount = 0
- $newObjStart = $false
- $arrayStart = $false
- $tokenStart = $false
- $valueStart = $false
- $escapeStart = $false
- 
- $jsonFileLen = $jsonFile.length
- $jsonObj = New-Object System.Text.StringBuilder
- 
- ForEach($c in $jsonFile.ToCharArray()) {
-    $jsonCharCount++
-    $tmpStr = ""
-    switch -regex ($c) {
-        "{" { 
-            if($newObjStart -eq $false) {
-                $tmpStr = "(New-Object PSObject "
-                $newObjStart = $true
-            } else {
-                $tmpStr = $c
-            }
-        }
-        "}" {
-            if($jsonCharCount -lt $jsonFileLen) {
-                $tmpStr = $c
-            } else {
-                $tmpStr = ")"
-            }
-        }
-        '"' {
-            if($tokenStart -eq $false -and $valueStart -eq $false -and $arrayStart -eq $false) {
-                $tmpStr = '| Add-Member -Passthru NoteProperty "'
-            } else {
-                if($escapeStart -eq $false) {
-                    $tmpStr = $c
-                } else {
-                    $tmpStr = "```""
-                    $escapeStart = $false
-                }
-            }
-            $tokenStart = $true
-        }
-        ":" {
-            if($valueStart -eq $true -or $arrayStart -eq $true) {
-                $tmpStr = $c
-            } else {
-                $tmpStr = " "
-            }
-            $valueStart = $true
-        }
-        "," {
-            if($arrayStart) {
-                $tmpStr = $c
-            } else {
-                $valueStart = $false
-                $tokenStart = $false
-            }
-        }	
-        "\[" {
-            $tmpStr = "@("
-            $arrayStart = $true
-        }
-        "\]" {
-            $tmpStr = ")"
-            $arrayStart = $false
-        }
-        "``" {
-            $tmpStr = "````"
-        }
-        "\\" {
-            if($escapeStart -eq $false) {
-                $escapeStart = $true
-            } else {
-                $tmpStr = $c
-                $escapeStart = $false
-            }
-        }
-        "\$" {
-            if($escapeStart -eq $false) {
-                $tmpStr = '`$'
-            } else {
-                $tmpStr = '`$'
-                $escapeStart = $false
-            }
-        }
-        "n" {
-            if($escapeStart -eq $false) {
-                $tmpStr = $c
-            } else {
-                $tmpStr = "``n"
-                $escapeStart = $false
-            }
-        }
-        "r" {
-            if($escapeStart -eq $false) {
-                $tmpStr = $c
-            } else {
-                $tmpStr = "``r"
-                $escapeStart = $false
-            }
-        }
-        "t" {
-            if($escapeStart -eq $false) {
-                $tmpStr = $c
-            } else {
-                $tmpStr = "``t"
-                $escapeStart = $false
-            }
-        }
-        "b" {
-            if($escapeStart -eq $false) {
-                $tmpStr = $c
-            } else {
-                $tmpStr = "``b"
-                $escapeStart = $false
-            }
-        }
-        default {
-            if($escapeStart -eq $false) {
-                $tmpStr = $c
-            } else {
-                $tmpStr = "\$c"
-                $escapeStart = $false
-            }
-            #$tmpStr = $c
-            #if($escapeStart -eq $true) {
-            #    $escapeStart = $false
-            #}
-        }
-    }                        
-    [void] $jsonObj.Append($tmpStr)
- }
- 
- $jsonObj | Invoke-Expression
-}
-
-$vmw_appd_json_file = Get-Content "$($Args[1])"
-$vmw_appd_json_obj = ParseJsonProps $vmw_appd_json_file
-$vmw_appd_json_props = $vmw_appd_json_obj.PsObject.Properties
-
-# Assigning obj to local variable
-ForEach ($vmw_appd_obj_prop in $vmw_appd_json_props)
-{
- $vmw_appd_obj_prop_name = $vmw_appd_obj_prop.Name;
- #$vmw_appd_obj_prop_name_full = '$vmw_appd_json_obj' + '.' + $vmw_appd_obj_prop_name
- #$vmw_appd_obj_prop_value = Invoke-Expression $vmw_appd_obj_prop_name_full
- Set-Variable -Name $vmw_appd_obj_prop_name -value $vmw_appd_json_obj."$vmw_appd_obj_prop_name"
-}
-
-
-# Execute user's Powershell script
-$error.clear()
-$LASTEXITCODE = 0
-. "$($Args[0])"
-
-if ($LASTEXITCODE -ne 0) {
- Write-Host "`nABORT. LASTEXITCODE is non-zero.`n"
- exit $LASTEXITCODE
-}
-
-if ($error.count -gt 0) {
- Write-Host "`nABORT. Encountered error in Powershell.`n"
- exit $error.count
- }
-
-# Export Powershell variables to output properties file
-ForEach ($vmw_appd_obj_prop in $vmw_appd_json_props)
-{
- $vmw_appd_obj_prop_name = $vmw_appd_obj_prop.Name;
- $vmw_appd_obj_prop_type = (($vmw_appd_json_obj.($vmw_appd_obj_prop_name)).GetType()).Name
-
- # Export only String AppD's properties; Output Array properties is not currently supported.
- if ($vmw_appd_obj_prop_type.Contains("String")) {
-      $vmw_appd_obj_prop_name_expanded = '$' + $vmw_appd_obj_prop_name
-
-      # The ExpandString takes care of three cases. 
-      # Case-I when the string is set via input properties
-      # Case-II when the string is set via input properties and overridden in script (install/configure..)
-      # Case-III lastly when it is only set via script (install/configure..) and left empty in input props
-      #
-      # Also note that powershell as is does not care if this variable was a computed 
-      # or a string variable that filter happens at a different layer.
-      #
-      $expandedUserVariable = $ExecutionContext.InvokeCommand.ExpandString($vmw_appd_obj_prop_name_expanded)
-
-     ($vmw_appd_obj_prop_name + '=' + $expandedUserVariable) | Add-Content $($Args[2]) 
- }
-}
-</exec-script>
-                                    <exec-script-extension>ps1</exec-script-extension>
-                                    <file-extension>ps1</file-extension>
-                                    </supported-os-details>
-                                    <script-type-expression>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <prop-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>String</name>
-                                    <description>String (java.lang.String).</description>
-                                    </prop-type>
-                                    <expression>$&lt;property-name&gt;</expression>
-                                    </script-type-expression>
-                                    <script-type-expression>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <prop-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>Content</name>
-                                    <description>Content (java.lang.String).</description>
-                                    </prop-type>
-                                    <expression>$&lt;property-name&gt;</expression>
-                                    </script-type-expression>
-                                    <script-type-expression>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <prop-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>Array</name>
-                                    <description>Array</description>
-                                    </prop-type>
-                                    <expression>$&lt;property-name&gt;</expression>
-                                    </script-type-expression>
-                                </script-type>
-                                <component-lifecycle-type>
-                                    <id>0</id>
-                                    <inactive>false</inactive>
-                                    <lock-version>0</lock-version>
-                                    <last-updated>2012-08-07T23:09:17+00:00</last-updated>
-                                    <last-update-user>SYSTEM</last-update-user>
-                                    <created>2012-08-07T23:09:17+00:00</created>
-                                    <create-user>SYSTEM</create-user>
-                                    <name>INSTALL</name>
-                                    <description>Install lifecycle on a component.</description>
-                                    <name-message-key>type.lifecycle.install.name</name-message-key>
-                                    <description-message-key>type.lifecycle.install.description</description-message-key>
-                                </component-lifecycle-type>
-                                <reboot-after>false</reboot-after>
-                            </ns9:component-version-script>
-                        </ns8:application-component-version>
-                    </application-node-component>
                 </service-node-component>
                 <bindable-props>
                     <id>0</id>
                     <inactive>false</inactive>
                     <lock-version>0</lock-version>
-                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                    <last-updated>2012-08-08T22:46:30+00:00</last-updated>
                     <last-update-user>admin</last-update-user>
                     <created>2012-08-08T01:17:55+00:00</created>
                     <create-user>admin</create-user>
@@ -3169,7 +2176,7 @@ ForEach ($vmw_appd_obj_prop in $vmw_appd_json_props)
                         <id>0</id>
                         <inactive>false</inactive>
                         <lock-version>0</lock-version>
-                        <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                        <last-updated>2012-08-08T22:46:30+00:00</last-updated>
                         <last-update-user>admin</last-update-user>
                         <created>2012-08-08T01:17:55+00:00</created>
                         <create-user>admin</create-user>
@@ -3194,7 +2201,7 @@ ForEach ($vmw_appd_obj_prop in $vmw_appd_json_props)
                     <id>0</id>
                     <inactive>false</inactive>
                     <lock-version>0</lock-version>
-                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                    <last-updated>2012-08-08T22:46:30+00:00</last-updated>
                     <last-update-user>admin</last-update-user>
                     <created>2012-08-08T01:17:55+00:00</created>
                     <create-user>admin</create-user>
@@ -3222,7 +2229,7 @@ ForEach ($vmw_appd_obj_prop in $vmw_appd_json_props)
                         <id>0</id>
                         <inactive>false</inactive>
                         <lock-version>0</lock-version>
-                        <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                        <last-updated>2012-08-08T22:46:30+00:00</last-updated>
                         <last-update-user>admin</last-update-user>
                         <created>2012-08-08T01:17:55+00:00</created>
                         <create-user>admin</create-user>
@@ -3247,7 +2254,7 @@ ForEach ($vmw_appd_obj_prop in $vmw_appd_json_props)
                     <id>0</id>
                     <inactive>false</inactive>
                     <lock-version>0</lock-version>
-                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                    <last-updated>2012-08-08T22:46:30+00:00</last-updated>
                     <last-update-user>admin</last-update-user>
                     <created>2012-08-08T01:17:55+00:00</created>
                     <create-user>admin</create-user>
@@ -3275,7 +2282,7 @@ ForEach ($vmw_appd_obj_prop in $vmw_appd_json_props)
                         <id>0</id>
                         <inactive>false</inactive>
                         <lock-version>0</lock-version>
-                        <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                        <last-updated>2012-08-08T22:46:30+00:00</last-updated>
                         <last-update-user>admin</last-update-user>
                         <created>2012-08-08T01:17:55+00:00</created>
                         <create-user>admin</create-user>
@@ -3300,7 +2307,7 @@ ForEach ($vmw_appd_obj_prop in $vmw_appd_json_props)
                     <id>0</id>
                     <inactive>false</inactive>
                     <lock-version>0</lock-version>
-                    <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                    <last-updated>2012-08-08T22:46:30+00:00</last-updated>
                     <last-update-user>admin</last-update-user>
                     <created>2012-08-08T01:17:55+00:00</created>
                     <create-user>admin</create-user>
@@ -3328,7 +2335,7 @@ ForEach ($vmw_appd_obj_prop in $vmw_appd_json_props)
                         <id>0</id>
                         <inactive>false</inactive>
                         <lock-version>0</lock-version>
-                        <last-updated>2012-08-08T02:08:16+00:00</last-updated>
+                        <last-updated>2012-08-08T22:46:30+00:00</last-updated>
                         <last-update-user>admin</last-update-user>
                         <created>2012-08-08T01:17:55+00:00</created>
                         <create-user>admin</create-user>
