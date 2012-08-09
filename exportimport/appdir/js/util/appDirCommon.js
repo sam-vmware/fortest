@@ -77,6 +77,12 @@ define(["jquery", "underscore"], function ($, _) {
             var byteArray = str2ab(data); // here we assuming string data
             var blob = new Blob([byteArray], {type: type});
             return window.URL.createObjectURL(blob);
+        },
+        strToBase64:function(str) {
+            var bytes =
+                Crypto.charenc.Binary.stringToBytes(str);
+            var base64Value  = Crypto.util.bytesToBase64(bytes);
+            return base64Value;
         }
     };
 });

@@ -184,9 +184,12 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
                     rdcClass:msgClass,
                     rdMsgVal:msgVal
                 });
-                var url = that.postParams.appdhost + "/darwin/#applicationOverviewPage:" + data.applicationId;
-                cu.log("ImportExportApp opening new application location: " + url);
-                window.open(url);
+//                var url = that.postParams.appdhost + "/darwin/#false:applicationOverviewPage:" + data.applicationId;
+                var baseURL = that.postParams.appdhost + "/darwin/#";
+                var encodedSegment = cu.strToBase64("false:applicationOverviewPage:" + data.applicationId);
+                var base64URL = baseURL + encodedSegment;
+                cu.log("ImportExportApp opening new application location: " + base64URL);
+                window.open(base64URL);
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 cu.log("%cImportExportApp post to app dir returned status: " + jqXHR.status, "color:red; background-color:blue");
                 updateFormDisplay({
