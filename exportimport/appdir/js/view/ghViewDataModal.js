@@ -20,6 +20,7 @@ define(["underscore", "backbone", "util/appDirCommon", "model/gitHubFile"],
             }
             var that = this;
             this.options = _.extend({}, {
+                showModal:true,
                 requestOptions: {
                     reset:false,
                     beforeSend:function (xhr) {
@@ -58,10 +59,15 @@ define(["underscore", "backbone", "util/appDirCommon", "model/gitHubFile"],
             // get a link referencing the inmemory data and set it on our download button
             var url = this.model.get("inMemLink");
             this.$("a[download]", ".modal-footer").attr("href", url).attr("download", header).attr("target", "_blank");
-            this.$el.modal({
-               backdrop:true,
-               keyboard:true
-            })
+            if (this.options.showModal) {
+                this.$el.modal({
+                   backdrop:true,
+                   keyboard:true
+                })
+            } else {
+                // if we are here assume we just want to trigger the download
+                this.$("a[download]", ".modal-footer")[0].click();
+            }
         }
     });
 

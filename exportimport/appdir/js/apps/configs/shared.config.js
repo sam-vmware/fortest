@@ -46,22 +46,16 @@ requirejs.config({
         },
         "twitterjs/bootstrap-transition":["jquery"],
         "twitterjs/bootstrap-button":["jquery"],
+        "twitterjs/bootstrap-collapse":["jquery"],
         "twitterjs/bootstrap-modal":["jquery"]
     },
     deps:["jquery", "util/appDirCommon", "jqPlugins/jquery.validate", "jqPlugins/jquery.validate.bootstrap", "jqPlugins/postmessage", "jqPlugins/jquery.activity-indicator",
-        "jqPlugins/jquery.url", "thirdparty/crypto-min", "twitterjs/bootstrap-transition", "twitterjs/bootstrap-button", "twitterjs/bootstrap-modal"], // force some to load since they aren't directly referenced
+        "jqPlugins/jquery.url", "thirdparty/crypto-min", "twitterjs/bootstrap-transition", "twitterjs/bootstrap-button", "twitterjs/bootstrap-collapse", "twitterjs/bootstrap-modal"], // force some to load since they aren't directly referenced
     callback:function ($, cu) {
         // Add a domain specifier check to the validator
         $.validator.addMethod("dn", function (value, element) {
             return this.optional(element) || /^(https?:\/\/)?([0-9A-Za-z]+\.?)+([A-Za-z]{2,3})?(:\d+)?$/i.test(value);
         });
         $.extend($.validator.messages, {dn:"is not a valid domain name."});
-
-        // setup activity indicator
-        $(document).ajaxStart(function() {
-            cu.activity(true);
-        }).ajaxStop(function(){
-            cu.activity(false);
-        });
     }
 });

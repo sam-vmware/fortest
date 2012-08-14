@@ -79,6 +79,13 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
                 spinner.stop();
             });
 
+            // Move this out when we get a page that doesn't have all the extjs stuff in it
+            $("#advancedOptionsWrap").on("hide", function () {
+                $("#advancedOptionsChevron").removeClass("icon-chevron-down").addClass("icon-chevron-right");
+            }).on("show", function () {
+                $("#advancedOptionsChevron").removeClass("icon-chevron-right").addClass("icon-chevron-down");
+            });
+
             this.initData();
         };
 
@@ -132,7 +139,7 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
                     this.sidebar = new SideBarView({el:that.sideBarEL, readMe:that.readMeFile});
                     // Construct the modal for viewing the importfile on the view file click
                     this.viewDataModal =
-                        new GHViewDataModal({model:that.targetFileMeta, clickTarget:that.importButtonEL});
+                        new GHViewDataModal({model:that.targetFileMeta, clickTarget:that.importButtonEL, showModal:false});
 
 
                     that.getImportFileRawData(that.readMeFile, {
@@ -164,8 +171,10 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
         // Post this data to app dir, done once we have the data
         ImportExportApp.prototype.importData = function (postData) {
             var that = this;
+            var url = [this.postParams.appdhost, this.postParams.appdeximep, "?",
+                       "conflictResolution", "=", this.postParams.conflictResolution];
             $.when(dataPoster({
-                url:this.postParams.appdhost + this.postParams.appdeximep,
+                url:url.join(""),
                 data:postData,
                 contentType:"application/xml",
                 dataType:"json",
@@ -174,9 +183,11 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
             })).done(function (data, textStatus, jqXHR) {
                 var msgClass = ALERT_SUCCESS_CLASSES;
                 var msgVal = "";
+                var errored = false;
                 if (!_.isBoolean(data.success) || data.success == false) {
                     msgClass = ALERT_ERROR_CLASSES;
                     msgVal = "Application Director reported non-success in importing the application. Please review the logs for result.";
+                    errored = true;
                 } else {
                     that.progressBar.update({value:"100%",text:"Complete!"});
                 }
@@ -184,6 +195,8 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
                     rdcClass:msgClass,
                     rdMsgVal:msgVal
                 });
+                if (errored) return;
+
 //                var url = that.postParams.appdhost + "/darwin/#false:applicationOverviewPage:" + data.applicationId;
                 var baseURL = that.postParams.appdhost + "/darwin/#";
                 var encodedSegment = cu.strToBase64("false:applicationOverviewPage:" + data.applicationId);
@@ -270,12 +283,16 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
                         Crypto.charenc.Binary.stringToBytes(uname + ":" + password);
                     var authToken = Crypto.util.bytesToBase64(bytes);
 
+                    // TODO more extjs stuff to do away with
+                    var conflictResolution = $(":checked", "#conflictResolutionStrategy").val();
+
                     // On import these are the params used to push our data to appdir
                     this.postParams = {
                         uname:uname,
                         password:password,
                         appdhost:$("#appDirHost").val(),
                         appdeximep:this.eximep,
+                        conflictResolution:conflictResolution,
                         beforeSend:function (xhr) {
                             xhr.setRequestHeader("Authorization", "Basic " + authToken);
                         },
