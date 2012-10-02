@@ -7,21 +7,20 @@
 define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPoster", "model/gitHubFileCollection",
     "hb!template/viewFileModal.part.hbs", "hb!template/importForm.hbs", "model/importForm", "view/sideBar", "view/ghViewDataModal",
     "view/progressBar"],
-    function ($, _, Backbone, cu, dataPoster, GitHubFileCollection, viewFileModal, compiledImportFormTmpl,
-              ImportFormModel, SideBarView, GHViewDataModal, ProgressBarView) {
+    function ($, _, Backbone, cu, dataPoster, GitHubFileCollection, viewFileModal, compiledImportFormTmpl, ImportFormModel, SideBarView, GHViewDataModal, ProgressBarView) {
 
+        var activityValues = {el:"document", segments:12, width:5.5, space:6, length:13, color:'#252525', outside:false, speed:1.5};
         // Constructor, with requirejs this should not do anything dom dependant call init to do so use this
         // to define some attributes
         function ImportExportApp() {
-
             // attributes
             this.queryParams = $.url().param();
             /*queryParams:{
-                uname:undefined, //mandatory name of the github user that owns the repo
-                repo:undefined, //mandatory the name of the repository where the exported services are stored
-                targetFile:undefined, //mandatory the name of the exported service file that is stored in the repo.
-                descr:undefined //optional Will be set on the header so Import + this value if set
-            },*/
+             uname:undefined, //mandatory name of the github user that owns the repo
+             repo:undefined, //mandatory the name of the repository where the exported services are stored
+             targetFile:undefined, //mandatory the name of the exported service file that is stored in the repo.
+             descr:undefined //optional Will be set on the header so Import + this value if set
+             },*/
             this.targetFileMeta = undefined;
             this.readMeFile = undefined;
             this.importFormModel = undefined;
@@ -33,16 +32,24 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
             this.viewDataModal = undefined;
             this.gitHubFileCollection = undefined;
             this.postParams = undefined;
+
+            $("input:radio[name=importOptionsRadio]").click(function (e) {
+                if ($(this).attr("id") == "importNew") {
+                    $("#importAsNewSuffix").removeAttr("disabled");
+                } else {
+                    $("#importAsNewSuffix").attr("disabled", true);
+                }
+            });
         }
 
-        ImportExportApp.prototype.postConstruct = function() {
+        ImportExportApp.prototype.postConstruct = function () {
             this.importFormModel = new ImportFormModel(); // some standard values for handlebar templates+partials
 
             // Compile and insert template, do this first in case something depends on DOM entry later.
             var content = compiledImportFormTmpl(this.importFormModel.toJSON());
             $("#importFormWrapper").html(content);
 
-           // Any loading buttons make sure they are loading
+            // Any loading buttons make sure they are loading
             $("button[data-loading-text]").each(function () {
                 $(this).button("loading");
             });
@@ -51,12 +58,15 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
             this.progressBar = new ProgressBarView({el:this.progressBarEL});
             this.sideBarEL = "#sidebar";
             this.importButtonEL = "#viewImportFileButton";
+            this.eximep = "/darwin/api/service/action/importexport";
 
             // Check for anything missing that is required on the URL that redirected to our page
             var missingValues = [];
             if (_.isUndefined(this.queryParams.uname)) missingValues.push("uname");
             if (_.isUndefined(this.queryParams.repo)) missingValues.push("repo");
             if (_.isUndefined(this.queryParams.targetFile)) missingValues.push("targetFile");
+            if (_.isUndefined(this.queryParams.branch)) missingValues.push("branch");
+
 
             if (missingValues.length > 0) {
                 var missingValuesString = missingValues.join(", ");
@@ -70,6 +80,20 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
             // Set the readme file, making assumpting the convention is the targetFile + .readme
             this.readMeFile = this.queryParams.targetFile + ".readme";
             cu.log("cImportExportApp Target file to lookup: " + this.queryParams.targetFile);
+
+            var spinner;
+            $(document).ajaxStart(function () {
+                spinner = new Spinner().spin($("#center")[0]);
+            }).ajaxStop(function () {
+                    spinner.stop();
+                });
+
+            // Move this out when we get a page that doesn't have all the extjs stuff in it
+            $("#advancedOptionsWrap").on("hide",function () {
+                $("#advancedOptionsChevron").removeClass("icon-chevron-down").addClass("icon-chevron-right");
+            }).on("show", function () {
+                    $("#advancedOptionsChevron").removeClass("icon-chevron-right").addClass("icon-chevron-down");
+                });
 
             this.initData();
         };
@@ -86,8 +110,7 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
             });
 
             this.gitHubFileCollection =
-                new GitHubFileCollection({userName:this.queryParams.uname, repoName:this.queryParams.repo});
-
+                new GitHubFileCollection({userName:this.queryParams.uname, repoName:this.queryParams.repo, sha:this.queryParams.branch});
             // Fetch the tree collection from GitHub
             this.gitHubFileCollection.fetch({
                 parse:false,
@@ -98,7 +121,7 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
                     var readMeFileName = that.queryParams.targetFile + ".readme";
                     _.each(collection.models, function (model, index) {
                         cu.log("tree entry: " + JSON.stringify(model));
-                        switch(model.get("path")) {
+                        switch (model.get("path")) {
                             case that.queryParams.targetFile:
                                 that.targetFileMeta = model;
                                 cu.log("found target file meta entry at index: " + index);
@@ -120,11 +143,24 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
                     if (_.isUndefined(that.readMeFile)) {
                         cu.log("%cImportExportApp unable to locate readmefile: " + readMeFileName, "color:red; background-color:blue");
                     }
-                     // Construct sidebar
+                    // Construct sidebar
                     this.sidebar = new SideBarView({el:that.sideBarEL, readMe:that.readMeFile});
                     // Construct the modal for viewing the importfile on the view file click
                     this.viewDataModal =
-                        new GHViewDataModal({model:that.targetFileMeta, clickTarget:that.importButtonEL});
+                        new GHViewDataModal({model:that.targetFileMeta, clickTarget:that.importButtonEL, showModal:false});
+
+
+                    that.getImportFileRawData(that.readMeFile, {
+                        beforeSend:function (xhr) {
+                            xhr.setRequestHeader("Accept", "application/vnd.github.raw");
+                        },
+                        success:function (model, response, jqXHR) {
+                            this.$("#readme-content").empty().append(_.escape(response)); // insert our data into the modal
+                        },
+                        error:function (model, error, jqXHR) {
+                            alert("Unable to retrieve readme file data");
+                        }
+                    });
 
                     that.bindImportForm(); // ok to allow input on the form now that we have all our data
                 },
@@ -143,51 +179,68 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
         // Post this data to app dir, done once we have the data
         ImportExportApp.prototype.importData = function (postData) {
             var that = this;
+            var paramObject = {
+                conflictResolution:this.postParams.conflictResolution
+            };
+            if (typeof(this.postParams.importAsNewSuffix) !== "undefined") {
+                paramObject.importAsNewSuffix = this.postParams.importAsNewSuffix;
+            }
+            var url =
+                [this.postParams.appdhost, this.postParams.appdeximep, "?", $.param(paramObject)].join("");
+            cu.log("Sending to... " + url);
             $.when(dataPoster({
-                url:this.postParams.appdhost + this.postParams.appdeximep,
+                url:url,
                 data:postData,
                 contentType:"application/xml",
                 dataType:"json",
                 beforeSend:this.postParams.beforeSend,
                 xhrFields:this.postParams.xhrFields
             })).done(function (data, textStatus, jqXHR) {
-                var msgClass = ALERT_SUCCESS_CLASSES;
-                var msgVal = "";
-                if (!_.isBoolean(data.success) || data.success == false) {
-                    msgClass = ALERT_ERROR_CLASSES;
-                    msgVal = "Application Director reported non-success in importing the application. Please review the logs for result.";
-                } else {
-                    that.progressBar.update({value:"100%"});
-                }
-                updateFormDisplay({
-                    rdcClass:msgClass,
-                    rdMsgVal:msgVal
+                    var msgClass = ALERT_SUCCESS_CLASSES;
+                    var msgVal = "";
+                    var errored = false;
+                    if (!_.isBoolean(data.success) || data.success == false) {
+                        msgClass = ALERT_ERROR_CLASSES;
+                        msgVal = "Application Director reported non-success in importing the application. Please review the logs for result.";
+                        errored = true;
+                    } else {
+                        that.progressBar.update({value:"100%", text:"Complete!"});
+                    }
+                    updateFormDisplay({
+                        rdcClass:msgClass,
+                        rdMsgVal:msgVal
+                    });
+                    if (errored) return;
+
+//                var url = that.postParams.appdhost + "/darwin/#false:applicationOverviewPage:" + data.applicationId;
+                    var baseURL = that.postParams.appdhost + "/darwin/#";
+                    var encodedSegment = cu.strToBase64("false:applicationOverviewPage:" + data.applicationId);
+                    var base64URL = baseURL + encodedSegment;
+                    cu.log("ImportExportApp opening new application location: " + base64URL);
+                    window.open(base64URL);
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    cu.log("%cImportExportApp post to app dir returned status: " + jqXHR.status, "color:red; background-color:blue");
+                    updateFormDisplay({
+                        rdcClass:ALERT_ERROR_CLASSES,
+                        rdMsgVal:"An error occurred during import. " + errorThrown
+                    });
                 });
-                var url = that.postParams.appdhost + "/darwin/#applicationOverviewPage:" + data.applicationId;
-                cu.log("ImportExportApp opening new application location: " + url);
-                window.open(url);
-            }).fail(function (jqXHR, textStatus, errorThrown) {
-                cu.log("%cImportExportApp post to app dir returned status: " + jqXHR.status, "color:red; background-color:blue");
-                updateFormDisplay({
-                    rdcClass:ALERT_ERROR_CLASSES,
-                    rdMsgVal:"An error occurred during import. " + errorThrown
-                });
-            });
         };
 
         // TODO convert to backbone view
         function updateFormDisplay(options) {
             // TODO validation
-            $("#responseDataControl").removeClass("hidden");
-            $("#responseDataControl").removeAttr("class").addClass(options.rdcClass);
-            var msg;
+            var msg, clazz;
 
             // Small enough not to place in template
             if (_.isEqual(options.rdcClass, ALERT_SUCCESS_CLASSES)) {
-                msg = "<h4>Success</h4>" + options.rdMsgVal;
+                msg = "Success " + options.rdMsgVal;
+                clazz = "success main-state-deploy-success"
             } else if (_.isEqual(options.rdcClass, ALERT_ERROR_CLASSES)) {
-                msg = "<h4>Error</h4>" + options.rdMsgVal;
+                msg = "Error " + options.rdMsgVal;
+                clazz = "notification-bulb-error"
             }
+            $("#responseDataControl").removeClass("hidden").removeAttr("class").addClass(clazz).addClass("responseData");
             $("#responseData").empty().html(msg);
         }
 
@@ -237,36 +290,44 @@ define(["jquery", "underscore", "backbone", "util/appDirCommon", "workers/dataPo
             $("#bpExportFN").attr("placeholder", fName);
             $("#importHeader").empty().text("Import " + header);
 
-            $("#importForm").validate({
-                submitHandler:_.bind(function (form, e) {
-                    e.preventDefault();
-                    var uname = $("#appDirUserName").val();
-                    var password = $("#appDirPassword").val();
-                    var bytes =
-                        Crypto.charenc.Binary.stringToBytes(uname + ":" + password);
-                    var authToken = Crypto.util.bytesToBase64(bytes);
+            $("#importButton").bind("click", _.bind(function () {
+                var uname = $("#appDirUserName").val();
+                var password = $("#appDirPassword").val();
+                var bytes =
+                    Crypto.charenc.Binary.stringToBytes(uname + ":" + password);
+                var authToken = Crypto.util.bytesToBase64(bytes);
 
-                    // On import these are the params used to push our data to appdir
-                    this.postParams = {
-                        uname:uname,
-                        password:password,
-                        appdhost:$("#appDirHost").val(),
-                        appdeximep:this.eximep,
-                        beforeSend:function (xhr) {
-                            xhr.setRequestHeader("Authorization", "Basic " + authToken);
-                        },
-                        xhrFields:{
-                            withCredentials:true // required for CORS check
-                        }
-                    };
-                    this.progressBar.show().update({value:"0%"});
-                    cu.log("ImportExportApp form submitted");
-                    this.getImportFileRawData(this.targetFileMeta);
-                }, this)
-            });
+                // TODO more extjs stuff to do away with
+                var conflictResolution = $(":checked", "#conflictResolutionStrategy").val();
+
+                // On import these are the params used to push our data to appdir
+                this.postParams = {
+                    uname:uname,
+                    password:password,
+                    appdhost:$("#appDirHost").val(),
+                    appdeximep:this.eximep,
+                    conflictResolution:conflictResolution,
+                    beforeSend:function (xhr) {
+                        xhr.setRequestHeader("Authorization", "Basic " + authToken);
+                    },
+                    xhrFields:{
+                        withCredentials:true // required for CORS check
+                    }
+                };
+
+                var importAsNewSuffix = (conflictResolution == "IMPORTASNEW") ? $("#importAsNewSuffix").val() : null;
+                if (importAsNewSuffix !== null) {
+                    this.postParams.importAsNewSuffix = importAsNewSuffix;
+                }
+
+                this.progressBar.show().update({value:"0%", text:"Importing..."});
+                cu.log("ImportExportApp form submitted");
+                this.getImportFileRawData(this.targetFileMeta);
+            }, this));
             return this;
         };
 
         return new ImportExportApp();
     }
 );
+

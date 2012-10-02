@@ -15,16 +15,16 @@ requirejs.config({
 //    enforceDefine:true,
     waitSeconds: 15,
     paths:{
-        jquery:"jquery/jquery-1.7.2.min",
+        jquery:"jquery/jquery-1.8.2.min",
         jqPlugins:"jquery/plugins",
-        twitterjs:"../../twitterbootstrap/docs/assets/js",
-        underscore:"thirdparty/underscore-min",
-        backbone:"thirdparty/backbone-min",
-        handlebars:"thirdparty/handlebars",
+        twitterjs:"../../twitter-bootstrap/js",
+        underscore:"thirdparty/underscore-1.4.1-min",
+        backbone:"thirdparty/backbone-0.9.2-min",
+        handlebars:"thirdparty/handlebars-1.0.rc.1",
         hb:'thirdparty/require/plugins/hbtemplate',
-        text:'thirdparty/require/plugins/text',
-        json:'thirdparty/require/plugins/json',
-        domReady:"thirdparty/require/plugins/domReady"
+        text:'thirdparty/require/plugins/text-2.0.3',
+        json:'thirdparty/require/plugins/json-0.2.1',
+        domReady:"thirdparty/require/plugins/domReady-2.0.1"
     },
     shim:{
         "jqPlugins/jquery.activity-indicator":["jquery"],
@@ -44,13 +44,14 @@ requirejs.config({
             deps:["underscore", "jquery"],
             exports:"Backbone"
         },
-        "twitterjs/bootstrap-transition":["jquery"],
+        "twitterjs/bootstrap-min":["jquery"]
+       /* "twitterjs/bootstrap-transition":["jquery"],
         "twitterjs/bootstrap-button":["jquery"],
         "twitterjs/bootstrap-collapse":["jquery"],
-        "twitterjs/bootstrap-modal":["jquery"]
+        "twitterjs/bootstrap-modal":["jquery"]*/
     },
-    deps:["jquery", "util/appDirCommon", "jqPlugins/jquery.validate", "jqPlugins/jquery.validate.bootstrap", "jqPlugins/postmessage", "jqPlugins/jquery.activity-indicator",
-        "jqPlugins/jquery.url", "thirdparty/crypto-min", "twitterjs/bootstrap-transition", "twitterjs/bootstrap-button", "twitterjs/bootstrap-collapse", "twitterjs/bootstrap-modal"], // force some to load since they aren't directly referenced
+    deps:["jquery", "util/appDirCommon", "jqPlugins/jquery.validate", "jqPlugins/jquery.validate.bootstrap", "jqPlugins/postmessage",
+          "jqPlugins/jquery.activity-indicator", "jqPlugins/jquery.url", "thirdparty/crypto-min", "twitterjs/bootstrap.min"], // force some to load since they aren't directly referenced
     callback:function ($, cu) {
         // Add a domain specifier check to the validator
         $.validator.addMethod("dn", function (value, element) {

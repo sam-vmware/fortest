@@ -1,26 +1,31 @@
 /* The primary colors from design spec. */
 @font-face {
   font-family: "PTSansRegular";
-  src: url("../../fonts/PT-Sans/PTS55F-webfont.eot");
-  src: url("../../fonts/PT-Sans/PTS55F-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/PT-Sans/PTS55F-webfont.woff") format("woff"), url("../../fonts/PT-Sans/PTS55F-webfont.ttf") format("truetype"), url("../../fonts/PT-Sans/PTS55F-webfont.svg#PTSansRegular") format("svg");
+  src: url("../resources/fonts/PT-Sans/PTS55F-webfont.eot");
+  src: url("../resources/fonts/PT-Sans/PTS55F-webfont.eot?#iefix") format("embedded-opentype"), url("../resources/fonts/PT-Sans/PTS55F-webfont.woff") format("woff"), url("../resources/fonts/PT-Sans/PTS55F-webfont.ttf") format("truetype"), url("../resources/fonts/PT-Sans/PTS55F-webfont.svg#PTSansRegular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "PTSansBold";
-  src: url("../../fonts/PT-Sans/PTS75F-webfont.eot");
-  src: url("../../fonts/PT-Sans/PTS75F-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/PT-Sans/PTS75F-webfont.woff") format("woff"), url("../../fonts/PT-Sans/PTS75F-webfont.ttf") format("truetype"), url("../../fonts/PT-Sans/PTS75F-webfont.svg#PTSansBold") format("svg");
+  src: url("../resources/fonts/PT-Sans/PTS75F-webfont.eot");
+  src: url("../resources/fonts/PT-Sans/PTS75F-webfont.eot?#iefix") format("embedded-opentype"), url("../resources/fonts/PT-Sans/PTS75F-webfont.woff") format("woff"), url("../resources/fonts/PT-Sans/PTS75F-webfont.ttf") format("truetype"), url("../resources/fonts/PT-Sans/PTS75F-webfont.svg#PTSansBold") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "PTSansCaptionRegular";
-  src: url("../../fonts/PT-Sans/PTC55F-webfont.eot");
-  src: url("../../fonts/PT-Sans/PTC55F-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/PT-Sans/PTC55F-webfont.woff") format("woff"), url("../../fonts/PT-Sans/PTC55F-webfont.ttf") format("truetype"), url("../../fonts/PT-Sans/PTC55F-webfont.svg#PTSansCaptionRegular") format("svg");
+  src: url("../resources/fonts/PT-Sans/PTC55F-webfont.eot");
+  src: url("../resources/fonts/PT-Sans/PTC55F-webfont.eot?#iefix") format("embedded-opentype"), url("../resources/fonts/PT-Sans/PTC55F-webfont.woff") format("woff"), url("../resources/fonts/PT-Sans/PTC55F-webfont.ttf") format("truetype"), url("../resources/fonts/PT-Sans/PTC55F-webfont.svg#PTSansCaptionRegular") format("svg");
   font-weight: normal;
   font-style: normal;
+}
+
+#mainbody {
+width: 100%;
+height: 100%;
 }
 
 /**
@@ -245,9 +250,11 @@
 /* line 77, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_reset.scss */
 html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3,
 h4, h5, h6, pre, code, form, fieldset, legend,
-input, textarea, p, blockquote, th, td {
+input, textarea, p, blockquote, th, td, label {
   margin: 0;
   padding: 0;
+  font-family: arial, tahoma, verdana, sans-serif;
+  font-size: 10pt;
 }
 
 /* line 82, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_reset.scss */
@@ -327,7 +334,7 @@ input, textarea, select {
 }
 
 /* line 1, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
-.x-body {
+body {
   color: #3f3f3f;
   font-size: 10pt;
   font-family: arial, tahoma, verdana, sans-serif;
@@ -511,7 +518,7 @@ input, textarea, select {
   width: 6px;
   height: 6px;
   float: left;
-  background-image: url('../../../extjs/resources/themes/images/default/shared/shadow.png');
+  background-image: url('../resources/themes/images/default/shared/shadow.png');
 }
 
 /* line 160, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
@@ -520,14 +527,14 @@ input, textarea, select {
   width: 6px;
   float: left;
   height: 100%;
-  background-image: url('../../../extjs/resources/themes/images/default/shared/shadow-lr.png');
+  background-image: url('../resources/themes/images/default/shared/shadow-lr.png');
 }
 
 /* line 170, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
 .x-frame-shadow .xsmc {
   float: left;
   height: 100%;
-  background-image: url('../../../extjs/resources/themes/images/default/shared/shadow-c.png');
+  background-image: url('../resources/themes/images/default/shared/shadow-c.png');
 }
 
 /* line 180, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
@@ -615,28 +622,28 @@ input, textarea, select {
 
 /* line 250, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
 .x-box-tl {
-  background-image: url('../../../extjs/resources/themes/images/default/box/corners.gif');
+  background-image: url('../resources/themes/images/default/box/corners.gif');
 }
 
 /* line 254, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
 .x-box-tc {
-  background-image: url('../../../extjs/resources/themes/images/default/box/tb.gif');
+  background-image: url('../resources/themes/images/default/box/tb.gif');
 }
 
 /* line 258, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
 .x-box-tr {
-  background-image: url('../../../extjs/resources/themes/images/default/box/corners.gif');
+  background-image: url('../resources/themes/images/default/box/corners.gif');
 }
 
 /* line 262, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
 .x-box-ml {
-  background-image: url('../../../extjs/resources/themes/images/default/box/l.gif');
+  background-image: url('../resources/themes/images/default/box/l.gif');
 }
 
 /* line 266, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
 .x-box-mc {
   background-color: #eee;
-  background-image: url('../../../extjs/resources/themes/images/default/box/tb.gif');
+  background-image: url('../resources/themes/images/default/box/tb.gif');
   font-family: "Myriad Pro","Myriad Web","Tahoma","Helvetica","Arial",sans-serif;
   color: #393939;
   font-size: 15px;
@@ -650,32 +657,32 @@ input, textarea, select {
 
 /* line 279, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
 .x-box-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/box/r.gif');
+  background-image: url('../resources/themes/images/default/box/r.gif');
 }
 
 /* line 283, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
 .x-box-bl {
-  background-image: url('../../../extjs/resources/themes/images/default/box/corners.gif');
+  background-image: url('../resources/themes/images/default/box/corners.gif');
 }
 
 /* line 287, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
 .x-box-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/box/tb.gif');
+  background-image: url('../resources/themes/images/default/box/tb.gif');
 }
 
 /* line 291, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
 .x-box-br {
-  background-image: url('../../../extjs/resources/themes/images/default/box/corners.gif');
+  background-image: url('../resources/themes/images/default/box/corners.gif');
 }
 
 /* line 295, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
 .x-box-blue .x-box-bl, .x-box-blue .x-box-br, .x-box-blue .x-box-tl, .x-box-blue .x-box-tr {
-  background-image: url('../../../extjs/resources/themes/images/default/box/corners-blue.gif');
+  background-image: url('../resources/themes/images/default/box/corners-blue.gif');
 }
 
 /* line 299, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
 .x-box-blue .x-box-bc, .x-box-blue .x-box-mc, .x-box-blue .x-box-tc {
-  background-image: url('../../../extjs/resources/themes/images/default/box/tb-blue.gif');
+  background-image: url('../resources/themes/images/default/box/tb-blue.gif');
 }
 
 /* line 303, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
@@ -690,12 +697,12 @@ input, textarea, select {
 
 /* line 311, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
 .x-box-blue .x-box-ml {
-  background-image: url('../../../extjs/resources/themes/images/default/box/l-blue.gif');
+  background-image: url('../resources/themes/images/default/box/l-blue.gif');
 }
 
 /* line 315, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/core/_core.scss */
 .x-box-blue .x-box-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/box/r-blue.gif');
+  background-image: url('../resources/themes/images/default/box/r-blue.gif');
 }
 
 /* line 1, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_focus.scss */
@@ -811,7 +818,7 @@ input, textarea, select {
 /* line 40, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_loadmask.scss */
 .x-mask-msg div {
   padding: 5px 10px 5px 25px;
-  background-image: url('../../../extjs/resources/themes/images/default/grid/loading.gif');
+  background-image: url('../resources/themes/images/default/grid/loading.gif');
   background-repeat: no-repeat;
   background-position: 5px center;
   cursor: wait;
@@ -881,17 +888,17 @@ input, textarea, select {
 
 /* line 65, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_dragdrop.scss */
 .x-dd-drop-nodrop .x-dd-drop-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/dd/drop-no.gif');
+  background-image: url('../resources/themes/images/default/dd/drop-no.gif');
 }
 
 /* line 69, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_dragdrop.scss */
 .x-dd-drop-ok .x-dd-drop-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/dd/drop-yes.gif');
+  background-image: url('../resources/themes/images/default/dd/drop-yes.gif');
 }
 
 /* line 73, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_dragdrop.scss */
 .x-dd-drop-ok-add .x-dd-drop-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/dd/drop-add.gif');
+  background-image: url('../resources/themes/images/default/dd/drop-add.gif');
 }
 
 /* line 2, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_resizable.scss */
@@ -1073,7 +1080,7 @@ input, textarea, select {
 .x-resizable-pinned .x-resizable-handle-east,
 .x-resizable-pinned .x-resizable-handle-west {
   background-position: left;
-  background-image: url('../../../extjs/resources/themes/images/default/sizer/e-handle.gif');
+  background-image: url('../resources/themes/images/default/sizer/e-handle.gif');
 }
 /* line 197, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_resizable.scss */
 .x-resizable-over .x-resizable-handle-south,
@@ -1081,31 +1088,31 @@ input, textarea, select {
 .x-resizable-pinned .x-resizable-handle-south,
 .x-resizable-pinned .x-resizable-handle-north {
   background-position: top;
-  background-image: url('../../../extjs/resources/themes/images/default/sizer/s-handle.gif');
+  background-image: url('../resources/themes/images/default/sizer/s-handle.gif');
 }
 /* line 202, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_resizable.scss */
 .x-resizable-over .x-resizable-handle-southeast,
 .x-resizable-pinned .x-resizable-handle-southeast {
   background-position: top left;
-  background-image: url('../../../extjs/resources/themes/images/default/sizer/se-handle.gif');
+  background-image: url('../resources/themes/images/default/sizer/se-handle.gif');
 }
 /* line 207, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_resizable.scss */
 .x-resizable-over .x-resizable-handle-northwest,
 .x-resizable-pinned .x-resizable-handle-northwest {
   background-position: bottom right;
-  background-image: url('../../../extjs/resources/themes/images/default/sizer/nw-handle.gif');
+  background-image: url('../resources/themes/images/default/sizer/nw-handle.gif');
 }
 /* line 212, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_resizable.scss */
 .x-resizable-over .x-resizable-handle-northeast,
 .x-resizable-pinned .x-resizable-handle-northeast {
   background-position: bottom left;
-  background-image: url('../../../extjs/resources/themes/images/default/sizer/ne-handle.gif');
+  background-image: url('../resources/themes/images/default/sizer/ne-handle.gif');
 }
 /* line 217, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_resizable.scss */
 .x-resizable-over .x-resizable-handle-southwest,
 .x-resizable-pinned .x-resizable-handle-southwest {
   background-position: top right;
-  background-image: url('../../../extjs/resources/themes/images/default/sizer/sw-handle.gif');
+  background-image: url('../resources/themes/images/default/sizer/sw-handle.gif');
 }
 
 /* line 3, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_splitter.scss */
@@ -1137,46 +1144,46 @@ input, textarea, select {
 /* line 33, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_splitter.scss */
 .x-layout-split-left {
   background: no-repeat top right;
-  background-image: url('../../../extjs/resources/themes/images/default/util/splitter/mini-left.gif');
+  background-image: url('../resources/themes/images/default/util/splitter/mini-left.gif');
 }
 
 /* line 38, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_splitter.scss */
 .x-layout-split-right {
   background: no-repeat top left;
-  background-image: url('../../../extjs/resources/themes/images/default/util/splitter/mini-right.gif');
+  background-image: url('../resources/themes/images/default/util/splitter/mini-right.gif');
 }
 
 /* line 43, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_splitter.scss */
 .x-layout-split-top {
   background: no-repeat top left;
-  background-image: url('../../../extjs/resources/themes/images/default/util/splitter/mini-top.gif');
+  background-image: url('../resources/themes/images/default/util/splitter/mini-top.gif');
 }
 
 /* line 48, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_splitter.scss */
 .x-layout-split-bottom {
   background: no-repeat top left;
-  background-image: url('../../../extjs/resources/themes/images/default/util/splitter/mini-bottom.gif');
+  background-image: url('../resources/themes/images/default/util/splitter/mini-bottom.gif');
 }
 
 /* line 54, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_splitter.scss */
 .x-splitter-collapsed .x-layout-split-left {
   background: no-repeat top left;
-  background-image: url('../../../extjs/resources/themes/images/default/util/splitter/mini-right.gif');
+  background-image: url('../resources/themes/images/default/util/splitter/mini-right.gif');
 }
 /* line 59, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_splitter.scss */
 .x-splitter-collapsed .x-layout-split-right {
   background: no-repeat top right;
-  background-image: url('../../../extjs/resources/themes/images/default/util/splitter/mini-left.gif');
+  background-image: url('../resources/themes/images/default/util/splitter/mini-left.gif');
 }
 /* line 64, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_splitter.scss */
 .x-splitter-collapsed .x-layout-split-top {
   background: no-repeat top left;
-  background-image: url('../../../extjs/resources/themes/images/default/util/splitter/mini-bottom.gif');
+  background-image: url('../resources/themes/images/default/util/splitter/mini-bottom.gif');
 }
 /* line 69, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_splitter.scss */
 .x-splitter-collapsed .x-layout-split-bottom {
   background: no-repeat top left;
-  background-image: url('../../../extjs/resources/themes/images/default/util/splitter/mini-top.gif');
+  background-image: url('../resources/themes/images/default/util/splitter/mini-top.gif');
 }
 
 /* line 75, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_splitter.scss */
@@ -1436,7 +1443,7 @@ input, textarea, select {
   cursor: pointer;
   height: 32px;
   background: transparent no-repeat -18px 0;
-  background-image: url('../../../extjs/resources/themes/images/default/tab-bar/scroll-left.gif');
+  background-image: url('../resources/themes/images/default/tab-bar/scroll-left.gif');
 }
 /* line 193, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/layout/_layout.scss */
 .x-box-scroller-left .x-toolbar-scroll-left-hover {
@@ -1452,7 +1459,7 @@ input, textarea, select {
 }
 /* line 204, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/layout/_layout.scss */
 .x-box-scroller-left .x-toolbar-scroll-left {
-  background-image: url('../../../extjs/resources/themes/images/default/toolbar/scroll-left.gif');
+  background-image: url('../resources/themes/images/default/toolbar/scroll-left.gif');
   background-position: -14px 0;
 }
 /* line 208, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/layout/_layout.scss */
@@ -1489,7 +1496,7 @@ input, textarea, select {
   cursor: pointer;
   height: 32px;
   background: transparent no-repeat 0 0;
-  background-image: url('../../../extjs/resources/themes/images/default/tab-bar/scroll-right.gif');
+  background-image: url('../resources/themes/images/default/tab-bar/scroll-right.gif');
 }
 /* line 241, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/layout/_layout.scss */
 .x-box-scroller-right .x-toolbar-scroll-right-hover {
@@ -1505,7 +1512,7 @@ input, textarea, select {
 }
 /* line 252, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/layout/_layout.scss */
 .x-box-scroller-right .x-toolbar-scroll-right {
-  background-image: url('../../../extjs/resources/themes/images/default/toolbar/scroll-right.gif');
+  background-image: url('../resources/themes/images/default/toolbar/scroll-right.gif');
 }
 /* line 255, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/layout/_layout.scss */
 .x-box-scroller-right .x-toolbar-scroll-right-hover {
@@ -1530,7 +1537,7 @@ input, textarea, select {
 /* line 276, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/layout/_layout.scss */
 .x-box-scroller-top .x-menu-scroll-top {
   background: transparent no-repeat center center;
-  background-image: url('../../../extjs/resources/themes/images/default/layout/mini-top.gif');
+  background-image: url('../resources/themes/images/default/layout/mini-top.gif');
   height: 8px;
   cursor: pointer;
 }
@@ -1543,7 +1550,7 @@ input, textarea, select {
 /* line 288, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/layout/_layout.scss */
 .x-box-scroller-bottom .x-menu-scroll-bottom {
   background: transparent no-repeat center center;
-  background-image: url('../../../extjs/resources/themes/images/default/layout/mini-bottom.gif');
+  background-image: url('../resources/themes/images/default/layout/mini-bottom.gif');
   height: 8px;
   cursor: pointer;
 }
@@ -1577,7 +1584,7 @@ input, textarea, select {
   cursor: pointer;
   background-color: transparent;
   background-repeat: no-repeat;
-  background-image: url('../../../extjs/resources/themes/images/default/tools/tool-sprites.gif');
+  background-image: url('../resources/themes/images/default/tools/tool-sprites.gif');
   margin: 0;
 }
 
@@ -2393,7 +2400,7 @@ input, textarea, select {
 
 /* line 180, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-btn-arrow {
-  background-image: url('../../../extjs/resources/themes/images/default/button/arrow.gif');
+  background-image: url('../resources/themes/images/default/button/arrow.gif');
   display: block;
 }
 
@@ -2401,7 +2408,7 @@ input, textarea, select {
 .x-btn-split-right,
 .x-btn-over .x-btn-split-right {
   background: transparent no-repeat right center;
-  background-image: url('../../../extjs/resources/themes/images/default/button/s-arrow.gif');
+  background-image: url('../resources/themes/images/default/button/s-arrow.gif');
   padding-right: 14px !important;
 }
 
@@ -2409,19 +2416,19 @@ input, textarea, select {
 .x-btn-split-bottom,
 .x-btn-over .x-btn-split-bottom {
   background: transparent no-repeat center bottom;
-  background-image: url('../../../extjs/resources/themes/images/default/button/s-arrow-b.gif');
+  background-image: url('../resources/themes/images/default/button/s-arrow-b.gif');
   padding-bottom: 14px;
 }
 
 /* line 201, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-toolbar .x-btn-split-right {
-  background-image: url('../../../extjs/resources/themes/images/default/button/s-arrow-noline.gif');
+  background-image: url('../resources/themes/images/default/button/s-arrow-noline.gif');
   padding-right: 12px !important;
 }
 
 /* line 206, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-toolbar .x-btn-split-bottom {
-  background-image: url('../../../extjs/resources/themes/images/default/button/s-arrow-b-noline.gif');
+  background-image: url('../resources/themes/images/default/button/s-arrow-b-noline.gif');
 }
 
 /* line 210, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
@@ -2442,12 +2449,12 @@ input, textarea, select {
 
 /* line 223, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-btn-over .x-btn-split-right {
-  background-image: url('../../../extjs/resources/themes/images/default/button/s-arrow-o.gif');
+  background-image: url('../resources/themes/images/default/button/s-arrow-o.gif');
 }
 
 /* line 224, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-btn-over .x-btn-split-bottom {
-  background-image: url('../../../extjs/resources/themes/images/default/button/s-arrow-bo.gif');
+  background-image: url('../resources/themes/images/default/button/s-arrow-bo.gif');
 }
 
 /* line 615, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
@@ -2480,7 +2487,7 @@ input, textarea, select {
 
 /* line 91, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nlg .x-btn-default-small-mc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-bg.gif');
   background-color: #f2f2f2;
 }
 
@@ -2507,13 +2514,13 @@ input, textarea, select {
 .x-nbr .x-btn-default-small-ml,
 .x-nbr .x-btn-default-small-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-corners.gif');
 }
 /* line 168, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-btn-default-small-ml,
 .x-nbr .x-btn-default-small-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-sides.gif');
   background-position: 0 0;
 }
 /* line 200, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
@@ -2716,17 +2723,17 @@ input, textarea, select {
 .x-nbr .x-btn-default-small-over .x-frame-br,
 .x-nbr .x-btn-default-small-over .x-frame-tc,
 .x-nbr .x-btn-default-small-over .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-over-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-over-corners.gif');
 }
 /* line 872, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-small-over .x-frame-ml,
 .x-nbr .x-btn-default-small-over .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-over-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-over-sides.gif');
 }
 /* line 875, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-small-over .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-over-bg.gif');
 }
 /* line 889, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-small-focus .x-frame-tl,
@@ -2735,17 +2742,17 @@ input, textarea, select {
 .x-nbr .x-btn-default-small-focus .x-frame-br,
 .x-nbr .x-btn-default-small-focus .x-frame-tc,
 .x-nbr .x-btn-default-small-focus .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-focus-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-focus-corners.gif');
 }
 /* line 893, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-small-focus .x-frame-ml,
 .x-nbr .x-btn-default-small-focus .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-focus-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-focus-sides.gif');
 }
 /* line 896, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-small-focus .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-focus-bg.gif');
 }
 /* line 911, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-small-menu-active .x-frame-tl,
@@ -2760,20 +2767,20 @@ input, textarea, select {
 .x-nbr .x-btn-default-small-pressed .x-frame-br,
 .x-nbr .x-btn-default-small-pressed .x-frame-tc,
 .x-nbr .x-btn-default-small-pressed .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-pressed-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-pressed-corners.gif');
 }
 /* line 915, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-small-menu-active .x-frame-ml,
 .x-nbr .x-btn-default-small-menu-active .x-frame-mr,
 .x-nbr .x-btn-default-small-pressed .x-frame-ml,
 .x-nbr .x-btn-default-small-pressed .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-pressed-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-pressed-sides.gif');
 }
 /* line 918, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-small-menu-active .x-frame-mc,
 .x-nbr .x-btn-default-small-pressed .x-frame-mc {
   background-color: #dadada;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-pressed-bg.gif');
 }
 /* line 932, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-small-disabled .x-frame-tl,
@@ -2782,48 +2789,48 @@ input, textarea, select {
 .x-nbr .x-btn-default-small-disabled .x-frame-br,
 .x-nbr .x-btn-default-small-disabled .x-frame-tc,
 .x-nbr .x-btn-default-small-disabled .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-disabled-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-disabled-corners.gif');
 }
 /* line 936, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-small-disabled .x-frame-ml,
 .x-nbr .x-btn-default-small-disabled .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-disabled-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-disabled-sides.gif');
 }
 /* line 939, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-small-disabled .x-frame-mc {
   background-color: white;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-disabled-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-disabled-bg.gif');
 }
 
 /* line 952, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-small {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-bg.gif');
 }
 
 /* line 961, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-small-over {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-over-bg.gif');
 }
 
 /* line 970, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-small-focus {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-focus-bg.gif');
 }
 
 /* line 980, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-small-menu-active,
 .x-nlg .x-btn-default-small-pressed {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-pressed-bg.gif');
 }
 
 /* line 989, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-small-disabled {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-small-disabled-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-small-disabled-bg.gif');
 }
 
 /* line 615, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
@@ -2856,7 +2863,7 @@ input, textarea, select {
 
 /* line 91, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nlg .x-btn-default-medium-mc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-bg.gif');
   background-color: #f2f2f2;
 }
 
@@ -2883,13 +2890,13 @@ input, textarea, select {
 .x-nbr .x-btn-default-medium-ml,
 .x-nbr .x-btn-default-medium-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-corners.gif');
 }
 /* line 168, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-btn-default-medium-ml,
 .x-nbr .x-btn-default-medium-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-sides.gif');
   background-position: 0 0;
 }
 /* line 200, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
@@ -3092,17 +3099,17 @@ input, textarea, select {
 .x-nbr .x-btn-default-medium-over .x-frame-br,
 .x-nbr .x-btn-default-medium-over .x-frame-tc,
 .x-nbr .x-btn-default-medium-over .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-over-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-over-corners.gif');
 }
 /* line 872, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-medium-over .x-frame-ml,
 .x-nbr .x-btn-default-medium-over .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-over-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-over-sides.gif');
 }
 /* line 875, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-medium-over .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-over-bg.gif');
 }
 /* line 889, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-medium-focus .x-frame-tl,
@@ -3111,17 +3118,17 @@ input, textarea, select {
 .x-nbr .x-btn-default-medium-focus .x-frame-br,
 .x-nbr .x-btn-default-medium-focus .x-frame-tc,
 .x-nbr .x-btn-default-medium-focus .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-focus-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-focus-corners.gif');
 }
 /* line 893, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-medium-focus .x-frame-ml,
 .x-nbr .x-btn-default-medium-focus .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-focus-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-focus-sides.gif');
 }
 /* line 896, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-medium-focus .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-focus-bg.gif');
 }
 /* line 911, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-medium-menu-active .x-frame-tl,
@@ -3136,20 +3143,20 @@ input, textarea, select {
 .x-nbr .x-btn-default-medium-pressed .x-frame-br,
 .x-nbr .x-btn-default-medium-pressed .x-frame-tc,
 .x-nbr .x-btn-default-medium-pressed .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-pressed-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-pressed-corners.gif');
 }
 /* line 915, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-medium-menu-active .x-frame-ml,
 .x-nbr .x-btn-default-medium-menu-active .x-frame-mr,
 .x-nbr .x-btn-default-medium-pressed .x-frame-ml,
 .x-nbr .x-btn-default-medium-pressed .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-pressed-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-pressed-sides.gif');
 }
 /* line 918, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-medium-menu-active .x-frame-mc,
 .x-nbr .x-btn-default-medium-pressed .x-frame-mc {
   background-color: #dadada;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-pressed-bg.gif');
 }
 /* line 932, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-medium-disabled .x-frame-tl,
@@ -3158,48 +3165,48 @@ input, textarea, select {
 .x-nbr .x-btn-default-medium-disabled .x-frame-br,
 .x-nbr .x-btn-default-medium-disabled .x-frame-tc,
 .x-nbr .x-btn-default-medium-disabled .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-disabled-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-disabled-corners.gif');
 }
 /* line 936, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-medium-disabled .x-frame-ml,
 .x-nbr .x-btn-default-medium-disabled .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-disabled-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-disabled-sides.gif');
 }
 /* line 939, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-medium-disabled .x-frame-mc {
   background-color: white;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-disabled-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-disabled-bg.gif');
 }
 
 /* line 952, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-medium {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-bg.gif');
 }
 
 /* line 961, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-medium-over {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-over-bg.gif');
 }
 
 /* line 970, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-medium-focus {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-focus-bg.gif');
 }
 
 /* line 980, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-medium-menu-active,
 .x-nlg .x-btn-default-medium-pressed {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-pressed-bg.gif');
 }
 
 /* line 989, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-medium-disabled {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-medium-disabled-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-medium-disabled-bg.gif');
 }
 
 /* line 615, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
@@ -3232,7 +3239,7 @@ input, textarea, select {
 
 /* line 91, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nlg .x-btn-default-large-mc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-bg.gif');
   background-color: #f2f2f2;
 }
 
@@ -3259,13 +3266,13 @@ input, textarea, select {
 .x-nbr .x-btn-default-large-ml,
 .x-nbr .x-btn-default-large-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-corners.gif');
 }
 /* line 168, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-btn-default-large-ml,
 .x-nbr .x-btn-default-large-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-sides.gif');
   background-position: 0 0;
 }
 /* line 200, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
@@ -3468,17 +3475,17 @@ input, textarea, select {
 .x-nbr .x-btn-default-large-over .x-frame-br,
 .x-nbr .x-btn-default-large-over .x-frame-tc,
 .x-nbr .x-btn-default-large-over .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-over-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-over-corners.gif');
 }
 /* line 872, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-large-over .x-frame-ml,
 .x-nbr .x-btn-default-large-over .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-over-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-over-sides.gif');
 }
 /* line 875, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-large-over .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-over-bg.gif');
 }
 /* line 889, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-large-focus .x-frame-tl,
@@ -3487,17 +3494,17 @@ input, textarea, select {
 .x-nbr .x-btn-default-large-focus .x-frame-br,
 .x-nbr .x-btn-default-large-focus .x-frame-tc,
 .x-nbr .x-btn-default-large-focus .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-focus-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-focus-corners.gif');
 }
 /* line 893, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-large-focus .x-frame-ml,
 .x-nbr .x-btn-default-large-focus .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-focus-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-focus-sides.gif');
 }
 /* line 896, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-large-focus .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-focus-bg.gif');
 }
 /* line 911, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-large-menu-active .x-frame-tl,
@@ -3512,20 +3519,20 @@ input, textarea, select {
 .x-nbr .x-btn-default-large-pressed .x-frame-br,
 .x-nbr .x-btn-default-large-pressed .x-frame-tc,
 .x-nbr .x-btn-default-large-pressed .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-pressed-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-pressed-corners.gif');
 }
 /* line 915, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-large-menu-active .x-frame-ml,
 .x-nbr .x-btn-default-large-menu-active .x-frame-mr,
 .x-nbr .x-btn-default-large-pressed .x-frame-ml,
 .x-nbr .x-btn-default-large-pressed .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-pressed-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-pressed-sides.gif');
 }
 /* line 918, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-large-menu-active .x-frame-mc,
 .x-nbr .x-btn-default-large-pressed .x-frame-mc {
   background-color: #dadada;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-pressed-bg.gif');
 }
 /* line 932, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-large-disabled .x-frame-tl,
@@ -3534,48 +3541,48 @@ input, textarea, select {
 .x-nbr .x-btn-default-large-disabled .x-frame-br,
 .x-nbr .x-btn-default-large-disabled .x-frame-tc,
 .x-nbr .x-btn-default-large-disabled .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-disabled-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-disabled-corners.gif');
 }
 /* line 936, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-large-disabled .x-frame-ml,
 .x-nbr .x-btn-default-large-disabled .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-disabled-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-disabled-sides.gif');
 }
 /* line 939, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-large-disabled .x-frame-mc {
   background-color: white;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-disabled-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-disabled-bg.gif');
 }
 
 /* line 952, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-large {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-bg.gif');
 }
 
 /* line 961, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-large-over {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-over-bg.gif');
 }
 
 /* line 970, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-large-focus {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-focus-bg.gif');
 }
 
 /* line 980, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-large-menu-active,
 .x-nlg .x-btn-default-large-pressed {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-pressed-bg.gif');
 }
 
 /* line 989, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-large-disabled {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-large-disabled-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-large-disabled-bg.gif');
 }
 
 /* line 615, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
@@ -3836,17 +3843,17 @@ input, textarea, select {
 .x-nbr .x-btn-default-toolbar-small-over .x-frame-br,
 .x-nbr .x-btn-default-toolbar-small-over .x-frame-tc,
 .x-nbr .x-btn-default-toolbar-small-over .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-small-over-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-small-over-corners.gif');
 }
 /* line 872, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-small-over .x-frame-ml,
 .x-nbr .x-btn-default-toolbar-small-over .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-small-over-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-small-over-sides.gif');
 }
 /* line 875, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-small-over .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-small-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-small-over-bg.gif');
 }
 /* line 889, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-small-focus .x-frame-tl,
@@ -3855,17 +3862,17 @@ input, textarea, select {
 .x-nbr .x-btn-default-toolbar-small-focus .x-frame-br,
 .x-nbr .x-btn-default-toolbar-small-focus .x-frame-tc,
 .x-nbr .x-btn-default-toolbar-small-focus .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-small-focus-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-small-focus-corners.gif');
 }
 /* line 893, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-small-focus .x-frame-ml,
 .x-nbr .x-btn-default-toolbar-small-focus .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-small-focus-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-small-focus-sides.gif');
 }
 /* line 896, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-small-focus .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-small-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-small-focus-bg.gif');
 }
 /* line 911, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-small-menu-active .x-frame-tl,
@@ -3880,20 +3887,20 @@ input, textarea, select {
 .x-nbr .x-btn-default-toolbar-small-pressed .x-frame-br,
 .x-nbr .x-btn-default-toolbar-small-pressed .x-frame-tc,
 .x-nbr .x-btn-default-toolbar-small-pressed .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-small-pressed-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-small-pressed-corners.gif');
 }
 /* line 915, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-small-menu-active .x-frame-ml,
 .x-nbr .x-btn-default-toolbar-small-menu-active .x-frame-mr,
 .x-nbr .x-btn-default-toolbar-small-pressed .x-frame-ml,
 .x-nbr .x-btn-default-toolbar-small-pressed .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-small-pressed-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-small-pressed-sides.gif');
 }
 /* line 918, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-small-menu-active .x-frame-mc,
 .x-nbr .x-btn-default-toolbar-small-pressed .x-frame-mc {
   background-color: #dddddd;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-small-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-small-pressed-bg.gif');
 }
 /* line 932, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-small-disabled .x-frame-tl,
@@ -3902,12 +3909,12 @@ input, textarea, select {
 .x-nbr .x-btn-default-toolbar-small-disabled .x-frame-br,
 .x-nbr .x-btn-default-toolbar-small-disabled .x-frame-tc,
 .x-nbr .x-btn-default-toolbar-small-disabled .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-small-disabled-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-small-disabled-corners.gif');
 }
 /* line 936, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-small-disabled .x-frame-ml,
 .x-nbr .x-btn-default-toolbar-small-disabled .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-small-disabled-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-small-disabled-sides.gif');
 }
 /* line 939, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-small-disabled .x-frame-mc {
@@ -3917,20 +3924,20 @@ input, textarea, select {
 /* line 961, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-toolbar-small-over {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-small-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-small-over-bg.gif');
 }
 
 /* line 970, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-toolbar-small-focus {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-small-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-small-focus-bg.gif');
 }
 
 /* line 980, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-toolbar-small-menu-active,
 .x-nlg .x-btn-default-toolbar-small-pressed {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-small-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-small-pressed-bg.gif');
 }
 
 /* line 615, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
@@ -4191,17 +4198,17 @@ input, textarea, select {
 .x-nbr .x-btn-default-toolbar-medium-over .x-frame-br,
 .x-nbr .x-btn-default-toolbar-medium-over .x-frame-tc,
 .x-nbr .x-btn-default-toolbar-medium-over .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-medium-over-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-medium-over-corners.gif');
 }
 /* line 872, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-medium-over .x-frame-ml,
 .x-nbr .x-btn-default-toolbar-medium-over .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-medium-over-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-medium-over-sides.gif');
 }
 /* line 875, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-medium-over .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-medium-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-medium-over-bg.gif');
 }
 /* line 889, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-medium-focus .x-frame-tl,
@@ -4210,17 +4217,17 @@ input, textarea, select {
 .x-nbr .x-btn-default-toolbar-medium-focus .x-frame-br,
 .x-nbr .x-btn-default-toolbar-medium-focus .x-frame-tc,
 .x-nbr .x-btn-default-toolbar-medium-focus .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-medium-focus-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-medium-focus-corners.gif');
 }
 /* line 893, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-medium-focus .x-frame-ml,
 .x-nbr .x-btn-default-toolbar-medium-focus .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-medium-focus-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-medium-focus-sides.gif');
 }
 /* line 896, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-medium-focus .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-medium-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-medium-focus-bg.gif');
 }
 /* line 911, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-medium-menu-active .x-frame-tl,
@@ -4235,20 +4242,20 @@ input, textarea, select {
 .x-nbr .x-btn-default-toolbar-medium-pressed .x-frame-br,
 .x-nbr .x-btn-default-toolbar-medium-pressed .x-frame-tc,
 .x-nbr .x-btn-default-toolbar-medium-pressed .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-medium-pressed-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-medium-pressed-corners.gif');
 }
 /* line 915, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-medium-menu-active .x-frame-ml,
 .x-nbr .x-btn-default-toolbar-medium-menu-active .x-frame-mr,
 .x-nbr .x-btn-default-toolbar-medium-pressed .x-frame-ml,
 .x-nbr .x-btn-default-toolbar-medium-pressed .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-medium-pressed-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-medium-pressed-sides.gif');
 }
 /* line 918, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-medium-menu-active .x-frame-mc,
 .x-nbr .x-btn-default-toolbar-medium-pressed .x-frame-mc {
   background-color: #dddddd;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-medium-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-medium-pressed-bg.gif');
 }
 /* line 932, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-medium-disabled .x-frame-tl,
@@ -4257,12 +4264,12 @@ input, textarea, select {
 .x-nbr .x-btn-default-toolbar-medium-disabled .x-frame-br,
 .x-nbr .x-btn-default-toolbar-medium-disabled .x-frame-tc,
 .x-nbr .x-btn-default-toolbar-medium-disabled .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-medium-disabled-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-medium-disabled-corners.gif');
 }
 /* line 936, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-medium-disabled .x-frame-ml,
 .x-nbr .x-btn-default-toolbar-medium-disabled .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-medium-disabled-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-medium-disabled-sides.gif');
 }
 /* line 939, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-medium-disabled .x-frame-mc {
@@ -4272,20 +4279,20 @@ input, textarea, select {
 /* line 961, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-toolbar-medium-over {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-medium-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-medium-over-bg.gif');
 }
 
 /* line 970, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-toolbar-medium-focus {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-medium-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-medium-focus-bg.gif');
 }
 
 /* line 980, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-toolbar-medium-menu-active,
 .x-nlg .x-btn-default-toolbar-medium-pressed {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-medium-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-medium-pressed-bg.gif');
 }
 
 /* line 615, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
@@ -4546,17 +4553,17 @@ input, textarea, select {
 .x-nbr .x-btn-default-toolbar-large-over .x-frame-br,
 .x-nbr .x-btn-default-toolbar-large-over .x-frame-tc,
 .x-nbr .x-btn-default-toolbar-large-over .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-large-over-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-large-over-corners.gif');
 }
 /* line 872, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-large-over .x-frame-ml,
 .x-nbr .x-btn-default-toolbar-large-over .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-large-over-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-large-over-sides.gif');
 }
 /* line 875, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-large-over .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-large-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-large-over-bg.gif');
 }
 /* line 889, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-large-focus .x-frame-tl,
@@ -4565,17 +4572,17 @@ input, textarea, select {
 .x-nbr .x-btn-default-toolbar-large-focus .x-frame-br,
 .x-nbr .x-btn-default-toolbar-large-focus .x-frame-tc,
 .x-nbr .x-btn-default-toolbar-large-focus .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-large-focus-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-large-focus-corners.gif');
 }
 /* line 893, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-large-focus .x-frame-ml,
 .x-nbr .x-btn-default-toolbar-large-focus .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-large-focus-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-large-focus-sides.gif');
 }
 /* line 896, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-large-focus .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-large-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-large-focus-bg.gif');
 }
 /* line 911, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-large-menu-active .x-frame-tl,
@@ -4590,20 +4597,20 @@ input, textarea, select {
 .x-nbr .x-btn-default-toolbar-large-pressed .x-frame-br,
 .x-nbr .x-btn-default-toolbar-large-pressed .x-frame-tc,
 .x-nbr .x-btn-default-toolbar-large-pressed .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-large-pressed-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-large-pressed-corners.gif');
 }
 /* line 915, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-large-menu-active .x-frame-ml,
 .x-nbr .x-btn-default-toolbar-large-menu-active .x-frame-mr,
 .x-nbr .x-btn-default-toolbar-large-pressed .x-frame-ml,
 .x-nbr .x-btn-default-toolbar-large-pressed .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-large-pressed-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-large-pressed-sides.gif');
 }
 /* line 918, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-large-menu-active .x-frame-mc,
 .x-nbr .x-btn-default-toolbar-large-pressed .x-frame-mc {
   background-color: #dddddd;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-large-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-large-pressed-bg.gif');
 }
 /* line 932, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-large-disabled .x-frame-tl,
@@ -4612,12 +4619,12 @@ input, textarea, select {
 .x-nbr .x-btn-default-toolbar-large-disabled .x-frame-br,
 .x-nbr .x-btn-default-toolbar-large-disabled .x-frame-tc,
 .x-nbr .x-btn-default-toolbar-large-disabled .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-large-disabled-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-large-disabled-corners.gif');
 }
 /* line 936, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-large-disabled .x-frame-ml,
 .x-nbr .x-btn-default-toolbar-large-disabled .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-large-disabled-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-large-disabled-sides.gif');
 }
 /* line 939, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-default-toolbar-large-disabled .x-frame-mc {
@@ -4627,20 +4634,20 @@ input, textarea, select {
 /* line 961, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-toolbar-large-over {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-large-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-large-over-bg.gif');
 }
 
 /* line 970, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-toolbar-large-focus {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-large-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-large-focus-bg.gif');
 }
 
 /* line 980, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-default-toolbar-large-menu-active,
 .x-nlg .x-btn-default-toolbar-large-pressed {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-default-toolbar-large-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-default-toolbar-large-pressed-bg.gif');
 }
 
 /* line 553, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
@@ -4747,16 +4754,16 @@ input, textarea, select {
 
 /* line 91, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_menu.scss */
 .x-menu-item-checked .x-menu-item-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/menu/checked.gif');
+  background-image: url('../resources/themes/images/default/menu/checked.gif');
 }
 /* line 94, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_menu.scss */
 .x-menu-item-checked .x-menu-group-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/menu/group-checked.gif');
+  background-image: url('../resources/themes/images/default/menu/group-checked.gif');
 }
 
 /* line 100, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_menu.scss */
 .x-menu-item-unchecked .x-menu-item-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/menu/unchecked.gif');
+  background-image: url('../resources/themes/images/default/menu/unchecked.gif');
 }
 /* line 103, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_menu.scss */
 .x-menu-item-unchecked .x-menu-group-icon {
@@ -4780,7 +4787,7 @@ input, textarea, select {
   top: 9px;
   right: 0px;
   background: no-repeat center center;
-  background-image: url('../../../extjs/resources/themes/images/default/menu/menu-parent.gif');
+  background-image: url('../resources/themes/images/default/menu/menu-parent.gif');
 }
 
 /* line 126, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_menu.scss */
@@ -4850,7 +4857,7 @@ input, textarea, select {
 /* line 181, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_menu.scss */
 .x-nlg .x-menu-item-active .x-menu-item-link {
   background: #e4f1f8 repeat-x left top;
-  background-image: url('../../../extjs/resources/themes/images/default/menu/menu-item-active-bg.gif');
+  background-image: url('../resources/themes/images/default/menu/menu-item-active-bg.gif');
 }
 
 /* line 188, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_menu.scss */
@@ -5005,14 +5012,14 @@ input, textarea, select {
 .x-nlg .x-grid-header-ct,
 .x-nlg .x-column-header {
   background: repeat-x 0 top;
-  background-image: url('../../../extjs/resources/themes/images/default/grid/column-header-bg.gif');
+  background-image: url('../resources/themes/images/default/grid/column-header-bg.gif');
 }
 /* line 137, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-nlg .x-column-header-over,
 .x-nlg .x-column-header-sort-ASC,
 .x-nlg .x-column-header-sort-DESC {
   background: #ebf3fd repeat-x 0 top;
-  background-image: url('../../../extjs/resources/themes/images/default/grid/column-header-over-bg.gif');
+  background-image: url('../resources/themes/images/default/grid/column-header-over-bg.gif');
 }
 
 /* line 144, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
@@ -5022,7 +5029,7 @@ input, textarea, select {
   width: 14px;
   background: no-repeat left center;
   background-color: #c3daf9;
-  background-image: url('../../../extjs/resources/themes/images/default/grid/grid3-hd-btn.gif');
+  background-image: url('../resources/themes/images/default/grid/grid3-hd-btn.gif');
   position: absolute;
   right: 0;
   top: 0;
@@ -5059,14 +5066,14 @@ input, textarea, select {
 .x-column-header-sort-ASC .x-column-header-text {
   padding-right: 16px;
   background: no-repeat right 6px;
-  background-image: url('../../../extjs/resources/themes/images/default/grid/sort_asc.gif');
+  background-image: url('../resources/themes/images/default/grid/sort_asc.gif');
 }
 
 /* line 185, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-column-header-sort-DESC .x-column-header-text {
   padding-right: 16px;
   background: no-repeat right 6px;
-  background-image: url('../../../extjs/resources/themes/images/default/grid/sort_desc.gif');
+  background-image: url('../resources/themes/images/default/grid/sort_desc.gif');
 }
 
 /* line 192, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
@@ -5233,7 +5240,7 @@ browsers will do whacky things with it.
 
 /* line 337, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-grid-dirty-cell {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/dirty.gif');
+  background-image: url('../resources/themes/images/default/grid/dirty.gif');
   background-position: 0 0;
   background-repeat: no-repeat;
 }
@@ -5251,12 +5258,12 @@ browsers will do whacky things with it.
 /* line 355, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-nlg .x-grid-row .x-grid-cell-special,
 .x-nlg .x-grid-row-over .x-grid-cell-special {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/cell-special-bg.gif');
+  background-image: url('../resources/themes/images/default/grid/cell-special-bg.gif');
 }
 /* line 361, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-nlg .x-grid-row-focused .x-grid-cell-special,
 .x-nlg .x-grid-row-selected .x-grid-cell-special {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/cell-special-selected-bg.gif');
+  background-image: url('../resources/themes/images/default/grid/cell-special-selected-bg.gif');
 }
 
 /* line 368, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
@@ -5278,7 +5285,7 @@ browsers will do whacky things with it.
 .x-property-grid .x-grid-row .x-grid-property-name .x-grid-cell-inner,
 .x-property-grid .x-grid-row-over .x-grid-property-name .x-grid-cell-inner {
   padding-left: 12px;
-  background-image: url('../../../extjs/resources/themes/images/default/grid/property-cell-bg.gif');
+  background-image: url('../resources/themes/images/default/grid/property-cell-bg.gif');
   background-repeat: no-repeat;
   background-position: -16px 1px;
 }
@@ -5325,7 +5332,7 @@ browsers will do whacky things with it.
 
 /* line 432, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-grid-row-expander {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/group-collapse.gif');
+  background-image: url('../resources/themes/images/default/grid/group-collapse.gif');
   background-color: transparent;
   width: 9px;
   height: 13px;
@@ -5336,7 +5343,7 @@ browsers will do whacky things with it.
 
 /* line 446, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-grid-row-collapsed .x-grid-row-expander {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/group-expand.gif');
+  background-image: url('../resources/themes/images/default/grid/group-expand.gif');
 }
 
 /* line 451, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
@@ -5364,12 +5371,12 @@ browsers will do whacky things with it.
 
 /* line 473, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .col-move-top {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/col-move-top.gif');
+  background-image: url('../resources/themes/images/default/grid/col-move-top.gif');
 }
 
 /* line 477, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .col-move-bottom {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/col-move-bottom.gif');
+  background-image: url('../resources/themes/images/default/grid/col-move-bottom.gif');
 }
 
 /* line 482, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
@@ -5401,7 +5408,7 @@ browsers will do whacky things with it.
 /* line 509, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-grid-group-title {
   background: transparent no-repeat 0 -1px;
-  background-image: url('../../../extjs/resources/themes/images/default/grid/group-collapse.gif');
+  background-image: url('../resources/themes/images/default/grid/group-collapse.gif');
   color: #787878;
   font: bold 9pt arial, tahoma, verdana, sans-serif;
   padding: 0 0 0 14px;
@@ -5409,7 +5416,7 @@ browsers will do whacky things with it.
 
 /* line 520, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-grid-group-hd-collapsed .x-grid-group-title {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/group-expand.gif');
+  background-image: url('../resources/themes/images/default/grid/group-expand.gif');
 }
 
 /* line 525, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
@@ -5419,17 +5426,17 @@ browsers will do whacky things with it.
 
 /* line 529, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-grid-group-collapsed .x-grid-group-title {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/group-expand.gif');
+  background-image: url('../resources/themes/images/default/grid/group-expand.gif');
 }
 
 /* line 533, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-group-by-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/group-by.gif');
+  background-image: url('../resources/themes/images/default/grid/group-by.gif');
 }
 
 /* line 537, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-show-groups-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/group-by.gif');
+  background-image: url('../resources/themes/images/default/grid/group-by.gif');
 }
 
 /* line 541, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
@@ -5447,7 +5454,7 @@ browsers will do whacky things with it.
 .x-column-header-checkbox .x-column-header-text {
   height: 14px;
   width: 14px;
-  background-image: url('../../../extjs/resources/themes/images/default/grid/unchecked.gif');
+  background-image: url('../resources/themes/images/default/grid/unchecked.gif');
   background-position: -1px -1px;
   background-repeat: no-repeat;
   background-color: transparent;
@@ -5475,7 +5482,7 @@ browsers will do whacky things with it.
 
 /* line 584, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-grid-hd-checker-on .x-column-header-text {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/checked.gif');
+  background-image: url('../resources/themes/images/default/grid/checked.gif');
 }
 
 /* line 588, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
@@ -5487,88 +5494,88 @@ browsers will do whacky things with it.
 /* line 595, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-grid-row-selected .x-grid-row-checker,
 .x-grid-row-checked .x-grid-row-checker {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/checked.gif');
+  background-image: url('../resources/themes/images/default/grid/checked.gif');
 }
 
 /* line 600, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-tbar-page-first {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/page-first.gif') !important;
+  background-image: url('../resources/themes/images/default/grid/page-first.gif') !important;
 }
 
 /* line 604, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-tbar-loading {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/refresh.gif') !important;
+  background-image: url('../resources/themes/images/default/grid/refresh.gif') !important;
 }
 
 /* line 608, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-tbar-page-last {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/page-last.gif') !important;
+  background-image: url('../resources/themes/images/default/grid/page-last.gif') !important;
 }
 
 /* line 612, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-tbar-page-next {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/page-next.gif') !important;
+  background-image: url('../resources/themes/images/default/grid/page-next.gif') !important;
 }
 
 /* line 616, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-tbar-page-prev {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/page-prev.gif') !important;
+  background-image: url('../resources/themes/images/default/grid/page-prev.gif') !important;
 }
 
 /* line 621, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-item-disabled .x-tbar-loading {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/refresh-disabled.gif') !important;
+  background-image: url('../resources/themes/images/default/grid/refresh-disabled.gif') !important;
 }
 /* line 625, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-item-disabled .x-tbar-page-first {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/page-first-disabled.gif') !important;
+  background-image: url('../resources/themes/images/default/grid/page-first-disabled.gif') !important;
 }
 /* line 629, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-item-disabled .x-tbar-page-last {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/page-last-disabled.gif') !important;
+  background-image: url('../resources/themes/images/default/grid/page-last-disabled.gif') !important;
 }
 /* line 633, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-item-disabled .x-tbar-page-next {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/page-next-disabled.gif') !important;
+  background-image: url('../resources/themes/images/default/grid/page-next-disabled.gif') !important;
 }
 /* line 637, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-item-disabled .x-tbar-page-prev {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/page-prev-disabled.gif') !important;
+  background-image: url('../resources/themes/images/default/grid/page-prev-disabled.gif') !important;
 }
 
 /* line 643, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-hmenu-sort-asc .x-menu-item-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/hmenu-asc.gif');
+  background-image: url('../resources/themes/images/default/grid/hmenu-asc.gif');
 }
 
 /* line 647, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-hmenu-sort-desc .x-menu-item-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/hmenu-desc.gif');
+  background-image: url('../resources/themes/images/default/grid/hmenu-desc.gif');
 }
 
 /* line 651, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-hmenu-lock .x-menu-item-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/hmenu-lock.gif');
+  background-image: url('../resources/themes/images/default/grid/hmenu-lock.gif');
 }
 
 /* line 655, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-hmenu-unlock .x-menu-item-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/hmenu-unlock.gif');
+  background-image: url('../resources/themes/images/default/grid/hmenu-unlock.gif');
 }
 
 /* line 659, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-group-by-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/group-by.gif');
+  background-image: url('../resources/themes/images/default/grid/group-by.gif');
 }
 
 /* line 663, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-cols-icon .x-menu-item-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/columns.gif');
+  background-image: url('../resources/themes/images/default/grid/columns.gif');
 }
 
 /* line 667, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-show-groups-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/group-by.gif');
+  background-image: url('../resources/themes/images/default/grid/group-by.gif');
 }
 
 /* line 672, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
@@ -5584,7 +5591,7 @@ browsers will do whacky things with it.
   position: absolute;
   top: -8px;
   left: -12px;
-  background-image: url('../../../extjs/resources/themes/images/default/grid/dd-insert-arrow-right.png');
+  background-image: url('../resources/themes/images/default/grid/dd-insert-arrow-right.png');
   height: 16px;
   width: 16px;
 }
@@ -5593,18 +5600,18 @@ browsers will do whacky things with it.
   position: absolute;
   top: -8px;
   right: -11px;
-  background-image: url('../../../extjs/resources/themes/images/default/grid/dd-insert-arrow-left.png');
+  background-image: url('../resources/themes/images/default/grid/dd-insert-arrow-left.png');
   height: 16px;
   width: 16px;
 }
 
 /* line 699, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-ie6 .x-grid-drop-indicator-left {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/dd-insert-arrow-right.gif');
+  background-image: url('../resources/themes/images/default/grid/dd-insert-arrow-right.gif');
 }
 /* line 703, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-ie6 .x-grid-drop-indicator-right {
-  background-image: url('../../../extjs/resources/themes/images/default/grid/dd-insert-arrow-left.gif');
+  background-image: url('../resources/themes/images/default/grid/dd-insert-arrow-left.gif');
 }
 
 /* line 709, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
@@ -5665,7 +5672,7 @@ browsers will do whacky things with it.
   width: 4px;
   height: 4px;
   bottom: 0px;
-  background-image: url('../../../extjs/resources/themes/images/default/panel/panel-default-framed-corners.gif');
+  background-image: url('../resources/themes/images/default/panel/panel-default-framed-corners.gif');
 }
 /* line 774, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
 .x-grid-row-editor-buttons-bl {
@@ -5721,7 +5728,7 @@ browsers will do whacky things with it.
 
 /* line 12, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/form/_all.scss */
 .x-form-item {
-  display: block;
+  display: inline-block;
   zoom: 1;
   position: relative;
   margin-bottom: 5px;
@@ -5744,10 +5751,10 @@ browsers will do whacky things with it.
 
 /* line 28, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/form/_all.scss */
 .x-form-item-label-top {
-  float: none;
-  clear: none;
+  clear: both;
   padding: 0;
   display: block;
+  margin-top: 6px;
 }
 
 /* line 35, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/form/_all.scss */
@@ -5770,7 +5777,7 @@ browsers will do whacky things with it.
   font: normal 9pt arial, tahoma, verdana, sans-serif;
   line-height: 16px;
   background: no-repeat 0 2px;
-  background-image: url('../../../extjs/resources/themes/images/default/form/exclamation.gif');
+  background-image: url('../resources/themes/images/default/form/exclamation.gif');
 }
 
 /* line 57, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/form/_all.scss */
@@ -5783,7 +5790,7 @@ browsers will do whacky things with it.
   left: 0;
   top: 0;
   background: no-repeat 2px 3px;
-  background-image: url('../../../extjs/resources/themes/images/default/form/exclamation.gif');
+  background-image: url('../resources/themes/images/default/form/exclamation.gif');
 }
 /* line 70, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/form/_all.scss */
 .x-form-invalid-icon ul {
@@ -5807,7 +5814,7 @@ textarea.x-form-field {
   background: repeat-x 0 0;
   border: 1px solid;
   background-color: white;
-  background-image: url('../../../extjs/resources/themes/images/default/form/text-bg.gif');
+  background-image: url('../resources/themes/images/default/form/text-bg.gif');
   border-color: #b5b8c8;
 }
 
@@ -5838,7 +5845,7 @@ textarea.x-form-field {
   line-height: normal;
   background: repeat-x 0 0;
   background-color: white;
-  background-image: url('../../../extjs/resources/themes/images/default/form/text-bg.gif');
+  background-image: url('../resources/themes/images/default/form/text-bg.gif');
   resize: none;
 }
 
@@ -5862,7 +5869,7 @@ textarea.x-form-focus {
 .x-form-invalid-field,
 textarea.x-form-invalid-field {
   background-color: white;
-  background-image: url('../../../extjs/resources/themes/images/default/grid/invalid_line.gif');
+  background-image: url('../resources/themes/images/default/grid/invalid_line.gif');
   background-repeat: repeat-x;
   background-position: bottom;
   border-color: #cc3300;
@@ -6033,7 +6040,7 @@ textarea.x-form-invalid-field {
   width: 20px;
   height: 20px;
   background: no-repeat;
-  background-image: url('../../../extjs/resources/themes/images/default/form/checkbox.gif');
+  background-image: url('../resources/themes/images/default/form/checkbox.gif');
   overflow: hidden;
   padding: 0;
   border: 0;
@@ -6072,7 +6079,7 @@ textarea.x-form-invalid-field {
 /* Radios */
 /* line 51, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/form/_checkbox.scss */
 .x-form-radio {
-  background-image: url('../../../extjs/resources/themes/images/default/form/radio.gif');
+  background-image: url('../resources/themes/images/default/form/radio.gif');
 }
 
 /* boxLabel */
@@ -6090,7 +6097,7 @@ textarea.x-form-invalid-field {
 .x-form-invalid .x-form-checkboxgroup-body {
   border: 1px solid #c30;
   background: #fff repeat-x bottom;
-  background-image: url('../../../extjs/resources/themes/images/default/grid/invalid_line.gif');
+  background-image: url('../resources/themes/images/default/grid/invalid_line.gif');
   padding: 2px 3px;
 }
 
@@ -6116,7 +6123,7 @@ textarea.x-form-invalid-field {
 
 /* line 6, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/form/_triggerfield.scss */
 .x-form-trigger {
-  background-image: url('../../../extjs/resources/themes/images/default/form/trigger.gif');
+  background-image: url('../resources/themes/images/default/form/trigger.gif');
   background-position: 0 0;
   width: 17px;
   height: 23px;
@@ -6213,18 +6220,18 @@ textarea.x-form-invalid-field {
 
 /* line 83, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/form/_triggerfield.scss */
 .x-form-arrow-trigger .x-form-trigger-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/boundlist/trigger-arrow.png');
+  background-image: url('../resources/themes/images/default/boundlist/trigger-arrow.png');
 }
 
 /* line 88, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/form/_triggerfield.scss */
 .x-form-date-trigger {
-  background-image: url('../../../extjs/resources/themes/images/default/form/date-trigger.gif');
+  background-image: url('../resources/themes/images/default/form/date-trigger.gif');
 }
 
 /* line 95, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/form/_triggerfield.scss */
 .x-form-trigger-wrap .x-form-spinner-up,
 .x-form-trigger-wrap .x-form-spinner-down {
-  background-image: url('../../../extjs/resources/themes/images/default/form/spinner.gif');
+  background-image: url('../resources/themes/images/default/form/spinner.gif');
   width: 17px !important;
   height: 12px !important;
   font-size: 0;
@@ -6259,7 +6266,7 @@ textarea.x-form-invalid-field {
 /* line 127, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/form/_triggerfield.scss */
 .x-field-default-toolbar .x-form-trigger-wrap .x-form-spinner-up,
 .x-field-default-toolbar .x-form-trigger-wrap .x-form-spinner-down {
-  background-image: url('../../../extjs/resources/themes/images/default/form/spinner-small.gif');
+  background-image: url('../resources/themes/images/default/form/spinner-small.gif');
   height: 10px !important;
 }
 /* line 131, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/form/_triggerfield.scss */
@@ -6291,12 +6298,12 @@ textarea.x-form-invalid-field {
 
 /* line 156, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/form/_triggerfield.scss */
 .x-form-clear-trigger {
-  background-image: url('../../../extjs/resources/themes/images/default/form/clear-trigger.gif');
+  background-image: url('../resources/themes/images/default/form/clear-trigger.gif');
 }
 
 /* line 159, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/form/_triggerfield.scss */
 .x-form-search-trigger {
-  background-image: url('../../../extjs/resources/themes/images/default/form/search-trigger.gif');
+  background-image: url('../resources/themes/images/default/form/search-trigger.gif');
 }
 
 /* line 7, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_panel.scss */
@@ -6457,22 +6464,22 @@ textarea.x-form-invalid-field {
 
 /* line 271, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_panel.scss */
 .x-nlg .x-panel-header-default-top {
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-top-bg.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-top-bg.gif');
 }
 
 /* line 275, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_panel.scss */
 .x-nlg .x-panel-header-default-bottom {
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-bottom-bg.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-bottom-bg.gif');
 }
 
 /* line 279, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_panel.scss */
 .x-nlg .x-panel-header-default-left {
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-left-bg.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-left-bg.gif');
 }
 
 /* line 283, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_panel.scss */
 .x-nlg .x-panel-header-default-right {
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-right-bg.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-right-bg.gif');
 }
 
 /* line 290, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_panel.scss */
@@ -6645,22 +6652,22 @@ textarea.x-form-invalid-field {
 
 /* line 271, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_panel.scss */
 .x-nlg .x-panel-header-default-framed-top {
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-top-bg.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-top-bg.gif');
 }
 
 /* line 275, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_panel.scss */
 .x-nlg .x-panel-header-default-framed-bottom {
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-bottom-bg.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-bottom-bg.gif');
 }
 
 /* line 279, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_panel.scss */
 .x-nlg .x-panel-header-default-framed-left {
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-left-bg.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-left-bg.gif');
 }
 
 /* line 283, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_panel.scss */
 .x-nlg .x-panel-header-default-framed-right {
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-right-bg.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-right-bg.gif');
 }
 
 /* line 290, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_panel.scss */
@@ -6740,13 +6747,13 @@ textarea.x-form-invalid-field {
 .x-nbr .x-panel-default-framed-ml,
 .x-nbr .x-panel-default-framed-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel/panel-default-framed-corners.gif');
+  background-image: url('../resources/themes/images/default/panel/panel-default-framed-corners.gif');
 }
 /* line 168, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-panel-default-framed-ml,
 .x-nbr .x-panel-default-framed-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel/panel-default-framed-sides.gif');
+  background-image: url('../resources/themes/images/default/panel/panel-default-framed-sides.gif');
   background-position: 0 0;
   background-repeat: repeat-y;
 }
@@ -6790,7 +6797,7 @@ textarea.x-form-invalid-field {
 
 /* line 91, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nlg .x-panel-header-default-framed-top-mc {
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-top-bg.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-top-bg.gif');
   background-color: #006990;
 }
 
@@ -6817,13 +6824,13 @@ textarea.x-form-invalid-field {
 .x-nbr .x-panel-header-default-framed-top-ml,
 .x-nbr .x-panel-header-default-framed-top-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-top-corners.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-top-corners.gif');
 }
 /* line 168, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-panel-header-default-framed-top-ml,
 .x-nbr .x-panel-header-default-framed-top-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-top-sides.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-top-sides.gif');
   background-position: 0 0;
 }
 /* line 200, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
@@ -6866,7 +6873,7 @@ textarea.x-form-invalid-field {
 
 /* line 91, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nlg .x-panel-header-default-framed-right-mc {
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-right-bg.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-right-bg.gif');
   background-color: #006990;
 }
 
@@ -6893,13 +6900,13 @@ textarea.x-form-invalid-field {
 .x-nbr .x-panel-header-default-framed-right-ml,
 .x-nbr .x-panel-header-default-framed-right-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-right-corners.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-right-corners.gif');
 }
 /* line 157, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-panel-header-default-framed-right-tc,
 .x-nbr .x-panel-header-default-framed-right-bc {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-right-sides.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-right-sides.gif');
   background-position: 0 0;
   background-repeat: repeat-x;
 }
@@ -6943,7 +6950,7 @@ textarea.x-form-invalid-field {
 
 /* line 91, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nlg .x-panel-header-default-framed-bottom-mc {
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-bottom-bg.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-bottom-bg.gif');
   background-color: #006990;
 }
 
@@ -6970,13 +6977,13 @@ textarea.x-form-invalid-field {
 .x-nbr .x-panel-header-default-framed-bottom-ml,
 .x-nbr .x-panel-header-default-framed-bottom-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-bottom-corners.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-bottom-corners.gif');
 }
 /* line 168, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-panel-header-default-framed-bottom-ml,
 .x-nbr .x-panel-header-default-framed-bottom-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-bottom-sides.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-bottom-sides.gif');
   background-position: 0 0;
 }
 /* line 200, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
@@ -7019,7 +7026,7 @@ textarea.x-form-invalid-field {
 
 /* line 91, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nlg .x-panel-header-default-framed-left-mc {
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-left-bg.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-left-bg.gif');
   background-color: #006990;
 }
 
@@ -7046,13 +7053,13 @@ textarea.x-form-invalid-field {
 .x-nbr .x-panel-header-default-framed-left-ml,
 .x-nbr .x-panel-header-default-framed-left-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-left-corners.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-left-corners.gif');
 }
 /* line 157, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-panel-header-default-framed-left-tc,
 .x-nbr .x-panel-header-default-framed-left-bc {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-left-sides.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-left-sides.gif');
   background-position: 0 0;
   background-repeat: repeat-x;
 }
@@ -7163,7 +7170,7 @@ textarea.x-form-invalid-field {
 
 /* line 91, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nlg .x-panel-header-default-framed-collapsed-top-mc {
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-top-bg.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-top-bg.gif');
   background-color: #006990;
 }
 
@@ -7190,13 +7197,13 @@ textarea.x-form-invalid-field {
 .x-nbr .x-panel-header-default-framed-collapsed-top-ml,
 .x-nbr .x-panel-header-default-framed-collapsed-top-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-top-corners.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-top-corners.gif');
 }
 /* line 168, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-panel-header-default-framed-collapsed-top-ml,
 .x-nbr .x-panel-header-default-framed-collapsed-top-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-top-sides.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-top-sides.gif');
   background-position: 0 0;
 }
 /* line 200, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
@@ -7239,7 +7246,7 @@ textarea.x-form-invalid-field {
 
 /* line 91, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nlg .x-panel-header-default-framed-collapsed-right-mc {
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-right-bg.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-right-bg.gif');
   background-color: #006990;
 }
 
@@ -7266,13 +7273,13 @@ textarea.x-form-invalid-field {
 .x-nbr .x-panel-header-default-framed-collapsed-right-ml,
 .x-nbr .x-panel-header-default-framed-collapsed-right-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-right-corners.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-right-corners.gif');
 }
 /* line 157, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-panel-header-default-framed-collapsed-right-tc,
 .x-nbr .x-panel-header-default-framed-collapsed-right-bc {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-right-sides.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-right-sides.gif');
   background-position: 0 0;
   background-repeat: repeat-x;
 }
@@ -7316,7 +7323,7 @@ textarea.x-form-invalid-field {
 
 /* line 91, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nlg .x-panel-header-default-framed-collapsed-bottom-mc {
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-bottom-bg.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-bottom-bg.gif');
   background-color: #006990;
 }
 
@@ -7343,13 +7350,13 @@ textarea.x-form-invalid-field {
 .x-nbr .x-panel-header-default-framed-collapsed-bottom-ml,
 .x-nbr .x-panel-header-default-framed-collapsed-bottom-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-bottom-corners.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-bottom-corners.gif');
 }
 /* line 168, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-panel-header-default-framed-collapsed-bottom-ml,
 .x-nbr .x-panel-header-default-framed-collapsed-bottom-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-bottom-sides.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-bottom-sides.gif');
   background-position: 0 0;
 }
 /* line 200, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
@@ -7392,7 +7399,7 @@ textarea.x-form-invalid-field {
 
 /* line 91, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nlg .x-panel-header-default-framed-collapsed-left-mc {
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-left-bg.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-left-bg.gif');
   background-color: #006990;
 }
 
@@ -7419,13 +7426,13 @@ textarea.x-form-invalid-field {
 .x-nbr .x-panel-header-default-framed-collapsed-left-ml,
 .x-nbr .x-panel-header-default-framed-collapsed-left-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-left-corners.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-left-corners.gif');
 }
 /* line 157, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-panel-header-default-framed-collapsed-left-tc,
 .x-nbr .x-panel-header-default-framed-collapsed-left-bc {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-left-sides.gif');
+  background-image: url('../resources/themes/images/default/panel-header/panel-header-default-framed-collapsed-left-sides.gif');
   background-position: 0 0;
   background-repeat: repeat-x;
 }
@@ -7513,13 +7520,13 @@ textarea.x-form-invalid-field {
 .x-nbr .x-tip-ml,
 .x-nbr .x-tip-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/tip/tip-corners.gif');
+  background-image: url('../resources/themes/images/default/tip/tip-corners.gif');
 }
 /* line 168, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-tip-ml,
 .x-nbr .x-tip-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/tip/tip-sides.gif');
+  background-image: url('../resources/themes/images/default/tip/tip-sides.gif');
   background-position: 0 0;
   background-repeat: repeat-y;
 }
@@ -7643,7 +7650,7 @@ textarea.x-form-invalid-field {
 /* line 142, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_qtip.scss */
 .x-form-invalid-tip-body {
   background: 1px 1px no-repeat;
-  background-image: url('../../../extjs/resources/themes/images/default/form/exclamation.gif');
+  background-image: url('../resources/themes/images/default/form/exclamation.gif');
   padding-left: 22px;
 }
 /* line 147, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_qtip.scss */
@@ -7697,13 +7704,13 @@ textarea.x-form-invalid-field {
 .x-nbr .x-form-invalid-tip-default-ml,
 .x-nbr .x-form-invalid-tip-default-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/form-invalid-tip/form-invalid-tip-default-corners.gif');
+  background-image: url('../resources/themes/images/default/form-invalid-tip/form-invalid-tip-default-corners.gif');
 }
 /* line 168, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-form-invalid-tip-default-ml,
 .x-nbr .x-form-invalid-tip-default-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/form-invalid-tip/form-invalid-tip-default-sides.gif');
+  background-image: url('../resources/themes/images/default/form-invalid-tip/form-invalid-tip-default-sides.gif');
   background-position: 0 0;
   background-repeat: repeat-y;
 }
@@ -7795,7 +7802,7 @@ textarea.x-form-invalid-field {
 /* line 110, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_progress-bar.scss */
 .x-nlg .x-progress-default .x-progress-bar {
   background: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/progress/progress-default-bg.gif');
+  background-image: url('../resources/themes/images/default/progress/progress-default-bg.gif');
 }
 
 /* line 2, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_toolbar.scss */
@@ -7897,7 +7904,7 @@ textarea.x-form-invalid-field {
 
 /* line 103, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_toolbar.scss */
 .x-toolbar-more-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/toolbar/more.gif') !important;
+  background-image: url('../resources/themes/images/default/toolbar/more.gif') !important;
   background-position: 2px center !important;
   background-repeat: no-repeat;
 }
@@ -7919,7 +7926,7 @@ textarea.x-form-invalid-field {
 
 /* line 151, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_toolbar.scss */
 .x-nlg .x-toolbar-default {
-  background-image: url('../../../extjs/resources/themes/images/default/toolbar/toolbar-default-bg.gif') !important;
+  background-image: url('../resources/themes/images/default/toolbar/toolbar-default-bg.gif') !important;
   background-repeat: repeat-x;
 }
 
@@ -8067,13 +8074,13 @@ textarea.x-form-invalid-field {
 .x-nbr .x-window-default-ml,
 .x-nbr .x-window-default-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/window/window-default-corners.gif');
+  background-image: url('../resources/themes/images/default/window/window-default-corners.gif');
 }
 /* line 168, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-window-default-ml,
 .x-nbr .x-window-default-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/window/window-default-sides.gif');
+  background-image: url('../resources/themes/images/default/window/window-default-sides.gif');
   background-position: 0 0;
   background-repeat: repeat-y;
 }
@@ -8165,13 +8172,13 @@ textarea.x-form-invalid-field {
 .x-nbr .x-window-header-default-top-ml,
 .x-nbr .x-window-header-default-top-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/window-header/window-header-default-top-corners.gif');
+  background-image: url('../resources/themes/images/default/window-header/window-header-default-top-corners.gif');
 }
 /* line 168, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-window-header-default-top-ml,
 .x-nbr .x-window-header-default-top-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/window-header/window-header-default-top-sides.gif');
+  background-image: url('../resources/themes/images/default/window-header/window-header-default-top-sides.gif');
   background-position: 0 0;
   background-repeat: repeat-y;
 }
@@ -8240,13 +8247,13 @@ textarea.x-form-invalid-field {
 .x-nbr .x-window-header-default-right-ml,
 .x-nbr .x-window-header-default-right-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/window-header/window-header-default-right-corners.gif');
+  background-image: url('../resources/themes/images/default/window-header/window-header-default-right-corners.gif');
 }
 /* line 168, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-window-header-default-right-ml,
 .x-nbr .x-window-header-default-right-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/window-header/window-header-default-right-sides.gif');
+  background-image: url('../resources/themes/images/default/window-header/window-header-default-right-sides.gif');
   background-position: 0 0;
   background-repeat: repeat-y;
 }
@@ -8315,13 +8322,13 @@ textarea.x-form-invalid-field {
 .x-nbr .x-window-header-default-bottom-ml,
 .x-nbr .x-window-header-default-bottom-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/window-header/window-header-default-bottom-corners.gif');
+  background-image: url('../resources/themes/images/default/window-header/window-header-default-bottom-corners.gif');
 }
 /* line 168, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-window-header-default-bottom-ml,
 .x-nbr .x-window-header-default-bottom-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/window-header/window-header-default-bottom-sides.gif');
+  background-image: url('../resources/themes/images/default/window-header/window-header-default-bottom-sides.gif');
   background-position: 0 0;
   background-repeat: repeat-y;
 }
@@ -8390,13 +8397,13 @@ textarea.x-form-invalid-field {
 .x-nbr .x-window-header-default-left-ml,
 .x-nbr .x-window-header-default-left-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/window-header/window-header-default-left-corners.gif');
+  background-image: url('../resources/themes/images/default/window-header/window-header-default-left-corners.gif');
 }
 /* line 168, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-window-header-default-left-ml,
 .x-nbr .x-window-header-default-left-mr {
   zoom: 1;
-  background-image: url('../../../extjs/resources/themes/images/default/window-header/window-header-default-left-sides.gif');
+  background-image: url('../resources/themes/images/default/window-header/window-header-default-left-sides.gif');
   background-position: 0 0;
   background-repeat: repeat-y;
 }
@@ -8479,27 +8486,27 @@ textarea.x-form-invalid-field {
 
 /* line 31, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_messagebox.scss */
 .x-message-box .x-msg-box-wait {
-  background-image: url('../../../extjs/resources/themes/images/default/shared/blue-loading.gif');
+  background-image: url('../resources/themes/images/default/shared/blue-loading.gif');
 }
 
 /* line 35, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_messagebox.scss */
 .x-message-box .ext-mb-info {
-  background-image: url('../../../extjs/resources/themes/images/default/shared/icon-info.gif');
+  background-image: url('../resources/themes/images/default/shared/icon-info.gif');
 }
 
 /* line 39, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_messagebox.scss */
 .x-message-box .ext-mb-warning {
-  background-image: url('../../../extjs/resources/themes/images/default/shared/icon-warning.gif');
+  background-image: url('../resources/themes/images/default/shared/icon-warning.gif');
 }
 
 /* line 43, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_messagebox.scss */
 .x-message-box .ext-mb-question {
-  background-image: url('../../../extjs/resources/themes/images/default/shared/icon-question.gif');
+  background-image: url('../resources/themes/images/default/shared/icon-question.gif');
 }
 
 /* line 47, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/util/_messagebox.scss */
 .x-message-box .ext-mb-error {
-  background-image: url('../../../extjs/resources/themes/images/default/shared/icon-error.gif');
+  background-image: url('../resources/themes/images/default/shared/icon-error.gif');
 }
 
 /* line 5, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
@@ -8513,7 +8520,7 @@ textarea.x-form-invalid-field {
 
 /* line 12, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
 .x-nlg .x-tab-bar {
-  background-image: url('../../../extjs/resources/themes/images/default/tab-bar/tab-bar-default-bg.gif');
+  background-image: url('../resources/themes/images/default/tab-bar/tab-bar-default-bg.gif');
 }
 
 /* line 17, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tabbar.scss */
@@ -8676,7 +8683,7 @@ textarea.x-form-invalid-field {
 
 /* line 91, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nlg .x-tab-default-top-mc {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-top-bg.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-top-bg.gif');
   background-color: transparent;
 }
 
@@ -8749,7 +8756,7 @@ textarea.x-form-invalid-field {
 
 /* line 91, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nlg .x-tab-default-bottom-mc {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-bottom-bg.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-bottom-bg.gif');
   background-color: transparent;
 }
 
@@ -9091,35 +9098,35 @@ textarea.x-form-invalid-field {
 
 /* line 326, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nlg .x-tab-top {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-top-bg.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-top-bg.gif');
 }
 /* line 327, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nlg .x-tab-bottom {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-bottom-bg.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-bottom-bg.gif');
 }
 /* line 331, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nlg .x-tab-top-over {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-top-over-bg.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-top-over-bg.gif');
 }
 /* line 332, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nlg .x-tab-bottom-over {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-bottom-over-bg.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-bottom-over-bg.gif');
 }
 /* line 336, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nlg .x-tab-top-active {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-top-active-bg.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-top-active-bg.gif');
 }
 /* line 337, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nlg .x-tab-bottom-active {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-bottom-active-bg.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-bottom-active-bg.gif');
 }
 /* line 341, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nlg .x-tab-top-disabled {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-top-disabled-bg.gif') !important;
+  background-image: url('../resources/themes/images/default/tab/tab-default-top-disabled-bg.gif') !important;
 }
 /* line 342, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nlg .x-tab-bottom-disabled {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-bottom-disabled-bg.gif') !important;
+  background-image: url('../resources/themes/images/default/tab/tab-default-bottom-disabled-bg.gif') !important;
 }
 
 /* line 347, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
@@ -9138,7 +9145,7 @@ textarea.x-form-invalid-field {
   line-height: 0;
   text-indent: -999px;
   background: no-repeat;
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-close.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-close.gif');
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
 }
@@ -9156,18 +9163,18 @@ textarea.x-form-invalid-field {
 .x-nbr .x-tab-top-over .x-frame-br,
 .x-nbr .x-tab-top-over .x-frame-tc,
 .x-nbr .x-tab-top-over .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-top-over-corners.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-top-over-corners.gif');
 }
 /* line 380, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-top-over .x-frame-ml,
 .x-nbr .x-tab-top-over .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-top-over-sides.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-top-over-sides.gif');
 }
 /* line 384, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-top-over .x-frame-mc {
   background-color: #e4f1f8;
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-top-over-bg.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-top-over-bg.gif');
 }
 /* line 398, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-bottom-over .x-frame-tl,
@@ -9176,18 +9183,18 @@ textarea.x-form-invalid-field {
 .x-nbr .x-tab-bottom-over .x-frame-br,
 .x-nbr .x-tab-bottom-over .x-frame-tc,
 .x-nbr .x-tab-bottom-over .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-bottom-over-corners.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-bottom-over-corners.gif');
 }
 /* line 402, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-bottom-over .x-frame-ml,
 .x-nbr .x-tab-bottom-over .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-bottom-over-sides.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-bottom-over-sides.gif');
 }
 /* line 406, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-bottom-over .x-frame-mc {
   background-color: #e4f1f8;
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-bottom-over-bg.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-bottom-over-bg.gif');
 }
 /* line 420, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-top-active .x-frame-tl,
@@ -9196,18 +9203,18 @@ textarea.x-form-invalid-field {
 .x-nbr .x-tab-top-active .x-frame-br,
 .x-nbr .x-tab-top-active .x-frame-tc,
 .x-nbr .x-tab-top-active .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-top-active-corners.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-top-active-corners.gif');
 }
 /* line 424, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-top-active .x-frame-ml,
 .x-nbr .x-tab-top-active .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-top-active-sides.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-top-active-sides.gif');
 }
 /* line 428, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-top-active .x-frame-mc {
   background-color: white;
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-top-active-bg.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-top-active-bg.gif');
 }
 /* line 442, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-bottom-active .x-frame-tl,
@@ -9216,18 +9223,18 @@ textarea.x-form-invalid-field {
 .x-nbr .x-tab-bottom-active .x-frame-br,
 .x-nbr .x-tab-bottom-active .x-frame-tc,
 .x-nbr .x-tab-bottom-active .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-bottom-active-corners.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-bottom-active-corners.gif');
 }
 /* line 446, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-bottom-active .x-frame-ml,
 .x-nbr .x-tab-bottom-active .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-bottom-active-sides.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-bottom-active-sides.gif');
 }
 /* line 450, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-bottom-active .x-frame-mc {
   background-color: white;
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-bottom-active-bg.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-bottom-active-bg.gif');
 }
 /* line 464, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-top-disabled .x-frame-tl,
@@ -9236,17 +9243,17 @@ textarea.x-form-invalid-field {
 .x-nbr .x-tab-top-disabled .x-frame-br,
 .x-nbr .x-tab-top-disabled .x-frame-tc,
 .x-nbr .x-tab-top-disabled .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-top-disabled-corners.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-top-disabled-corners.gif');
 }
 /* line 468, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-top-disabled .x-frame-ml,
 .x-nbr .x-tab-top-disabled .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-top-disabled-sides.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-top-disabled-sides.gif');
 }
 /* line 472, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-top-disabled .x-frame-mc {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-top-disabled-bg.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-top-disabled-bg.gif');
 }
 /* line 485, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-bottom-disabled .x-frame-tl,
@@ -9255,17 +9262,17 @@ textarea.x-form-invalid-field {
 .x-nbr .x-tab-bottom-disabled .x-frame-br,
 .x-nbr .x-tab-bottom-disabled .x-frame-tc,
 .x-nbr .x-tab-bottom-disabled .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-bottom-disabled-corners.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-bottom-disabled-corners.gif');
 }
 /* line 489, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-bottom-disabled .x-frame-ml,
 .x-nbr .x-tab-bottom-disabled .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-bottom-disabled-sides.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-bottom-disabled-sides.gif');
 }
 /* line 493, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_tab.scss */
 .x-nbr .x-tab-bottom-disabled .x-frame-mc {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/tab/tab-default-bottom-disabled-bg.gif');
+  background-image: url('../resources/themes/images/default/tab/tab-default-bottom-disabled-bg.gif');
 }
 
 /* line 2, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_viewport.scss */
@@ -9425,16 +9432,16 @@ textarea.x-form-invalid-field {
 
 /* line 91, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_menu.scss */
 .x-menu-item-checked .x-menu-item-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/menu/checked.gif');
+  background-image: url('../resources/themes/images/default/menu/checked.gif');
 }
 /* line 94, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_menu.scss */
 .x-menu-item-checked .x-menu-group-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/menu/group-checked.gif');
+  background-image: url('../resources/themes/images/default/menu/group-checked.gif');
 }
 
 /* line 100, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_menu.scss */
 .x-menu-item-unchecked .x-menu-item-icon {
-  background-image: url('../../../extjs/resources/themes/images/default/menu/unchecked.gif');
+  background-image: url('../resources/themes/images/default/menu/unchecked.gif');
 }
 /* line 103, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_menu.scss */
 .x-menu-item-unchecked .x-menu-group-icon {
@@ -9458,7 +9465,7 @@ textarea.x-form-invalid-field {
   top: 9px;
   right: 0px;
   background: no-repeat center center;
-  background-image: url('../../../extjs/resources/themes/images/default/menu/menu-parent.gif');
+  background-image: url('../resources/themes/images/default/menu/menu-parent.gif');
 }
 
 /* line 126, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_menu.scss */
@@ -9528,7 +9535,7 @@ textarea.x-form-invalid-field {
 /* line 181, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_menu.scss */
 .x-nlg .x-menu-item-active .x-menu-item-link {
   background: #e4f1f8 repeat-x left top;
-  background-image: url('../../../extjs/resources/themes/images/default/menu/menu-item-active-bg.gif');
+  background-image: url('../resources/themes/images/default/menu/menu-item-active-bg.gif');
 }
 
 /* line 188, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_menu.scss */
@@ -12476,17 +12483,17 @@ input.x-form-radio {
 .x-nbr .x-btn-slanted-small-over .x-frame-br,
 .x-nbr .x-btn-slanted-small-over .x-frame-tc,
 .x-nbr .x-btn-slanted-small-over .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-small-over-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-small-over-corners.gif');
 }
 /* line 872, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-small-over .x-frame-ml,
 .x-nbr .x-btn-slanted-small-over .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-small-over-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-small-over-sides.gif');
 }
 /* line 875, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-small-over .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-small-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-small-over-bg.gif');
 }
 /* line 889, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-small-focus .x-frame-tl,
@@ -12495,17 +12502,17 @@ input.x-form-radio {
 .x-nbr .x-btn-slanted-small-focus .x-frame-br,
 .x-nbr .x-btn-slanted-small-focus .x-frame-tc,
 .x-nbr .x-btn-slanted-small-focus .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-small-focus-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-small-focus-corners.gif');
 }
 /* line 893, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-small-focus .x-frame-ml,
 .x-nbr .x-btn-slanted-small-focus .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-small-focus-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-small-focus-sides.gif');
 }
 /* line 896, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-small-focus .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-small-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-small-focus-bg.gif');
 }
 /* line 911, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-small-menu-active .x-frame-tl,
@@ -12520,20 +12527,20 @@ input.x-form-radio {
 .x-nbr .x-btn-slanted-small-pressed .x-frame-br,
 .x-nbr .x-btn-slanted-small-pressed .x-frame-tc,
 .x-nbr .x-btn-slanted-small-pressed .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-small-pressed-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-small-pressed-corners.gif');
 }
 /* line 915, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-small-menu-active .x-frame-ml,
 .x-nbr .x-btn-slanted-small-menu-active .x-frame-mr,
 .x-nbr .x-btn-slanted-small-pressed .x-frame-ml,
 .x-nbr .x-btn-slanted-small-pressed .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-small-pressed-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-small-pressed-sides.gif');
 }
 /* line 918, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-small-menu-active .x-frame-mc,
 .x-nbr .x-btn-slanted-small-pressed .x-frame-mc {
   background-color: #dadada;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-small-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-small-pressed-bg.gif');
 }
 /* line 932, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-small-disabled .x-frame-tl,
@@ -12542,48 +12549,48 @@ input.x-form-radio {
 .x-nbr .x-btn-slanted-small-disabled .x-frame-br,
 .x-nbr .x-btn-slanted-small-disabled .x-frame-tc,
 .x-nbr .x-btn-slanted-small-disabled .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-small-disabled-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-small-disabled-corners.gif');
 }
 /* line 936, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-small-disabled .x-frame-ml,
 .x-nbr .x-btn-slanted-small-disabled .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-small-disabled-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-small-disabled-sides.gif');
 }
 /* line 939, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-small-disabled .x-frame-mc {
   background-color: white;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-small-disabled-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-small-disabled-bg.gif');
 }
 
 /* line 952, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-slanted-small {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-small-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-small-bg.gif');
 }
 
 /* line 961, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-slanted-small-over {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-small-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-small-over-bg.gif');
 }
 
 /* line 970, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-slanted-small-focus {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-small-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-small-focus-bg.gif');
 }
 
 /* line 980, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-slanted-small-menu-active,
 .x-nlg .x-btn-slanted-small-pressed {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-small-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-small-pressed-bg.gif');
 }
 
 /* line 989, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-slanted-small-disabled {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-small-disabled-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-small-disabled-bg.gif');
 }
 
 /* line 615, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
@@ -12852,17 +12859,17 @@ input.x-form-radio {
 .x-nbr .x-btn-slanted-medium-over .x-frame-br,
 .x-nbr .x-btn-slanted-medium-over .x-frame-tc,
 .x-nbr .x-btn-slanted-medium-over .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-medium-over-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-medium-over-corners.gif');
 }
 /* line 872, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-medium-over .x-frame-ml,
 .x-nbr .x-btn-slanted-medium-over .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-medium-over-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-medium-over-sides.gif');
 }
 /* line 875, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-medium-over .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-medium-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-medium-over-bg.gif');
 }
 /* line 889, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-medium-focus .x-frame-tl,
@@ -12871,17 +12878,17 @@ input.x-form-radio {
 .x-nbr .x-btn-slanted-medium-focus .x-frame-br,
 .x-nbr .x-btn-slanted-medium-focus .x-frame-tc,
 .x-nbr .x-btn-slanted-medium-focus .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-medium-focus-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-medium-focus-corners.gif');
 }
 /* line 893, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-medium-focus .x-frame-ml,
 .x-nbr .x-btn-slanted-medium-focus .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-medium-focus-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-medium-focus-sides.gif');
 }
 /* line 896, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-medium-focus .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-medium-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-medium-focus-bg.gif');
 }
 /* line 911, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-medium-menu-active .x-frame-tl,
@@ -12896,20 +12903,20 @@ input.x-form-radio {
 .x-nbr .x-btn-slanted-medium-pressed .x-frame-br,
 .x-nbr .x-btn-slanted-medium-pressed .x-frame-tc,
 .x-nbr .x-btn-slanted-medium-pressed .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-medium-pressed-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-medium-pressed-corners.gif');
 }
 /* line 915, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-medium-menu-active .x-frame-ml,
 .x-nbr .x-btn-slanted-medium-menu-active .x-frame-mr,
 .x-nbr .x-btn-slanted-medium-pressed .x-frame-ml,
 .x-nbr .x-btn-slanted-medium-pressed .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-medium-pressed-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-medium-pressed-sides.gif');
 }
 /* line 918, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-medium-menu-active .x-frame-mc,
 .x-nbr .x-btn-slanted-medium-pressed .x-frame-mc {
   background-color: #dadada;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-medium-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-medium-pressed-bg.gif');
 }
 /* line 932, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-medium-disabled .x-frame-tl,
@@ -12918,48 +12925,48 @@ input.x-form-radio {
 .x-nbr .x-btn-slanted-medium-disabled .x-frame-br,
 .x-nbr .x-btn-slanted-medium-disabled .x-frame-tc,
 .x-nbr .x-btn-slanted-medium-disabled .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-medium-disabled-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-medium-disabled-corners.gif');
 }
 /* line 936, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-medium-disabled .x-frame-ml,
 .x-nbr .x-btn-slanted-medium-disabled .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-medium-disabled-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-medium-disabled-sides.gif');
 }
 /* line 939, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-medium-disabled .x-frame-mc {
   background-color: white;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-medium-disabled-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-medium-disabled-bg.gif');
 }
 
 /* line 952, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-slanted-medium {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-medium-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-medium-bg.gif');
 }
 
 /* line 961, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-slanted-medium-over {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-medium-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-medium-over-bg.gif');
 }
 
 /* line 970, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-slanted-medium-focus {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-medium-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-medium-focus-bg.gif');
 }
 
 /* line 980, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-slanted-medium-menu-active,
 .x-nlg .x-btn-slanted-medium-pressed {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-medium-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-medium-pressed-bg.gif');
 }
 
 /* line 989, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-slanted-medium-disabled {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-medium-disabled-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-medium-disabled-bg.gif');
 }
 
 /* line 615, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
@@ -13228,17 +13235,17 @@ input.x-form-radio {
 .x-nbr .x-btn-slanted-large-over .x-frame-br,
 .x-nbr .x-btn-slanted-large-over .x-frame-tc,
 .x-nbr .x-btn-slanted-large-over .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-large-over-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-large-over-corners.gif');
 }
 /* line 872, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-large-over .x-frame-ml,
 .x-nbr .x-btn-slanted-large-over .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-large-over-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-large-over-sides.gif');
 }
 /* line 875, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-large-over .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-large-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-large-over-bg.gif');
 }
 /* line 889, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-large-focus .x-frame-tl,
@@ -13247,17 +13254,17 @@ input.x-form-radio {
 .x-nbr .x-btn-slanted-large-focus .x-frame-br,
 .x-nbr .x-btn-slanted-large-focus .x-frame-tc,
 .x-nbr .x-btn-slanted-large-focus .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-large-focus-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-large-focus-corners.gif');
 }
 /* line 893, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-large-focus .x-frame-ml,
 .x-nbr .x-btn-slanted-large-focus .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-large-focus-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-large-focus-sides.gif');
 }
 /* line 896, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-large-focus .x-frame-mc {
   background-color: #e4f1f8;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-large-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-large-focus-bg.gif');
 }
 /* line 911, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-large-menu-active .x-frame-tl,
@@ -13272,20 +13279,20 @@ input.x-form-radio {
 .x-nbr .x-btn-slanted-large-pressed .x-frame-br,
 .x-nbr .x-btn-slanted-large-pressed .x-frame-tc,
 .x-nbr .x-btn-slanted-large-pressed .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-large-pressed-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-large-pressed-corners.gif');
 }
 /* line 915, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-large-menu-active .x-frame-ml,
 .x-nbr .x-btn-slanted-large-menu-active .x-frame-mr,
 .x-nbr .x-btn-slanted-large-pressed .x-frame-ml,
 .x-nbr .x-btn-slanted-large-pressed .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-large-pressed-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-large-pressed-sides.gif');
 }
 /* line 918, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-large-menu-active .x-frame-mc,
 .x-nbr .x-btn-slanted-large-pressed .x-frame-mc {
   background-color: #dadada;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-large-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-large-pressed-bg.gif');
 }
 /* line 932, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-large-disabled .x-frame-tl,
@@ -13294,48 +13301,48 @@ input.x-form-radio {
 .x-nbr .x-btn-slanted-large-disabled .x-frame-br,
 .x-nbr .x-btn-slanted-large-disabled .x-frame-tc,
 .x-nbr .x-btn-slanted-large-disabled .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-large-disabled-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-large-disabled-corners.gif');
 }
 /* line 936, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-large-disabled .x-frame-ml,
 .x-nbr .x-btn-slanted-large-disabled .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-large-disabled-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-large-disabled-sides.gif');
 }
 /* line 939, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-slanted-large-disabled .x-frame-mc {
   background-color: white;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-large-disabled-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-large-disabled-bg.gif');
 }
 
 /* line 952, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-slanted-large {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-large-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-large-bg.gif');
 }
 
 /* line 961, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-slanted-large-over {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-large-over-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-large-over-bg.gif');
 }
 
 /* line 970, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-slanted-large-focus {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-large-focus-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-large-focus-bg.gif');
 }
 
 /* line 980, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-slanted-large-menu-active,
 .x-nlg .x-btn-slanted-large-pressed {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-large-pressed-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-large-pressed-bg.gif');
 }
 
 /* line 989, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nlg .x-btn-slanted-large-disabled {
   background-repeat: repeat-x;
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-slanted-large-disabled-bg.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-slanted-large-disabled-bg.gif');
 }
 
 /* line 166, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/resources/css/sass/common/_slantedbutton.scss */
@@ -13352,7 +13359,7 @@ input.x-form-radio {
   margin: 0px 4px;
   padding: 2px 1em;
   text-align: center;
-  min-width: 100px;
+  min-width: 80px;
   float: right;
 }
 /* line 175, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/resources/css/sass/common/_slantedbutton.scss */
@@ -13362,12 +13369,14 @@ input.x-form-radio {
   -o-transform: skew(45deg, 0deg);
   -ms-transform: skew(45deg, 0deg);
   transform: skew(45deg, 0deg);
+  border: none;
+  background: none;
 }
 
 /* line 180, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/resources/css/sass/common/_slantedbutton.scss */
 .slanted-button-bar {
   display: inline-block;
-  margin-right: -26px;
+  margin-right: 40px;
   position: absolute;
   right: 0;
 }
@@ -13780,12 +13789,12 @@ input.x-form-radio {
 .x-nbr .x-btn-transparent-btn-small-over .x-frame-br,
 .x-nbr .x-btn-transparent-btn-small-over .x-frame-tc,
 .x-nbr .x-btn-transparent-btn-small-over .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-small-over-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-small-over-corners.gif');
 }
 /* line 872, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-small-over .x-frame-ml,
 .x-nbr .x-btn-transparent-btn-small-over .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-small-over-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-small-over-sides.gif');
 }
 /* line 875, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-small-over .x-frame-mc {
@@ -13798,12 +13807,12 @@ input.x-form-radio {
 .x-nbr .x-btn-transparent-btn-small-focus .x-frame-br,
 .x-nbr .x-btn-transparent-btn-small-focus .x-frame-tc,
 .x-nbr .x-btn-transparent-btn-small-focus .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-small-focus-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-small-focus-corners.gif');
 }
 /* line 893, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-small-focus .x-frame-ml,
 .x-nbr .x-btn-transparent-btn-small-focus .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-small-focus-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-small-focus-sides.gif');
 }
 /* line 896, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-small-focus .x-frame-mc {
@@ -13822,14 +13831,14 @@ input.x-form-radio {
 .x-nbr .x-btn-transparent-btn-small-pressed .x-frame-br,
 .x-nbr .x-btn-transparent-btn-small-pressed .x-frame-tc,
 .x-nbr .x-btn-transparent-btn-small-pressed .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-small-pressed-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-small-pressed-corners.gif');
 }
 /* line 915, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-small-menu-active .x-frame-ml,
 .x-nbr .x-btn-transparent-btn-small-menu-active .x-frame-mr,
 .x-nbr .x-btn-transparent-btn-small-pressed .x-frame-ml,
 .x-nbr .x-btn-transparent-btn-small-pressed .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-small-pressed-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-small-pressed-sides.gif');
 }
 /* line 918, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-small-menu-active .x-frame-mc,
@@ -13843,12 +13852,12 @@ input.x-form-radio {
 .x-nbr .x-btn-transparent-btn-small-disabled .x-frame-br,
 .x-nbr .x-btn-transparent-btn-small-disabled .x-frame-tc,
 .x-nbr .x-btn-transparent-btn-small-disabled .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-small-disabled-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-small-disabled-corners.gif');
 }
 /* line 936, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-small-disabled .x-frame-ml,
 .x-nbr .x-btn-transparent-btn-small-disabled .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-small-disabled-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-small-disabled-sides.gif');
 }
 /* line 939, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-small-disabled .x-frame-mc {
@@ -14087,12 +14096,12 @@ input.x-form-radio {
 .x-nbr .x-btn-transparent-btn-medium-over .x-frame-br,
 .x-nbr .x-btn-transparent-btn-medium-over .x-frame-tc,
 .x-nbr .x-btn-transparent-btn-medium-over .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-medium-over-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-medium-over-corners.gif');
 }
 /* line 872, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-medium-over .x-frame-ml,
 .x-nbr .x-btn-transparent-btn-medium-over .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-medium-over-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-medium-over-sides.gif');
 }
 /* line 875, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-medium-over .x-frame-mc {
@@ -14105,12 +14114,12 @@ input.x-form-radio {
 .x-nbr .x-btn-transparent-btn-medium-focus .x-frame-br,
 .x-nbr .x-btn-transparent-btn-medium-focus .x-frame-tc,
 .x-nbr .x-btn-transparent-btn-medium-focus .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-medium-focus-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-medium-focus-corners.gif');
 }
 /* line 893, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-medium-focus .x-frame-ml,
 .x-nbr .x-btn-transparent-btn-medium-focus .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-medium-focus-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-medium-focus-sides.gif');
 }
 /* line 896, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-medium-focus .x-frame-mc {
@@ -14129,14 +14138,14 @@ input.x-form-radio {
 .x-nbr .x-btn-transparent-btn-medium-pressed .x-frame-br,
 .x-nbr .x-btn-transparent-btn-medium-pressed .x-frame-tc,
 .x-nbr .x-btn-transparent-btn-medium-pressed .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-medium-pressed-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-medium-pressed-corners.gif');
 }
 /* line 915, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-medium-menu-active .x-frame-ml,
 .x-nbr .x-btn-transparent-btn-medium-menu-active .x-frame-mr,
 .x-nbr .x-btn-transparent-btn-medium-pressed .x-frame-ml,
 .x-nbr .x-btn-transparent-btn-medium-pressed .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-medium-pressed-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-medium-pressed-sides.gif');
 }
 /* line 918, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-medium-menu-active .x-frame-mc,
@@ -14150,12 +14159,12 @@ input.x-form-radio {
 .x-nbr .x-btn-transparent-btn-medium-disabled .x-frame-br,
 .x-nbr .x-btn-transparent-btn-medium-disabled .x-frame-tc,
 .x-nbr .x-btn-transparent-btn-medium-disabled .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-medium-disabled-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-medium-disabled-corners.gif');
 }
 /* line 936, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-medium-disabled .x-frame-ml,
 .x-nbr .x-btn-transparent-btn-medium-disabled .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-medium-disabled-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-medium-disabled-sides.gif');
 }
 /* line 939, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-medium-disabled .x-frame-mc {
@@ -14394,12 +14403,12 @@ input.x-form-radio {
 .x-nbr .x-btn-transparent-btn-large-over .x-frame-br,
 .x-nbr .x-btn-transparent-btn-large-over .x-frame-tc,
 .x-nbr .x-btn-transparent-btn-large-over .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-large-over-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-large-over-corners.gif');
 }
 /* line 872, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-large-over .x-frame-ml,
 .x-nbr .x-btn-transparent-btn-large-over .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-large-over-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-large-over-sides.gif');
 }
 /* line 875, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-large-over .x-frame-mc {
@@ -14412,12 +14421,12 @@ input.x-form-radio {
 .x-nbr .x-btn-transparent-btn-large-focus .x-frame-br,
 .x-nbr .x-btn-transparent-btn-large-focus .x-frame-tc,
 .x-nbr .x-btn-transparent-btn-large-focus .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-large-focus-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-large-focus-corners.gif');
 }
 /* line 893, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-large-focus .x-frame-ml,
 .x-nbr .x-btn-transparent-btn-large-focus .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-large-focus-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-large-focus-sides.gif');
 }
 /* line 896, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-large-focus .x-frame-mc {
@@ -14436,14 +14445,14 @@ input.x-form-radio {
 .x-nbr .x-btn-transparent-btn-large-pressed .x-frame-br,
 .x-nbr .x-btn-transparent-btn-large-pressed .x-frame-tc,
 .x-nbr .x-btn-transparent-btn-large-pressed .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-large-pressed-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-large-pressed-corners.gif');
 }
 /* line 915, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-large-menu-active .x-frame-ml,
 .x-nbr .x-btn-transparent-btn-large-menu-active .x-frame-mr,
 .x-nbr .x-btn-transparent-btn-large-pressed .x-frame-ml,
 .x-nbr .x-btn-transparent-btn-large-pressed .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-large-pressed-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-large-pressed-sides.gif');
 }
 /* line 918, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-large-menu-active .x-frame-mc,
@@ -14457,12 +14466,12 @@ input.x-form-radio {
 .x-nbr .x-btn-transparent-btn-large-disabled .x-frame-br,
 .x-nbr .x-btn-transparent-btn-large-disabled .x-frame-tc,
 .x-nbr .x-btn-transparent-btn-large-disabled .x-frame-bc {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-large-disabled-corners.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-large-disabled-corners.gif');
 }
 /* line 936, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-large-disabled .x-frame-ml,
 .x-nbr .x-btn-transparent-btn-large-disabled .x-frame-mr {
-  background-image: url('../../../extjs/resources/themes/images/default/btn/btn-transparent-btn-large-disabled-sides.gif');
+  background-image: url('../resources/themes/images/default/btn/btn-transparent-btn-large-disabled-sides.gif');
 }
 /* line 939, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/extjs/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-nbr .x-btn-transparent-btn-large-disabled .x-frame-mc {
@@ -15292,9 +15301,9 @@ input.x-form-radio {
 /* styles for webapp chrome title page and its extension page section */
 /* line 25, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/resources/css/sass/chrome/_titlepage.scss */
 .title-page {
-  width: 100%;
+  width: 98%;
   height: 100%;
-  padding: 2px 15px 44px 20px;
+  padding: 2px 15px;
   position: relative;
 }
 /* line 30, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/resources/css/sass/chrome/_titlepage.scss */
@@ -15362,17 +15371,25 @@ input.x-form-radio {
 }
 /* line 40, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/resources/css/sass/chrome/_titlepage.scss */
 .title-page .control-bar {
-  position: absolute;
-  right: 15px;
-  top: 0px;
+  float: right;
+  margin-top: 6px;
+  margin-right: 15px;
   height: 29px;
 }
 /* line 46, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/resources/css/sass/chrome/_titlepage.scss */
-.title-page .control-bar .control-item {
+.title-page .control-bar a {
   display: inline-block;
   vertical-align: middle;
-  margin: 6px 0px 6px 6px;
+  margin: 0px 6px;
+  text-decoration: none;
+  color: #006990;
+  font-family: arial, tahoma;
 }
+
+.title-page .control-bar a:hover {
+    color: #399fbe;
+}
+ 
 /* line 53, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/resources/css/sass/chrome/_titlepage.scss */
 .title-page .content-divider {
   height: 9px;
@@ -15382,18 +15399,15 @@ input.x-form-radio {
 }
 /* line 59, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/resources/css/sass/chrome/_titlepage.scss */
 .title-page .content-container {
-  width: 100%;
-  height: 100%;
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAKT2lDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjanVNnVFPpFj333vRCS4iAlEtvUhUIIFJCi4AUkSYqIQkQSoghodkVUcERRUUEG8igiAOOjoCMFVEsDIoK2AfkIaKOg6OIisr74Xuja9a89+bN/rXXPues852zzwfACAyWSDNRNYAMqUIeEeCDx8TG4eQuQIEKJHAAEAizZCFz/SMBAPh+PDwrIsAHvgABeNMLCADATZvAMByH/w/qQplcAYCEAcB0kThLCIAUAEB6jkKmAEBGAYCdmCZTAKAEAGDLY2LjAFAtAGAnf+bTAICd+Jl7AQBblCEVAaCRACATZYhEAGg7AKzPVopFAFgwABRmS8Q5ANgtADBJV2ZIALC3AMDOEAuyAAgMADBRiIUpAAR7AGDIIyN4AISZABRG8lc88SuuEOcqAAB4mbI8uSQ5RYFbCC1xB1dXLh4ozkkXKxQ2YQJhmkAuwnmZGTKBNA/g88wAAKCRFRHgg/P9eM4Ors7ONo62Dl8t6r8G/yJiYuP+5c+rcEAAAOF0ftH+LC+zGoA7BoBt/qIl7gRoXgugdfeLZrIPQLUAoOnaV/Nw+H48PEWhkLnZ2eXk5NhKxEJbYcpXff5nwl/AV/1s+X48/Pf14L7iJIEyXYFHBPjgwsz0TKUcz5IJhGLc5o9H/LcL//wd0yLESWK5WCoU41EScY5EmozzMqUiiUKSKcUl0v9k4t8s+wM+3zUAsGo+AXuRLahdYwP2SycQWHTA4vcAAPK7b8HUKAgDgGiD4c93/+8//UegJQCAZkmScQAAXkQkLlTKsz/HCAAARKCBKrBBG/TBGCzABhzBBdzBC/xgNoRCJMTCQhBCCmSAHHJgKayCQiiGzbAdKmAv1EAdNMBRaIaTcA4uwlW4Dj1wD/phCJ7BKLyBCQRByAgTYSHaiAFiilgjjggXmYX4IcFIBBKLJCDJiBRRIkuRNUgxUopUIFVIHfI9cgI5h1xGupE7yAAygvyGvEcxlIGyUT3UDLVDuag3GoRGogvQZHQxmo8WoJvQcrQaPYw2oefQq2gP2o8+Q8cwwOgYBzPEbDAuxsNCsTgsCZNjy7EirAyrxhqwVqwDu4n1Y8+xdwQSgUXACTYEd0IgYR5BSFhMWE7YSKggHCQ0EdoJNwkDhFHCJyKTqEu0JroR+cQYYjIxh1hILCPWEo8TLxB7iEPENyQSiUMyJ7mQAkmxpFTSEtJG0m5SI+ksqZs0SBojk8naZGuyBzmULCAryIXkneTD5DPkG+Qh8lsKnWJAcaT4U+IoUspqShnlEOU05QZlmDJBVaOaUt2ooVQRNY9aQq2htlKvUYeoEzR1mjnNgxZJS6WtopXTGmgXaPdpr+h0uhHdlR5Ol9BX0svpR+iX6AP0dwwNhhWDx4hnKBmbGAcYZxl3GK+YTKYZ04sZx1QwNzHrmOeZD5lvVVgqtip8FZHKCpVKlSaVGyovVKmqpqreqgtV81XLVI+pXlN9rkZVM1PjqQnUlqtVqp1Q61MbU2epO6iHqmeob1Q/pH5Z/YkGWcNMw09DpFGgsV/jvMYgC2MZs3gsIWsNq4Z1gTXEJrHN2Xx2KruY/R27iz2qqaE5QzNKM1ezUvOUZj8H45hx+Jx0TgnnKKeX836K3hTvKeIpG6Y0TLkxZVxrqpaXllirSKtRq0frvTau7aedpr1Fu1n7gQ5Bx0onXCdHZ4/OBZ3nU9lT3acKpxZNPTr1ri6qa6UbobtEd79up+6Ynr5egJ5Mb6feeb3n+hx9L/1U/W36p/VHDFgGswwkBtsMzhg8xTVxbzwdL8fb8VFDXcNAQ6VhlWGX4YSRudE8o9VGjUYPjGnGXOMk423GbcajJgYmISZLTepN7ppSTbmmKaY7TDtMx83MzaLN1pk1mz0x1zLnm+eb15vft2BaeFostqi2uGVJsuRaplnutrxuhVo5WaVYVVpds0atna0l1rutu6cRp7lOk06rntZnw7Dxtsm2qbcZsOXYBtuutm22fWFnYhdnt8Wuw+6TvZN9un2N/T0HDYfZDqsdWh1+c7RyFDpWOt6azpzuP33F9JbpL2dYzxDP2DPjthPLKcRpnVOb00dnF2e5c4PziIuJS4LLLpc+Lpsbxt3IveRKdPVxXeF60vWdm7Obwu2o26/uNu5p7ofcn8w0nymeWTNz0MPIQ+BR5dE/C5+VMGvfrH5PQ0+BZ7XnIy9jL5FXrdewt6V3qvdh7xc+9j5yn+M+4zw33jLeWV/MN8C3yLfLT8Nvnl+F30N/I/9k/3r/0QCngCUBZwOJgUGBWwL7+Hp8Ib+OPzrbZfay2e1BjKC5QRVBj4KtguXBrSFoyOyQrSH355jOkc5pDoVQfujW0Adh5mGLw34MJ4WHhVeGP45wiFga0TGXNXfR3ENz30T6RJZE3ptnMU85ry1KNSo+qi5qPNo3ujS6P8YuZlnM1VidWElsSxw5LiquNm5svt/87fOH4p3iC+N7F5gvyF1weaHOwvSFpxapLhIsOpZATIhOOJTwQRAqqBaMJfITdyWOCnnCHcJnIi/RNtGI2ENcKh5O8kgqTXqS7JG8NXkkxTOlLOW5hCepkLxMDUzdmzqeFpp2IG0yPTq9MYOSkZBxQqohTZO2Z+pn5mZ2y6xlhbL+xW6Lty8elQfJa7OQrAVZLQq2QqboVFoo1yoHsmdlV2a/zYnKOZarnivN7cyzytuQN5zvn//tEsIS4ZK2pYZLVy0dWOa9rGo5sjxxedsK4xUFK4ZWBqw8uIq2Km3VT6vtV5eufr0mek1rgV7ByoLBtQFr6wtVCuWFfevc1+1dT1gvWd+1YfqGnRs+FYmKrhTbF5cVf9go3HjlG4dvyr+Z3JS0qavEuWTPZtJm6ebeLZ5bDpaql+aXDm4N2dq0Dd9WtO319kXbL5fNKNu7g7ZDuaO/PLi8ZafJzs07P1SkVPRU+lQ27tLdtWHX+G7R7ht7vPY07NXbW7z3/T7JvttVAVVN1WbVZftJ+7P3P66Jqun4lvttXa1ObXHtxwPSA/0HIw6217nU1R3SPVRSj9Yr60cOxx++/p3vdy0NNg1VjZzG4iNwRHnk6fcJ3/ceDTradox7rOEH0x92HWcdL2pCmvKaRptTmvtbYlu6T8w+0dbq3nr8R9sfD5w0PFl5SvNUyWna6YLTk2fyz4ydlZ19fi753GDborZ752PO32oPb++6EHTh0kX/i+c7vDvOXPK4dPKy2+UTV7hXmq86X23qdOo8/pPTT8e7nLuarrlca7nuer21e2b36RueN87d9L158Rb/1tWeOT3dvfN6b/fF9/XfFt1+cif9zsu72Xcn7q28T7xf9EDtQdlD3YfVP1v+3Njv3H9qwHeg89HcR/cGhYPP/pH1jw9DBY+Zj8uGDYbrnjg+OTniP3L96fynQ89kzyaeF/6i/suuFxYvfvjV69fO0ZjRoZfyl5O/bXyl/erA6xmv28bCxh6+yXgzMV70VvvtwXfcdx3vo98PT+R8IH8o/2j5sfVT0Kf7kxmTk/8EA5jz/GMzLdsAAAAgY0hSTQAAeiUAAICDAAD5/wAAgOkAAHUwAADqYAAAOpgAABdvkl/FRgAAAe1JREFUeNqclMmO4zAMRIukFuf/PzLtxAiQU2Qt5BwCst3XEWAYhiS66rEkejweZmYQEcw5AQBEFM+cE8yMWitUFXNOEBHWWqi1YowBMwO9329rrWHbNqgqxhjIOUNVQUQYY4CZQUQQEfTeY96/iQi077uJCJgZzIw5J9ZaSClhzhnvnHMUNjOklEIhM4Oez6epKnyYWdgrpWDOCZ8XEZgZcs5RMNY/n0/LOeM8T6gqtm3DeZ6hYM4Zi0UkrDJz2EspgY7jMGcAAGMMiEioGmNAVXG73dB7jwLMjLUWSinftfu+GzNDRKCqSCkBAFprYY+ZQ7GZxeYxRjSJjuMwVUXOGWYGZgYAnOeJWmvA7L0HYLdJRFGc7ve7iQhEBGut4FBrDStu2/NjZqG2tfZl9Hg8rJQCM4t2+kLf7LBVFbVWeIBba3As9Hq9jJlhZui9B0gAYde75911a9dB+75bSikY+FG5hu6qCkBY8p9s2/YtVEqJ7PgQEXw+H9RaA7a3POf853istb6MvAO995DMzBhjgIgiO674PE9s24bP54NSypfR/X43Z3Jtac45suSPI7geJyJCrfUX9v9kx6+dlNKX0bULqgpnVmvFWgtrrVDgqXYMflPQz8+P+UG9hs85+U9aa39y5XfSGAMA8G8A/HCu4a0azwwAAAAASUVORK5CYII=');
   background-repeat: repeat;
   border: 1px solid #c1c1c1;
   position: static;
-  padding: 10px;
+  padding-bottom: 20px;
 }
 /* line 65, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/resources/css/sass/chrome/_titlepage.scss */
 .title-page .content-container .content {
-  width: 100%;
-  height: 100%;
+  padding: 20px;
 }
 
 /*------ page section styles ------*/
@@ -15415,7 +15429,7 @@ input.x-form-radio {
   top: -1px;
   padding-right: 30px;
   height: 36px;
-  font-family: PTSansRegular;
+  font-family: arial, tahoma;
   color: white;
   z-index: 2;
 }
