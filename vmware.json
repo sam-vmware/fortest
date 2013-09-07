@@ -1,0 +1,15 @@
+{
+    "vmware":{
+        "config":{
+            "version":1.0
+        },
+        "applications":{
+            "applicationDirectorWebImport":{
+                "exportFileName":"jPetStore-1.0.1.xml",
+                "exportedFileReadme":"jPetStore-1.0.1.readme",
+                "importSectionHeader":"jPetStore",
+                "exportedWithAppDVersion":5.0
+            }
+        }
+    }
+}
