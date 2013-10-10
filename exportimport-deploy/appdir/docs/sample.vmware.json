@@ -1,0 +1,24 @@
+{
+    "//":"This is a sample configuration file of what would be stored in the GH repo/branch, comments are not part of it",
+    "//_1":"The real name is vmware.json",
+    "vmware":{
+        "config":{
+            "version":1.0
+        },
+        "applications":{
+            "applicationDirectorWebImport":{
+                "exportFileName":"weblogic12c-cluster-dukebank-1.0.0.xml",
+                "exportedFileReadme":"weblogic12c-cluster-dukebank-1.0.0.xml.readme",                                
+                "importSectionHeader":"Weblogic Cluster",
+                "exportedWithAppDVersion":5.0,
+                "//_optional":"For future something like the following optional fields could be introduced",
+                "optional":{
+                    "nextStepsMarkdownFile":"weblogic12c-cluster-dukebank-1.0.0.xml.nextsteps.markdown",
+                    "enableConsoleLogging":false,
+                    "exportedFileErrorReadme":"weblogic12c-cluster-dukebank-1.0.0.xml.error.readme"
+                }
+            }
+        }
+    }
+}
+

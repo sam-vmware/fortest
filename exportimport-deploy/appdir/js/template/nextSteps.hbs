@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    {{> template_commonHeaderContent}}
+</head>
+<body>
+<div id="importLink">    
+    <section>
+        <header>
+            <h3>{{artifactType}} Imported Successfully!</h3>
+        </header>
+    </section>
+    <section>
+    <h4>Your Import Link</h4>
+    <a href="{{importLink}}" onclick="return false;">{{importLink}}</a>
+</section>
+</div>
+<hr/>
+<div id="nsWrapper">
+    {{#if nextStepsContent}}
+    <section>
+        {{{nextStepsContent}}}
+    </section>
+    {{/if}}
+</div>
+<footer>
+    {{> template_copyRight}}
+</footer>
+{{> template_commonFooterContent}}
+</body>
+</html>

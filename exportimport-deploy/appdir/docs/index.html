@@ -27,8 +27,10 @@
             </div>
         </div>
         <div class="control-bar">
+            <!--
             <a href="">About</a>
-            <a href="">Home</a>
+            <a href="">Home</a> 
+             -->
             <a href="">Contact</a>
         </div>
         <div class="x-clear"></div>
@@ -115,9 +117,9 @@
                                                class="x-form-text" style="width: 380px;">
                                     </div>
                                 </div>
-                                <div class="x-form-item">
+<!--                                <div class="x-form-item">
                                     <label class="x-form-item-label-top" for="appDirUserName">
-                                        Application Director Name:
+                                        Application Director Username:
                                         <span class="x-darwin-required-field">*</span>
                                     </label>
 
@@ -136,7 +138,7 @@
                                         <input id="appDirPassword" type="password" class="x-form-text"
                                                style="width: 380px;">
                                     </div>
-                                </div>
+                                </div>-->
                                 <div class="x-form-item">
                                     <label class="x-form-item-label-top" for="bpExportFN">
                                         File:
@@ -149,6 +151,11 @@
                                     </div>
                                 </div>
 
+                            </div>
+                            <div class="offset1 span4">
+                            <label class="text-info x-form-item-label-left">
+                                After selecting import, authentication credentials will be prompted for by your browser's native control.
+                            </label>
                             </div>
                         </div>
 
@@ -167,6 +174,13 @@
 
                                 <div id="responseDataControl" class="hidden">
                                     <div id="responseData" class="responseData"></div>
+                                    <div id="errordiv" class="filler">                                    
+	                                    <textarea name="description"
+	                                              id="error-readme-content"
+	                                              disabled=""
+	                                              class="error-readme-content">	                                              
+	                                    </textarea>
+	                                </div>	             
                                 </div>
                             </div>
                         </div>
