@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Import Application</title>
+    <script type="text/javascript" src="../js/thirdparty/head_core.js"></script>
+    <link href="../../twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../twitter-bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/importapp.css"/>
+</head>
+
+<body class="x-chrome-bg">
+<div id="center" class="center"></div>
+<div id="mainbody">
+    <div class="chrome-header" style="height: 44px;">
+        <div class="main-toolbar"></div>
+    </div>
+    <div class="title-page">
+        <div class="title-container">
+            <div class="title-container-body">
+                <div class="title-content-container" id="importHeader">
+                    Import Application
+                </div>
+            </div>
+        </div>
+        <div class="control-bar">
+            <a href="">About</a>
+            <a href="">Home</a>
+            <a href="">Contact</a>
+        </div>
+        <div class="x-clear"></div>
+        <div id="contentWrapper">
+            <div class="container-fluid fill">
+                <div class="content row-fluid">
+                    <div class="span12">
+                        <div class="row-fluid">
+                            <div class="span5">
+                                <div class="filler">
+                                    <label class="x-form-item-label-top" for="readme-content">Description:</label>
+                                    <textarea name="description"
+                                              id="readme-content"
+                                              disabled=""
+                                              class="x-form-text readme-content">
+                                    </textarea>
+                                </div>
+                                <div id="importOptions">
+                                    <span class="label label-item" style="font-size: 18px;"><b>Advanced
+                                        Options</b></span>
+                                    <a href="#advancedOptionsWrap" data-target="#advancedOptionsWrap"
+                                       data-toggle="collapse"
+                                       class="accordion-toggle">
+                                        <i id="advancedOptionsChevron" class="icon-chevron-right"></i>
+                                    </a>
+
+                                    <div style="width: 280px;" role="presentation" id="advancedOptionsWrap"
+                                         class="accordion-body collapse">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <!--<div id="conflictResolutionStrategy" class="controls" style="border:1px solid #ccc;">-->
+                                                    <div id="conflictResolutionStrategy" class="controls">
+                                                        <label>Conflict Resolution</label>
+                                                        <label class="radio">
+                                                            <input type="radio" name="importOptionsRadio"
+                                                                   id="importOverwrite"
+                                                                   value="OVERWRITE"
+                                                                   checked="">
+                                                            Overwrite
+                                                        </label>
+                                                        <label class="radio">
+                                                            <input type="radio" name="importOptionsRadio"
+                                                                   id="importSkip"
+                                                                   value="SKIP">
+                                                            Skip
+                                                        </label>
+                                                        <label class="radio">
+                                                            <input type="radio" name="importOptionsRadio" id="importNew"
+                                                                   value="IMPORTASNEW">
+                                                            New
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="x-form-item">
+                                                        <label class="x-form-item-label-top" for="importAsNewSuffix">
+                                                            Import As New Suffix
+                                                        </label>
+
+                                                        <div class="x-form-item-body">
+                                                            <input id="importAsNewSuffix" type="text" placeholder="_new"
+                                                                   class="x-form-text" disabled=""
+                                                                   style="width: 100px;">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="offset1 span6">
+                                <div class="x-form-item">
+                                    <label class="x-form-item-label-top" for="appDirHost">
+                                        Application Director Host Base URL:
+                                        <span class="x-darwin-required-field">*</span>
+                                    </label>
+
+                                    <div class="x-form-item-body">
+                                        <input placeholder="http://localhost:8080" id="appDirHost" type="text"
+                                               class="x-form-text" style="width: 380px;">
+                                    </div>
+                                </div>
+                                <div class="x-form-item">
+                                    <label class="x-form-item-label-top" for="appDirUserName">
+                                        Application Director Name:
+                                        <span class="x-darwin-required-field">*</span>
+                                    </label>
+
+                                    <div class="x-form-item-body">
+                                        <input placeholder="admin" id="appDirUserName" type="text" class="x-form-text"
+                                               style="width: 380px;">
+                                    </div>
+                                </div>
+                                <div class="x-form-item">
+                                    <label class="x-form-item-label-top" for="appDirPassword">
+                                        Application Director Password:
+                                        <span class="x-darwin-required-field">*</span>
+                                    </label>
+
+                                    <div class="x-form-item-body">
+                                        <input id="appDirPassword" type="password" class="x-form-text"
+                                               style="width: 380px;">
+                                    </div>
+                                </div>
+                                <div class="x-form-item">
+                                    <label class="x-form-item-label-top" for="bpExportFN">
+                                        File:
+                                        <span class="x-darwin-required-field">*</span>
+                                    </label>
+
+                                    <div class="x-form-item-body">
+                                        <input type="text" id="bpExportFN" disabled="" class="x-form-text"
+                                               style="width: 380px;">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <div id="progressGroup" class="control-group hidden">
+                                <span class="badge" id="progressBadge"
+                                      style="padding: 3px; float: left; width: 25px; text-align: center;">
+                                   50%
+                                </span>
+
+                                    <div id="progressWrapper" class="progress progress-striped">
+                                        <div class="bar" style="width: 50%;" id="progressBar">Importing...</div>
+                                    </div>
+                                </div>
+
+                                <div id="responseDataControl" class="hidden">
+                                    <div id="responseData" class="responseData"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="viewFileModal" class="modal hide fade in" style="display: none; ">
+                <div class="modal-header">
+                    <h3 class="pagination-centered"></h3>
+                </div>
+                <div class="modal-body">
+                    <!--<pre id="model-content" class="prettyprint lang-xml" style="margin-bottom: 9px;">-->
+                   <pre id="model-content">
+                   </pre>
+                </div>
+                <div class="modal-footer">
+                    <a download="" class="btn">Download</a>
+                    <a href="#" class="btn" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div id="bottomWrapper" class="span12">
+
+                    <div id="actionButtons">
+                        <div class="slanted-button-bar">
+                            <div id="importButton" class="is-last is-default x-btn-slanted-medium">
+                                <button>Import File</button>
+                            </div>
+                            <div id="viewImportFileButton" class="x-btn-slanted-medium">
+                                <button>&lt;&lt; Download File</button>
+                            </div>
+                        </div>
+                        <div class="x-clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/thirdparty/require/require-2.1.1-min.js"></script>
+<script type="text/javascript" src="../js/apps/configs/shared.config.js"></script>
+<script>
+    require(["apps/importExportApp.nopm"], function (importApp) {
+        $(function () {
+            if (!_.isUndefined(importApp)) {
+                importApp.postConstruct();
+            }
+        })
+    });
+</script>
+</body>
+</html>
+
+
