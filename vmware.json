@@ -1,14 +1,18 @@
 {
-    "vmware":{
-        "config":{
-            "version":1.0
+    "vmware": {
+        "config": {
+            "version": 1.0
         },
-        "applications":{
-            "applicationDirectorWebImport":{
-                "exportFileName":"jPetStore-1.0.1.xml",
-                "exportedFileReadme":"jPetStore-1.0.1.readme",
-                "importSectionHeader":"jPetStore",
-                "exportedWithAppDVersion":5.0
+        "applications": {
+            "applicationDirectorWebImport": {
+                "exportFileName": "jPetStore-1.0.1.xml",
+                "exportedFileReadme": "jPetStore-1.0.1.readme",
+                "importSectionHeader": "jPetStore",
+                "exportedWithAppDVersion": 5.0,
+                "optional": {
+                    "enableConsoleLogging": true,
+                    "exportedFileErrorReadme": "jPetstore-1.0.0.xml.error.readme"
+                }
             }
         }
     }
