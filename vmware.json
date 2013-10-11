@@ -1,0 +1,20 @@
+{
+    "vmware":{
+        "config":{
+            "version":1.0
+        },
+        "applications":{
+            "applicationDirectorWebImport":{
+                "exportFileName":"weblogic12c-cluster-dukebank-1.0.0.xml",
+                "exportedFileReadme":"weblogic12c-cluster-dukebank-1.0.0.xml.readme",
+                "importSectionHeader":"Weblogic Cluster",
+                "exportedWithAppDVersion":5.0,
+                "optional":{
+                    "nextStepsMarkdownFile":"weblogic12c-cluster-dukebank-1.0.0.xml.md",
+                    "enableConsoleLogging":true,
+                    "exportedFileErrorReadme":"weblogic12c-cluster-dukebank-1.0.0.xml.error.readme"
+                }
+            }
+        }
+    }
+}

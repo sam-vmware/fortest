@@ -1,0 +1,4 @@
+Oracle WebLogic Server 12c is the industry's best application server for building and deploying enterprise Java EE applications with support for new features for lowering cost of operations, improving performance, enhancing scalability and supporting the Oracle Applications portfolio. 
+
+!! Important !!
+Be sure to provide weblogic_installer property in ASWebLogic and MSWebLogic with the location of your installer and property mod_wl_so in SetupWLClusterLB with the location of your mod_wl.so
