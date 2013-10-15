@@ -18,8 +18,12 @@
     left: 50%;
     z-index: 99999;
 }
-#inputs {
 
+#inputs {}
+.bullet {}
+/*.bullet a:hover, a:link, a.bullet, a:active {*/
+.bullet a {
+    color: #f67012;
 }
 
 html, body {
@@ -117,9 +121,15 @@ textarea.error-readme-content {
     height: 50px;    
 }
 
+#mainHeader {
+    font-size: 18px;
+}
+
+#infoOptions {
+    margin-top: 10px;
+}
 #importOptions {
     position: relative;
-    margin-top: 25px;
     float: right;
 }
 
@@ -132,7 +142,6 @@ textarea.error-readme-content {
 }
 
 #bottomWrapper .slanted-button-bar {
-    margin-right: 53%;
 }
 
 #sidebar {

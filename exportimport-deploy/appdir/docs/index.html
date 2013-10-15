@@ -22,10 +22,9 @@
 <script type="text/javascript" src="../js/apps/configs/shared.config.js"></script>
 <script>
     require(["apps/importExportApp.nopm", "hbs!template/indexBody", "model/indexBody", "model/commonProperties"],
-            function (importApp, compiledIndexBody, IndexBodyModel, cp) {
+            function (importApp, compiledIndexBody, indexBody, cp) {
         $(function () {
-            indexBodyModel = new IndexBodyModel();
-            var content = compiledIndexBody(indexBodyModel.toJSON());
+            var content = compiledIndexBody(indexBody.toJSON());
             cp.get("indexBodyWrapper").html(content);
             if (!_.isUndefined(importApp)) {
                 importApp.postConstruct();

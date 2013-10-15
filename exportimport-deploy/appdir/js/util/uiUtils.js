@@ -3,13 +3,15 @@
  * @author samueldoyle
  */
 define(function (require) {
-    require("util/handleBarHelpers");
-
     var $ = require("jquery"),
         _ = require("underscore"),
         compiledNoticeTemplate = require("hbs!template/notice"),
+        compiledEmailPartnerSupportTemplate = require("hbs!template/emailPartnerSupport"),
         cu = require("util/appDirCommon"),
-        cp = require("model/commonProperties")
+        cp = require("model/commonProperties"),
+        email = require("model/email");
+
+    require("util/handleBarHelpers");
 
     function noticeModal(templateValues) {
         var content = compiledNoticeTemplate(templateValues);
@@ -19,6 +21,23 @@ define(function (require) {
 
     function getBase() {
         return $(document.documentElement).length > 0 ? $(document.documentElement) : $(document.body);
+    }
+
+    function generateEmailTemplate(options) {
+        var queryParams = $.url().param();
+        options || {};
+        var emailProperties = new email(_.extend({
+            repoUname:queryParams.uname,
+            repoName:queryParams.repo,
+            repoBranch:queryParams.branch
+        },options));
+
+        if (!emailProperties.isValid()) {
+            cu.log("emailProperties invalid: " + JSON.stringify(emailProperties));
+            return;
+        }
+
+        return compiledEmailPartnerSupportTemplate(emailProperties.toJSON());
     }
 
     // Updates the banner with success or error messages
@@ -131,6 +150,9 @@ define(function (require) {
         },
         getBase:function() {
             return getBase();
+        },
+        generateEmailTemplate:function(options) {
+            return generateEmailTemplate(options);
         }
     }
 
