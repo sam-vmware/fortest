@@ -9,6 +9,7 @@ define(function (require) {
             _ = require("underscore"),
             GitHubFileCollection = require("model/gitHubFileCollection"),
             cp = require("model/commonProperties"),
+            errors = require("model/errorMappings"),
             cu = require("util/appDirCommon"),
             uiUtils = require("util/uiUtils"),
             VMwareJSONModel = require("model/vmWareJSON"),
@@ -25,27 +26,27 @@ define(function (require) {
         require("util/jsBundle");
 
         marked.setOptions({
-            gfm:true,
-            pedantic:false,
-            sanitize:true
+            gfm: true,
+            pedantic: false,
+            sanitize: true
         });
 
-        var activityValues = {el:"document", segments:12, width:5.5, space:6, length:13, color:'#252525', outside:false, speed:1.5},
+        var activityValues = {el: "document", segments: 12, width: 5.5, space: 6, length: 13, color: '#252525', outside: false, speed: 1.5},
             importFormModel = new ImportFormModel();
 
         // First thing browser check
         if (!cp.get("page-index").hasClass("chrome-gte20") && !cp.get("page-index").hasClass("ff-gte15")) {
             // Yes this could be modeled as collection/model
             var browserInfo = {
-                "info":"The latest version of Chrome or Firefox is required to work with this page.",
-                "supportedBrowsers":[
-                    {"name":"Google Chrome", "version":"20.0", "link":"http://www.google.com/chrome", "img":"../images/chrome_logo_2x.png"},
-                    {"name":"Firefox", "version":"15.0", "link":"http://www.mozilla.org/en-US/firefox", "img":"../images/ff-usage-standard.png"}
+                "info": "The latest version of Chrome or Firefox is required to work with this page.",
+                "supportedBrowsers": [
+                    {"name": "Google Chrome", "version": "20.0", "link": "http://www.google.com/chrome", "img": "../images/chrome_logo_2x.png"},
+                    {"name": "Firefox", "version": "15.0", "link": "http://www.mozilla.org/en-US/firefox", "img": "../images/ff-usage-standard.png"}
                 ]
             };
             var context = {
-                headerText:"Unsupported Browser",
-                bodyText:compiledWrongBrowser(browserInfo)
+                headerText: "Unsupported Browser",
+                bodyText: compiledWrongBrowser(browserInfo)
             };
             uiUtils.noticeModal(context);
             return undefined;
@@ -59,7 +60,7 @@ define(function (require) {
             }
         });
 
-               
+
         function ImportExportApp() {
             this.queryParams = $.url().param();
             this.vmwareJSONFile = undefined;
@@ -79,12 +80,12 @@ define(function (require) {
 
         ImportExportApp.prototype.postConstruct = function () {
             // This was made invalid with the appd index.html provided. TODO move the index.html into template.
-/*            var content = compiledImportFormTmpl(importFormModel.toJSON());
-            cp.get("importFormWrapper").html(content);*/
+            var content = compiledImportFormTmpl(importFormModel.toJSON());
+            cp.get("importFormWrapper").html(content);
 
             this.queryParams = $.url().param();
             this.progressBarEL = "#progressGroup";
-            this.progressBar = new ProgressBarView({el:this.progressBarEL});
+            this.progressBar = new ProgressBarView({el: this.progressBarEL});
             this.eximep = cp.get("APPD_SE");
 
             // Check for anything missing that is required on the URL that redirected to our page
@@ -96,9 +97,10 @@ define(function (require) {
             if (missingValues.length > 0) {
                 var missingValuesString = missingValues.join(", ");
                 uiUtils.updateFormDisplay({
-                    rdcClass:ALERT_ERROR_CLASSES,
-                    rdMsgVal:"Missing <b>[" + missingValuesString + "]</b> required parameter(s) to continue."
-                });
+                    rdcClass: ALERT_ERROR_CLASSES,
+                    rdMsgVal: "Missing <b>[" + missingValuesString + "]</b> required parameter(s) to continue. " + errors.get("ERRORS").import
+
+            });
                 return;
             }
 
@@ -133,14 +135,15 @@ define(function (require) {
             try {
                 this.gitHubFileCollection =
                     new GitHubFileCollection({
-                        userName:this.queryParams.uname,
-                        repoName:this.queryParams.repo,
-                        sha:this.queryParams.branch
+                        userName: this.queryParams.uname,
+                        repoName: this.queryParams.repo,
+                        sha: this.queryParams.branch
                     });
             } catch (e) {
                 uiUtils.updateFormDisplay({
-                    rdcClass:ALERT_ERROR_CLASSES,
-                    rdMsgVal:e
+                    rdcClass: ALERT_ERROR_CLASSES,
+                    rdMsgVal: errors.get("ERRORS").import
+//                    rdMsgVal: e
                 });
                 return false;
             }
@@ -148,17 +151,18 @@ define(function (require) {
             // Fetch the tree collection from GitHub
             cu.log("Fetching GH repo base dir. file meta-data");
             this.gitHubFileCollection.fetch({
-                parse:false,
-                success:this.ghCollectionSuccessHandler,
-                error:function (collection, response) {                    
+                parse: false,
+                success: this.ghCollectionSuccessHandler,
+                error: function (collection, response) {
                     var msg = "Failed to get data from GitHub repository. " + response.statusText
-                    if(response.status === 404){
+                    if (response.status === 404) {
                         msg = 'The repository or branch was not found on github. Please check the url parameters!'
                     }
                     cu.log("%cImportExportApp failed to get tree: " + response, "color:red; background-color:blue");
                     uiUtils.updateFormDisplay({
-                        rdcClass:ALERT_ERROR_CLASSES,
-                        rdMsgVal: msg
+                        rdcClass: ALERT_ERROR_CLASSES,
+                        rdMsgVal: errors.get("ERRORS").import
+//                        rdMsgVal: msg
                     });
                 }
             });
@@ -166,21 +170,21 @@ define(function (require) {
 
         // Post this data to app dir, done once we have the data
         ImportExportApp.prototype.importData = function (postData) {
-           /* this.displayNextSteps("http://foo");
-            return;*/
+            /* this.displayNextSteps("http://foo");
+             return;*/
             var missingValuesString = ''
             if (this.postParams.appdhost === undefined || this.postParams.appdhost == '') {
                 missingValuesString = 'Host Url';
             }
-    
-           /* if (this.postParams.uname === undefined || this.postParams.uname == '') {
-                missingValuesString = 'username';
-            }
-    
-            if (this.postParams.password === undefined || this.postParams.password == '') {
-                missingValuesString = 'password';
-            }*/
-    
+
+            /* if (this.postParams.uname === undefined || this.postParams.uname == '') {
+             missingValuesString = 'username';
+             }
+
+             if (this.postParams.password === undefined || this.postParams.password == '') {
+             missingValuesString = 'password';
+             }*/
+
             if (missingValuesString != '') {
                 uiUtils.updateFormDisplay({
                     rdcClass: ALERT_ERROR_CLASSES,
@@ -192,22 +196,23 @@ define(function (require) {
             var paramObject = {
                 conflictResolution: this.postParams.conflictResolution,
                 importAsNewSuffix: !_.isUndefined(this.postParams.importAsNewSuffix) ? this.postParams.importAsNewSuffix
-                        : "NOOP"
+                    : "NOOP"
             }, url = [ this.postParams.appdhost, this.postParams.appdeximep, "?", $.param(paramObject) ].join("");
-    
-            var importSuccessHandler = function(data, textStatus, jqXHR) {
-    
+
+            var importSuccessHandler = function (data, textStatus, jqXHR) {
+
                 var msgClass = ALERT_SUCCESS_CLASSES, msgVal = "", errored = false;
-    
+
                 if (!_.isBoolean(data.success) || data.success == false) {
                     msgClass = ALERT_ERROR_CLASSES;
                     msgVal = "Application Director could not import the application. Please review the Application Director server logs.";
                     errored = true;
-                    if (!_.isUndefined(this.errorReadMeFile)) {
+/*                    if (!_.isUndefined(this.errorReadMeFile)) {
                         this.displayErrorReadme();
                     } else {
                         cp.get("error-readme-content").hide();
-                    }
+                    }*/
+                    cp.get("error-readme-content").hide();
                     this.gaugesTrack('50b3c1fbf5a1f548a9000010');
                 } else {
                     this.progressBar.update({
@@ -218,13 +223,14 @@ define(function (require) {
                 }
                 uiUtils.updateFormDisplay({
                     rdcClass: msgClass,
-                    rdMsgVal: msgVal
+                    rdMsgVal: errors.get("ERRORS").import
+//                    rdMsgVal: msgVal
                 });
                 if (errored) {
                     return;
                 }
 
-                
+
                 // this code should work with the 5.0 version of the backend
                 // too.Put in checks using just the id and app name, instead of
                 // count.
@@ -232,70 +238,75 @@ define(function (require) {
                 // were imported, change the message and url
                 var artifactType = '';
                 var baseURL = this.postParams.appdhost + "/darwin/#";
-                var encodedSegment  =  '';
-                
+                var encodedSegment = '';
+
                 //first check if there is an applicationId, to be compatible with the previous code in titan release
-                if(data.applicationId > 0 || data.applicationsCount > 0) {
-                     artifactType = data.applicationsCount > 1 ? data.applicationsCount + ' Applications' : '1 Application';
-                     encodedSegment = cu.strToBase64("false:applicationOverviewPage:" + data.applicationId);
-                }else if(data.servicesCount > 0){
-                    artifactType = data.servicesCount > 1 ? data.servicesCount + ' Services' : '1 Service';                    
-                    encodedSegment = cu.strToBase64('false:serviceVersionOverviewPage:' + data.serviceId + ':overviewMode=view');                   
-               }else if(data.scriptTasksCount > 0){
-                   artifactType =data.scriptTasksCount > 1 ? data.scriptTasksCount + ' Script Tasks' : '1 Script Task';
-                   encodedSegment = cu.strToBase64('false:taskVersionOverviewPage:' + data.scriptTaskId + ':overviewMode=view');
-               }else{
-                   //cannot determine which one of app/service or script task was imported
-                   //show the application landing url in that case
-                   artifactType = '';
-                   encodedSegment = cu.strToBase64('false:applicationLanding');
-               }              
-                   
-               var  base64URL = baseURL + encodedSegment;
-               this.displayNextSteps(artifactType, base64URL);
+                if (data.applicationId > 0 || data.applicationsCount > 0) {
+                    artifactType = data.applicationsCount > 1 ? data.applicationsCount + ' Applications' : '1 Application';
+                    encodedSegment = cu.strToBase64("false:applicationOverviewPage:" + data.applicationId);
+                } else if (data.servicesCount > 0) {
+                    artifactType = data.servicesCount > 1 ? data.servicesCount + ' Services' : '1 Service';
+                    encodedSegment = cu.strToBase64('false:serviceVersionOverviewPage:' + data.serviceId + ':overviewMode=view');
+                } else if (data.scriptTasksCount > 0) {
+                    artifactType = data.scriptTasksCount > 1 ? data.scriptTasksCount + ' Script Tasks' : '1 Script Task';
+                    encodedSegment = cu.strToBase64('false:taskVersionOverviewPage:' + data.scriptTaskId + ':overviewMode=view');
+                } else {
+                    //cannot determine which one of app/service or script task was imported
+                    //show the application landing url in that case
+                    artifactType = '';
+                    encodedSegment = cu.strToBase64('false:applicationLanding');
+                }
+
+                var base64URL = baseURL + encodedSegment;
+                this.displayNextSteps(artifactType, base64URL);
             };
 
             cu.log("Sending to... " + url);
             $.when(dataPoster({
-                url:url,
-                data:postData,
-                contentType:"application/xml",
-                dataType:"json",
-                beforeSend:this.postParams.beforeSend,
-                xhrFields:this.postParams.xhrFields,
-                error: function (xhr, desc, err) {                    
-                    cu.log(xhr);
-                    cu.log("Desc: " + desc + "\nErr:" + err);
-                  }
-            })).done(_.bind(importSuccessHandler, this)).
-                fail(function (jqXHR, textStatus, errorThrown) {                    
-                    cu.log("%cImportExportApp post to app dir returned status: " + jqXHR.status, "color:red; background-color:blue");
-                    var msg= "An error occurred during import. " + errorThrown;
-                    
-                    if(errorThrown === 'Unauthorized' || jqXHR.status === 401){
-                        msg = 'Login credentials are incorrect. Please check the username and password!'
+                    url: url,
+                    data: postData,
+                    contentType: "application/xml",
+                    dataType: "json",
+                    beforeSend: this.postParams.beforeSend,
+                    xhrFields: this.postParams.xhrFields,
+                    error: function (xhr, desc, err) {
+                        cu.log(xhr);
+                        cu.log("Desc: " + desc + "\nErr:" + err);
                     }
-                    
-                    if(errorThrown == 'timeout'){
-                        msg = 'Connection to the Application Director server timed out. Please check connection parameters!';
+                })).done(_.bind(importSuccessHandler, this)).
+                fail(function (jqXHR, textStatus, errorThrown) {
+                    cu.log("%cImportExportApp post to app dir returned status: " + jqXHR.status, "color:red; background-color:blue");
+//                    var msg = "An error occurred during import. " + errorThrown;
+                    var msg = errors.get("ERRORS").import;
+
+                    if (errorThrown === 'Unauthorized' || jqXHR.status === 401) {
+//                        msg = 'Login credentials are incorrect. Please check the username and password!'
+                        msg = errors.get("ERRORS").authenticate;
+                    }
+
+                    if (errorThrown == 'timeout') {
+//                        msg = 'Connection to the Application Director server timed out. Please check connection parameters!';
+                        msg = errors.get("ERRORS").connect;
+
                     }
                     uiUtils.updateFormDisplay({
-                        rdcClass:ALERT_ERROR_CLASSES,
+                        rdcClass: ALERT_ERROR_CLASSES,
                         rdMsgVal: msg
                     });
-                    if (!_.isUndefined(this.errorReadMeFile)){
+                    /*if (!_.isUndefined(this.errorReadMeFile)) {
                         this.displayErrorReadme();
-                    }else{
+                    } else {
                         cp.get("error-readme-content").hide();
-                    }
+                    }*/
+                    cp.get("error-readme-content").hide();
                 });
         };
-        
+
         ImportExportApp.prototype.gaugesTrack = function (trackingId) {
-            var t   = document.createElement('script');
-            t.type  = 'text/javascript';
+            var t = document.createElement('script');
+            t.type = 'text/javascript';
             t.async = true;
-            t.id    = 'gauges-tracker';
+            t.id = 'gauges-tracker';
             t.setAttribute('data-site-id', trackingId);
             t.src = 'https://secure.gaug.es/track.js';
             var s = document.getElementsByTagName('script')[0];
@@ -309,21 +320,22 @@ define(function (require) {
             cp.get("responseDataControl").addClass("hidden"); // hide the response in case it is open from prev request
 
             var requestOpts = _.extend({}, {
-                reset:false, // if this model has retrieved its data already skip
-                success:function (model, response, jqXHR) {
+                reset: false, // if this model has retrieved its data already skip
+                success: function (model, response, jqXHR) {
                     cu.log("!! Empty success callback encountered !!");
                 },
-                error:function (model, error, jqXHR) {
+                error: function (model, error, jqXHR) {
                     cu.log("Failed: getting data from GH");
                     uiUtils.updateFormDisplay({
-                        rdcClass:ALERT_ERROR_CLASSES,
-                        rdMsgVal:"Failed to get data from GitHub. " + JSON.stringify({
-                            name:model.get("path"),
-                            code:jqXHR.status,
-                            error:error
-                        })
-                    });
-                    
+                        rdcClass: ALERT_ERROR_CLASSES,
+                        rdMsgVal: "Failed to get data from GitHub. " + JSON.stringify({
+                            name: model.get("path"),
+                            code: jqXHR.status,
+                            error: error
+                        }) + " " + errors.get("ERRORS").import
+
+                });
+
                 }
             }, options);
 
@@ -352,30 +364,30 @@ define(function (require) {
 
             if (_.isUndefined(jsonMetaFile)) {
                 uiUtils.updateFormDisplay({
-                    rdcClass:ALERT_ERROR_CLASSES,
-                    rdMsgVal:"Unable to locate the json configuration file: " + jsonFileID
-                });
+                    rdcClass: ALERT_ERROR_CLASSES,
+                    rdMsgVal: "Unable to locate the required json configuration file: " + jsonFileID + " " + errors.get("ERRORS").import
+            });
                 return;
             }
 
             // Process the vmware.json file
             this.getGHFileRawData(jsonMetaFile, {
-                success:function (model, response, jqXHR) {
+                success: function (model, response, jqXHR) {
                     try {
-                        var vmwareJSONFile = new VMwareJSONModel({rawJSON:model.get("rawData")});
+                        var vmwareJSONFile = new VMwareJSONModel({rawJSON: model.get("rawData")});
                         this.targetFileMeta = collection.get(vmwareJSONFile.get("exportFileName"));
-                        this.readMeFile = collection.get(vmwareJSONFile.get("exportedFileReadme"));                        
+                        this.readMeFile = collection.get(vmwareJSONFile.get("exportedFileReadme"));
                         if (_.isUndefined(this.targetFileMeta)) throw new Error("Export File: " + vmwareJSONFile.get("exportFileName")) + " missing";
                         if (_.isUndefined(this.readMeFile)) throw new Error("Export Readme File: " + vmwareJSONFile.get("exportFileReadme")) + " missing";
-                                                
+
                         var optional = vmwareJSONFile.get("optional");
-                        if (!optional || !optional.exportedFileErrorReadme) {
-                            cu.log("No error readme file was entered in configuration.");                            
+/*                        if (!optional || !optional.exportedFileErrorReadme) {
+                            cu.log("No error readme file was entered in configuration.");
                         } else if (optional.exportedFileErrorReadme) {
-                            this.errorReadMeFile = collection.get(optional.exportedFileErrorReadme);                
-                            if (_.isUndefined(this.errorReadMeFile)) throw new Error("Missing Error-Readme File: " + vmwareJSONFile.get("exportedFileErrorReadme"));                
-                        }
-                        
+                            this.errorReadMeFile = collection.get(optional.exportedFileErrorReadme);
+                            if (_.isUndefined(this.errorReadMeFile)) throw new Error("Missing Error-Readme File: " + vmwareJSONFile.get("exportedFileErrorReadme"));
+                        }*/
+
                         this.importSectionHeader = vmwareJSONFile.get("importSectionHeader");
                         this.vmwareJSONFile = vmwareJSONFile;
 
@@ -386,11 +398,12 @@ define(function (require) {
                             cu.log("Logging output to console");
                         }
 
-                        this.displayReadme();                        
+                        this.displayReadme();
                     } catch (e) {
                         uiUtils.updateFormDisplay({
-                            rdcClass:ALERT_ERROR_CLASSES,
-                            rdMsgVal:e
+                            rdcClass: ALERT_ERROR_CLASSES,
+                            rdMsgVal: errors.get("ERRORS").import
+//                            rdMsgVal: e
                         });
                         return false;
                     }
@@ -401,18 +414,18 @@ define(function (require) {
         // Fetches the readme data file and displays it in the textarea, after so enables input fields
         ImportExportApp.prototype.displayReadme = function () {
             this.getGHFileRawData(this.readMeFile, {
-                success:function (model, response, jqXHR) {
+                success: function (model, response, jqXHR) {
                     cp.get("readme-content").empty().append(_.escape(response)); // insert our data into the modal
                     this.allowInput();
                 }
             });
         };
-        
+
         // Fetches the error readme data file and displays it in case of error importing
         ImportExportApp.prototype.displayErrorReadme = function () {
-            if (!_.isUndefined(this.errorReadMeFile)){
-                this.getGHFileRawData(this.errorReadMeFile, {reset:true,
-                    success:function (model, response, jqXHR) {                    
+            if (!_.isUndefined(this.errorReadMeFile)) {
+                this.getGHFileRawData(this.errorReadMeFile, {reset: true,
+                    success: function (model, response, jqXHR) {
                         cp.get("error-readme-content").empty().append(_.escape(response)); // insert our data into the modal
                         this.allowInput();
                     }
@@ -436,12 +449,12 @@ define(function (require) {
                 cu.log("content: " + content);
                 cu.log("contentLink: " + contentLink);
 
-                
+
                 $contentWrapper.empty();
                 uiUtils.displayIframe(
-                    { id:"contentWrapper",
-                        src:contentLink,
-                        cssObj:{ width:width, height:height, padding:"10px" }
+                    { id: "contentWrapper",
+                        src: contentLink,
+                        cssObj: { width: width, height: height, padding: "10px" }
                     }
                 );
                 // Disable the import button
@@ -450,7 +463,7 @@ define(function (require) {
 
             // Get the optional section, markdown nextsteps file is optional
             var optional = this.vmwareJSONFile.get("optional"),
-                contentParams = {artifactType: artifactType, importLink:importedBPURL}, // will always present imported bp url
+                contentParams = {artifactType: artifactType, importLink: importedBPURL}, // will always present imported bp url
                 haveNSFile = true;
 
             if (!optional || !optional.nextStepsMarkdownFile) {
@@ -463,8 +476,8 @@ define(function (require) {
                     cu.log("!! ERROR !! nextSteps file was entered in configuration but missing from repo");
                     haveNSFile = false;
                 }
-            }            
-            
+            }
+
             if (!haveNSFile) {
                 displayNSFrame(contentParams);
                 return;
@@ -472,7 +485,7 @@ define(function (require) {
 
             // Fetch the markdown nextstep file from the repo
             this.getGHFileRawData(this.nextsStepFile, {
-                success:function (model, response, jqXHR) {
+                success: function (model, response, jqXHR) {
                     // convert markeddown file to html to and add to our contentparams for display
                     contentParams.nextStepsContent = marked(model.get("rawData"));
                     displayNSFrame(contentParams);
@@ -485,7 +498,7 @@ define(function (require) {
             // TODO clean this, the show modal no longer exists and all this is doing now is providing the download
             // on click functionality
             this.viewDataModal =
-                new GHViewDataModal({model:this.targetFileMeta, clickTarget:this.importButtonEL, showModal:false});
+                new GHViewDataModal({model: this.targetFileMeta, clickTarget: this.importButtonEL, showModal: false});
 
             this.bindImportForm(); // ok to allow input on the form now that we have all our data
         };
@@ -494,50 +507,73 @@ define(function (require) {
             var fName = this.targetFileMeta.get("path"),
                 header = !_.isUndefined(this.importSectionHeader) ? this.importSectionHeader : fName.split("\.")[0];
 
-            var clickHandler = function () {
-                var uname = cp.get("appDirUserName").val() ? cp.get("appDirUserName").val() : cp.get("appDirUserName").attr("placeholder"),
-                    password = cp.get("appDirPassword").val() ? cp.get("appDirPassword").val() : cp.get("appDirPassword").attr("placeholder"),
-                    appdhost = cp.get("appDirHost").val() ? cp.get("appDirHost").val() : cp.get("appDirHost").attr("placeholder"),
-                    bytes = Crypto.charenc.Binary.stringToBytes(uname + ":" + password),
-                    authToken = Crypto.util.bytesToBase64(bytes),
-                    conflictResolution = $(":checked", "#conflictResolutionStrategy").val(),
-                    importAsNewSuffix = (conflictResolution == "IMPORTASNEW") ? (cp.get("importAsNewSuffix").val() ? cp.get("importAsNewSuffix").val() : cp.get("importAsNewSuffix").attr("placeholder")) : null;
-
-                // On import these are the params used to push our data to appdir
-                this.postParams = {
-                    uname:uname,
-                    password:password,
-                    appdhost:appdhost,
-                    appdeximep:this.eximep,
-                    conflictResolution:conflictResolution,
-                    beforeSend:function (xhr) {
-//                        xhr.setRequestHeader("Authorization", "Basic " + authToken);
-                    },
-                    xhrFields:{
-                        withCredentials:true // required for CORS check
-                    }
-                };
-
-                if (importAsNewSuffix !== null) {
-                    this.postParams.importAsNewSuffix = importAsNewSuffix;
-                }
-
-                this.progressBar.show().update({value:"0%", text:"Importing..."});
-                cu.log("ImportExportApp form submitted");
-                this.getGHFileRawData(this.targetFileMeta, {
-                    reset:true,
-                    success:function (model, response, jqXHR) {
-                        this.progressBar.update({value:"50%"});
-                        cu.log("%cImportExportApp sending import data to app dir, user: "
-                            + this.postParams.uname + " app dir host: " + this.postParams.appdhost, "color:yellow; background-color:blue");
-                        this.importData(model.get("rawData"));
-                    }
-                });
-            };
-
             cp.get("bpExportFN").attr("placeholder", fName);
             cp.get("importHeader").empty().text("Import " + header);
-            cp.get("importButton").on("click", _.bind(clickHandler, this));
+//            cp.get("importButton").on("click", _.bind(clickHandler, this));
+
+            $("#importForm").validate({
+                showErrors:function(errorMap, errorList) {
+
+                    // Clean up any tooltips for valid elements
+                    $.each(this.validElements(), function (index, element) {
+                        $(element).data("title", "").css({"background-color": "white"}).tooltip("destroy");
+                    });
+
+                    // Create new tooltips for invalid elements
+                    $.each(errorList, function (index, error) {
+                        $(error.element).tooltip("destroy")
+                            .data("title", error.message)
+                            .css({"background-color": "red"})
+                            .tooltip();
+                    });
+                },
+
+                submitHandler: _.bind(function (form, e) {
+                    e.preventDefault();
+
+//                  var clickHandler = function () {
+                    var uname = cp.get("appDirUserName").val() ? cp.get("appDirUserName").val() : cp.get("appDirUserName").attr("placeholder"),
+                        password = cp.get("appDirPassword").val() ? cp.get("appDirPassword").val() : cp.get("appDirPassword").attr("placeholder"),
+                        appdhost = cp.get("appDirHost").val() ? cp.get("appDirHost").val() : cp.get("appDirHost").attr("placeholder"),
+                        bytes = Crypto.charenc.Binary.stringToBytes(uname + ":" + password),
+                        authToken = Crypto.util.bytesToBase64(bytes),
+                        conflictResolution = $(":checked", "#conflictResolutionStrategy").val(),
+                        importAsNewSuffix = (conflictResolution == "IMPORTASNEW") ? (cp.get("importAsNewSuffix").val() ? cp.get("importAsNewSuffix").val() : cp.get("importAsNewSuffix").attr("placeholder")) : null;
+
+                    appdhost = "http://"+appdhost+":8080";
+                    // On import these are the params used to push our data to appdir
+                    this.postParams = {
+                        uname: uname,
+                        password: password,
+                        appdhost: appdhost,
+                        appdeximep: this.eximep,
+                        conflictResolution: conflictResolution,
+                        beforeSend: function (xhr) {
+//                        xhr.setRequestHeader("Authorization", "Basic " + authToken);
+                        },
+                        xhrFields: {
+                            withCredentials: true // required for CORS check
+                        }
+                    };
+
+                    if (importAsNewSuffix !== null) {
+                        this.postParams.importAsNewSuffix = importAsNewSuffix;
+                    }
+
+                    this.progressBar.show().update({value: "0%", text: "Importing..."});
+                    cu.log("ImportExportApp form submitted");
+                    this.getGHFileRawData(this.targetFileMeta, {
+                        reset: true,
+                        success: function (model, response, jqXHR) {
+                            this.progressBar.update({value: "50%"});
+                            cu.log("%cImportExportApp sending import data to app dir, user: "
+                                + this.postParams.uname + " app dir host: " + this.postParams.appdhost, "color:yellow; background-color:blue");
+                            this.importData(model.get("rawData"));
+                        }
+                    });
+//                  };
+                }, this)
+            });
         };
 
         return new ImportExportApp();

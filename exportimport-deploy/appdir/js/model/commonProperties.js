@@ -7,9 +7,10 @@ define(["jquery", "underscore", "backbone"], function ($, _, Backbone) {
         defaults:{
             VMW_JSON:"vmware.json", // The json file that contains the config information, see the sample.vmware.json
             APPD_SE:"/darwin/api/service/action/importexport", // Service Endpoint for web import
-            ID_LIST:["noticeModal", "responseDataControl", "responseData", "errordiv", "error-readme-content", "appDirUserName", "center", "advancedOptionsChevron",
-                     "advancedOptionsWrap", "importFormWrapper", "page-index", "appDirPassword", "appDirHost", "readme-content",
-                     "conflictResolutionStrategy", "importAsNewSuffix", "bpExportFN", "importHeader", "importButton", "contentWrapper"]
+            ID_LIST:["noticeModal", "responseDataControl", "responseData", "errordiv", "error-readme-content", "appDirUserName",
+                     "center", "advancedOptionsChevron", "advancedOptionsWrap", "importFormWrapper", "page-index", "appDirPassword",
+                     "appDirHost", "readme-content", "conflictResolutionStrategy", "importAsNewSuffix", "bpExportFN", "importHeader",
+                     "importButton", "contentWrapper", "indexBodyWrapper"]
         },
 
         initialize:function () {

@@ -9599,7 +9599,7 @@ textarea.x-form-invalid-field {
 input.x-form-text {
   color: #3f3f3f;
   border: 1px solid #c1c1c1;
-  background-color: white;
+  /*background-color: white;*/
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   -o-border-radius: 6px;

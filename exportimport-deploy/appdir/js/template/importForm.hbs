@@ -1,75 +1,58 @@
 {{!
+  author: samueldoyle
   model: model/importForm
 }}
-<form class="form-horizontal" id="importForm">
-    <fieldset>
+<div class="offset1 span6">
+    <form class="form-horizontal" id="importForm">
         <div class="control-group">
-            <label class="control-label" for="appDirHost">{{hostLabel}}</label>
-
-            <div class="controls">
-                <input class="input-xlarge required dn" id="appDirHost" type="text"
-                       value="{{hostValue}}">
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="appDirUserName">{{userLabel}}</label>
-
-            <div class="controls">
-                <input class="input-xlarge focused required" minlength="4" id="appDirUserName"
-                       value="{{userValue}}" type="text">
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="appDirPassword">{{passwordLabel}}</label>
-
-            <div class="controls">
-                <input class="input-xlarge required" id="appDirPassword" minlength="4"
-                       value="{{passwordValue}}" type="password">
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="bpExportFN">{{importFileLabel}}</label>
-
-            <div class="controls">
-                <input class="input-xlarge disabled" id="bpExportFN" type="text"
-                       placeholder="" disabled="">
-            </div>
-        </div>
-        <div class="offset1 span4">
-            <div class="offset1 span4">
-                <label class="text-info x-form-item-label-left">
-                    After selecting import, authentication credentials will be prompted for by your browser's native
-                    control.
+            <div class="x-form-item">
+                <label class="x-form-item-label-top" for="appDirHost">
+                    {{hostLabel}}
+                    <span class="x-darwin-required-field">*</span>
                 </label>
-            </div>
 
-            <div id="progressGroup" class="control-group hidden">
-            <span class="badge" id="progressBadge"
-                  style="padding: 3px; float: left; width: 25px; text-align: center;">50%</span>
-
-                <div id="progressWrapper" class="progress progress-striped">
-                    <div class="bar" style="width: 50%;" id="progressBar">{{progressBarText}}</div>
+                <div>
+                    <input id="appDirHost" class="required hostOrIP" style="width: 380px;"
+                           type="text"
+                           placeholder="{{hostPlaceHolderValue}}"
+                           data-validation-regex-regex="{{hostValidationRegex}}"
+                           data-validation-regex-message="{{hostValidationRegexErrorMsg}}"
+                            />
                 </div>
             </div>
+        </div>
+        <div class="control-group">
+            <div class="x-form-item">
+                <label class="x-form-item-label-top" for="bpExportFN">
+                    {{fileLabel}}
+                    <span class="x-darwin-required-field">*</span>
+                </label>
 
-            <div id="responseDataControl" class="hidden">
-                <div id="responseData"></div>
-            </div>
-
-            <div class="control-group">
-                <div class="controls">
-                    <a id="viewImportFileButton" data-loading-text="{{buttonLoadingText}}"
-                       data-complete-text="{{viewFileButtonText}}"
-                       class="btn">
-                    </a>
-                    <button id="appDirImportButton" data-loading-text="{{buttonLoadingText}}"
-                            data-complete-text="{{importButtonText}}"
-                            type="submit" class="btn btn-primary" disabled="">
-                    </button>
+                <div class="x-form-item-body">
+                    <input type="text" id="bpExportFN" disabled="" class="x-form-text"
+                           style="width: 380px;">
                 </div>
             </div>
-    </fieldset>
-</form>
-<div id="eximData" class="hidden">
-    <span id="eximep" type="data" data-value="{{importEP}}"></span>
+        </div>
+                <div id="bottomWrapper">
+                    <hr style="border-width:2px" />
+                    <p class="text-info text-left">
+                        {{authPromptText}}
+                    </p>
+
+                    <div id="actionButtons" class="control-group" style="margin-top: 30px;">
+                        <div class="slanted-button-bar">
+                            <div id="importButton" class="is-last is-default x-btn-slanted-medium">
+                                <button type="submit">{{importButtonText}}</button>
+                            </div>
+                            <div id="viewImportFileButton" class="x-btn-slanted-medium">
+                                <button>{{downloadButtonText}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </form>
 </div>
+<!--    <div id="eximData" class="hidden">
+        <span id="eximep" type="data" data-value="{{importEP}}"></span>
+    </div>-->

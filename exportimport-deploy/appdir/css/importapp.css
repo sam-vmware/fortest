@@ -18,11 +18,14 @@
     left: 50%;
     z-index: 99999;
 }
+#inputs {
+
+}
 
 html, body {
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 /* http://stackoverflow.com/questions/8740779/how-to-build-a-2-column-fixed-fluid-layout-with-twitter-bootstrap */
@@ -125,15 +128,11 @@ textarea.error-readme-content {
 }
 
 #bottomWrapper {
-    /*margin: auto;*/
-    float: none;
-    margin: 5px;
-    bottom: 25px;
-    position: absolute;
+    position: relative;
 }
 
 #bottomWrapper .slanted-button-bar {
-    margin-right: 45%;
+    margin-right: 53%;
 }
 
 #sidebar {

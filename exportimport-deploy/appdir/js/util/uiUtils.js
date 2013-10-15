@@ -9,7 +9,7 @@ define(function (require) {
         _ = require("underscore"),
         compiledNoticeTemplate = require("hbs!template/notice"),
         cu = require("util/appDirCommon"),
-        cp = require("model/commonProperties");
+        cp = require("model/commonProperties")
 
     function noticeModal(templateValues) {
         var content = compiledNoticeTemplate(templateValues);
