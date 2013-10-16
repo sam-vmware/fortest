@@ -24,7 +24,7 @@ define(function(require) {
                     emailToName:indexBody.get("contactName")
                 });
             var errorsHash = this.get("ERRORS");
-            errorsHash.import='Could not import – please send an email to ' + emailHTML + ' your blueprint name to get the error resolved';
+            errorsHash.import='Could not import – please send an email to ' + emailHTML + ' with the blueprint name and URL to get the error resolved';
             Backbone.Model.prototype.initialize.apply(this, arguments);
         },
 

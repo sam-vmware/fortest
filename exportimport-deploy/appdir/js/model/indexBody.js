@@ -21,7 +21,7 @@ define(function (require) {
             importAsNewLabel:"Import As New Suffix",
             contactEnabled:false,
             contactText:"Contact",
-            contactName:"Partner Support",
+            contactName:"Marketplace Support",
             contactEmail:"app-mgmt-partner-support@vmware.com",
             contactEmailLink:undefined,
             appDDSLink:'<a href="http://www.vmware.com/files/pdf/vfabric/VMware-vFabric-Application-Director-Datasheet.pdf">vFabric Application Director</a>',
