@@ -52,15 +52,6 @@ define(function (require) {
             return undefined;
         }
 
-        $("input:radio[name=importOptionsRadio]").on("click", function (e) {
-            if ($(this).attr("id") == "importNew") {
-                cp.get("importAsNewSuffix").removeAttr("disabled");
-            } else {
-                cp.get("importAsNewSuffix").attr("disabled", true);
-            }
-        });
-
-
         function ImportExportApp() {
             this.queryParams = $.url().param();
             this.vmwareJSONFile = undefined;
@@ -103,6 +94,14 @@ define(function (require) {
             });
                 return;
             }
+
+            $("input:radio[name=importOptionsRadio]").on("click", function (e) {
+                if ($(this).attr("id") == "importNew") {
+                    cp.get("importAsNewSuffix").removeAttr("disabled");
+                } else {
+                    cp.get("importAsNewSuffix").attr("disabled", true);
+                }
+            });
 
             // Move this out when we get a page that doesn't have all the extjs stuff in it
             cp.get("advancedOptionsWrap").on("hide",function () {

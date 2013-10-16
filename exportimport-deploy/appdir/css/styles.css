@@ -13377,7 +13377,6 @@ input.x-form-radio {
 .slanted-button-bar {
   display: inline-block;
   margin-right: 40px;
-  position: absolute;
   right: 0;
 }
 /* line 186, c:/Users/nnemani/darwin/darwin-webapp/src/main/webapp/resources/css/sass/common/_slantedbutton.scss */

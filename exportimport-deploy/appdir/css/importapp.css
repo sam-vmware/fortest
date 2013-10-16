@@ -130,7 +130,7 @@ textarea.error-readme-content {
 }
 #importOptions {
     position: relative;
-    float: right;
+    margin-top: 25px;
 }
 
 #spinnerEl {
@@ -142,6 +142,7 @@ textarea.error-readme-content {
 }
 
 #bottomWrapper .slanted-button-bar {
+    float:left;
 }
 
 #sidebar {
