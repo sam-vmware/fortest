@@ -5,7 +5,7 @@
  * @author samueldoyle
  */
 define(function (require) {
-        var $ = require("jquery"),
+            var $ = require("jquery"),
             _ = require("underscore"),
             GitHubFileCollection = require("model/gitHubFileCollection"),
             cp = require("model/commonProperties"),
@@ -16,14 +16,13 @@ define(function (require) {
             ImportFormModel = require("model/importForm"),
             GHViewDataModal = require("view/ghViewDataModal"),
             ProgressBarView = require("view/progressBar"),
-            compiledImportFormTmpl = require("hbs!template/importForm"),
-            compiledWrongBrowser = require("hbs!template/unsupportedBrowser"),
-            compiledPopupBlocked = require("hbs!template/popupBlocked"),
-            compiledNextSteps = require("hbs!template/nextSteps"),
+            compiledImportFormTmpl = require("hbars!template/importForm"),
+            compiledWrongBrowser = require("hbars!template/unsupportedBrowser"),
+            compiledPopupBlocked = require("hbars!template/popupBlocked"),
+            compiledNextSteps = require("hbars!template/nextSteps"),
             marked = require("thirdparty/marked"),
             dataPoster = require("workers/dataPoster");
-
-        require("util/jsBundle");
+            jqPurl = require("jqPlugins/jquery.url");
 
         marked.setOptions({
             gfm: true,
@@ -53,7 +52,7 @@ define(function (require) {
         }
 
         function ImportExportApp() {
-            this.queryParams = $.url().param();
+            this.queryParams = jqPurl().param();
             this.vmwareJSONFile = undefined;
             this.targetFileMeta = undefined;
             this.readMeFile = undefined;

@@ -5,7 +5,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Import Application</title>
+    <script type="text/javascript" src="../js/jquery/jquery-1.8.2.min.js"></script>
+    <!--<script type="text/javascript" src="../js/jquery/plugins/jquery.url.js"></script>-->
+    <!--<script type="text/javascript" src="../js/jquery/plugins/jquery.validate.min.js"></script>-->
+    <script type="text/javascript" src="../js/thirdparty/spin.min.js"></script>
     <script type="text/javascript" src="../js/thirdparty/head_core.js"></script>
+    <script data-main="../js/apps/configs/shared.config" src="../js/thirdparty/require/require.js"></script>
     <link href="../../twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="../../twitter-bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="../css/styles.css"/>
@@ -17,21 +22,6 @@
 <!-- indexBody.hbs -->
 </span>
 
-
-<script type="text/javascript" src="../js/thirdparty/require/require-2.1.1-min.js"></script>
-<script type="text/javascript" src="../js/apps/configs/shared.config.js"></script>
-<script>
-    require(["apps/importExportApp.nopm", "hbs!template/indexBody", "model/indexBody", "model/commonProperties"],
-            function (importApp, compiledIndexBody, indexBody, cp) {
-        $(function () {
-            var content = compiledIndexBody(indexBody.toJSON());
-            cp.get("indexBodyWrapper").html(content);
-            if (!_.isUndefined(importApp)) {
-                importApp.postConstruct();
-            }
-        })
-    });
-</script>
 </body>
 </html>
 

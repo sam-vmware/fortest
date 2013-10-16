@@ -5,13 +5,12 @@
 define(function (require) {
     var $ = require("jquery"),
         _ = require("underscore"),
-        compiledNoticeTemplate = require("hbs!template/notice"),
-        compiledEmailPartnerSupportTemplate = require("hbs!template/emailPartnerSupport"),
+        jqPurl = require("jqPlugins/jquery.url"),
+        compiledNoticeTemplate = require("hbars!template/notice"),
+        compiledEmailPartnerSupportTemplate = require("hbars!template/emailPartnerSupport"),
         cu = require("util/appDirCommon"),
         cp = require("model/commonProperties"),
         email = require("model/email");
-
-    require("util/handleBarHelpers");
 
     function noticeModal(templateValues) {
         var content = compiledNoticeTemplate(templateValues);
@@ -24,8 +23,8 @@ define(function (require) {
     }
 
     function generateEmailTemplate(options) {
-        var queryParams = $.url().param();
         options || {};
+        var queryParams = jqPurl().param();
         var emailProperties = new email(_.extend({
             repoUname:queryParams.uname,
             repoName:queryParams.repo,

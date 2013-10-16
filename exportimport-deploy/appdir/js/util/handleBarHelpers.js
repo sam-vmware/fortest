@@ -3,7 +3,7 @@
  * @author samueldoyle
  */
 define(function (require) {
-    var Handlebars = require("handlebars");
+    var Handlebars = require("Handlebars");
     assert(Handlebars, "Unable to find handlebars dependency");
 
     // {{year}}

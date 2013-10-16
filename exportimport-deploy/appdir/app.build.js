@@ -5,15 +5,22 @@
     // Build output directory is ../appdir-build
     // More info see here: http://requirejs.org/docs/optimization.html
     // For more configuration options see example @ https://github.com/jrburke/r.js/blob/master/build/example.build.js
-    baseUrl:"js",
-    inlineText:true,
+    name: "apps/main",
+    create: true,
+    appDir: "../",
+    baseUrl: "appdir/js",
+    dir: "../../exportimport-deploy",
     mainConfigFile:"js/apps/configs/shared.config.js",
-    name:"apps/importExportApp.nopm",
-    out:"../../exportimport-deploy/appdir/js/apps/importExportApp.nopm.js",
-    //dir:"../../exportimport-deploy/appdir/js",
-    //include:["thirdparty/crypto-min", "util/uiUtils", "util/appDirCommon"],
-    //exclude:["jquery"],
-    //deps:["text"],
+    findNestedDependencies: true,
+    onBuildWrite: function (moduleName, path, content) {
+        // replace handlebars with the runtime version
+        if (moduleName === 'Handlebars') {
+            path = path.replace('handlebars.js', 'handlebars.runtime.js');
+            content = fs.readFileSync(path).toString();
+            content = content.replace(/(define\()(function)/, '$1"handlebars", $2');
+        }
+        return content;
+    },
     pragmasOnSave:{
         //removes Handlebars.Parser code (used to compile template strings) set
         //it to `false` if you need to parse template strings even after build
@@ -23,10 +30,10 @@
         // removes i18n precompiler, handlebars and json2
         excludeAfterBuild:true
     },
+    wrap: true,
+    normalizeDirDefines: "skip",
     skipModuleInsertion:false,
-    findNestedDependencies:false,
     optimizeAllPluginResources:false,
-    keepBuildDir:false,
     optimize:"uglify",
     uglify:{
         toplevel:true,
@@ -42,5 +49,6 @@
     cssImportIgnore:null,
     useStrict:false,
     cjsTranslate:true,
-    logLevel:0
+    logLevel:0,
+    stubModules: ['text']
 })
