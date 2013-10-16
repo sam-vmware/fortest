@@ -16,10 +16,10 @@ define(function (require) {
             ImportFormModel = require("model/importForm"),
             GHViewDataModal = require("view/ghViewDataModal"),
             ProgressBarView = require("view/progressBar"),
-            compiledImportFormTmpl = require("hbars!template/importForm"),
-            compiledWrongBrowser = require("hbars!template/unsupportedBrowser"),
-            compiledPopupBlocked = require("hbars!template/popupBlocked"),
-            compiledNextSteps = require("hbars!template/nextSteps"),
+            compiledImportFormTmpl = require("hbs!template/importForm"),
+            compiledWrongBrowser = require("hbs!template/unsupportedBrowser"),
+            compiledPopupBlocked = require("hbs!template/popupBlocked"),
+            compiledNextSteps = require("hbs!template/nextSteps"),
             marked = require("thirdparty/marked"),
             dataPoster = require("workers/dataPoster");
             jqPurl = require("jqPlugins/jquery.url");

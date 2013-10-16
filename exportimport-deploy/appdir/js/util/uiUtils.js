@@ -6,8 +6,8 @@ define(function (require) {
     var $ = require("jquery"),
         _ = require("underscore"),
         jqPurl = require("jqPlugins/jquery.url"),
-        compiledNoticeTemplate = require("hbars!template/notice"),
-        compiledEmailPartnerSupportTemplate = require("hbars!template/emailPartnerSupport"),
+        compiledNoticeTemplate = require("hbs!template/notice"),
+        compiledEmailPartnerSupportTemplate = require("hbs!template/emailPartnerSupport"),
         cu = require("util/appDirCommon"),
         cp = require("model/commonProperties"),
         email = require("model/email");

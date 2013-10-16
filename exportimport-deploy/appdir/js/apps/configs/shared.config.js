@@ -20,14 +20,14 @@ requirejs.config({
         backbone: "thirdparty/backbone-0.9.2-amd",
         Handlebars: "thirdparty/require/handlebars",
         text: "thirdparty/require/text",
-        hbars: "thirdparty/require/hbars",
         i18nprecompile: "thirdparty/require/plugins/i18nprecompile",
         json2: "thirdparty/require/plugins/json2",
+        hbs: "thirdparty/require/hbs",
         twitterjs: "../../twitter-bootstrap/js/bootstrap.min"
     },
     locale: "en_us",
     // default plugin settings, listing here just as a reference
-    hbars: {
+    hbs: {
         extension: '.hbs',
         // if disableI18n is `true` it won't load locales and the i18n helper
         // won't work as well.

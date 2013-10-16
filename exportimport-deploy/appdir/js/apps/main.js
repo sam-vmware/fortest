@@ -1,9 +1,8 @@
 define(function (require) {
         var $ = require("jquery"),
-        Handlebars = require("Handlebars"),
         cp = require("model/commonProperties"),
         indexBody = require("model/indexBody"),
-        compiledIndexBody = require("hbars!template/indexBody"),
+        compiledIndexBody = require("hbs!template/indexBody"),
         importApp = require("apps/importExportApp.nopm");
 
         $.validator.addMethod("hostOrIP", function (value, element) {
@@ -24,16 +23,6 @@ define(function (require) {
                 throw new AssertException(message);
             }
         };
-        // Register Handlebar Helpers
-        function ulQuestionList(context, options) {
-            var ret = "<ul>";
-            for (var i = 0, j = context.length; i < j; i++) {
-                ret = ret + "<li class='bullet'> <i class='icon-question-sign'></i>    " + options.fn(context[i]) + "</li>";
-            }
-            return ret + "</ul>";
-        }
-
-        Handlebars.registerHelper("ulQuestionList", ulQuestionList);
 
         // populate content
         var content = compiledIndexBody(indexBody.toJSON());
