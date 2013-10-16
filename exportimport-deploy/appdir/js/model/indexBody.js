@@ -24,7 +24,7 @@ define(function (require) {
             contactName:"Partner Support",
             contactEmail:"app-mgmt-partner-support@vmware.com",
             contactEmailLink:undefined,
-            appDDSLink:'<a href="http://www.vmware.com/files/pdf/vfabric/VMware-vFabric-Application-Director-Datasheet.pdf">vfabric Application Director</a>',
+            appDDSLink:'<a href="http://www.vmware.com/files/pdf/vfabric/VMware-vFabric-Application-Director-Datasheet.pdf">vFabric Application Director</a>',
             infoBulletPoints: []
         },
 
@@ -41,7 +41,7 @@ define(function (require) {
                 {msg: 'A blueprint is a visual model for deployment topology. This page has an import utility that allows you to automatically render the selected application blueprint into ' + that.get("appDDSLink") + ' 5.x'},
                 {msg: 'Your Application Director instance needs to be network accessible for the import utility to work'},
                 {msg: 'You need to have Catalog Admin and Application Architect roles to use import the blueprint into your instance of Application Director'},
-                {msg: 'If you do not have an instance of Application Director , contact us at ' + that.get("contactEmailLink")}
+                {msg: 'If you do not have an instance of Application Director, contact us at ' + that.get("contactEmailLink")}
             ];
 
             _.each(bulletValues, function (bullet) {
