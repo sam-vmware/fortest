@@ -1,0 +1,1 @@
+(function(){define("main",function(){}),require(["main"])})();
