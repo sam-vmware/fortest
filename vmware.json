@@ -11,14 +11,7 @@
                 "exportedWithAppDVersion": 6.0,
                 "optional": {
                     "enableConsoleLogging": true,
-                    "exportedFileErrorReadme": "jPetstore-1.0.0.xml.error.readme",
-                    "headerBulletPoints":[
-                        {"msg": "A blueprint is a visual model for deployment topology. This page has an import utility that allows you to automatically render the selected application blueprint into <a href='http://www.vmware.com/files/pdf/vfabric/VMware-vFabric-Application-Director-Datasheet.pdf'>vFabric Application Director</a> 6.0"},
-                        {"msg": "Your Application Director instance needs to be network accessible for the import utility to work"},
-                        {"msg": "You need to have Catalog Admin and Application Architect roles to use import the blueprint into your instance of Application Director"},
-                        {"msg": "If you do not have an instance of Application Director, contact us at app-mgmt-partner-support@vmware.com"},
-                        {"msg": "<b>Note</b> If you require a 5.x version of this solution see the <a href='http://sam-vmware.github.io/fortest/exportimport-deploy/appdir/docs/index.html?uname=sam-vmware&repo=fortest&branch=jpetstore'>5.x implementation</a>"}
-                    ]
+                    "exportedFileErrorReadme": "jPetstore-1.0.0.xml.error.readme"
                 }
             }
         }
