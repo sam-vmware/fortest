@@ -15,7 +15,13 @@
                 "optional":{
                     "nextStepsMarkdownFile":"weblogic12c-cluster-dukebank-1.0.0.xml.nextsteps.markdown",
                     "enableConsoleLogging":false,
-                    "exportedFileErrorReadme":"weblogic12c-cluster-dukebank-1.0.0.xml.error.readme"
+                    "exportedFileErrorReadme":"weblogic12c-cluster-dukebank-1.0.0.xml.error.readme",
+                    "headerBulletPoints":[
+                        {"msg":"A blueprint is a visual model for deployment topology. This page has an import utility that allows you to automatically render the selected application blueprint into <a href='http://www.vmware.com/files/pdf/vfabric/VMware-vFabric-Application-Director-Datasheet.pdf'>vFabric Application Director</a> 6.0"},
+                        {"msg":"Your Application Director instance needs to be network accessible for the import utility to work"},
+                        {"msg":"You need to have Catalog Admin and Application Architect roles to use import the blueprint into your instance of Application Director"},
+                        {"msg":"If you do not have an instance of Application Director, contact us at contact@vmware.com"}
+                    ]
                 }
             }
         }
