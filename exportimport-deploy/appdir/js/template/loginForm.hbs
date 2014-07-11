@@ -1,9 +1,9 @@
 {{!
   author: samueldoyle
-  model: model/importForm
+  model: model/loginForm
 }}
 <div class="offset1 span6">
-    <form class="form-horizontal" id="importForm">
+    <form class="form-horizontal" id="loginForm">
         <div class="control-group">
             <div class="x-form-item">
                 <label class="x-form-item-label-top" for="appDirHost">
@@ -11,9 +11,13 @@
                     <span class="x-darwin-required-field">*</span>
                 </label>
 
-                <div class="x-form-item-body">
-                    <input type="text" id="appDirHost" disabled="" placeholder="{{appDirHost}}" value="{{appDirHost}}" class="x-form-text"
-                           style="width: 380px;">
+                <div>
+                    <input id="appDirHost" class="required hostOrIP" style="width: 380px;"
+                           type="text"
+                           placeholder="{{hostPlaceHolderValue}}"
+                           data-validation-regex-regex="{{hostValidationRegex}}"
+                           data-validation-regex-message="{{hostValidationRegexErrorMsg}}"
+                            />
                 </div>
             </div>
         </div>
@@ -23,29 +27,17 @@
                     {{tenantLabel}}
                     <span class="x-darwin-required-field">*</span>
                 </label>
-                <div class="x-form-item-body">
-                    <input type="text" id="appDirTenant" disabled="" placeholder="{{appDirTenant}}" value="{{appDirTenant}}" class="x-form-text"
-                           style="width: 380px;">
+
+                <div>
+                    <input id="appDirTenant" class="required tenant" style="width: 380px;"
+                           type="text"
+                           placeholder="{{tenantPlaceHolderValue}}"
+                           data-validation-regex-regex="{{tenantValidationRegex}}"
+                           data-validation-regex-message="{{tenanthostValidationRegexErrorMsg}}"
+                            />
                 </div>
             </div>
         </div>
-        <div class="control-group">
-            <div class="x-form-item">
-                <label class="x-form-item-label-top" for="appDirBusinessGroups">
-                    {{fileLabel}}
-                    <span class="x-darwin-required-field">*</span>
-                </label>
-
-                <div class="x-form-item-body">
-                    <select id="appDirBusinessGroups">
-                        {{#businessGroupCollection}}
-                            <option value="{{name}}">{{name}}</option>
-                        {{/businessGroupCollection}}
-                    </select>
-                </div>
-            </div>
-        </div>
-
         <div class="control-group">
             <div class="x-form-item">
                 <label class="x-form-item-label-top" for="bpExportFN">
@@ -67,8 +59,8 @@
 
                     <div id="actionButtons" class="control-group" style="margin-top: 30px;">
                         <div class="slanted-button-bar">
-                            <div id="importButton" class="is-last is-default x-btn-slanted-medium">
-                                <button type="submit">{{importButtonText}}</button>
+                            <div id="loginButton" class="is-last is-default x-btn-slanted-medium">
+                                <button type="submit">{{loginButtonText}}</button>
                             </div>
                             <div id="viewImportFileButton" class="x-btn-slanted-medium">
                                 <button>{{downloadButtonText}}</button>
@@ -79,5 +71,5 @@
     </form>
 </div>
 <!--    <div id="eximData" class="hidden">
-        <span id="eximep" type="data" data-value="{{importEP}}"></span>
+        <span id="eximep" type="data" data-value="{{loginEP}}"></span>
     </div>-->
