@@ -18,7 +18,7 @@ define(["underscore", "backbone"], function (_, Backbone) {
             progressBarText:"Importing...",
             importButtonText:"Import File",
             downloadButtonText:"Download File",
-            fileLabel:"Application Import Repository Filename",
+            tenantLabel:"Tenant",
             authPromptText:"After selecting import, authentication credentials will be prompted for by your browser's native control.",
             buttonLoadingText:"loading...",
             importEP:"/darwin/api/service/action/importexport",
