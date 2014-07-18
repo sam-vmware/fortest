@@ -40,8 +40,8 @@ define(function (require) {
             var browserInfo = {
                 "info": "The latest version of Chrome or Firefox is required to work with this page.",
                 "supportedBrowsers": [
-                    {"name": "Google Chrome", "version": "20.0", "link": "http://www.google.com/chrome", "img": "../images/chromeLogo.png"},
-                    {"name": "Firefox", "version": "15.0", "link": "http://www.mozilla.org/en-US/firefox", "img": "../images/ffLogo.png"}
+                    {"name": "Google Chrome", "version": "20.0", "link": "http://www.google.com/chrome", "img": "../additional_images/chromeLogo.png"},
+                    {"name": "Firefox", "version": "15.0", "link": "http://www.mozilla.org/en-US/firefox", "img": "../additional_images/ffLogo.png"}
                 ]
             };
             var context = {
@@ -485,12 +485,15 @@ define(function (require) {
                     var uname = cp.get("appDirUserName").val() ? cp.get("appDirUserName").val() : cp.get("appDirUserName").attr("placeholder"),
                         password = cp.get("appDirPassword").val() ? cp.get("appDirPassword").val() : cp.get("appDirPassword").attr("placeholder"),
                         appdhost = cp.get("appDirHost").val() ? cp.get("appDirHost").val() : cp.get("appDirHost").attr("placeholder"),
-                        bytes = Crypto.charenc.Binary.stringToBytes(uname + ":" + password),
-                        authToken = Crypto.util.bytesToBase64(bytes),
+                        appdtenant = cp.get("appDirTenant").val(),
+                    /*                        bytes = Crypto.charenc.Binary.stringToBytes(uname + ":" + password),
+                                            authToken = Crypto.util.bytesToBase64(bytes),*/
                         conflictResolution = $(":checked", "#advancedOptionsWrap").val(),
                         importAsNewSuffix = (conflictResolution == "IMPORTASNEW") ? (cp.get("importAsNewSuffix").val() ? cp.get("importAsNewSuffix").val() : cp.get("importAsNewSuffix").attr("placeholder")) : null,
                         shared = cp.get("shared").is(":checked"),
                         importGroup = cp.get("importGroup").val() ? cp.get("importGroup").val() : null;
+
+                    var bg = _.findWhere(this.attributes.sessionStorage.get("businessGroupCollection"), {name: importGroup});
 
                     appdhost = "https://" + appdhost + ":8443";
                     // On import these are the params used to push our data to appdir
@@ -502,7 +505,8 @@ define(function (require) {
                         conflictResolution: conflictResolution,
                         shared: shared,
                         beforeSend: function (xhr) {
-//                        xhr.setRequestHeader("Authorization", "Basic " + authToken);
+                            xhr.setRequestHeader("darwin-security-token", bg.authToken);
+                            xhr.setRequestHeader("darwin-tenant-id", appdtenant);
                         },
                         xhrFields: {
                             withCredentials: true // required for CORS check

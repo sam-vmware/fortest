@@ -94,8 +94,16 @@ define(["underscore", "backbone", "util/appDirCommon"], function (_, Backbone, c
             return $.ajax(params);
         },
 
-        parse:function (response) { // fetch should only ever be called in lazy init for rawdata
-            this.set("rawData", response);
+        parse:function (response, options) { // fetch should only ever be called in lazy init for rawdata
+            if (options.reset === false) {
+                this.set("rawData", response);
+                return;
+            }
+            return {
+               "sha": response.sha,
+                "path": response.path,
+                "theURL": response.url
+            };
         }
     });
     return GitHubFile;

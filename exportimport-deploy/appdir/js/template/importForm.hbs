@@ -12,7 +12,8 @@
                 </label>
 
                 <div class="x-form-item-body">
-                    <input type="text" id="appDirHost" disabled="" placeholder="{{appDirHost}}" value="{{appDirHost}}" class="x-form-text"
+                    <input type="text" id="appDirHost" disabled="" placeholder="{{appDirHost}}" value="{{appDirHost}}"
+                           class="x-form-text"
                            style="width: 380px;">
                 </div>
             </div>
@@ -23,8 +24,10 @@
                     {{tenantLabel}}
                     <span class="x-darwin-required-field">*</span>
                 </label>
+
                 <div class="x-form-item-body">
-                    <input type="text" id="appDirTenant" disabled="" placeholder="{{appDirTenant}}" value="{{appDirTenant}}" class="x-form-text"
+                    <input type="text" id="appDirTenant" disabled="" placeholder="{{appDirTenant}}"
+                           value="{{appDirTenant}}" class="x-form-text"
                            style="width: 380px;">
                 </div>
             </div>
@@ -59,23 +62,23 @@
                 </div>
             </div>
         </div>
-                <div id="bottomWrapper">
-                    <hr style="border-width:2px" />
-                    <p class="text-info text-left">
-                        {{authPromptText}}
-                    </p>
 
-                    <div id="actionButtons" class="control-group" style="margin-top: 30px;">
-                        <div class="slanted-button-bar">
-                            <div id="importButton" class="is-last is-default x-btn-slanted-medium">
-                                <button type="submit">{{importButtonText}}</button>
-                            </div>
-                            <div id="viewImportFileButton" class="x-btn-slanted-medium">
-                                <button>{{downloadButtonText}}</button>
-                            </div>
-                        </div>
-                    </div>
+        <div id="bottomWrapper">
+            <hr style="border-width:2px"/>
+            <p class="text-info text-left">
+                {{authPromptText}}
+            </p>
+
+            <div id="actionButtons" class="control-group" style="margin-top: 30px;">
+                <div id="loginButton">
+                    <button type="submit" class="btn btn-primary btn-lg"
+                            style="float: left">{{loginButtonText}}</button>
                 </div>
+                <div id="viewImportFileButton">
+                    <button type="button" class="btn btn-primary btn-lg">{{downloadButtonText}}</button>
+                </div>
+            </div>
+        </div>
     </form>
 </div>
 <!--    <div id="eximData" class="hidden">

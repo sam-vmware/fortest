@@ -3,16 +3,16 @@
   model: model/loginForm
 }}
 <div class="offset1 span6">
-    <form class="form-horizontal" id="loginForm">
-        <div class="control-group">
+    <form class="form-horizontal container-fluid" id="loginForm">
+        <div class="control-group control-group-pad row">
             <div class="x-form-item">
-                <label class="x-form-item-label-top" for="appDirHost">
+                <label class="x-form-item-label-top col-md-4" for="appDirHost">
                     {{hostLabel}}
                     <span class="x-darwin-required-field">*</span>
                 </label>
 
-                <div>
-                    <input id="appDirHost" class="required hostOrIP" style="width: 380px;"
+                <div class="col-md-4">
+                    <input id="appDirHost" class="required hostOrIP" style=" width: 380px;"
                            type="text"
                            placeholder="{{hostPlaceHolderValue}}"
                            data-validation-regex-regex="{{hostValidationRegex}}"
@@ -21,14 +21,14 @@
                 </div>
             </div>
         </div>
-        <div class="control-group">
+        <div class="control-group control-group-pad row">
             <div class="x-form-item">
-                <label class="x-form-item-label-top" for="appDirTenant">
+                <label class="x-form-item-label-top col-md-4" for="appDirTenant">
                     {{tenantLabel}}
                     <span class="x-darwin-required-field">*</span>
                 </label>
 
-                <div>
+                <div class="col-md-4">
                     <input id="appDirTenant" class="required tenant" style="width: 380px;"
                            type="text"
                            placeholder="{{tenantPlaceHolderValue}}"
@@ -38,36 +38,34 @@
                 </div>
             </div>
         </div>
-        <div class="control-group">
+        <div class="control-group control-group-pad row">
             <div class="x-form-item">
-                <label class="x-form-item-label-top" for="bpExportFN">
+                <label class="x-form-item-label-top col-md-4" for="bpExportFN">
                     {{fileLabel}}
                     <span class="x-darwin-required-field">*</span>
                 </label>
 
-                <div class="x-form-item-body">
+                <div class="col-md-4">
                     <input type="text" id="bpExportFN" disabled="" class="x-form-text"
                            style="width: 380px;">
                 </div>
             </div>
         </div>
-                <div id="bottomWrapper">
-                    <hr style="border-width:2px" />
-                    <p class="text-info text-left">
-                        {{authPromptText}}
-                    </p>
-
-                    <div id="actionButtons" class="control-group" style="margin-top: 30px;">
-                        <div class="slanted-button-bar">
-                            <div id="loginButton" class="is-last is-default x-btn-slanted-medium">
-                                <button type="submit">{{loginButtonText}}</button>
-                            </div>
-                            <div id="viewImportFileButton" class="x-btn-slanted-medium">
-                                <button>{{downloadButtonText}}</button>
-                            </div>
-                        </div>
-                    </div>
+        <div id="bottomWrapper">
+            <hr style="border-width:2px"/>
+            <div id="actionButtons" class="control-group row" style="margin-top: 30px;">
+                <div id="viewImportFileButton" class="col-md-2 col-md-offset-3">
+                    <button type="button" class="btn btn-primary btn-lg">{{downloadButtonText}}</button>
                 </div>
+                <div id="loginButton" class="col-md-2">
+                    <button type="submit" class="btn btn-primary btn-lg"
+                            style="float: left">{{loginButtonText}}</button>
+                    <p class="text-left" style="color: rgba(0, 0, 0, 0.45);">
+                        <small>{{authPromptText}}</small>
+                    </p>
+                </div>
+            </div>
+        </div>
     </form>
 </div>
 <!--    <div id="eximData" class="hidden">

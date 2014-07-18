@@ -5,77 +5,81 @@
  * @author samueldoyle
  */
 define(function (require) {
-        var $ = require("jquery"),
-            _ = require("underscore"),
-            SessionStorage = require("model/sessionStorage"),
-            BusinessGroupCollection = require("model/tenantBusinessGroupCollection"),
-            GitHubFileCollection = require("model/gitHubFileCollection"),
-            cp = require("model/commonProperties"),
-            errors = require("model/errorMappings"),
-            cu = require("util/appDirCommon"),
-            uiUtils = require("util/uiUtils"),
-            VMwareJSONModel = require("model/vmWareJSON"),
-            GHViewDataModal = require("view/ghViewDataModal"),
-            compiledWrongBrowser = require("hbs!template/unsupportedBrowser"),
-            dataPoster = require("workers/dataPoster"),
-            marked = require("marked"),
-            Crypto = require("Crypto"),
-            twitterjs = require("twitterjs"),
-            Spinner = require("spin"),
-            eventBus = require("util/appCommonEB");
+    var $ = require("jquery"),
+        _ = require("underscore"),
+        SessionStorage = require("model/sessionStorage"),
+        BusinessGroupCollection = require("model/tenantBusinessGroupCollection"),
+        GitHubFileCollection = require("model/gitHubFileCollection"),
+        cp = require("model/commonProperties"),
+        errors = require("model/errorMappings"),
+        cu = require("util/appDirCommon"),
+        uiUtils = require("util/uiUtils"),
+        VMwareJSONModel = require("model/vmWareJSON"),
+        GHViewDataModal = require("view/ghViewDataModal"),
+        compiledWrongBrowser = require("hbs!template/unsupportedBrowser"),
+        dataPoster = require("workers/dataPoster"),
+        marked = require("marked"),
+        Crypto = require("Crypto"),
+        twitterjs = require("twitterjs"),
+        Spinner = require("spin"),
+        eventBus = require("util/appCommonEB");
+
+    var LoginPage = Backbone.Model.extend({
+
+        defaults: {
+            queryParams: $.url().param(),
+            vmwareJSONFile: undefined,
+            targetFileMeta: undefined,
+            readMeFile: undefined,
+            errorReadMeFile: undefined,
+            nextsStepFile: undefined,
+            importButtonEL: "#viewImportFileButton",
+            viewDataModal: undefined,
+            gitHubFileCollection: undefined,
+            sessionStorage: undefined,
+            getParams: undefined
+        },
+
+        initialize: function () {
+            marked.setOptions({
+                gfm: true,
+                pedantic: false,
+                sanitize: true
+            });
+            var activityValues = {el: "document", segments: 12, width: 5.5, space: 6, length: 13, color: '#252525', outside: false, speed: 1.5};
 
 
-        marked.setOptions({
-            gfm: true,
-            pedantic: false,
-            sanitize: true
-        });
+            // First thing browser check
+            if (!cp.get("page-index").hasClass("chrome-gte20") && !cp.get("page-index").hasClass("ff-gte15")) {
+                // Yes this could be modeled as collection/model
+                var browserInfo = {
+                    "info": "The latest version of Chrome or Firefox is required to work with this page.",
+                    "supportedBrowsers": [
+                        {"name": "Google Chrome", "version": "20.0", "link": "http://www.google.com/chrome", "img": "../additional_images/chromeLogo.png"},
+                        {"name": "Firefox", "version": "15.0", "link": "http://www.mozilla.org/en-US/firefox", "img": "../additional_images/ffLogo.png"}
+                    ]
+                };
+                var context = {
+                    headerText: "Unsupported Browser",
+                    bodyText: compiledWrongBrowser(browserInfo)
+                };
+                uiUtils.noticeModal(context);
+                return undefined;
+            }
 
-        var activityValues = {el: "document", segments: 12, width: 5.5, space: 6, length: 13, color: '#252525', outside: false, speed: 1.5};
+            _.bindAll(this, 'postConstruct', 'gaugesTrack', 'getGHFileRawData', 'ghCollectionSuccessHandler',
+                'displayReadme', 'initData', 'allowInput', 'businessGroupSuccessHandler', 'bindLoginForm');
+        },
 
-        // First thing browser check
-        if (!cp.get("page-index").hasClass("chrome-gte20") && !cp.get("page-index").hasClass("ff-gte15")) {
-            // Yes this could be modeled as collection/model
-            var browserInfo = {
-                "info": "The latest version of Chrome or Firefox is required to work with this page.",
-                "supportedBrowsers": [
-                    {"name": "Google Chrome", "version": "20.0", "link": "http://www.google.com/chrome", "img": "../images/chromeLogo.png"},
-                    {"name": "Firefox", "version": "15.0", "link": "http://www.mozilla.org/en-US/firefox", "img": "../images/ffLogo.png"}
-                ]
-            };
-            var context = {
-                headerText: "Unsupported Browser",
-                bodyText: compiledWrongBrowser(browserInfo)
-            };
-            uiUtils.noticeModal(context);
-            return undefined;
-        }
-
-        function LoginPage() {
-            this.queryParams = $.url().param();
-            this.vmwareJSONFile = undefined;
-            this.targetFileMeta = undefined;
-            this.readMeFile = undefined;
-            this.errorReadMeFile = undefined;
-            this.nextsStepFile = undefined;
-            this.importButtonEL = "#viewImportFileButton";
-            this.viewDataModal = undefined;
-            this.gitHubFileCollection = undefined;
-            this.businessGroupCollection = undefined;
-            this.getParams = undefined;
-
-            _.bindAll(this);
-        }
-
-        LoginPage.prototype.postConstruct = function () {
-            this.queryParams = $.url().param();
-            this.verifyLoginEP = cp.get("APPD_VERIFY_LOGIN");
+        postConstruct: function () {
+            this.set("queryParams", $.url().param());
+            this.set("verifyLoginEP", cp.get("APPD_VERIFY_LOGIN"));
 
             // Check for anything missing that is required on the URL that redirected to our page
             var missingValues = [];
-            if (_.isUndefined(this.queryParams.uname)) missingValues.push("uname");
-            if (_.isUndefined(this.queryParams.repo)) missingValues.push("repo");
-            if (_.isUndefined(this.queryParams.branch)) missingValues.push("branch");
+            if (_.isUndefined(this.attributes.queryParams.uname)) missingValues.push("uname");
+            if (_.isUndefined(this.attributes.queryParams.repo)) missingValues.push("repo");
+            if (_.isUndefined(this.attributes.queryParams.branch)) missingValues.push("branch");
 
             if (missingValues.length > 0) {
                 var missingValuesString = missingValues.join(", ");
@@ -88,32 +92,32 @@ define(function (require) {
             }
 
             // Move this out when we get a page that doesn't have all the extjs stuff in it
-            cp.get("advancedOptionsWrap").on("hide",function () {
+            cp.get("advancedOptionsWrap").on("hide", function () {
                 cp.get("advancedOptionsChevron").removeClass("icon-chevron-down").addClass("icon-chevron-right");
             }).on("show", function () {
-                    cp.get("advancedOptionsChevron").removeClass("icon-chevron-right").addClass("icon-chevron-down");
-                });
+                cp.get("advancedOptionsChevron").removeClass("icon-chevron-right").addClass("icon-chevron-down");
+            });
 
             var spinner;
             $(document).ajaxStart(function () {
                 spinner = new Spinner().spin(cp.get("center")[0]);
             }).ajaxStop(function () {
-                    spinner.stop();
-                });
+                spinner.stop();
+            });
 
             this.initData();
             this.gaugesTrack('50b3b654613f5d6634000009');
-        };
+        },
 
         // Initialize data values required for app, includes fetching what is needed from GH
-        LoginPage.prototype.initData = function () {
+        initData: function () {
             try {
-                this.gitHubFileCollection =
+                this.set("gitHubFileCollection",
                     new GitHubFileCollection({
-                        userName: this.queryParams.uname,
-                        repoName: this.queryParams.repo,
-                        sha: this.queryParams.branch
-                    });
+                        userName: this.attributes.queryParams.uname,
+                        repoName: this.attributes.queryParams.repo,
+                        sha: this.attributes.queryParams.branch
+                    }));
             } catch (e) {
                 cu.log("initData: exception: " + e);
                 uiUtils.updateFormDisplay({
@@ -125,8 +129,7 @@ define(function (require) {
 
             // Fetch the tree collection from GitHub
             cu.log("Fetching GH repo base dir. file meta-data");
-            this.gitHubFileCollection.fetch({
-                parse: false,
+            this.attributes.gitHubFileCollection.fetch({
                 success: this.ghCollectionSuccessHandler,
                 error: function (collection, response) {
                     var msg = "Failed to get data from GitHub repository. " + response.statusText;
@@ -140,10 +143,10 @@ define(function (require) {
                     });
                 }
             });
-        };
+        },
 
         // Post this data to app dir, done once we have the data
-        LoginPage.prototype.gaugesTrack = function (trackingId) {
+        gaugesTrack: function (trackingId) {
             return;
             var t = document.createElement('script');
             t.type = 'text/javascript';
@@ -153,12 +156,13 @@ define(function (require) {
             t.src = 'https://secure.gaug.es/track.js';
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(t, s);
-        };
+        },
+
         /* We only have meta data in the collection getting all the file data potentially could take a lot of time
          * this can be used in a lazy init manner to get the raw full data for a file from GH
          * each property can be overridden in the options success,error etc. the defaults are as you see.
          */
-        LoginPage.prototype.getGHFileRawData = function (model, options) {
+        getGHFileRawData: function (model, options) {
             cp.get("responseDataControl").addClass("hidden"); // hide the response in case it is open from prev request
 
             var requestOpts = _.extend({}, {
@@ -184,7 +188,7 @@ define(function (require) {
 
             // Fetch the rawData for the file we want from GitHub
             model.fetch(requestOpts);
-        };
+        },
 
 
         /* 1.) Process file data
@@ -195,12 +199,12 @@ define(function (require) {
          * I saw a promising lib for this would need to review further: https://github.com/fjakobs/async.js.
          * "this" is assumed to be bound to the correct context
          */
-        LoginPage.prototype.ghCollectionSuccessHandler = function (collection, response) {
+        ghCollectionSuccessHandler: function (collection, response) {
             cu.log("%cLoginPage received tree data: ", "color:yellow; background-color:blue");
 
             // First need to locate the vmware.json configuration file.
             var jsonFileID = cp.get("VMW_JSON"),
-                jsonMetaFile = collection.get(jsonFileID);
+                jsonMetaFile = collection.findWhere({path: jsonFileID});
 
             if (_.isUndefined(jsonMetaFile)) {
                 uiUtils.updateFormDisplay({
@@ -215,17 +219,17 @@ define(function (require) {
                 success: function (model, response, jqXHR) {
                     try {
                         var vmwareJSONFile = new VMwareJSONModel({rawJSON: model.get("rawData")});
-                        this.targetFileMeta = collection.get(vmwareJSONFile.get("exportFileName"));
-                        this.readMeFile = collection.get(vmwareJSONFile.get("exportedFileReadme"));
-                        if (_.isUndefined(this.targetFileMeta)) throw new Error("Export File: " + vmwareJSONFile.get("exportFileName")) + " missing";
-                        if (_.isUndefined(this.readMeFile)) throw new Error("Export Readme File: " + vmwareJSONFile.get("exportFileReadme")) + " missing";
+                        this.set("targetFileMeta", collection.get(vmwareJSONFile.get("exportFileName")));
+                        this.set("readMeFile", collection.get(vmwareJSONFile.get("exportedFileReadme")));
+                        if (_.isUndefined(this.attributes.targetFileMeta)) throw new Error("Export File: " + vmwareJSONFile.get("exportFileName")) + " missing";
+                        if (_.isUndefined(this.attributes.readMeFile)) throw new Error("Export Readme File: " + vmwareJSONFile.get("exportFileReadme")) + " missing";
 
                         var optional = vmwareJSONFile.get("optional");
-                        this.importSectionHeader = vmwareJSONFile.get("importSectionHeader");
-                        this.vmwareJSONFile = vmwareJSONFile;
+                        this.set("importSectionHeader", vmwareJSONFile.get("importSectionHeader"));
+                        this.set("vmwareJSONFile", vmwareJSONFile);
 
                         // Check for optional enableConsoleLogging field and set TESTING to true if set for logging.
-                        var optional = this.vmwareJSONFile.get("optional");
+                        var optional = this.attributes.vmwareJSONFile.get("optional");
                         if (optional && optional.enableConsoleLogging == true) {
                             TESTING = true;
                             cu.log("Logging output to console");
@@ -241,34 +245,34 @@ define(function (require) {
                         return false;
                     }
 
-                    eventBus.triggerEvent(eventBus.getEvents().VMW_JSON_LOADED, this.vmwareJSONFile);
+                    eventBus.triggerEvent(eventBus.getEvents().VMW_JSON_LOADED, this.attributes.vmwareJSONFile);
                 }
             });
-        };
+        },
 
         // Fetches the readme data file and displays it in the textarea, after so enables input fields
-        LoginPage.prototype.displayReadme = function () {
-            this.getGHFileRawData(this.readMeFile, {
+        displayReadme: function () {
+            this.getGHFileRawData(this.attributes.readMeFile, {
                 success: function (model, response, jqXHR) {
                     cp.get("readme-content").empty().append(_.escape(response)); // insert our data into the modal
                 }
             });
-        };
+        },
 
-        LoginPage.prototype.allowInput = function () {
+        allowInput: function () {
             // Construct the modal for viewing the importfile on the view file click
             // TODO clean this, the show modal no longer exists and all this is doing now is providing the download
             // on click functionality
-            this.viewDataModal =
-                new GHViewDataModal({model: this.targetFileMeta, clickTarget: this.importButtonEL, showModal: false});
+            this.set("viewDataModal",
+                new GHViewDataModal({model: this.attributes.targetFileMeta, clickTarget: this.attributes.importButtonEL, showModal: false}));
 
             this.bindLoginForm(); // ok to allow input on the form now that we have all our data
-        };
+        },
 
-        LoginPage.prototype.businessGroupSuccessHandler = function (collection, response) {
+        businessGroupSuccessHandler: function (collection, response) {
             cu.log("%cLoginPage retrieved busingess groups: ", "color:yellow; background-color:blue");
 
-            if (! collection.length) {
+            if (!collection.length) {
                 uiUtils.updateFormDisplay({
                     rdcClass: ALERT_ERROR_CLASSES,
                     rdMsgVal: "Collection contain no business group entries: " + errors.get("ERRORS").import
@@ -276,20 +280,17 @@ define(function (require) {
                 return;
             }
 
-            new SessionStorage({
-                targetHost:cp.get("appDirHost").val(),
-                tenantId:cp.get("appDirTenant").val(),
-                businessGroupCollection:collection
-            }).save();
+            // Save local storage values including business group collections
+            this.attributes.sessionStorage.save();
 
             var importPage = $.url().attr("directory") + cp.get("IMPORT_PAGE") + "?" + $.url().attr("query");
             cu.log("Redirecting --> " + importPage);
             window.location.replace(importPage);
-        };
+        },
 
-        LoginPage.prototype.bindLoginForm = function () {
-            var fName = this.targetFileMeta.get("path"),
-                header = !_.isUndefined(this.importSectionHeader) ? this.importSectionHeader : fName.split("\.")[0];
+        bindLoginForm: function () {
+            var fName = this.attributes.targetFileMeta.get("path"),
+                header = !_.isUndefined(this.attributes.importSectionHeader) ? this.attributes.importSectionHeader : fName.split("\.")[0];
 
             cp.get("bpExportFN").attr("placeholder", fName);
             cp.get("importHeader").empty().text("Import " + header);
@@ -315,16 +316,18 @@ define(function (require) {
                     var userProvidedHost = cp.get("appDirHost").val() ? cp.get("appDirHost").val() : cp.get("appDirHost").attr("placeholder"),
                         userProvidedTenant = cp.get("appDirTenant").val();
 
-                    this.businessGroupCollection =
-                        new BusinessGroupCollection({
+                    this.set("sessionStorage", new SessionStorage({
+                        targetHost: userProvidedHost,
+                        tenantId: userProvidedTenant,
+                        businessGroupCollection: new BusinessGroupCollection({
                             appdhost: userProvidedHost,
                             tenant: userProvidedTenant
-                        });
+                        })
+                    }));
 
                     // Fetch the tree collection from GitHub
                     cu.log("Logging in to retrieve tenant information.");
-                    this.businessGroupCollection.fetch({
-                        parse: false,
+                    this.attributes.sessionStorage.get("businessGroupCollection").fetch({
                         success: this.businessGroupSuccessHandler,
                         error: function (collection, response) {
                             var msg = "Failed to verify login information through App Director. " + response.statusText;
@@ -340,10 +343,9 @@ define(function (require) {
                     });
                 }, this)
             });
-        };
+        }
+    });
 
-        return new LoginPage();
-    }
-)
-;
+    return new LoginPage();
+});
 

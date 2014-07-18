@@ -13,7 +13,7 @@ define(["underscore", "backbone"], function (_, Backbone) {
             tenantValidationRegex:/^\w+$/,
             tenanthostValidationRegexErrorMsg:"A value for Tenant is required",
             tenantPlaceHolderValue:"default",
-            loginButtonText:"Login",
+            loginButtonText:"Login to Import >>",
             downloadButtonText:"Download File",
             fileLabel:"Application Import Repository Filename",
             authPromptText:"After selecting login, authentication credentials will be prompted for by your browser's native control.",

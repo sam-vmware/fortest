@@ -19,6 +19,17 @@
     z-index: 99999;
 }
 
+.fleft {
+    float:left;
+    position: inherit;
+    border-right: 5px;
+}
+
+.control-group-pad {
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
 #inputs {}
 .bullet {}
 /*.bullet a:hover, a:link, a.bullet, a:active {*/

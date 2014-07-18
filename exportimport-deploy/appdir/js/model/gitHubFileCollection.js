@@ -44,15 +44,10 @@ define(["underscore", "backbone", "model/gitHubFile", "util/appDirCommon"], func
 
         // Parse out the collection of response objects
         parse:function (response) {
-            return _(response.tree).map(
-                function (serverFileData) {
-                    return {
-                        path:serverFileData.path,
-                        sha:serverFileData.sha,
-                        theURL:serverFileData.url
-                    }
-                }
-            );
+            if (response.tree) {
+                return response.tree;
+            }
+            return response;
         }
     });
 

@@ -8,7 +8,9 @@ define(["underscore", "backbone", "util/appDirCommon"], function (_, Backbone, c
         defaults:{
             tenantId:null,
             name:null,
-            tenant:null
+            tenant:null,
+            user:null,
+            authToken:null
         },
 
         get:function (attr) {
@@ -30,6 +32,16 @@ define(["underscore", "backbone", "util/appDirCommon"], function (_, Backbone, c
             if (!_.isNumber(attrs.tenantId) || !_.isString(attrs.name) || !_.isObject(attrs.tenant)) {
                 return "Business Group missing or invalid tenantId, name and/or tenant"
             }
+        },
+
+        parse:function (response, options) { // fetch should only ever be called in lazy init for rawdata
+            return {
+                "tenantId":response.id,
+                "name":response.name,
+                "tenant":response.tenant,
+                "user":response.user,
+                "authToken":response.authToken
+            };
         }
     });
     return GitHubFile;

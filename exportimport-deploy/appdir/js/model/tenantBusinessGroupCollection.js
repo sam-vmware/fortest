@@ -6,13 +6,11 @@ define(["underscore", "backbone", "localstorage", "model/tenantBusinessGroup", "
     function (_, Backbone, localstorage, BusinessGroup, cu) {
 
     var BusinessGroupCollection = Backbone.Collection.extend({
-        //sessionStorage: new Backbone.SessionStorage("APPD_BusinessGroupCollection"),
-        sessionStorage: new Backbone.LocalStorage("APPD_BusinessGroupCollection"),
         model:BusinessGroup,
-        myOptions:{
-            appdhost:null,
-            tenant:null,
-            url:null
+        collectionOptions:{
+            appdhost:undefined,
+            tenant:undefined,
+            url:undefined
         },
 
         initialize:function (options) {
@@ -20,8 +18,8 @@ define(["underscore", "backbone", "localstorage", "model/tenantBusinessGroup", "
             if (!_.isString(options.appdhost) || !_.isString(options.tenant)) {
                 throw new Error("Can't missing or invalid App Director host or tenant");
             }
-            _.extend(this.myOptions, options);
-            this.myOptions.url = _.template("https://<%= appdhost %>:8443/darwin/api/security/verify-login")(this.myOptions);
+            _.extend(this.collectionOptions, options);
+            this.collectionOptions.url = _.template("https://<%= appdhost %>:8443/darwin/api/security/verify-login")(this.collectionOptions);
         },
 
         sync:function (method, model, options) {
@@ -30,7 +28,7 @@ define(["underscore", "backbone", "localstorage", "model/tenantBusinessGroup", "
                 type:"GET", // force get backbone likes using post for new/save
                 timeout:30000,
                 processData:true,
-                url:that.myOptions.url,
+                url:that.collectionOptions.url,
                 context:that,
                 dataType:"json",
                 complete:function (data) {
@@ -45,7 +43,7 @@ define(["underscore", "backbone", "localstorage", "model/tenantBusinessGroup", "
                   /*  var bytes = Crypto.charenc.Binary.stringToBytes("tony@coke.vmware.com:password");
                     var authToken = Crypto.util.bytesToBase64(bytes);
                     xhr.setRequestHeader("Authorization", "Basic " + authToken);*/
-                    xhr.setRequestHeader("darwin-tenant-id", that.myOptions.tenant);
+                    xhr.setRequestHeader("darwin-tenant-id", that.collectionOptions.tenant);
                 },
                 xhrFields: {
                     withCredentials: true // required for CORS check
@@ -57,15 +55,14 @@ define(["underscore", "backbone", "localstorage", "model/tenantBusinessGroup", "
 
         // Parse out the collection of response objects
         parse:function (response) {
-            return _(response.result.businessGroups).map(
-                function (businessGroupData) {
-                    return {
-                        tenantId:businessGroupData.id,
-                        name:businessGroupData.name,
-                        tenant:businessGroupData.tenant
-                    }
-                }
-            );
+            if (response.result.businessGroups) {
+                _.each(response.result.businessGroups, function(bg) {
+                    bg.user = response.result.name;
+                    bg.authToken = response.result.credential.password;
+                });
+                return response.result.businessGroups;
+            }
+            return response;
         }
     });
 
