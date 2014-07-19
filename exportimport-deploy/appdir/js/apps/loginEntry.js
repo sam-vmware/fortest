@@ -63,6 +63,7 @@ define(function (require) {
                         supportedVersions.push(version);
                     });
                     loginFormModel.set("appDVersionCollection", supportedVersions);
+                    loginFormModel.set("appdVersionGroupDisplay", "inherit");
                 } else if (optional.appdVersions) {
                     cu.log("No appd versions provided no tenant/group information will be handled");
                 }

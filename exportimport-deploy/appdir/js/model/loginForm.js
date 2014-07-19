@@ -19,7 +19,8 @@ define(["underscore", "backbone"], function (_, Backbone) {
             authPromptText:"After selecting login, authentication credentials will be prompted for by your browser's native control.",
             buttonLoadingText:"loading...",
             appDVersionLabel:"Application Director Version",
-            appDVersionCollection:[]
+            appDVersionCollection:[],
+            appdVersionGroupDisplay:"none"
         }
     });
 
