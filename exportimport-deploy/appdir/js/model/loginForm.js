@@ -17,7 +17,9 @@ define(["underscore", "backbone"], function (_, Backbone) {
             downloadButtonText:"Download File",
             fileLabel:"Application Import Repository Filename",
             authPromptText:"After selecting login, authentication credentials will be prompted for by your browser's native control.",
-            buttonLoadingText:"loading..."
+            buttonLoadingText:"loading...",
+            appDVersionLabel:"Application Director Version",
+            appDVersionCollection:[]
         }
     });
 

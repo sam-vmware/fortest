@@ -35,6 +35,7 @@ define(function (require) {
             contactEmail:"app-mgmt-partner-support@vmware.com",
             contactEmailLink:undefined,
             appDDSLink:'<a href="http://www.vmware.com/files/pdf/vfabric/VMware-vFabric-Application-Director-Datasheet.pdf">vCloud Automation Center</a>',
+            infoBulletPoints: [],
             infoBulletPoints: []
         },
 

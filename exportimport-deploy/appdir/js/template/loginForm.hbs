@@ -4,7 +4,7 @@
 }}
 <div class="offset1 span6">
     <form class="form-horizontal container-fluid" id="loginForm">
-        <div class="control-group control-group-pad row">
+        <div class="control-group-pad row">
             <div class="x-form-item">
                 <label class="x-form-item-label-top col-md-4" for="appDirHost">
                     {{hostLabel}}
@@ -21,24 +21,8 @@
                 </div>
             </div>
         </div>
-        <div class="control-group control-group-pad row">
-            <div class="x-form-item">
-                <label class="x-form-item-label-top col-md-4" for="appDirTenant">
-                    {{tenantLabel}}
-                    <span class="x-darwin-required-field">*</span>
-                </label>
 
-                <div class="col-md-4">
-                    <input id="appDirTenant" class="required tenant" style="width: 380px;"
-                           type="text"
-                           placeholder="{{tenantPlaceHolderValue}}"
-                           data-validation-regex-regex="{{tenantValidationRegex}}"
-                           data-validation-regex-message="{{tenanthostValidationRegexErrorMsg}}"
-                            />
-                </div>
-            </div>
-        </div>
-        <div class="control-group control-group-pad row">
+        <div class="control-group-pad row">
             <div class="x-form-item">
                 <label class="x-form-item-label-top col-md-4" for="bpExportFN">
                     {{fileLabel}}
@@ -51,6 +35,41 @@
                 </div>
             </div>
         </div>
+
+        <div class="control-group row">
+            <div class="x-form-item">
+                <label class="x-form-item-label-top col-md-4" for="appDirVersion">
+                    {{appDVersionLabel}}
+                    <span class="x-darwin-required-field">*</span>
+                </label>
+
+                <div class="x-form-item-body col-md-4">
+                    <select id="appDirVersion">
+                        {{#appDVersionCollection}}
+                            <option value="{{number}}">{{name}}</option>
+                        {{/appDVersionCollection}}
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="appDirTenantGroup" class="control-group control-group-pad row" style="display: none">
+            <div class="x-form-item">
+                <label class="x-form-item-label-top col-md-4" for="appDirTenant">
+                    {{tenantLabel}}
+                    <span class="x-darwin-required-field">*</span>
+                </label>
+
+                <div class="col-md-4">
+                    <input id="appDirTenant" class="required tenant" style="width: 380px;"
+                           type="text"
+                           placeholder="{{tenantPlaceHolderValue}}"
+                           data-validation-regex-regex="{{tenantValidationRegex}}"
+                           data-validation-regex-message="{{tenanthostValidationRegexErrorMsg}}"/>
+                </div>
+            </div>
+        </div>
+
         <div id="bottomWrapper">
             <hr style="border-width:2px"/>
             <div id="actionButtons" class="control-group row" style="margin-top: 30px;">
@@ -64,11 +83,13 @@
                 </div>
             </div>
         </div>
+
         <div class="row">
             <p class="text-left col-md-2 col-md-offset-5" style="color: rgba(0, 0, 0, 0.45);">
                 <small>{{authPromptText}}</small>
             </p>
         </div>
+
     </form>
 </div>
 <!--    <div id="eximData" class="hidden">

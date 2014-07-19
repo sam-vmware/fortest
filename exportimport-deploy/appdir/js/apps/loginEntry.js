@@ -56,6 +56,16 @@ define(function (require) {
                 } else {
                     cu.log("jsonFileLoadedCB: no optional header bullet points found in json descriptor");
                 }
+                if (optional && optional.appdVersions) {
+                    cu.log("AppD Supported Versions: " + JSON.stringify(optional.appdVersions));
+                    var supportedVersions = [];
+                    _.each(optional.appdVersions, function (version) {
+                        supportedVersions.push(version);
+                    });
+                    loginFormModel.set("appDVersionCollection", supportedVersions);
+                } else if (optional.appdVersions) {
+                    cu.log("No appd versions provided no tenant/group information will be handled");
+                }
             }
 
             // populate content

@@ -37,7 +37,8 @@ define(function (require) {
             viewDataModal: undefined,
             gitHubFileCollection: undefined,
             sessionStorage: undefined,
-            getParams: undefined
+            getParams: undefined,
+            appdVersions: undefined
         },
 
         initialize: function () {
@@ -294,6 +295,17 @@ define(function (require) {
 
             cp.get("bpExportFN").attr("placeholder", fName);
             cp.get("importHeader").empty().text("Import " + header);
+
+            cp.get('appDirVersion').on('change', function () {
+                //var optionSelected = $(this).find("option:selected");
+                var version = parseFloat(this.value);
+                if (version >= 6.1) {
+                    cp.get("appDirTenantGroup").show();
+                } else {
+                    cp.get("appDirTenantGroup").hide();
+                }
+            });
+
             $("#loginForm").validate({
                 showErrors: function (errorMap, errorList) {
 
