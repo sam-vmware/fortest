@@ -19,7 +19,7 @@
                         {"msg": "If you do not have an instance of Application Director, contact us at app-mgmt-partner-support@vmware.com"}
                     ],
                     "appdVersions":[
-                        {"name": "5.1", "number": "5.1"},
+                        {"name": "Nitro", "number": "5.1"},
                         {"name": "6.0", "number": "6.0"},
                         {"name": "6.1", "number": "6.1"}
                     ]
