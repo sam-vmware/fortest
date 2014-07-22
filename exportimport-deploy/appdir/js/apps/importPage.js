@@ -398,7 +398,7 @@ define(function (require) {
                     // adding to iframe gives us a way to easily reset.
                     var content = compiledNextSteps(contentParams),
                         contentArray = cu.getLinkForData(content, "text/html"),
-                        $contentWrapper = cp.get("contentWrapper"),
+                        $contentWrapper = cp.get("mainbody"),
                         width = $contentWrapper.css("width"),
                         height = $contentWrapper.css("height");
 
@@ -408,7 +408,7 @@ define(function (require) {
 
                     $contentWrapper.empty();
                     uiUtils.displayIframe(
-                        { id: "contentWrapper",
+                        { id: "mainbody",
                             src: contentArray[0],
                             blob: contentArray[1],
                             originalContent: content,
