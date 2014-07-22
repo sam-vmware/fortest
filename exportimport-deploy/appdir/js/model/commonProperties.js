@@ -11,7 +11,7 @@ define(["jquery", "underscore", "backbone"], function ($, _, Backbone) {
             APPD_VERIFY_LOGIN:"/darwin/api/security/verify-login", // verify login api
             ID_LIST:["noticeModal", "responseDataControl", "responseData", "errordiv", "error-readme-content", "appDirUserName",
                      "center", "advancedOptionsChevron", "advancedOptionsWrap", "importFormWrapper", "page-index", "page-import", "appDirPassword",
-                     "appDirHost", "appDirTenantGroup", "appDirTenant", "appDirBusinessGroups", "appDirVersion", "readme-content",
+                     "appDirHost", "appDirTenantGroup", "appdVersion", "appDirTenant", "appDirBusinessGroups", "appDirVersion", "readme-content",
                      "conflictResolutionStrategy", "importAsNewSuffix", "importGroup", "bpExportFN", "importHeader", "importButton",
                      "contentWrapper", "indexBodyWrapper", "shared", "loginFormWrapper"]
         },

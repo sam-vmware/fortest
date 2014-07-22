@@ -9,41 +9,27 @@ define(function (require) {
         uiUtils = require("util/uiUtils");
 
     var IndexBodyModel = Backbone.Model.extend({
-    defaults:{
-            mainHeader:"A blueprint is a visual model for deployment topology. This page has an import utility that allows you to automatically render the selected application blueprint into vCloud Automation Center 6.0",
-            importHeader:"Import Application",
-            readMeHeader:"Description",
-            advancedOptionsHeader:"Import Options",
-            conflictResolutionLabel:"Conflict Resolution",
-            overwriteLabel:"Overwrite",
-            overwriteTT:"Overwrite the repository contents with the package contents if there is a conflict between them.",
-            skipLabel:"Skip",
-            skipTT:"Skip importing the package contents if they conflict with the repository; reuse the repository contents.",
-            newLabel:"New",
-            newTT:"All package contents that conflict with the repository contents will be imported into the repository as new content, with a timestamp used to identify them.",
-            importGroupLabel:"Group Name",
-            importGroupTT:"The import group name to use.",
-            importAsNewLabel:"Import As New Suffix",
-            importAsNewTT:"Provide a suffix used for renaming entities which conflict.",
-            importSuffixTT:"The suffix value to use.",
-            sharedLabel:"Shared",
-            sharedTT:"If specified the artifacts will be shared to public, otherwise by default they will be in private group.\nNOTE! Only applies to v6.0+",
-            contactEnabled:false,
-            importEnabled:false,
-            contactText:"Contact",
-            contactName:"Marketplace Support",
-            contactEmail:"app-mgmt-partner-support@vmware.com",
-            contactEmailLink:undefined,
-            appDDSLink:'<a href="http://www.vmware.com/files/pdf/vfabric/VMware-vFabric-Application-Director-Datasheet.pdf">vCloud Automation Center</a>',
+        defaults: {
+            mainHeader: "A blueprint is a visual model for deployment topology. This page has an import utility that allows you to automatically render the selected application blueprint into vCloud Automation Center 6.0",
+            importHeader: "Import Application",
+            readMeHeader: "Description",
+            contactEnabled: false,
+            importEnabled: false,
+            contactText: "Contact",
+            contactName: "Marketplace Support",
+            contactEmail: "app-mgmt-partner-support@vmware.com",
+            contactEmailLink: undefined,
+            appDDSLink: '<a href="http://www.vmware.com/files/pdf/vfabric/VMware-vFabric-Application-Director-Datasheet.pdf">vCloud Automation Center</a>',
+            importButtonText: "Import",
             infoBulletPoints: []
         },
 
-        initialize:function () {
-            var that=this;
+        initialize: function () {
+            var that = this;
 
             this.set("contactEmailLink", uiUtils.generateEmailTemplate({
-                emailToAddress:that.get("contactEmail"),
-                emailToName:that.get("contactName")
+                emailToAddress: that.get("contactEmail"),
+                emailToName: that.get("contactName")
             }));
 
             var bulletValues = [

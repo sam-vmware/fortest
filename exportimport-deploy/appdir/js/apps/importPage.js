@@ -76,7 +76,7 @@ define(function (require) {
                 this.attributes.sessionStorage.fetch();
 
                 _.bindAll(this, 'postConstruct', 'gaugesTrack', 'getGHFileRawData', 'ghCollectionSuccessHandler',
-                    'displayReadme', 'initData', 'allowInput', 'bindImportForm', 'importData', 'displayErrorReadme', 'displayNextSteps');
+                    'initData', 'allowInput', 'bindImportForm', 'importData', 'displayErrorReadme', 'displayNextSteps');
             },
 
             postConstruct: function () {
@@ -101,14 +101,6 @@ define(function (require) {
                     return;
                 }
 
-                $("input:radio[name=importOptionsRadio]").on("click", function (e) {
-                    if ($(this).attr("id") == "importNew") {
-                        cp.get("importAsNewSuffix").removeAttr("disabled");
-                    } else {
-                        cp.get("importAsNewSuffix").attr("disabled", true);
-                    }
-                });
-
                 // Move this out when we get a page that doesn't have all the extjs stuff in it
                 cp.get("advancedOptionsWrap").on("hide", function () {
                     cp.get("advancedOptionsChevron").removeClass("icon-chevron-down").addClass("icon-chevron-right");
@@ -125,6 +117,14 @@ define(function (require) {
 
                 this.initData();
                 this.gaugesTrack('50b3b654613f5d6634000009');
+
+                $(document).on('change', 'input:radio[name=importOptionsRadio]', function (e) {
+                    if ($(this).attr("id") == "importNew") {
+                        cp.get("importAsNewSuffix").removeAttr("disabled");
+                    } else {
+                        cp.get("importAsNewSuffix").attr("disabled", true);
+                    }
+                });
             },
 
             // Initialize data values required for app, includes fetching what is needed from GH
@@ -348,7 +348,6 @@ define(function (require) {
                             this.set("targetFileMeta", collection.get(vmwareJSONFile.get("exportFileName")));
                             this.set("readMeFile", collection.get(vmwareJSONFile.get("exportedFileReadme")));
                             if (_.isUndefined(this.attributes.targetFileMeta)) throw new Error("Export File: " + vmwareJSONFile.get("exportFileName")) + " missing";
-                            if (_.isUndefined(this.attributes.readMeFile)) throw new Error("Export Readme File: " + vmwareJSONFile.get("exportFileReadme")) + " missing";
 
                             var optional = vmwareJSONFile.get("optional");
                             this.set("importSectionHeader", vmwareJSONFile.get("importSectionHeader"));
@@ -360,8 +359,6 @@ define(function (require) {
                                 TESTING = true;
                                 cu.log("Logging output to console");
                             }
-
-                            this.displayReadme();
                         } catch (e) {
                             cu.log("getGHFileRawData: exception: " + e);
                             uiUtils.updateFormDisplay({
@@ -377,15 +374,6 @@ define(function (require) {
                          cp.get("appDirHost").attr("placeholder", targetHost);*/
 
                         eventBus.triggerEvent(eventBus.getEvents().VMW_JSON_LOADED, this.attributes.vmwareJSONFile);
-                    }
-                });
-            },
-
-            // Fetches the readme data file and displays it in the textarea, after so enables input fields
-            displayReadme: function () {
-                this.getGHFileRawData(this.attributes.readMeFile, {
-                    success: function (model, response, jqXHR) {
-                        cp.get("readme-content").empty().append(_.escape(response)); // insert our data into the modal
                     }
                 });
             },
@@ -502,11 +490,13 @@ define(function (require) {
                         e.preventDefault();
                         var uname = cp.get("appDirUserName").val(),
                             password = cp.get("appDirPassword").val(),
-                            appdhost = cp.get("appDirHost").val(),
-                            appdtenant = cp.get("appDirTenant").val(),
+                            //appdhost = cp.get("appDirHost").val(),
+                            appdhost = this.attributes.sessionStorage.get("targetHost"),
+                            //appdtenant = cp.get("appDirTenant").val(),
+                            appdtenant = this.attributes.sessionStorage.get("tenantId"),
                             bytes = Crypto.charenc.Binary.stringToBytes(uname + ":" + password),
                             authToken = Crypto.util.bytesToBase64(bytes),
-                            conflictResolution = $(":checked", "#advancedOptionsWrap").val(),
+                            conflictResolution = $("input:radio[name=importOptionsRadio]:checked").val(),
                             importAsNewSuffix = (conflictResolution == "IMPORTASNEW") ? (cp.get("importAsNewSuffix").val() ? cp.get("importAsNewSuffix").val() : cp.get("importAsNewSuffix").attr("placeholder")) : null,
                             shared = cp.get("shared").is(":checked"),
                             importGroup = cp.get("appDirBusinessGroups").find(":selected").text();

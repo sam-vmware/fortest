@@ -25,9 +25,15 @@
     border-right: 5px;
 }
 
+.fright {
+    float:left;
+    position: inherit;
+    border-right: 5px;
+}
+
 .control-group-pad {
-    margin-top:5px;
-    margin-bottom:5px;
+    margin-top:10px;
+    margin-bottom:10px;
 }
 
 #inputs {}
@@ -236,13 +242,10 @@ table label {
 }
 
 #sharedOption {
-    margin-top: 5px;
-    width: 100px;
 }
 
 #sharedOption hr {
     margin-top: 5px;
     margin-bottom: 5px;
     border-width:2px;
-    width: 100%;
 }

@@ -326,11 +326,14 @@ define(function (require) {
                 submitHandler: _.bind(function (form, e) {
                     e.preventDefault();
                     var userProvidedHost = cp.get("appDirHost").val() ? cp.get("appDirHost").val() : cp.get("appDirHost").attr("placeholder"),
-                        userProvidedTenant = cp.get("appDirTenant").val();
+                        userProvidedTenant = cp.get("appDirTenant").val(),
+                        userProvidedAppdVersion = cp.get('appDirVersion').val() ? parseFloat(cp.get('appDirVersion').val()) : undefined
+                        ;
 
                     this.set("sessionStorage", new SessionStorage({
                         targetHost: userProvidedHost,
                         tenantId: userProvidedTenant,
+                        appdVersion:userProvidedAppdVersion,
                         businessGroupCollection: new BusinessGroupCollection({
                             appdhost: userProvidedHost,
                             tenant: userProvidedTenant

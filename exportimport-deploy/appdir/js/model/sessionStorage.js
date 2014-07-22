@@ -16,6 +16,7 @@ define(function (require) {
             authToken: undefined,
             targetHost: undefined,
             tenantId: undefined,
+            appdVersion:undefined,
             businessGroupCollection: undefined
         },
 

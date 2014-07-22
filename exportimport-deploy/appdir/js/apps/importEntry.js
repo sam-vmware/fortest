@@ -45,16 +45,6 @@ define(function (require) {
             // instead of default.
             if (vmwareJSONFile) {
                 var optional = vmwareJSONFile.get("optional");
-                if (optional && optional.headerBulletPoints) {
-                    cu.log("jsonFileLoadedCB: found optional header bullet points in json descriptor");
-                    var overrideHeaderBulletPoints = [];
-                    _.each(optional.headerBulletPoints, function (bullet) {
-                        overrideHeaderBulletPoints.push(bullet);
-                    });
-                    indexBody.set("infoBulletPoints", overrideHeaderBulletPoints);
-                } else {
-                    cu.log("jsonFileLoadedCB: no optional header bullet points found in json descriptor");
-                }
             }
 
             // populate content
@@ -73,11 +63,16 @@ define(function (require) {
             // set our values retrieved from localstorage set on login
             importFormModel.set("appDirHost", this.theSessionStorage.get("targetHost"));
             importFormModel.set("appDirTenant", this.theSessionStorage.get("tenantId"));
-            importFormModel.set("businessGroupCollection", this.theSessionStorage.attributes.businessGroupCollection);
+            importFormModel.set("businessGroupCollection", this.theSessionStorage.get("businessGroupCollection"));
 
             // Inject our generated markup
             cp.get("indexBodyWrapper").html(compiledIndexBody(indexBody.toJSON()));
             cp.get("importFormWrapper").html(compiledImportFormTmpl(importFormModel.toJSON()));
+
+            var appdVersion = this.theSessionStorage.get("appdVersion");
+            appdVersion = appdVersion && parseFloat(appdVersion);
+            if (!appdVersion || appdVersion < 6.1)
+                $("#bgGroup").hide();
 
             // init any tooltips
             $("[data-toggle='tooltip']").tooltip();
