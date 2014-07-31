@@ -13,7 +13,7 @@ define(["jquery", "underscore", "backbone"], function ($, _, Backbone) {
                      "center", "advancedOptionsChevron", "advancedOptionsWrap", "importFormWrapper", "page-index", "page-import", "appDirPassword",
                      "appDirHost", "appDirTenantGroup", "appdVersion", "appDirTenant", "appDirBusinessGroups", "appDirVersion", "readme-content",
                      "conflictResolutionStrategy", "importAsNewSuffix", "importGroup", "bpExportFN", "importHeader", "importButton",
-                     "contentWrapper", "indexBodyWrapper", "shared", "loginFormWrapper"]
+                     "contentWrapper", "indexBodyWrapper", "mainbody", "shared", "loginFormWrapper"]
         },
 
         initialize:function () {
