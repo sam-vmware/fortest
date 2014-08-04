@@ -12,8 +12,8 @@ define(["jquery", "underscore", "backbone"], function ($, _, Backbone) {
             ID_LIST:["noticeModal", "responseDataControl", "responseData", "errordiv", "error-readme-content", "appDirUserName",
                      "center", "advancedOptionsChevron", "advancedOptionsWrap", "importFormWrapper", "page-index", "page-import", "appDirPassword",
                      "appDirHost", "appDirTenantGroup", "appdVersion", "appDirTenant", "appDirBusinessGroups", "appDirVersion", "readme-content",
-                     "conflictResolutionStrategy", "importAsNewSuffix", "importGroup", "bpExportFN", "importHeader", "importButton",
-                     "contentWrapper", "indexBodyWrapper", "mainbody", "shared", "loginFormWrapper"]
+                     "conflictResolutionStrategy", "importAsNewSuffix", "importGroup", "bpExportFN", "importHeader", "importButton", "contentWrapper",
+                "indexBodyWrapper", "mainbody", "shared", "loginFormWrapper", "loginButton", "continueButton", "authPromptInfo"]
         },
 
         initialize:function () {

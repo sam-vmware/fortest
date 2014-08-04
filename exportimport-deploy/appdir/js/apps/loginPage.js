@@ -14,6 +14,7 @@ define(function (require) {
         errors = require("model/errorMappings"),
         cu = require("util/appDirCommon"),
         uiUtils = require("util/uiUtils"),
+        ghFH = require("util/ghFileHandler"),
         VMwareJSONModel = require("model/vmWareJSON"),
         GHViewDataModal = require("view/ghViewDataModal"),
         compiledWrongBrowser = require("hbs!template/unsupportedBrowser"),
@@ -30,6 +31,7 @@ define(function (require) {
             queryParams: $.url().param(),
             vmwareJSONFile: undefined,
             targetFileMeta: undefined,
+            defaultBPFile: undefined,
             readMeFile: undefined,
             errorReadMeFile: undefined,
             nextsStepFile: undefined,
@@ -68,7 +70,7 @@ define(function (require) {
                 return undefined;
             }
 
-            _.bindAll(this, 'postConstruct', 'gaugesTrack', 'getGHFileRawData', 'ghCollectionSuccessHandler',
+            _.bindAll(this, 'postConstruct', 'gaugesTrack', 'ghCollectionSuccessHandler',
                 'displayReadme', 'initData', 'allowInput', 'businessGroupSuccessHandler', 'bindLoginForm');
         },
 
@@ -159,39 +161,6 @@ define(function (require) {
             s.parentNode.insertBefore(t, s);
         },
 
-        /* We only have meta data in the collection getting all the file data potentially could take a lot of time
-         * this can be used in a lazy init manner to get the raw full data for a file from GH
-         * each property can be overridden in the options success,error etc. the defaults are as you see.
-         */
-        getGHFileRawData: function (model, options) {
-            cp.get("responseDataControl").addClass("hidden"); // hide the response in case it is open from prev request
-
-            var requestOpts = _.extend({}, {
-                reset: false, // if this model has retrieved its data already skip
-                success: function (model, response, jqXHR) {
-                    cu.log("!! Empty success callback encountered !!");
-                },
-                error: function (model, error, jqXHR) {
-                    cu.log("Failed: getting data from GH");
-                    uiUtils.updateFormDisplay({
-                        rdcClass: ALERT_ERROR_CLASSES,
-                        rdMsgVal: "Failed to get data from GitHub. " + JSON.stringify({
-                            name: model.get("path"),
-                            code: jqXHR.status,
-                            error: error
-                        }) + " " + errors.get("ERRORS").import
-                    });
-                }
-            }, options);
-
-            // another bind before fetch
-            requestOpts.success = _.bind(requestOpts.success, this);
-
-            // Fetch the rawData for the file we want from GitHub
-            model.fetch(requestOpts);
-        },
-
-
         /* 1.) Process file data
          * TODO This was a basic callback at first should be factored out in a separate module for
          * specifically dealing with GH file data and also clean up the nested async callbacks providing functions
@@ -216,27 +185,47 @@ define(function (require) {
             }
 
             // Process the vmware.json file
-            this.getGHFileRawData(jsonMetaFile, {
+            var that=this;
+            ghFH.getGHFileRawData(jsonMetaFile, {
                 success: function (model, response, jqXHR) {
                     try {
                         var vmwareJSONFile = new VMwareJSONModel({rawJSON: model.get("rawData")});
-                        this.set("targetFileMeta", collection.get(vmwareJSONFile.get("exportFileName")));
-                        this.set("readMeFile", collection.get(vmwareJSONFile.get("exportedFileReadme")));
-                        if (_.isUndefined(this.attributes.targetFileMeta)) throw new Error("Export File: " + vmwareJSONFile.get("exportFileName")) + " missing";
-                        if (_.isUndefined(this.attributes.readMeFile)) throw new Error("Export Readme File: " + vmwareJSONFile.get("exportFileReadme")) + " missing";
+                        that.set("defaultBPFile", vmwareJSONFile.get("exportFileName"));
+                        that.set("targetFileMeta", collection.get(vmwareJSONFile.get("exportFileName")));
+                        that.set("readMeFile", collection.get(vmwareJSONFile.get("exportedFileReadme")));
+                        if (_.isUndefined(that.attributes.targetFileMeta)) throw new Error("Export File: " + vmwareJSONFile.get("exportFileName")) + " missing";
+                        if (_.isUndefined(that.attributes.readMeFile)) throw new Error("Export Readme File: " + vmwareJSONFile.get("exportFileReadme")) + " missing";
 
                         var optional = vmwareJSONFile.get("optional");
-                        this.set("importSectionHeader", vmwareJSONFile.get("importSectionHeader"));
-                        this.set("vmwareJSONFile", vmwareJSONFile);
+                        that.set("importSectionHeader", vmwareJSONFile.get("importSectionHeader"));
+                        that.set("vmwareJSONFile", vmwareJSONFile);
 
                         // Check for optional enableConsoleLogging field and set TESTING to true if set for logging.
-                        var optional = this.attributes.vmwareJSONFile.get("optional");
-                        if (optional && optional.enableConsoleLogging == true) {
-                            TESTING = true;
-                            cu.log("Logging output to console");
+                        var optional = that.attributes.vmwareJSONFile.get("optional");
+                        if (optional) {
+                            if (optional.enableConsoleLogging == true) {
+                                TESTING = true;
+                                cu.log("Logging output to console");
+                            }
+
+                            // If there is optional appdversions check to see if the default first entry contains an exportFileName
+                            // and set that instead of the default
+                            if (optional.appdVersions) {
+                                var firstEntry = _.first(optional.appdVersions);
+                                if (firstEntry && firstEntry.exportFileName) {
+                                    // there was an appdentry found with an alternate export file, verify first
+                                    // it is in the collection before setting on model
+                                    if (! collection.get(firstEntry.exportFileName)) {
+                                        cu.log("!! ERROR !! alternate exportFile file was entered in configuration but missing from repo: " + firstEntry);
+                                    } else {
+                                        that.set("defaultBPFile", firstEntry.exportFileName);
+                                        that.set("targetFileMeta", collection.get(firstEntry.exportFileName));
+                                    }
+                                }
+                            }
                         }
 
-                        this.displayReadme();
+                        that.displayReadme();
                     } catch (e) {
                         cu.log("getGHFileRawData: exception: " + e);
                         uiUtils.updateFormDisplay({
@@ -246,14 +235,14 @@ define(function (require) {
                         return false;
                     }
 
-                    eventBus.triggerEvent(eventBus.getEvents().VMW_JSON_LOADED, this.attributes.vmwareJSONFile);
+                    eventBus.triggerEvent(eventBus.getEvents().VMW_JSON_LOADED, that.attributes.vmwareJSONFile);
                 }
             });
         },
 
         // Fetches the readme data file and displays it in the textarea, after so enables input fields
         displayReadme: function () {
-            this.getGHFileRawData(this.attributes.readMeFile, {
+            ghFH.getGHFileRawData(this.attributes.readMeFile, {
                 success: function (model, response, jqXHR) {
                     cp.get("readme-content").empty().append(_.escape(response)); // insert our data into the modal
                 }
@@ -286,7 +275,8 @@ define(function (require) {
 
             var importPage = $.url().attr("directory") + cp.get("IMPORT_PAGE") + "?" + $.url().attr("query");
             cu.log("Redirecting --> " + importPage);
-            window.location.replace(importPage);
+            // window.location.replace(importPage);
+            window.location = importPage;
         },
 
         bindLoginForm: function () {
@@ -296,13 +286,48 @@ define(function (require) {
             cp.get("bpExportFN").attr("placeholder", fName);
             cp.get("importHeader").empty().text("Import " + header);
 
+            var that=this;
             cp.get('appDirVersion').on('change', function () {
                 //var optionSelected = $(this).find("option:selected");
+
                 var version = parseFloat(this.value);
+                var optional = that.attributes.vmwareJSONFile.get("optional");
+                if (optional && optional.appdVersions) {
+                    var entry = _.findWhere(optional.appdVersions,{version: this.value});
+                    cu.log("change event, found entry: " + JSON.stringify(entry));
+                    if (entry && entry.exportFileName) {
+                        var collectionFile = that.attributes.gitHubFileCollection.get(entry.exportFileName);
+                        if (!collectionFile) {
+                            cu.log("!! ERROR !! exportFileName specified with appdVersion but no matching file of that name found in repo: " + collectionFile);
+                        } else {
+                            cp.get("bpExportFN").attr("placeholder", entry.exportFileName);
+                            that.set("defaultBPFile", entry.exportFileName);
+                        }
+                    } else {
+                        cp.get("bpExportFN").attr("placeholder", that.attributes.defaultBPFile);
+                    }
+                    if (entry && entry.nextStepsMarkdownFile) {
+                        var collectionFile = that.attributes.gitHubFileCollection.get(entry.nextStepsMarkdownFile);
+                        if (!collectionFile) {
+                            cu.log("!! ERROR !! nextsSteps specified with appdVersion but no matching file of that name found in repo: " + collectionFile);
+                        } else {
+                            that.set("nextsStepFile", entry.nextStepsMarkdownFile);
+                        }
+                    } else {
+                        that.set("nextsStepFile", optional.nextStepsMarkdownFile);
+                    }
+                }
+
                 if (version >= 6.1) {
                     cp.get("appDirTenantGroup").show();
+                    cp.get("continueButton").hide();
+                    cp.get("loginButton").show();
+                    cp.get("authPromptInfo").show();
                 } else {
                     cp.get("appDirTenantGroup").hide();
+                    cp.get("continueButton").show();
+                    cp.get("loginButton").hide();
+                    cp.get("authPromptInfo").hide();
                 }
             });
 
@@ -334,28 +359,35 @@ define(function (require) {
                         targetHost: userProvidedHost,
                         tenantId: userProvidedTenant,
                         appdVersion:userProvidedAppdVersion,
+                        exportFileName:that.attributes.defaultBPFile,
+                        nextsStepFile:that.attributes.nextsStepFile,
                         businessGroupCollection: new BusinessGroupCollection({
                             appdhost: userProvidedHost,
                             tenant: userProvidedTenant
                         })
                     }));
 
-                    // Fetch the tree collection from GitHub
-                    cu.log("Logging in to retrieve tenant information.");
-                    this.attributes.sessionStorage.get("businessGroupCollection").fetch({
-                        success: this.businessGroupSuccessHandler,
-                        error: function (collection, response) {
-                            var msg = "Failed to verify login information through App Director. " + response.statusText;
-                            if (response.status === 404) {
-                                msg = 'The verify login url was not available. Please check the url parameters!';
+                    if (parseFloat(userProvidedAppdVersion) >= 6.1) {
+                        // Fetch the business groups
+                        cu.log("Logging in to retrieve tenant information.");
+                        this.attributes.sessionStorage.get("businessGroupCollection").fetch({
+                            success: this.businessGroupSuccessHandler,
+                            error: function (collection, response) {
+                                var msg = "Failed to verify login information through App Director. " + response.statusText;
+                                if (response.status === 404) {
+                                    msg = 'The verify login url was not available. Please check the url parameters!';
+                                }
+                                cu.log("%cLoginPage failed to get tree: " + response, "color:red; background-color:blue");
+                                uiUtils.updateFormDisplay({
+                                    rdcClass: ALERT_ERROR_CLASSES,
+                                    rdMsgVal: errors.get("ERRORS").import
+                                });
                             }
-                            cu.log("%cLoginPage failed to get tree: " + response, "color:red; background-color:blue");
-                            uiUtils.updateFormDisplay({
-                                rdcClass: ALERT_ERROR_CLASSES,
-                                rdMsgVal: errors.get("ERRORS").import
-                            });
-                        }
-                    });
+                        });
+                    } else {
+                        this.attributes.sessionStorage.save();
+                        window.location = $.url().attr("directory") + cp.get("IMPORT_PAGE") + "?" + $.url().attr("query");
+                    }
                 }, this)
             });
         }

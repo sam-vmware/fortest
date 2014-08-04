@@ -24,25 +24,25 @@ define(function (require) {
             twitterjs = require("twitterjs"),
             Spinner = require("spin"),
             eventBus = require("util/appCommonEB"),
+            ghFH = require("util/ghFileHandler"),
             SessionStore = require("model/sessionStorage");
 
         var ImportPage = Backbone.Model.extend({
+            sessionStorage:undefined,
+            defaultBPFile: undefined,
+            nextsStepFile:undefined,
 
             defaults: {
                 queryParams: $.url().param(),
                 vmwareJSONFile: undefined,
                 targetFileMeta: undefined,
-                readMeFile: undefined,
                 errorReadMeFile: undefined,
-                nextsStepFile: undefined,
                 progressBarEL: undefined,
                 progressBar: undefined,
                 importButtonEL: "#viewImportFileButton",
                 viewDataModal: undefined,
                 gitHubFileCollection: undefined,
-                postParams: undefined,
-                sessionStorage: undefined
-
+                postParams: undefined
             },
 
             initialize: function () {
@@ -72,11 +72,14 @@ define(function (require) {
                     return undefined;
                 }
 
-                this.set("sessionStorage", new SessionStore({id: "DEFAULT"}));
-                this.attributes.sessionStorage.fetch();
+                // Retrieve localstorage from index/login page
+                this.sessionStorage = new SessionStore({id: "DEFAULT"});
+                this.sessionStorage.fetch();
+                this.defaultBPFile = this.sessionStorage.get("exportFileName");
+                this.nextsStepFile = this.sessionStorage.get("nextsStepFile");
 
-                _.bindAll(this, 'postConstruct', 'gaugesTrack', 'getGHFileRawData', 'ghCollectionSuccessHandler',
-                    'initData', 'allowInput', 'bindImportForm', 'importData', 'displayErrorReadme', 'displayNextSteps');
+                _.bindAll(this, 'postConstruct', 'gaugesTrack', 'ghCollectionSuccessHandler', 'initData', 'allowInput',
+                    'bindImportForm', 'importData', 'displayErrorReadme', 'displayNextSteps');
             },
 
             postConstruct: function () {
@@ -115,9 +118,6 @@ define(function (require) {
                     spinner.stop();
                 });
 
-                this.initData();
-                this.gaugesTrack('50b3b654613f5d6634000009');
-
                 $(document).on('change', 'input:radio[name=importOptionsRadio]', function (e) {
                     if ($(this).attr("id") == "importNew") {
                         cp.get("importAsNewSuffix").removeAttr("disabled");
@@ -125,6 +125,10 @@ define(function (require) {
                         cp.get("importAsNewSuffix").attr("disabled", true);
                     }
                 });
+
+
+                this.initData();
+                this.gaugesTrack('50b3b654613f5d6634000009');
             },
 
             // Initialize data values required for app, includes fetching what is needed from GH
@@ -150,7 +154,7 @@ define(function (require) {
                 this.attributes.gitHubFileCollection.fetch({
                     success: this.ghCollectionSuccessHandler,
                     error: function (collection, response) {
-                        var msg = "Failed to get data from GitHub repository. " + response.statusText
+                        var msg = "Failed to get data from GitHub repository. " + response.statusText;
                         if (response.status === 404) {
                             msg = 'The repository or branch was not found on github. Please check the url parameters!'
                         }
@@ -182,8 +186,7 @@ define(function (require) {
                     conflictResolution: this.attributes.postParams.conflictResolution,
                     importAsNewSuffix: !_.isUndefined(this.attributes.postParams.importAsNewSuffix) ? this.attributes.postParams.importAsNewSuffix : null,
                     importGroup: !_.isUndefined(this.attributes.postParams.importGroup) ? this.attributes.postParams.importGroup : null,
-                    shared: this.attributes.postParams.shared,
-                    "darwin-tenant-id": this.attributes.postParams.appdtenant
+                    shared: this.attributes.postParams.shared
                 }, url = [ this.attributes.postParams.appdhost, this.attributes.postParams.appdeximep, "?", $.param(paramObject) ].join("");
 
                 var importSuccessHandler = function (data, textStatus, jqXHR) {
@@ -283,38 +286,6 @@ define(function (require) {
                 var s = document.getElementsByTagName('script')[0];
                 s.parentNode.insertBefore(t, s);
             },
-            /* We only have meta data in the collection getting all the file data potentially could take a lot of time
-             * this can be used in a lazy init manner to get the raw full data for a file from GH
-             * each property can be overridden in the options success,error etc. the defaults are as you see.
-             */
-            getGHFileRawData: function (model, options) {
-                cp.get("responseDataControl").addClass("hidden"); // hide the response in case it is open from prev request
-
-                var requestOpts = _.extend({}, {
-                    reset: false, // if this model has retrieved its data already skip
-                    success: function (model, response, jqXHR) {
-                        cu.log("!! Empty success callback encountered !!");
-                    },
-                    error: function (model, error, jqXHR) {
-                        cu.log("Failed: getting data from GH");
-                        uiUtils.updateFormDisplay({
-                            rdcClass: ALERT_ERROR_CLASSES,
-                            rdMsgVal: "Failed to get data from GitHub. " + JSON.stringify({
-                                name: model.get("path"),
-                                code: jqXHR.status,
-                                error: error
-                            }) + " " + errors.get("ERRORS").import
-                        });
-                    }
-                }, options);
-
-                // another bind before fetch
-                requestOpts.success = _.bind(requestOpts.success, this);
-
-                // Fetch the rawData for the file we want from GitHub
-                model.fetch(requestOpts);
-            },
-
 
             /* 1.) Process file data
              * TODO This was a basic callback at first should be factored out in a separate module for
@@ -339,22 +310,22 @@ define(function (require) {
                     return;
                 }
 
-                var that = this;
                 // Process the vmware.json file
-                this.getGHFileRawData(jsonMetaFile, {
+                var that=this;
+                ghFH.getGHFileRawData(jsonMetaFile, {
                     success: function (model, response, jqXHR) {
                         try {
                             var vmwareJSONFile = new VMwareJSONModel({rawJSON: model.get("rawData")});
-                            this.set("targetFileMeta", collection.get(vmwareJSONFile.get("exportFileName")));
-                            this.set("readMeFile", collection.get(vmwareJSONFile.get("exportedFileReadme")));
-                            if (_.isUndefined(this.attributes.targetFileMeta)) throw new Error("Export File: " + vmwareJSONFile.get("exportFileName")) + " missing";
+                            //that.set("targetFileMeta", collection.get(vmwareJSONFile.get("exportFileName")));
+                            that.set("targetFileMeta", collection.get(that.defaultBPFile));
+                            if (_.isUndefined(that.attributes.targetFileMeta)) throw new Error("Export File: " + vmwareJSONFile.get("exportFileName")) + " missing";
 
                             var optional = vmwareJSONFile.get("optional");
-                            this.set("importSectionHeader", vmwareJSONFile.get("importSectionHeader"));
-                            this.set("vmwareJSONFile", vmwareJSONFile);
+                            that.set("importSectionHeader", vmwareJSONFile.get("importSectionHeader"));
+                            that.set("vmwareJSONFile", vmwareJSONFile);
 
                             // Check for optional enableConsoleLogging field and set TESTING to true if set for logging.
-                            var optional = this.attributes.vmwareJSONFile.get("optional");
+                            var optional = that.attributes.vmwareJSONFile.get("optional");
                             if (optional && optional.enableConsoleLogging == true) {
                                 TESTING = true;
                                 cu.log("Logging output to console");
@@ -373,7 +344,7 @@ define(function (require) {
                          cu.log("Setting host field from localstorage: " + targetHost);
                          cp.get("appDirHost").attr("placeholder", targetHost);*/
 
-                        eventBus.triggerEvent(eventBus.getEvents().VMW_JSON_LOADED, this.attributes.vmwareJSONFile);
+                        eventBus.triggerEvent(eventBus.getEvents().VMW_JSON_LOADED, that.attributes.vmwareJSONFile);
                     }
                 });
             },
@@ -381,7 +352,7 @@ define(function (require) {
             // Fetches the error readme data file and displays it in case of error importing
             displayErrorReadme: function () {
                 if (!_.isUndefined(this.attributes.errorReadMeFile)) {
-                    this.getGHFileRawData(this.attributes.errorReadMeFile, {reset: true,
+                    ghFH.getGHFileRawData(this.attributes.errorReadMeFile, {reset: true,
                         success: function (model, response, jqXHR) {
                             cp.get("error-readme-content").empty().append(_.escape(response)); // insert our data into the modal
                         }
@@ -422,17 +393,30 @@ define(function (require) {
                 // Get the optional section, markdown nextsteps file is optional
                 var optional = this.attributes.vmwareJSONFile.get("optional"),
                     contentParams = {artifactType: artifactType, importLink: importedBPURL}, // will always present imported bp url
-                    haveNSFile = true;
-
-                if (!optional || !optional.nextStepsMarkdownFile) {
-                    cu.log("No nextSteps file was entered in configuration.");
                     haveNSFile = false;
-                } else if (optional.nextStepsMarkdownFile) {
+
+                // Check optional field first
+                if (optional.nextStepsMarkdownFile) {
                     cu.log("nextSteps File: " + optional.nextStepsMarkdownFile);
-                    this.set("nextsStepFile", this.attributes.gitHubFileCollection.get(optional.nextStepsMarkdownFile));
-                    if (!this.attributes.nextsStepFile) {
-                        cu.log("!! ERROR !! nextSteps file was entered in configuration but missing from repo");
-                        haveNSFile = false;
+                    var optionalNSFile = this.attributes.gitHubFileCollection.get(optional.nextStepsMarkdownFile);
+                    if (!optionalNSFile) {
+                        cu.log("!! ERROR !! nextSteps file was entered in configuration but missing from repo: " + optional.nextStepsMarkdownFile);
+                    } else {
+                        this.nextsStepFile = optionalNSFile;
+                        haveNSFile = true;
+                    }
+                }
+
+                // Check localstorage overrides default optional
+                var setNSFile = this.nextsStepFile;
+                if (setNSFile) {
+                    cu.log("Default next steps set on model: " + setNSFile);
+                    var optionalNSFile = this.attributes.gitHubFileCollection.get(setNSFile);
+                    if (!optionalNSFile) {
+                        cu.log("!! ERROR !! nextSteps file was set on the model but missing from repo: " + setNSFile);
+                    } else {
+                        this.nextsStepFile = optionalNSFile;
+                        haveNSFile = true;
                     }
                 }
 
@@ -442,7 +426,7 @@ define(function (require) {
                 }
 
                 // Fetch the markdown nextstep file from the repo
-                this.getGHFileRawData(this.attributes.nextsStepFile, {
+                ghFH.getGHFileRawData(this.nextsStepFile, {
                     success: function (model, response, jqXHR) {
                         // convert markeddown file to html to and add to our contentparams for display
                         contentParams.nextStepsContent = marked(model.get("rawData"));
@@ -491,9 +475,9 @@ define(function (require) {
                         var uname = cp.get("appDirUserName").val(),
                             password = cp.get("appDirPassword").val(),
                             //appdhost = cp.get("appDirHost").val(),
-                            appdhost = this.attributes.sessionStorage.get("targetHost"),
-                            //appdtenant = cp.get("appDirTenant").val(),
-                            appdtenant = this.attributes.sessionStorage.get("tenantId"),
+                            appdhost = this.sessionStorage.get("targetHost"),
+                            appdVersion = this.sessionStorage.get("appdVersion"),
+                            appdtenant = this.sessionStorage.get("tenantId"),
                             bytes = Crypto.charenc.Binary.stringToBytes(uname + ":" + password),
                             authToken = Crypto.util.bytesToBase64(bytes),
                             conflictResolution = $("input:radio[name=importOptionsRadio]:checked").val(),
@@ -501,29 +485,34 @@ define(function (require) {
                             shared = cp.get("shared").is(":checked"),
                             importGroup = cp.get("appDirBusinessGroups").find(":selected").text();
 
-                        // Retrieve session store to get user+token
-                        var bg = _.findWhere(this.attributes.sessionStorage.get("businessGroupCollection"), {name: importGroup});
-
                         appdhost = "https://" + appdhost + ":8443";
-                        // On import these are the params used to push our data to appdir
-                        this.set("postParams", {
+
+                        // Retrieve session store to get user+token
+                        var bg = _.findWhere(this.sessionStorage.get("businessGroupCollection"), {name: importGroup});
+                        var postParams = {
                             uname: uname,
                             password: password,
                             appdhost: appdhost,
-                            appdtenant: appdtenant,
                             appdeximep: this.attributes.eximep,
                             conflictResolution: conflictResolution,
                             shared: shared,
-                            beforeSend: function (xhr) {
-                                //var bytes = Crypto.charenc.Binary.stringToBytes(authToken);
-                                //var newAuthToken = Crypto.util.bytesToBase64(bytes);
-                                xhr.setRequestHeader("darwin-security-token", bg.authToken);
-                                xhr.setRequestHeader("darwin-tenant-id", appdtenant);
-                            },
                             xhrFields: {
                                 withCredentials: true // required for CORS check
                             }
-                        });
+                        };
+
+                        if (parseFloat(appdVersion) >= 6.1) {
+                            postParams = _.extend(postParams, {
+                                appdtenant: appdtenant,
+                                beforeSend: function (xhr) {
+                                    xhr.setRequestHeader("darwin-security-token", bg.authToken);
+                                    xhr.setRequestHeader("darwin-tenant-id", appdtenant);
+                                }
+                            });
+                        }
+
+                        // On import these are the params used to push our data to appdir
+                        this.set("postParams", postParams);
 
                         if (importAsNewSuffix !== null) {
                             this.attributes.postParams.importAsNewSuffix = importAsNewSuffix;
@@ -534,13 +523,14 @@ define(function (require) {
 
                         this.attributes.progressBar.show().update({value: "0%", text: "Importing..."});
                         cu.log("ImportExportApp form submitted");
-                        this.getGHFileRawData(this.attributes.targetFileMeta, {
+                        var that=this;
+                        ghFH.getGHFileRawData(this.attributes.targetFileMeta, {
                             reset: false,
                             success: function (model, response, jqXHR) {
-                                this.attributes.progressBar.update({value: "50%"});
+                                that.attributes.progressBar.update({value: "50%"});
                                 cu.log("%cImportExportApp sending import data to app dir, user: "
-                                    + this.attributes.postParams.uname + " app dir host: " + this.attributes.postParams.appdhost, "color:yellow; background-color:blue");
-                                this.importData(model.get("rawData"));
+                                    + that.attributes.postParams.uname + " app dir host: " + that.attributes.postParams.appdhost, "color:yellow; background-color:blue");
+                                that.importData(model.get("rawData"));
                             }
                         });
                     }, this)

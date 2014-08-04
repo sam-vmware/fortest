@@ -17,7 +17,9 @@ define(function (require) {
             targetHost: undefined,
             tenantId: undefined,
             appdVersion:undefined,
-            businessGroupCollection: undefined
+            businessGroupCollection: undefined,
+            exportFileName:undefined,
+            nextsStepFile:undefined
         },
 
         initialize: function (arguments) {

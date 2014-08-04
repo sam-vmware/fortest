@@ -1,31 +1,36 @@
 {
-    "//":"This is a sample configuration file of what would be stored in the GH repo/branch, comments are not part of it",
-    "//_1":"The real name is vmware.json",
-    "vmware":{
-        "config":{
-            "version":1.0
+    "//": "This is a sample configuration file of what would be stored in the GH repo/branch, comments are not part of it",
+    "//_1": "The real name is vmware.json",
+    "vmware": {
+        "config": {
+            "version": 1.0
         },
-        "applications":{
-            "applicationDirectorWebImport":{
-                "exportFileName":"weblogic12c-cluster-dukebank-1.0.0.xml",
-                "exportedFileReadme":"weblogic12c-cluster-dukebank-1.0.0.xml.readme",                                
-                "importSectionHeader":"Weblogic Cluster",
-                "exportedWithAppDVersion":5.0,
-                "//_optional":"For future something like the following optional fields could be introduced",
-                "optional":{
-                    "nextStepsMarkdownFile":"weblogic12c-cluster-dukebank-1.0.0.xml.nextsteps.markdown",
-                    "enableConsoleLogging":false,
-                    "exportedFileErrorReadme":"weblogic12c-cluster-dukebank-1.0.0.xml.error.readme",
-                    "headerBulletPoints":[
+        "applications": {
+            "applicationDirectorWebImport": {
+                "exportFileName": "weblogic12c-cluster-dukebank-1.0.0.xml",
+                "exportedFileReadme": "weblogic12c-cluster-dukebank-1.0.0.xml.readme",
+                "importSectionHeader": "Weblogic Cluster",
+                "exportedWithAppDVersion": 5.0,
+                "//_optional": "For future something like the following optional fields could be introduced",
+                "optional": {
+                    "nextStepsMarkdownFile": "weblogic12c-cluster-dukebank-1.0.0.xml.nextsteps.markdown",
+                    "enableConsoleLogging": false,
+                    "exportedFileErrorReadme": "weblogic12c-cluster-dukebank-1.0.0.xml.error.readme",
+                    "headerBulletPoints": [
                         {"msg": "A blueprint is a visual model for deployment topology. This page has an import utility that allows you to automatically render the selected application blueprint into <a href='http://www.vmware.com/files/pdf/vfabric/VMware-vFabric-Application-Director-Datasheet.pdf'>vFabric Application Director</a> 6.0"},
                         {"msg": "Your Application Director instance needs to be network accessible for the import utility to work"},
                         {"msg": "You need to have Catalog Admin and Application Architect roles to use import the blueprint into your instance of Application Director"},
                         {"msg": "If you do not have an instance of Application Director, contact us at app-mgmt-partner-support@vmware.com"}
                     ],
-                    "appdVersions":[
-                        {"name": "Nitro", "number": "5.1"},
-                        {"name": "6.0", "number": "6.0"},
-                        {"name": "6.1", "number": "6.1"}
+                    "appdVersions": [
+                        {"name": "Nitro", "version": "5.1"},
+                        {"name": "6.0", "version": "6.0"},
+                        {
+                            "name": "6.1",
+                            "version": "6.1",
+                            "exportFileName": "weblogic12c-cluster-dukebank-appd6.1-1.0.0.xml",
+                            "nextStepsMarkdownFile": "weblogic12c-cluster-dukebank-appd6.1-1.0.0.xml.nextsteps.markdown"
+                        }
                     ]
                 }
             }
