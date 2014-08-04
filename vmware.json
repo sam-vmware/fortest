@@ -1,0 +1,45 @@
+{
+    "vmware": {
+        "config": {
+            "version": 1.0
+        },
+        "applications": {
+            "applicationDirectorWebImport": {
+                "exportFileName": "Clustered-Dukes-Bank-Application-2.1.0.xml",
+                "exportedFileReadme": "Clustered-Dukes-Bank-Application-2.1.0.xml.readme",
+                "importSectionHeader": "Clustered-Dukes-Bank-Application",
+                "exportedWithAppDVersion": 6.0,
+                "optional": {
+                    "nextStepsMarkdownFile": "Clustered-Dukes-Bank-Application-2.1.0.xml.md",
+                    "enableConsoleLogging": true,
+                    "exportedFileErrorReadme": "Clustered-Dukes-Bank-Application-2.1.0.xml.error.readme",
+                    "headerBulletPoints": [{
+                        "msg": "A blueprint is a visual model for deployment topology. This page has an import utility that allows you to automatically render the selected application blueprint into vCloud Application Director 6.0. If you need this solution for <a href='http://www.vmware.com/files/pdf/vfabric/VMware-vFabric-Application-Director-Datasheet.pdf'> vFabric Application Director</a> 5.x please click <a href='http://vmware-applicationdirector.github.io/solutions-import-beta/exportimport-deploy/appdir/docs/index.html?uname=vmware-applicationdirector&repo=solutions-import-beta&branch=Clustered-Duke-Bank-Application-Blueprint-50'>here</a>"
+                    }, {
+                        "msg": "Your Application Director instance needs to be network accessible for the import utility to work"
+                    }, {
+                        "msg": "You need to have Catalog Admin and Application Architect roles to use import the blueprint into your instance of Application Director"
+                    }, {
+                        "msg": "If you do not have an instance of Application Director, contact us at <a href='mailto:app-mgmt-partner-support@vmware.com'>Marketplace Support</a>"
+                    }],
+                    "appdVersions": [{
+                        "name": "5.x",
+                        "version": "5.2",
+                        "exportFileName": "Clustered-Dukes-Bank-Application-appd5x-2.1.0.xml",
+                        "nextStepsMarkdownFile": "Clustered-Dukes-Bank-Application-appd5x-2.1.0.xml.md"
+                    }, {
+                        "name": "6.0",
+                        "version": "6.0",
+                        "exportFileName": "Clustered-Dukes-Bank-Application-appd60-2.1.0.xml",
+                        "nextStepsMarkdownFile": "Clustered-Dukes-Bank-Application-appd60-2.1.0.xml.md"
+                    }, {
+                        "name": "6.1",
+                        "version": "6.1",
+                        "exportFileName": "Clustered-Dukes-Bank-Application-appd61-2.1.0.xml",
+                        "nextStepsMarkdownFile": "Clustered-Dukes-Bank-Application-appd61-2.1.0.xml.md"
+                    }]
+                }
+            }
+        }
+    }
+}

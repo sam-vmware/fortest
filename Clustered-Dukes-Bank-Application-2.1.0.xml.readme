@@ -1,0 +1,1 @@
+The Clustered Dukes Bank application is a classic three-tier J2EE application with a web-tier, app-tier (JBoss appserver) and db tier (MySQL database), a JBoss Application server. In this solution, Riverbed Stingray Traffic Manager as a load balancer in the web tier fronts JBoss application server. 
