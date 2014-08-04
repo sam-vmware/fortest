@@ -22,16 +22,16 @@
                     }, {
                         "msg": "If you do not have an instance of Application Director, contact us at <a href='mailto:app-mgmt-partner-support@vmware.com'>Marketplace Support</a>"
                     }],
-                    "appdVersions": [{
-                        "name": "5.x",
-                        "number": "5.2"
-                    }, {
-                        "name": "6.0",
-                        "number": "6.0"
-                    }, {
-                        "name": "6.1",
-                        "number": "6.1"
-                    }]
+                    "appdVersions": [
+                        { "name": "5.x", "version": "5.2" },
+                        { "name": "6.0", "version": "6.0" },
+                        {
+                            "name": "6.1",
+                            "version": "6.1", 
+                            "exportFileName": "Joomla-Blueprint-appd6.1.xml",
+                            "nextStepsMarkdownFile": "Joomla-Blueprint-appd6.1.xml.md"
+                        }
+                    ]
                 }
             }
         }
