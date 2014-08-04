@@ -30,7 +30,7 @@
                     }, {
                         "name": "6.0",
                         "version": "6.0",
-                        "exportFileName": "Clustered-Dukes-Bank-Application-appd60-2.1.0.xml",
+                        "exportFileName": "BitNami-WordPress-64bit-blueprint.xml",
                         "nextStepsMarkdownFile": "Clustered-Dukes-Bank-Application-appd60-2.1.0.xml.md"
                     }, {
                         "name": "6.1",
