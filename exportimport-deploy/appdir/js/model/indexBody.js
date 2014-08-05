@@ -19,7 +19,7 @@ define(function (require) {
             contactName: "Marketplace Support",
             contactEmail: "app-mgmt-partner-support@vmware.com",
             contactEmailLink: undefined,
-            appDDSLink: '<a href="http://www.vmware.com/files/pdf/vfabric/VMware-vFabric-Application-Director-Datasheet.pdf">vCloud Automation Center</a>',
+            appDDSLink: '<a href="http://www.vmware.com/files/pdf/vcloud/vmware-vcloud-automation-center-datasheet.pdf">vCloud Automation Center - Application Services</a>',
             importButtonText: "Import",
             infoBulletPoints: []
         },
@@ -33,7 +33,7 @@ define(function (require) {
             }));
 
             var bulletValues = [
-                {msg: 'A blueprint is a visual model for deployment topology. This page has an import utility that allows you to automatically render the selected application blueprint into ' + that.get("appDDSLink") + ' 6.0'},
+                {msg: 'A blueprint is a visual model for deployment topology. This page has an import utility that allows you to automatically render the selected application blueprint into ' + that.get("appDDSLink")},
                 {msg: 'Your Application Director instance needs to be network accessible for the import utility to work'},
                 {msg: 'You need to have Catalog Admin and Application Architect roles to use import the blueprint into your instance of Application Director'},
                 {msg: 'If you do not have an instance of Application Director, contact us at ' + that.get("contactEmailLink")}
