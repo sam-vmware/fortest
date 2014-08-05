@@ -71,8 +71,14 @@ define(function (require) {
 
             var appdVersion = this.theSessionStorage.get("appdVersion");
             appdVersion = appdVersion && parseFloat(appdVersion);
-            if (!appdVersion || appdVersion < 6.1)
-                $("#bgGroup").hide();
+            if (appdVersion) {
+                if (appdVersion < 6.1) {
+                    $("#bgGroup").hide();
+                }
+                if (appdVersion < 6.0) {
+                    $("#sharedOption").hide();
+                }
+            }
 
             // init any tooltips
             $("[data-toggle='tooltip']").tooltip();

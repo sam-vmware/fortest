@@ -33,7 +33,6 @@ define(function (require) {
             }));
 
             var bulletValues = [
-
                 {msg: 'A blueprint is a visual model for deployment topology. This page has an import utility that allows you to automatically render the selected application blueprint into ' + that.get("appDDSLink") + ' 6.0'},
                 {msg: 'Your Application Director instance needs to be network accessible for the import utility to work'},
                 {msg: 'You need to have Catalog Admin and Application Architect roles to use import the blueprint into your instance of Application Director'},
