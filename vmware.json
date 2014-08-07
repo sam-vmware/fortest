@@ -21,12 +21,12 @@
                     }, {
                         "name": "6.0",
                         "version": "6.0",
-                        "exportFileName": "BitNami-WordPress-64bit-blueprint.xml",
+                        "exportFileName": "Clustered-Dukes-Bank-Application-appd60-2.1.0.xml",
                         "nextStepsMarkdownFile": "Clustered-Dukes-Bank-Application-appd60-2.1.0.xml.md"
                     }, {
                         "name": "6.1",
                         "version": "6.1",
-                        "exportFileName": "Joomla-Blueprint.xml",
+                        "exportFileName": "Clustered-Dukes-Bank-Application-appd61-2.1.0.xml",
                         "nextStepsMarkdownFile": "Joomla-Blueprint.xml.md"
                     }]
                 }
