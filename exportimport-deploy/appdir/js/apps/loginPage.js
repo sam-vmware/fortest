@@ -323,11 +323,16 @@ define(function (require) {
                     cp.get("continueButton").hide();
                     cp.get("loginButton").show();
                     cp.get("authPromptInfo").show();
+                    $("input[name='tenant']").rules("add", {
+                        required: true,
+                        tenant: true
+                    });
                 } else {
                     cp.get("appDirTenantGroup").hide();
                     cp.get("continueButton").show();
                     cp.get("loginButton").hide();
                     cp.get("authPromptInfo").hide();
+                    $("input[name='tenant']").rules("remove");
                 }
             });
 

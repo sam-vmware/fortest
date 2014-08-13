@@ -28,8 +28,8 @@ define(["underscore", "backbone", "util/appDirCommon"], function (_, Backbone, c
 
             // Init and store inmem link
             var link = cu.getLinkForData(this.get("rawData"), this.get("contentType"));
-            cu.log("GitHubFile setting inMemLinkHolder: " + link);
-            this.set("inMemLinkHolder", link);
+            cu.log("GitHubFile setting inMemLinkHolder: " + link[0]);
+            this.set("inMemLinkHolder", link[0]);
             return this.get("inMemLinkHolder");
         },
 
