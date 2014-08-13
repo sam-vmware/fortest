@@ -10,7 +10,8 @@ define(["underscore", "backbone", "util/appDirCommon"], function (_, Backbone, c
             name:null,
             tenant:null,
             user:null,
-            authToken:null
+            authToken:null,
+            selected:null
         },
 
         get:function (attr) {
@@ -40,7 +41,8 @@ define(["underscore", "backbone", "util/appDirCommon"], function (_, Backbone, c
                 "name":response.name,
                 "tenant":response.tenant,
                 "user":response.user,
-                "authToken":response.authToken
+                "authToken":response.authToken,
+                "selected":response.selected
             };
         }
     });

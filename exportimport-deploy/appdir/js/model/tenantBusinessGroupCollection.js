@@ -59,7 +59,10 @@ define(["underscore", "backbone", "localstorage", "model/tenantBusinessGroup", "
                 _.each(response.result.businessGroups, function(bg) {
                     bg.user = response.result.name;
                     bg.authToken = response.result.credential.password;
+                    bg.selected = "";
                 });
+                var first = _.first(response.result.businessGroups);
+                if (first) first.selected="selected";
                 return response.result.businessGroups;
             }
             return response;
