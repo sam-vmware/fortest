@@ -385,7 +385,7 @@ define(function (require) {
                                 if (response.status === 404) {
                                     msg = 'The verify login url was not available. Please check the url parameters!';
                                 }
-                                cu.log("%cLoginPage failed to get tree: " + response, "color:red; background-color:blue");
+                                cu.log("%cLoginPage failed to get tree: " + JSON.stringify(response), "color:red; background-color:blue");
                                 uiUtils.updateFormDisplay({
                                     rdcClass: ALERT_ERROR_CLASSES,
                                     rdMsgVal: errors.get("ERRORS").import

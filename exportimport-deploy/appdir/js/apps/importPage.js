@@ -76,7 +76,6 @@ define(function (require) {
                 this.sessionStorage = new SessionStore({id: "DEFAULT"});
                 this.sessionStorage.fetch();
                 this.defaultBPFile = this.sessionStorage.get("exportFileName");
-                this.nextsStepFile = this.sessionStorage.get("nextsStepFile");
 
                 _.bindAll(this, 'postConstruct', 'gaugesTrack', 'ghCollectionSuccessHandler', 'initData', 'allowInput',
                     'bindImportForm', 'importData', 'displayErrorReadme', 'displayNextSteps');
@@ -395,29 +394,36 @@ define(function (require) {
                     contentParams = {artifactType: artifactType, importLink: importedBPURL}, // will always present imported bp url
                     haveNSFile = false;
 
+                var optionalNSFile = undefined;
                 // Check optional field first
+                cu.log("Checking for optional nextSteps file ...");
                 if (optional.nextStepsMarkdownFile) {
-                    cu.log("nextSteps File: " + optional.nextStepsMarkdownFile);
-                    var optionalNSFile = this.attributes.gitHubFileCollection.get(optional.nextStepsMarkdownFile);
+                    cu.log("Optional nextSteps File found: " + optional.nextStepsMarkdownFile);
+                    optionalNSFile = this.attributes.gitHubFileCollection.get(optional.nextStepsMarkdownFile);
                     if (!optionalNSFile) {
                         cu.log("!! ERROR !! nextSteps file was entered in configuration but missing from repo: " + optional.nextStepsMarkdownFile);
                     } else {
                         this.nextsStepFile = optionalNSFile;
                         haveNSFile = true;
                     }
+                } else {
+                    cu.log("No optional nextSteps file found!");
                 }
 
                 // Check localstorage overrides default optional
-                var setNSFile = this.nextsStepFile;
+                cu.log("Checking localstorage for nextSteps override file ...");
+                var setNSFile = this.sessionStorage.get("nextsStepFile");
                 if (setNSFile) {
-                    cu.log("Default next steps set on model: " + setNSFile);
-                    var optionalNSFile = this.attributes.gitHubFileCollection.get(setNSFile);
+                    cu.log("Storage nextsSteps file was set:" + setNSFile);
+                    optionalNSFile = this.attributes.gitHubFileCollection.get(setNSFile);
                     if (!optionalNSFile) {
                         cu.log("!! ERROR !! nextSteps file was set on the model but missing from repo: " + setNSFile);
                     } else {
                         this.nextsStepFile = optionalNSFile;
                         haveNSFile = true;
                     }
+                } else {
+                    cu.log("No localstorage nextSteps file found!");
                 }
 
                 if (!haveNSFile) {
