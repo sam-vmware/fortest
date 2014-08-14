@@ -18,8 +18,8 @@ define(["underscore", "backbone", "localstorage", "model/tenantBusinessGroup", "
             if (!_.isString(options.appdhost) || !_.isString(options.tenant)) {
                 throw new Error("Can't missing or invalid App Director host or tenant");
             }
-            _.extend(this.collectionOptions, options);
             this.collectionOptions.url = _.template("https://<%= appdhost %>:8443/darwin/api/security/verify-login")(this.collectionOptions);
+            _.extend(this.collectionOptions, options);
         },
 
         sync:function (method, model, options) {

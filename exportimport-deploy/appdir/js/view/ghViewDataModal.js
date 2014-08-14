@@ -31,6 +31,8 @@ define(["underscore", "backbone", "util/appDirCommon", "model/gitHubFile"],
             // If provided with a clicktarget then bind to it for displaying the
             // data in our model
             if (!_.isUndefined(this.options.clickTarget)) {
+                // remove any previous click handler in case we have switched model target
+                $(this.options.clickTarget).off("click");
                 $(this.options.clickTarget).on("click", _.bind(function(e) {
                     this.handleViewEvent(e);
                 }, this));

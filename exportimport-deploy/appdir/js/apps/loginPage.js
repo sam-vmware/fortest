@@ -302,6 +302,9 @@ define(function (require) {
                         } else {
                             cp.get("bpExportFN").attr("placeholder", entry.exportFileName);
                             that.set("defaultBPFile", entry.exportFileName);
+                            that.set("targetFileMeta", collectionFile);
+                            that.set("viewDataModal",
+                                new GHViewDataModal({model: that.attributes.targetFileMeta, clickTarget: that.attributes.importButtonEL, showModal: false}));
                         }
                     } else {
                         cp.get("bpExportFN").attr("placeholder", that.attributes.defaultBPFile);
