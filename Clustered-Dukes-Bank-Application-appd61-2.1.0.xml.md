@@ -1,5 +1,5 @@
 #Success
-Blueprint has been successfully imported in  vCloud Application Director. 
+Blueprint has been successfully imported in to vCloud Automation Center – Application Services
 
 There are  few final steps you need to follow before performing this deployment.
 
