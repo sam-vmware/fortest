@@ -42,7 +42,8 @@ define(function (require) {
                 importButtonEL: "#viewImportFileButton",
                 viewDataModal: undefined,
                 gitHubFileCollection: undefined,
-                postParams: undefined
+                postParams: undefined,
+                performReset: false
             },
 
             initialize: function () {
@@ -127,7 +128,7 @@ define(function (require) {
 
 
                 this.initData();
-                this.gaugesTrack('50b3b654613f5d6634000009');
+                //this.gaugesTrack('50b3b654613f5d6634000009');
             },
 
             // Initialize data values required for app, includes fetching what is needed from GH
@@ -168,6 +169,7 @@ define(function (require) {
 
             // Post this data to app dir, done once we have the data
             importData: function (postData) {
+                var that=this;
                 var missingValuesString = '';
                 if (this.attributes.postParams.appdhost === undefined || this.attributes.postParams.appdhost == '') {
                     missingValuesString = 'Host Url';
@@ -182,11 +184,11 @@ define(function (require) {
                 }
 
                 var paramObject = {
-                    conflictResolution: this.attributes.postParams.conflictResolution,
-                    importAsNewSuffix: !_.isUndefined(this.attributes.postParams.importAsNewSuffix) ? this.attributes.postParams.importAsNewSuffix : null,
-                    importGroup: !_.isUndefined(this.attributes.postParams.importGroup) ? this.attributes.postParams.importGroup : null,
-                    shared: this.attributes.postParams.shared
-                }, url = [ this.attributes.postParams.appdhost, this.attributes.postParams.appdeximep, "?", $.param(paramObject) ].join("");
+                    conflictResolution: that.attributes.postParams.conflictResolution,
+                    importAsNewSuffix: !_.isUndefined(that.attributes.postParams.importAsNewSuffix) ? that.attributes.postParams.importAsNewSuffix : null,
+                    importGroup: !_.isUndefined(that.attributes.postParams.importGroup) ? that.attributes.postParams.importGroup : null,
+                    shared: that.attributes.postParams.shared
+                }, url = [ that.attributes.postParams.appdhost, that.attributes.postParams.appdeximep, "?", $.param(paramObject) ].join("");
 
                 var importSuccessHandler = function (data, textStatus, jqXHR) {
                     var msgClass = ALERT_SUCCESS_CLASSES, msgVal = "", errored = false;
@@ -195,13 +197,13 @@ define(function (require) {
                         msgVal = errors.get("ERRORS").import;
                         errored = true;
                         cp.get("error-readme-content").hide();
-                        this.gaugesTrack('50b3c1fbf5a1f548a9000010');
+                        //this.gaugesTrack('50b3c1fbf5a1f548a9000010');
                     } else {
-                        this.attributes.progressBar.update({
+                        that.attributes.progressBar.update({
                             value: "100%",
                             text: "Complete!"
                         });
-                        this.gaugesTrack('50b3c1ebf5a1f548a900000f');
+                        //that.gaugesTrack('50b3c1ebf5a1f548a900000f');
                     }
                     uiUtils.updateFormDisplay({
                         rdcClass: msgClass,
@@ -217,7 +219,7 @@ define(function (require) {
                     // depending on whether application or only service(s)/task(s)
                     // were imported, change the message and url
                     var artifactType = '';
-                    var baseURL = this.attributes.postParams.appdhost + "/darwin/#";
+                    var baseURL = that.attributes.postParams.appdhost + "/darwin/#";
                     var encodedSegment = '';
 
                     //first check if there is an applicationId, to be compatible with the previous code in titan release
@@ -247,8 +249,8 @@ define(function (require) {
                     data: postData,
                     contentType: "application/xml",
                     dataType: "json",
-                    beforeSend: this.attributes.postParams.beforeSend,
-                    xhrFields: this.attributes.postParams.xhrFields,
+                    beforeSend: that.attributes.postParams.beforeSend,
+                    xhrFields: that.attributes.postParams.xhrFields,
                     error: function (xhr, desc, err) {
                         cu.log(xhr);
                         cu.log("Desc: " + desc + "\nErr:" + err);
@@ -368,9 +370,11 @@ define(function (require) {
                     // adding to iframe gives us a way to easily reset.
                     var content = compiledNextSteps(contentParams),
                         contentArray = cu.getLinkForData(content, "text/html"),
-                        $contentWrapper = cp.get("mainbody"),
-                        width = $contentWrapper.css("width"),
-                        height = $contentWrapper.css("height");
+                        $contentWrapper = $("#mainbody"),
+                        width = $(window).width() + "px",
+                        height = $(window).height() + "px";
+                        //width = $contentWrapper.css("width"),
+                        //height = $contentWrapper.css("height");
 
                     cu.log("content: " + content);
                     cu.log("contentLink: " + contentArray[0]);
@@ -452,6 +456,7 @@ define(function (require) {
             },
 
             bindImportForm: function () {
+                var that=this;
                 var fName = this.attributes.targetFileMeta.get("path"),
                     header = !_.isUndefined(this.attributes.importSectionHeader) ? this.attributes.importSectionHeader : fName.split("\.")[0];
 
@@ -476,14 +481,14 @@ define(function (require) {
                         });
                     },
 
-                    submitHandler: _.bind(function (form, e) {
+                    submitHandler: function (form, e) {
                         e.preventDefault();
                         var uname = cp.get("appDirUserName").val(),
                             password = cp.get("appDirPassword").val(),
                             //appdhost = cp.get("appDirHost").val(),
-                            appdhost = this.sessionStorage.get("targetHost"),
-                            appdVersion = this.sessionStorage.get("appdVersion"),
-                            appdtenant = this.sessionStorage.get("tenantId"),
+                            appdhost = that.sessionStorage.get("targetHost"),
+                            appdVersion = that.sessionStorage.get("appdVersion"),
+                            appdtenant = that.sessionStorage.get("tenantId"),
                             bytes = Crypto.charenc.Binary.stringToBytes(uname + ":" + password),
                             authToken = Crypto.util.bytesToBase64(bytes),
                             conflictResolution = $("input:radio[name=importOptionsRadio]:checked").val(),
@@ -494,12 +499,12 @@ define(function (require) {
                         appdhost = "https://" + appdhost + ":8443";
 
                         // Retrieve session store to get user+token
-                        var bg = _.findWhere(this.sessionStorage.get("businessGroupCollection"), {name: importGroup});
+                        var bg = _.findWhere(that.sessionStorage.get("businessGroupCollection"), {name: importGroup});
                         var postParams = {
                             uname: uname,
                             password: password,
                             appdhost: appdhost,
-                            appdeximep: this.attributes.eximep,
+                            appdeximep: that.attributes.eximep,
                             conflictResolution: conflictResolution,
                             shared: shared,
                             xhrFields: {
@@ -518,28 +523,33 @@ define(function (require) {
                         }
 
                         // On import these are the params used to push our data to appdir
-                        this.set("postParams", postParams);
+                        that.set("postParams", postParams);
 
                         if (importAsNewSuffix !== null) {
-                            this.attributes.postParams.importAsNewSuffix = importAsNewSuffix;
+                            that.attributes.postParams.importAsNewSuffix = importAsNewSuffix;
                         }
                         if (importGroup !== null) {
-                            this.attributes.postParams.importGroup = importGroup;
+                            that.attributes.postParams.importGroup = importGroup;
                         }
 
-                        this.attributes.progressBar.show().update({value: "0%", text: "Importing..."});
+                        that.attributes.progressBar.show().update({value: "0%", text: "Importing..."});
                         cu.log("ImportExportApp form submitted");
-                        var that=this;
-                        ghFH.getGHFileRawData(this.attributes.targetFileMeta, {
-                            reset: false,
-                            success: function (model, response, jqXHR) {
-                                that.attributes.progressBar.update({value: "50%"});
-                                cu.log("%cImportExportApp sending import data to app dir, user: "
+                        var rawData = that.attributes.targetFileMeta.get("rawData");
+                        if (_.isUndefined(rawData)) {
+                            ghFH.getGHFileRawData(that.attributes.targetFileMeta, {
+                                reset: false,
+                                success: function (model, response, jqXHR) {
+                                    that.attributes.progressBar.update({value: "50%"});
+                                    cu.log("%cImportExportApp sending import data to app dir, user: "
                                     + that.attributes.postParams.uname + " app dir host: " + that.attributes.postParams.appdhost, "color:yellow; background-color:blue");
-                                that.importData(model.get("rawData"));
-                            }
-                        });
-                    }, this)
+                                    that.importData(model.get("rawData"));
+                                }
+                            });
+                        } else {
+                            cp.get("responseDataControl").addClass("hidden"); // hide the response in case it is open from prev request
+                            that.importData(rawData);
+                        }
+                    }
                 });
             }
         });
