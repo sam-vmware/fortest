@@ -222,6 +222,16 @@ define(function (require) {
                                         that.set("targetFileMeta", collection.get(firstEntry.exportFileName));
                                     }
                                 }
+                                if (firstEntry && firstEntry.nextStepsMarkdownFile) {
+                                    var collectionFile = collection.get(firstEntry.nextStepsMarkdownFile);
+                                    if (!collectionFile) {
+                                        cu.log("!! ERROR !! nextsSteps specified with appdVersion but no matching file of that name found in repo: " + collectionFile);
+                                    } else {
+                                        that.set("nextsStepFile", firstEntry.nextStepsMarkdownFile);
+                                    }
+                                } else {
+                                    that.set("nextsStepFile", optional.nextStepsMarkdownFile);
+                                }
                             }
                         }
 
@@ -290,13 +300,14 @@ define(function (require) {
             cp.get('appDirVersion').on('change', function () {
                 //var optionSelected = $(this).find("option:selected");
 
+                var collectionFile = undefined;
                 var version = parseFloat(this.value);
                 var optional = that.attributes.vmwareJSONFile.get("optional");
                 if (optional && optional.appdVersions) {
                     var entry = _.findWhere(optional.appdVersions,{version: this.value});
                     cu.log("change event, found entry: " + JSON.stringify(entry));
                     if (entry && entry.exportFileName) {
-                        var collectionFile = that.attributes.gitHubFileCollection.get(entry.exportFileName);
+                        collectionFile = that.attributes.gitHubFileCollection.get(entry.exportFileName);
                         if (!collectionFile) {
                             cu.log("!! ERROR !! exportFileName specified with appdVersion but no matching file of that name found in repo: " + collectionFile);
                         } else {
@@ -310,7 +321,7 @@ define(function (require) {
                         cp.get("bpExportFN").attr("placeholder", that.attributes.defaultBPFile);
                     }
                     if (entry && entry.nextStepsMarkdownFile) {
-                        var collectionFile = that.attributes.gitHubFileCollection.get(entry.nextStepsMarkdownFile);
+                        collectionFile = that.attributes.gitHubFileCollection.get(entry.nextStepsMarkdownFile);
                         if (!collectionFile) {
                             cu.log("!! ERROR !! nextsSteps specified with appdVersion but no matching file of that name found in repo: " + collectionFile);
                         } else {
