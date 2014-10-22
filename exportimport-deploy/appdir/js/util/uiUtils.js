@@ -27,10 +27,10 @@ define(function (require) {
         options || {};
         var queryParams = $.url().param();
         var emailProperties = new email(_.extend({
-            repoUname:queryParams.uname,
-            repoName:queryParams.repo,
-            repoBranch:queryParams.branch
-        },options));
+            repoUname: queryParams.uname,
+            repoName: queryParams.repo,
+            repoBranch: queryParams.branch
+        }, options));
 
         if (!emailProperties.isValid()) {
             cu.log("emailProperties invalid: " + JSON.stringify(emailProperties));
@@ -125,9 +125,9 @@ define(function (require) {
 
         // Setup the iframe properties
         var realIframeOptions = _.extend({}, {
-            id:iframeId,
-            name:iframeName,
-            css:iframeOptions.cssObj ? iframeOptions.cssObj: ""
+            id: iframeId,
+            name: iframeName,
+            css: iframeOptions.cssObj ? iframeOptions.cssObj : ""
         }, _.pick(iframeOptions, "src", "seamless", "srcdoc", "sandbox"));
 
         cu.log("Creating iframe with the following attributes: " + JSON.stringify(realIframeOptions));
@@ -135,25 +135,51 @@ define(function (require) {
         $targetIframe.appendTo($target).show("highlight", 1000);
     }
 
-    return {
-        noticeModal:function (values) {
-            return noticeModal(values);
-        },
-        openWindow:function (url) {
-            return openWindow(url);
-        },
-        updateFormDisplay:function (options) {
-            return updateFormDisplay(options);
-        },
-        displayIframe:function (iframeOptions) {
-            return displayIframe(iframeOptions);
-        },
-        getBase:function() {
-            return getBase();
-        },
-        generateEmailTemplate:function(options) {
-            return generateEmailTemplate(options);
+    // For changes needed to tenant related elements on appd version change, this should be tied to a custom event
+    // but the validation rules make it a bit trickier since it is coupled to the validation plugin
+    function appdVersionChangeUpdateTenant(options) {
+        var version = parseFloat(options.appdVersion);
+        if (version >= 6.1) {
+            cp.get("appDirTenantGroup").show();
+            cp.get("continueButton").hide();
+            cp.get("loginButton").show();
+            cp.get("authPromptInfo").show();
+            $("input[name='tenant']").rules("add", {
+                required: true,
+                tenant: true
+            });
+        } else {
+            cp.get("appDirTenantGroup").hide();
+            cp.get("continueButton").show();
+            cp.get("loginButton").hide();
+            cp.get("authPromptInfo").hide();
+            $("input[name='tenant']").rules("remove");
         }
     }
 
-});
+    return {
+        noticeModal: function (values) {
+            return noticeModal(values);
+        },
+        openWindow: function (url) {
+            return openWindow(url);
+        },
+        updateFormDisplay: function (options) {
+            return updateFormDisplay(options);
+        },
+        displayIframe: function (iframeOptions) {
+            return displayIframe(iframeOptions);
+        },
+        getBase: function () {
+            return getBase();
+        },
+        generateEmailTemplate: function (options) {
+            return generateEmailTemplate(options);
+        },
+        appdVersionChangeUpdateTenant: function (options) {
+            return appdVersionChangeUpdateTenant(options);
+        }
+    }
+
+})
+;

@@ -331,23 +331,6 @@ define(function (require) {
                         that.set("nextsStepFile", optional.nextStepsMarkdownFile);
                     }
                 }
-
-                if (version >= 6.1) {
-                    cp.get("appDirTenantGroup").show();
-                    cp.get("continueButton").hide();
-                    cp.get("loginButton").show();
-                    cp.get("authPromptInfo").show();
-                    $("input[name='tenant']").rules("add", {
-                        required: true,
-                        tenant: true
-                    });
-                } else {
-                    cp.get("appDirTenantGroup").hide();
-                    cp.get("continueButton").show();
-                    cp.get("loginButton").hide();
-                    cp.get("authPromptInfo").hide();
-                    $("input[name='tenant']").rules("remove");
-                }
             });
 
             $("#loginForm").validate({
@@ -408,6 +391,11 @@ define(function (require) {
                         window.location = $.url().attr("directory") + cp.get("IMPORT_PAGE") + "?" + $.url().attr("query");
                     }
                 }, this)
+            });
+
+            var currentVersion = cp.get('appDirVersion').val() ? parseFloat(cp.get('appDirVersion').val()) : undefined;
+            uiUtils.appdVersionChangeUpdateTenant({
+                appdVersion:currentVersion
             });
         }
     });
