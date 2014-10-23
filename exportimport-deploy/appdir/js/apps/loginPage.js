@@ -331,6 +331,10 @@ define(function (require) {
                         that.set("nextsStepFile", optional.nextStepsMarkdownFile);
                     }
                 }
+
+                uiUtils.appdVersionChangeUpdateTenant({
+                    appdVersion:version
+                });
             });
 
             $("#loginForm").validate({
